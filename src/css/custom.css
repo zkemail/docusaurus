@@ -1,0 +1,143 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+/* Import Fustat font */
+@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@400;700&display=swap');
+
+/* Apply Fustat font to everything */
+body {
+  font-family: 'Fustat', sans-serif;
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2962A5;
+  --ifm-color-primary-dark: #0C3D77;
+  --ifm-color-primary-darker: #062242;
+  --ifm-color-primary-darkest: #03162C;
+  --ifm-color-primary-light: #68A3E9;
+  --ifm-color-primary-lighter: #CCE0EA;
+  --ifm-color-primary-lightest: #CCE0EA;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Additional colors */
+  --zk-gray-50: #F5F3EF;
+  --zk-gray-100: #D4D4D4;
+  --zk-gray-200: #A8A8A8;
+  --zk-gray-300: #606060;
+  --zk-gray-400: #3B3B3B;
+  --zk-gray-500: #161819;
+
+  --zk-blue-50: #CCE0EA;
+  --zk-blue-100: #68A3E9;
+  --zk-blue-200: #2962A5;
+  --zk-blue-300: #0C3D77;
+  --zk-blue-400: #062242;
+  --zk-blue-500: #03162C;
+
+  --zk-red-50: #FDC8C5;
+  --zk-red-100: #F38E88;
+  --zk-red-200: #E15E56;
+  --zk-red-300: #C72C22;
+  --zk-red-400: #98251E;
+  --zk-red-500: #5B0D08;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #68A3E9;
+  --ifm-color-primary-dark: #2962A5;
+  --ifm-color-primary-darker: #0C3D77;
+  --ifm-color-primary-darkest: #062242;
+  --ifm-color-primary-light: #CCE0EA;
+  --ifm-color-primary-lighter: #CCE0EA;
+  --ifm-color-primary-lightest: #CCE0EA;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+/* Make navbar always dark with white text */
+.navbar {
+  background-color: var(--zk-gray-500);
+}
+
+.navbar__link,
+.navbar__brand,
+.navbar__toggle,
+.navbar-sidebar__brand {
+  color: #ffffff !important;
+}
+
+.navbar__link {
+  border-radius: 20px;
+  transition: background-color 200ms;
+}
+
+.navbar__link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Style the color mode toggle button */
+.navbar .clean-btn {
+  color: #ffffff !important;
+  background-color: transparent !important;
+  transition: background-color 200ms;
+}
+
+.navbar .clean-btn:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Style the SVG inside the color mode toggle button */
+.navbar .clean-btn svg {
+  fill: currentColor;
+  width: 20px;
+  height: 20px;
+  transition: fill 200ms;
+}
+
+.navbar .clean-btn:hover svg {
+  fill: #ffffff;
+}
+
+/* Make footer always dark with white text */
+.footer {
+  background-color: var(--zk-gray-500);
+  color: #ffffff;
+}
+
+.footer__link-item {
+  color: #ffffff !important;
+  transition: color 200ms;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-lightest) !important;
+}
+
+.footer__title {
+  color: #ffffff;
+}
+
+.footer__copyright {
+  color: #ffffff;
+}
+
+/* Style the footer links */
+.footer__items {
+  font-size: 0.9rem;
+}
+
+.footer__item {
+  margin-bottom: 0.5rem;
+}
+
+/* Add some spacing between footer sections */
+.footer__col {
+  margin-bottom: 2rem;
+}
+
