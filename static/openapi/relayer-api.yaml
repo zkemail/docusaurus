@@ -1,0 +1,381 @@
+openapi: 3.0.0
+servers:
+  - url: https://auth.prove.email
+    description: ZK Email Relayer API
+info:
+  title: Guardian API Server
+  version: 1.0.0
+  description: |
+    API specification for the Guardian server endpoints.
+
+    ## Introduction
+    This API provides endpoints for managing account recovery, guardian operations, and email-based authentication for blockchain accounts.
+
+    ## Authentication
+    Some endpoints may require authentication. Please refer to the specific endpoint documentation for details.
+
+  license:
+    name: MIT
+    url: "https://opensource.org/licenses/MIT"
+
+tags:
+  - name: account
+    description: Account management operations
+  - name: guardian
+    description: Guardian-related operations
+  - name: email
+    description: Email processing operations
+
+paths:
+  /api/echo:
+    get:
+      summary: Echo endpoint
+      tags:
+        - utility
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Hello, world!"
+
+  /api/requestStatus:
+    post:
+      summary: Request status
+      tags:
+        - account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RequestStatusRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RequestStatusResponse'
+        '500':
+          $ref: '#/components/responses/InternalServerError'
+
+  /api/acceptanceRequest:
+    post:
+      summary: Acceptance request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AcceptanceRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcceptanceResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/recoveryRequest:
+    post:
+      summary: Recovery request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecoveryRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecoveryResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/completeRequest:
+    post:
+      summary: Complete recovery request
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompleteRecoveryRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompleteRecoveryResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/getAccountSalt:
+    post:
+      summary: Get account salt
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetAccountSaltRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountSaltResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/inactiveGuardian:
+    post:
+      summary: Inactive guardian
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InactiveGuardianRequest'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InactiveGuardianResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+
+  /api/receiveEmail:
+    post:
+      summary: Receive email
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                emailContent:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+
+components:
+  schemas:
+    RequestStatusRequest:
+      type: object
+      properties:
+        requestId:
+          type: string
+          format: uuid
+        accountAddress:
+          type: string
+          description: Ethereum address of the account
+
+    RequestStatusResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          enum: [pending, approved, rejected, completed]
+        details:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+
+    AcceptanceRequest:
+      type: object
+      properties:
+        requestId:
+          type: string
+          format: uuid
+        guardianAddress:
+          type: string
+          description: Ethereum address of the guardian
+        signature:
+          type: string
+          description: Signed message to prove guardian's acceptance
+
+    AcceptanceResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+
+    RecoveryRequest:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+          description: Ethereum address of the account to recover
+        newOwnerAddress:
+          type: string
+          description: Ethereum address of the new owner
+        guardianSignatures:
+          type: array
+          items:
+            type: string
+          description: Array of signatures from guardians approving the recovery
+
+    RecoveryResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        recoveryId:
+          type: string
+          format: uuid
+        message:
+          type: string
+
+    CompleteRecoveryRequest:
+      type: object
+      properties:
+        recoveryId:
+          type: string
+          format: uuid
+        newOwnerSignature:
+          type: string
+          description: Signature from the new owner to complete the recovery process
+
+    CompleteRecoveryResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        transactionHash:
+          type: string
+          description: Hash of the transaction that completed the recovery on-chain
+
+    GetAccountSaltRequest:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+          description: Ethereum address of the account
+
+    GetAccountSaltResponse:
+      type: object
+      properties:
+        salt:
+          type: string
+        accountAddress:
+          type: string
+
+    InactiveGuardianRequest:
+      type: object
+      properties:
+        accountAddress:
+          type: string
+          description: Ethereum address of the account
+        guardianAddress:
+          type: string
+          description: Ethereum address of the guardian to mark as inactive
+        signature:
+          type: string
+          description: Signature from the account owner to prove ownership
+
+    InactiveGuardianResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        transactionHash:
+          type: string
+          description: Hash of the transaction that marked the guardian as inactive on-chain
+
+  responses:
+    InternalServerError:
+      description: Internal server error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              error:
+                type: string
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+externalDocs:
+  description: Guardian API Documentation
+  url: "https://docs.prove.email/api"
+
+x-tagGroups:
+  - name: Core Operations
+    tags:
+      - account
+      - guardian
+  - name: Utility
+    tags:
+      - email
+      - utility

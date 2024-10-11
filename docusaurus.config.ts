@@ -35,6 +35,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          docItemComponent: "@theme/ApiItem",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -64,8 +65,29 @@ const config: Config = {
     ],
   ],
 
+  // Add the plugins configuration
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "relayer-api",
+        docsPluginId: "classic",
+        config: {
+          guardian: {
+            specPath: "static/openapi/relayer-api.yaml",
+            outputDir: "docs/account-recovery/relayer-api",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+        },
+      },
+    ],
+  ],
+
+  themes: ["docusaurus-theme-openapi-docs"],
+
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'ZK Email',
@@ -125,38 +147,38 @@ const config: Config = {
       disableSwitch: false,
       respectPrefersColorScheme: true,
     },
+    api: {
+      authPersistenceDisabled: false,
+    },
+    languageTabs: [
+      {
+        highlight: "bash",
+        language: "curl",
+        logoClass: "curl",
+      },
+      {
+        highlight: "javascript",
+        language: "nodejs",
+        logoClass: "nodejs",
+      },
+      {
+        highlight: "go",
+        language: "go",
+        logoClass: "go",
+      },
+      {
+        highlight: "rust",
+        language: "rust",
+        logoClass: "rust",
+      },
+      {
+        highlight: "python",
+        language: "python",
+        logoClass: "python",
+      },
+    ],
   } satisfies Preset.ThemeConfig,
 };
 
-// Custom function to set favicon based on color mode
-const setFaviconForColorMode = `
-  (function() {
-    var lightFavicon = '/img/zk-email-logo-small.svg';
-    var darkFavicon = '/img/zk-email-logo-small-white.svg';
-    
-    function updateFavicon() {
-      var favicon = document.querySelector('link[rel="icon"]');
-      if (document.documentElement.getAttribute('data-theme') === 'dark') {
-        favicon.href = darkFavicon;
-      } else {
-        favicon.href = lightFavicon;
-      }
-    }
-    
-    // Set initial favicon
-    updateFavicon();
-    
-    // Update favicon when color mode changes
-    var observer = new MutationObserver(updateFavicon);
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-  })();
-`;
-
-// Add the custom script to the config
-config.scripts = config.scripts || [];
-config.scripts.push({
-  src: 'data:text/javascript,' + encodeURIComponent(setFaviconForColorMode),
-  defer: true,
-});
-
 export default config;
+

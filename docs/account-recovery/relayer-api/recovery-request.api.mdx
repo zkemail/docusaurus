@@ -1,0 +1,292 @@
+---
+id: recovery-request
+title: "Recovery request"
+description: "Recovery request"
+sidebar_label: "Recovery request"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVk2P2zYQ/SvE5KrY2wK96FQ32AZuUWSx3qJAvT6MqbHFRCKZIbmOYei/F0NJ/tgVekl8sUTOvHnz9ewTMH1NFOJvrjpCecqvhqmCMnKiArSzkWyUK/S+MRqjcXb+OTgrZ0HX1KI8xaMnKMFtP5OOUIBn54mjoZB9tXbJxkVVMYVwZR8iG7uHAioKmo0XdCjhPtbElFqFvYdyOxVrUgOOik4xafdCDF0Blg6fDpb4u+EtHZQTJEHdJ+TKoF2ZvcWYmK6BkRmPUICJ1E4E7F5HXIi9hAlnNLVj16oxSlDoPbsXY/eZypDeEbqugGhiI+iPw+Fj3zToOrllCt7Z0PP7+e5Ovm6jr5LWFMIuNWo0hh/W29CDXxlunWsILWRuPeNlNdWVneMWI5SQkqnEvKUQcE8TBZ2swpBKX4ZfpjJf2khssVGB+IVYEbPjH5d7DzfBtus53ZIZiath6UASjrWroATv8rvHWEMJc/Rmzq+6XUCfRIByfYLEDZRQx+hDOZ9jivVM5odm1KJp3oz8v3+qe7lQj9TgkVgtHpbQbQRTJzbxuJKU+6y2hEy8SELlnJpEEgrZTJqcjaAYHn4fW/nHP0+5W1LKx4u43H/D1jc0JQaXeXizyJerqW1cj9ebrgBjdy7THabk4+AgiapVLhwUIOXrC/LT7G5296ZMYhw8abMbRkLtHOeFPOONk2Qr74yNYfZsn+27d2ppI7sqafF6tk+1CTl0XuqKwsUhQ7ZocS/LPkra2O3iLAlKJi2TCIVCW6nc2fdbDFQpaTjZeM1y2zj9Rddo7Ah65ra4sX62K9fSFaEW+5k0TK+AZ+qhIQyiRzti0V2pxVihM4SqnE4t2XhhU1FE0wiDYd1Q53WzmMcndyV571gGu5/ZEkJ/8uvtJN+O+tXdfLAX6WiMJhGDS4i/lk9vnJ0nG1xiTTPH+/ngFOZiK1Mra9iivUKZWNqbkTkvSKRvce4bNFn4ctjTsM9rQG/goobjRm8KqGXvyzWcTtLXv7npOjn+mkT7y/WmgBdkg1uZ6bXMeU1YEWcJ+EJHKOFDL2Xvn4SGmDcp/0K9lrWuGD0WWpOP/2u7uZKmh08rKeR2+IvQukp8GA+SER6gBCjA5XJk+chnJ2jQ7lMWc+gx5fMf/Hv8yA==
+sidebar_class_name: "post api-method"
+info_path: docs/account-recovery/relayer-api/guardian-api-server
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Heading from "@theme/Heading";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Recovery request"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/recoveryRequest"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recovery request
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<MimeTabs
+  className={"openapi-tabs__mime"}
+>
+  <TabItem
+    label={"application/json"}
+    value={"application/json-schema"}
+  >
+    <details
+      style={{}}
+      className={"openapi-markdown__details mime"}
+      data-collapsed={false}
+      open={true}
+    >
+      <summary
+        style={{}}
+        className={"openapi-markdown__details-summary-mime"}
+      >
+        <h3
+          className={"openapi-markdown__details-summary-header-body"}
+        >
+          Body
+        </h3><strong
+          className={"openapi-schema__required"}
+        >
+          required
+        </strong>
+      </summary><div
+        style={{"textAlign":"left","marginLeft":"1rem"}}
+      >
+        
+      </div><ul
+        style={{"marginLeft":"1rem"}}
+      >
+        <SchemaItem
+          collapsible={false}
+          name={"accountAddress"}
+          required={false}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Ethereum address of the account to recover"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"newOwnerAddress"}
+          required={false}
+          schemaName={"string"}
+          qualifierMessage={undefined}
+          schema={{"type":"string","description":"Ethereum address of the new owner"}}
+        >
+          
+        </SchemaItem><SchemaItem
+          collapsible={false}
+          name={"guardianSignatures"}
+          required={false}
+          schemaName={"string[]"}
+          qualifierMessage={undefined}
+          schema={{"type":"array","items":{"type":"string"},"description":"Array of signatures from guardians approving the recovery"}}
+        >
+          
+        </SchemaItem>
+      </ul>
+    </details>
+  </TabItem>
+</MimeTabs><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Successful response
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"success"}
+                        required={false}
+                        schemaName={"boolean"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"boolean"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"recoveryId"}
+                        required={false}
+                        schemaName={"uuid"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","format":"uuid"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"message"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"success\": true,\n  \"recoveryId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\n  \"message\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"500"}
+        value={"500"}
+      >
+        <div>
+          
+          
+          Internal server error
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"error"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"error\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      
