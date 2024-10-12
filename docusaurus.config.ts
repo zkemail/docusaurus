@@ -34,29 +34,13 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           docItemComponent: "@theme/ApiItem",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          path: 'changelog',
-          routeBasePath: 'changelog',
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -96,25 +80,31 @@ const config: Config = {
         src: 'img/zk-email-logo-small-white.svg',
       },
       items: [
-        {to: '/docs/zk-email-sdk/', label: 'SDK', position: 'left'},
-        {to: '/docs/email-wallet/', label: 'Email Wallet', position: 'left'},
-        {to: '/docs/account-recovery/', label: 'Account Recovery', position: 'left'},
-        {to: '/changelog', label: 'Changelog', position: 'right'},
+        {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
+        {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
+        {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Projects',
           items: [
             {
-              label: 'Documentation',
-              to: '/docs/intro',
+              label: 'SDK Registry',
+              to: 'https://sdk.prove.email/',
+              target: '_blank',
             },
             {
-              label: 'Changelog',
-              to: '/changelog',
+              label: 'Account Recovery Demo',
+              to: 'https://recovery.prove.email/',
+              target: '_blank',
+            },
+            {
+              label: 'DKIM Archive',
+              to: 'https://archive.prove.email/',
+              target: '_blank',
             },
           ],
         },

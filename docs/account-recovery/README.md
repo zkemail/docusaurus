@@ -36,8 +36,7 @@ The account recovery process involves four main steps:
 
 ![Account Recovery Overview](/img/account-recovery-overview.avif)
 
-
-### Detailed Recovery Flow[​](http://localhost:3000/docs/account-recovery/overview#detailed-recovery-flow) <a href="#detailed-recovery-flow" id="detailed-recovery-flow"></a>
+### Detailed Recovery Flow
 
 1. **User Initiates Recovery**: When a user needs to recover their account, they interact with a front-end application that communicates with the off-chain Relayer.
 2. **Relayer Processes Request**: The Relayer, an off-chain component, receives the recovery initiation request. It prepares the necessary data and interacts with the on-chain components.

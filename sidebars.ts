@@ -20,7 +20,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading first">Welcome</span>',
     },
-    'intro',
+    'introduction',
     'quickstart',
     {
       type: 'html',
