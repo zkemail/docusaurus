@@ -1,4 +1,4 @@
-# ZK Email Documentation Hub
+# Introduction
 
 Welcome to the ZK Email Documentation Hub, the central repository for comprehensive documentation on the ZK Email project suite. This hub serves as your one-stop guide to understanding and implementing our email verification solutions powered by zero-knowledge proof technology.
 

@@ -1,6 +1,6 @@
 openapi: 3.0.0
 servers:
-  - url: https://auth.prove.email
+  - url: https://auth-base-sepolia-staging.prove.email
     description: ZK Email Relayer API
 info:
   title: Guardian API Server

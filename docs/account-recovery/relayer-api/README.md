@@ -11,7 +11,7 @@ To see an interactive example of this API in practice, you can see [demo fronten
 The base URL for all API endpoints is:
 
 ```
-https://auth.prove.email
+https://auth-base-sepolia-staging.prove.email
 ```
 
 ## Authentication

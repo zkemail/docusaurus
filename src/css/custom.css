@@ -20,7 +20,6 @@ body {
   --ifm-color-primary-light: #68A3E9;
   --ifm-color-primary-lighter: #CCE0EA;
   --ifm-color-primary-lightest: #CCE0EA;
-  --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Additional colors */
@@ -141,3 +140,13 @@ body {
   margin-bottom: 2rem;
 }
 
+.sidebar-heading {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem !important;
+  margin-left: 12px;
+}
+
+.sidebar-heading.first {
+  margin-top: 0 !important;
+}

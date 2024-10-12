@@ -16,7 +16,15 @@ const sidebars: SidebarsConfig = {
 
   // But you can create a sidebar manually
   docs: [
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading first">Welcome</span>',
+    },
     'intro',
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">SDK</span>',
+    },
     {
       type: 'category',
       label: 'ZK Email SDK',
@@ -31,6 +39,10 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
+      type: 'html',
+      value: '<span class="sidebar-heading">ZK Email Verifier</span>',
+    },
+    {
       type: 'category',
       label: 'ZK-Email-Verifier',
       link: {
@@ -42,6 +54,10 @@ const sidebars: SidebarsConfig = {
         'zk-email-verifier/packages-components',
         'zk-email-verifier/usage-guide',
       ],
+    },
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">Email Wallet</span>',
     },
     {
       type: 'category',
@@ -58,6 +74,10 @@ const sidebars: SidebarsConfig = {
         'email-wallet/email-wallet-extensions-sdk',
         'email-wallet/deployed-contract-addresses',
       ],
+    },
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">Account Recovery</span>',
     },
     {
       type: 'category',
@@ -89,6 +109,10 @@ const sidebars: SidebarsConfig = {
         },
         'account-recovery/deployed-contracts',
       ],
+    },
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">Additional Resources</span>',
     },
     'login-with-zk-email-oauth-api',
     'audits',

@@ -139,8 +139,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} ZK Email.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneDark,
+      darkTheme: prismThemes.oneDark,
     },
     colorMode: {
       defaultMode: 'light',

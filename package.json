@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "generate-docs": "docusaurus generate-docs all",
+    "generate-docs": "docusaurus gen-api-docs all",
     "clean-docs": "docusaurus clean-api-docs all",
     "typecheck": "tsc"
   },
