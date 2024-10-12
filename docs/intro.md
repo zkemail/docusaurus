@@ -2,42 +2,53 @@
 
 Welcome to the ZK Email Documentation Hub, the central repository for comprehensive documentation on the ZK Email project suite. This hub serves as your one-stop guide to understanding and implementing our email verification solutions powered by zero-knowledge proof technology.
 
-## ZK Email Project Repos
+## Getting Started
 
-We have several repos within the ZK Email ecosystem. Developers can use these to build their own custom email verification circuits.
+To start building with ZK Email, check out our [Quickstart Guide](./quickstart.md) for step-by-step instructions on setting up your development environment and creating your first ZK Email project.
 
-[ZK Email SDK](zk-email-sdk/README.md): Use this to build a new kind of ZK Email proofs out of the box with 8 lines of JSON, and automatically have proof infrastructure deployed for you. We recommend this for all developers new to ZK Email.
 
-[ZK Email Verifier](zk-email-verifier/README.md): Build custom circuits, smart contracts, and frontend utils. This SDK will likely require ZK knowledge to be able to use, and gives more customizability than the [ZK Email SDK](zk-email-sdk/README.md).
+<div className="row" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+  <div className="col col--6" style={{ marginBottom: '1rem' }}>
+    <a href="quickstart" className="card-link" style={{ textDecoration: 'none' }}>
+      <div className="card" style={{ cursor: 'pointer', padding: '1.5rem 1rem', height: '100%' }}>
+        <div className="card__header">
+          <h3 style={{ pointerEvents: 'none', marginBottom: '1rem' }}>Quickstart Guide</h3>
+        </div>
+        <div className="card__body">
+          <p style={{ pointerEvents: 'none', fontWeight: 'normal' }}>Get started with ZK Email by following our step-by-step quickstart guide.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div className="col col--6" style={{ marginBottom: '1rem' }}>
+    <a href="https://t.me/zkemail" target="_blank" className="card-link" style={{ textDecoration: 'none' }}>
+      <div className="card" style={{ cursor: 'pointer', padding: '1.5rem 1rem', height: '100%' }}>
+        <div className="card__header">
+          <h3 style={{ pointerEvents: 'none', marginBottom: '1rem' }}>Join Our Community</h3>
+        </div>
+        <div className="card__body">
+          <p style={{ pointerEvents: 'none', fontWeight: 'normal' }}>Connect with other developers and get support in our Telegram group.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
 
-[Email Wallet](email-wallet/README.md): A smart contract wallet controlled by your email. You can understand [how to hit the API](email-wallet/api-documentation.md) from a frontend easily, [run your own relayer](email-wallet/relayer-infrastructure.md) if you like, or [define your own extensions](email-wallet/email-wallet-extensions-sdk.md) to add functionality.
+## Learn More
 
-[Account Recovery](account-recovery/README.md): Explains the interfaces to call account recovery functions from a frontend API, and explains the smart contract architecture for wallets to customize. Used to enable and trigger recovery on any Safe or 7579-compatible wallet. Defines [Ether Email Auth](account-recovery/email-controlled-smart-contracts.md), which lets anyone write smart contracts that are triggered by emails.
+ZK Email allows users to prove the contents of their emails on a blockchain by verifying DKIM signatures using zero-knowledge proofs. This enables trustless integration between web2 and web3 by allowing verification of email contents on-chain without revealing the full email, thus preserving privacy.
 
-[Oauth Login](login-with-zk-email-oauth-api.md):  Explains how to hit our APIs from a frontend to be able to login via emails with ZK Email, and optionally request scopes like temporary access to assets.
+When we say "trustless", we mean reducing reliance on centralized attesters for off-chain facts. However, some trust assumptions remain, such as in DNS and email providers. We continually work to minimize these and empower users with greater control over their data verification.
 
-[ZK Regex](zk-regex.md): A library to do regex verification in circom. The zk-regex CLI takes in a regex and outputs a ZK circuit.
+Some key features and benefits of ZK Email:
 
-## Projects that use ZK Email
+- Verify email contents on-chain without revealing private data
+- Prove ownership of email accounts and domains
+- Enable web2 identity and data verification for web3 applications
+- No need to trust centralized oracles or attestation services
+- Fully open source and audited implementation
 
-There are many real world applications that currently use our sdks. Here's a list of a few notable ones
-
-* [ZKP2P](https://zkp2p.xyz/): Decentralized Venmo - USDC Bridge
-* [Email Wallet](https://emailwallet.org): Send transactions via email or act as a Safe multisig signer!
-* [Email Account Recovery](https://prove.email/blog/recovery): Use emails as guardians for any smart wallet or multisig.
-* [Nozee](https://nozee.xyz): Anonymous Proofs of Email Domain via JWTs
-* [Proof of Twitter](https://twitter.prove.email/): Verify your twitter username on chain using zk proofs
-
-## Quick Start
-
-To get started with ZK Email, follow these steps:
-
-1. **Choose the Project Component**: Select the project component you're interested in from our list of SDKs, templates, and examples.
-2. **Read the README Guide**: Each section comes with a "README" guide. Make sure to read it to understand how the technology works and to get started with the basic setup.
-3. **Dive into Specific Documentation**: For detailed information and advanced configurations, delve into the specific documentation of the component you've chosen. Check out our [How to Set Up Proof of Twitter Example](https://prove.email/blog/twitter) blog post for a step-by-step tutorial showcasing a practical example of how our SDKs can be implemented for a custom ZK email circuit, and our [Github](https://github.com/zkemail) to see code for other demos.
-4. **Regularly Check for Updates**: Since we frequently make changes to enhance functionality and security, it's crucial to keep your circuits package up-to-date.
-
-Please read our [CONTRIBUTING.md](contributing.md) for details on our how you can contribute to Prove.email, and the process for submitting pull requests to us.
+ZK Email opens up a wide range of use cases bridging web2 and web3, from account recovery to KYC to anonymous credentials.
 
 ## License
 

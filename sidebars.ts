@@ -21,6 +21,7 @@ const sidebars: SidebarsConfig = {
       value: '<span class="sidebar-heading first">Welcome</span>',
     },
     'intro',
+    'quickstart',
     {
       type: 'html',
       value: '<span class="sidebar-heading">SDK</span>',
@@ -114,6 +115,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',
     },
+    'projects',
     'login-with-zk-email-oauth-api',
     'audits',
     'zk-regex',

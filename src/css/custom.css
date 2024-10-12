@@ -150,3 +150,24 @@ body {
 .sidebar-heading.first {
   margin-top: 0 !important;
 }
+
+.card {
+  border: 1px solid white;
+  backdrop-filter: blur(6px);
+  border-radius: 17px;
+  cursor: pointer;
+  transition: all 0.1s;
+  display: flex;
+  user-select: none;
+  font-weight: bolder;
+  color: var(--ifm-color-content);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.card:hover {
+  border: 1px solid var(--ifm-color-primary);
+}
+
+.card__header, .card__body, .card__footer {
+  padding: 0px !important;
+}
