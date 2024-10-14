@@ -1,4 +1,4 @@
-# Quickstart
+# Getting Started
 
 To get started with ZK Email, follow these steps:
 

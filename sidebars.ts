@@ -27,7 +27,6 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">How ZK Email Works</span>',
     },
-    'learn',
     {
       type: 'category',
       label: 'Architecture',

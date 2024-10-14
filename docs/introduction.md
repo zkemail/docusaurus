@@ -17,7 +17,7 @@ Start building with ZK Email using our quickstart guide and dive deeper into how
     {
       type: 'link',
       href: '/quickstart',
-      label: 'Quickstart Guide',
+      label: 'Getting Started',
       description: 'Get started with ZK Email by following our step-by-step guide.',
     }
   ]}
@@ -39,7 +39,7 @@ Explore our resources to understand the technology behind ZK Email and how you c
       type: 'link',
       href: 'https://github.com/zkemail',
       label: 'Example Repositories',
-      description: 'Browse our collection of example projects and starter kits on GitHub.',
+      description: 'Browse our collection of example projects on GitHub.',
     },
     {
       type: 'link',
@@ -49,11 +49,3 @@ Explore our resources to understand the technology behind ZK Email and how you c
     }
   ]}
 />
-
-## License
-
-This documentation is licensed under the [MIT License](https://github.com/zkemail/prove-email-docs/blob/docs/LICENSE.md).
-
-## Support and Contact
-
-If you need help or have questions, please join our community chat on [Telegram](https://t.me/zkemail).
