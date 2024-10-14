@@ -1,6 +1,4 @@
-# Getting Started
-
-
+# Quickstart Guides
 
 The following steps are for developers to implement account recovery using ether-email-auth. Note that this is the workflow for custom smart contracts -- if your wallet is 7579 compatible, you can simply install our 7579 module directly.
 

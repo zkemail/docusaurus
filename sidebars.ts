@@ -25,6 +25,25 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'html',
+      value: '<span class="sidebar-heading">How ZK Email Works</span>',
+    },
+    'learn',
+    {
+      type: 'category',
+      label: 'Architecture',
+      link: {
+        type: 'doc',
+        id: 'architecture/README',
+      },
+      items: [
+        'architecture/dkim-verification',
+        'architecture/zk-proofs',
+        'architecture/on-chain',
+        'architecture/security-considerations',
+      ],
+    },
+    {
+      type: 'html',
       value: '<span class="sidebar-heading">SDK</span>',
     },
     {
@@ -85,7 +104,7 @@ const sidebars: SidebarsConfig = {
       value: '<span class="sidebar-heading">Account Recovery</span>',
     },
     'account-recovery/README',
-    'account-recovery/getting-started',
+    'account-recovery/quickstart-guides',
     {
       type: 'category',
       label: 'Contracts Reference',
