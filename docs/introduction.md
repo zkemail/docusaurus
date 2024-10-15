@@ -6,7 +6,21 @@ import DocCardList from '@theme/DocCardList';
 Welcome to the ZK Email Documentation. This documentation provides everything you need to understand and implement our email verification solutions powered by zero-knowledge.
 </div>
 
-<img src="/img/zk-email-docs-banner.png" alt="ZK Email Documentation Banner" style={{width: '100%', display: 'block', margin: '20px auto', borderRadius: '17px'}} />
+<img 
+  src="/img/zk-email-docs-banner.png" 
+  alt="ZK Email Documentation Banner" 
+  style={{
+    width: '100%',
+    display: 'block',
+    margin: '20px auto',
+    borderRadius: '17px',
+    objectFit: 'contain',
+    maxWidth: '100%',
+    height: 'auto'
+  }} 
+  loading="lazy"
+  decoding="async"
+/>
 
 ## Get started with ZK Email
 

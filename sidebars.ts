@@ -103,7 +103,16 @@ const sidebars: SidebarsConfig = {
       value: '<span class="sidebar-heading">Account Recovery</span>',
     },
     'account-recovery/README',
-    'account-recovery/quickstart-guides',
+    {
+      type: 'category',
+      label: 'Quickstart',
+      link: {
+        type: 'doc',
+        id: 'account-recovery/quickstart',
+      },
+      items: [
+      ],
+    },
     {
       type: 'category',
       label: 'Contracts Reference',
