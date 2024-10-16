@@ -32,25 +32,43 @@ include "@zk-email/circuits/email-verifier.circom";
     * `n`: Number of bits per chunk the RSA key is split into. Recommended to be 121.
     * `k`: Number of chunks the RSA key is split into. Recommended to be 17.
     * `ignoreBodyHashCheck`: Set 1 to skip body hash check in case data to prove/extract is only in the headers.
+    * `enableHeaderMasking`: Set to 1 to enable masking of the email header.
+    * `enableBodyMasking`: Set to 1 to enable masking of the email body.
+    * `removeSoftLineBreaks`: Set to 1 to remove soft line breaks from the email body (`=\r\n`).
 
-    `Note`: We use these values for n and k because their product (n \* k) needs to be more than 2048 (RSA constraint) and n has to be less than half of 255 to fit in a circom signal.
+    `Note`: We use these values for n and k because their product (n * k) needs to be more than 2048 (RSA constraint) and n has to be less than half of 255 to fit in a circom signal.
 *   **Input Signals**:
 
-    * `emailHeader[maxHeadersLength]`: Email headers that are signed (ones in `DKIM-Signature` header) as ASCII int\[], padded as per SHA-256 block size.
+    * `emailHeader[maxHeadersLength]`: Email headers that are signed (ones in `DKIM-Signature` header) as ASCII int[], padded as per SHA-256 block size.
     * `emailHeaderLength`: Length of the email header including the SHA-256 padding.
     * `pubkey[k]`: RSA public key split into k chunks of n bits each.
     * `signature[k]`: RSA signature split into k chunks of n bits each.
-    * `emailBody[maxBodyLength]`: Email body after the precomputed SHA as ASCII int\[], padded as per SHA-256 block size.
+    * `emailBody[maxBodyLength]`: Email body after the precomputed SHA as ASCII int[], padded as per SHA-256 block size.
     * `emailBodyLength`: Length of the email body including the SHA-256 padding.
     * `bodyHashIndex`: Index of the body hash `bh` in the `emailHeader`.
     * `precomputedSHA[32]`: Precomputed SHA-256 hash of the email body till the bodyHashIndex.
 
-    **Output Signal**
+    If `removeSoftLineBreaks` is enabled:
+    * `decodedEmailBodyIn[maxBodyLength]`: The email body with soft line breaks removed, provided as input for validation.
 
-    * `pubkeyHash`: Poseidon hash of the pubkey - Poseidon(n/2)(n/2 chunks of pubkey with k\*2 bits per chunk).
+    If `enableHeaderMasking` is enabled:
+    * `headerMask[maxHeadersLength]`: A mask array for the email header, where each element is `1` (reveal) or `0` (hide).
 
-\
+    If `enableBodyMasking` is enabled:
+    * `bodyMask[maxBodyLength]`: A mask array for the email body, where each element is `1` (reveal) or `0` (hide).
 
+*   **Output Signals**:
+
+    * `pubkeyHash`: Poseidon hash of the pubkey - Poseidon(n/2)(n/2 chunks of pubkey with k*2 bits per chunk).
+
+    If `removeSoftLineBreaks` is enabled:
+    * `decodedEmailBodyOut[maxBodyLength]`: The decoded email body with soft line breaks removed.
+
+    If `enableHeaderMasking` is enabled:
+    * `maskedHeader[maxHeadersLength]`: The masked email header after applying the `headerMask`.
+
+    If `enableBodyMasking` is enabled:
+    * `maskedBody[maxBodyLength]`: The masked email body after applying the `bodyMask`.
 
 ### **Libraries**
 
@@ -248,6 +266,20 @@ This section provides an overview of utility circom templates available in the `
 
 </details>
 
+<details>
+
+<summary>ByteMask: Applies a mask to a byte array to selectively reveal or hide bytes.</summary>
+
+* **Parameters**:
+  * `maxArrayLen`: The maximum length of the input array.
+* **Inputs**:
+  * `in[maxArrayLen]`: The input byte array.
+  * `mask[maxArrayLen]`: The mask array, where each element is `1` (reveal) or `0` (hide).
+* **Output**:
+  * `out[maxArrayLen]`: The masked byte array after applying the mask.
+
+</details>
+
 #### `utils/constants.circom`
 
 <details>
@@ -344,3 +376,25 @@ This section contains helper circom templates in `@zk-email/circuits/helpers` th
   * `out`: The email nullifier.
 
 </details>
+
+#### `helpers/remove-soft-line-breaks.circom`
+
+<details>
+
+<summary>RemoveSoftLineBreaks: Removes soft line breaks from the email body.</summary>
+
+* **Parameters**:
+  * `maxBodyLength`: The maximum length of the email body.
+* **Inputs**:
+  * `encoded[maxBodyLength]`: The email body with potential soft line breaks.
+* **Outputs**:
+  * `decoded[maxBodyLength]`: The email body with soft line breaks removed.
+  * `isValid`: A signal indicating whether the decoding was successful (`1` for valid, `0` for invalid).
+
+</details>
+
+### Additional Notes
+
+- **Constraint Counts**: The inclusion of new functionalities like masking and soft line break removal may increase the number of constraints in the circuit. Be mindful of these when designing proofs and verifying performance.
+- **Padding Requirements**: The circuit includes assertions to ensure that `maxHeadersLength` and `maxBodyLength` are multiples of 64, which aligns with SHA-256 padding requirements.
+- **Security Considerations**: When using masking and data processing features, ensure that they are applied correctly to maintain data integrity and privacy. Misuse could lead to unintended data exposure or verification failures.
