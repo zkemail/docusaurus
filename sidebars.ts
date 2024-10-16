@@ -72,7 +72,19 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'zk-email-verifier/installation',
-        'zk-email-verifier/packages-components',
+        {
+          type: 'category',
+          label: 'Packages',
+          link: {
+            type: 'doc',
+            id: 'zk-email-verifier/packages/README',
+          },
+          items: [
+            'zk-email-verifier/packages/zk-email-circuits',
+            'zk-email-verifier/packages/zk-email-helpers',
+            'zk-email-verifier/packages/zk-email-contracts'
+          ],
+        },
         'zk-email-verifier/usage-guide',
       ],
     },
