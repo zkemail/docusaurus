@@ -131,6 +131,7 @@ const config: Config = {
     prism: {
       theme: prismThemes.oneDark,
       darkTheme: prismThemes.oneDark,
+      additionalLanguages: ['solidity'],
     },
     colorMode: {
       defaultMode: 'light',
@@ -171,4 +172,3 @@ const config: Config = {
 };
 
 export default config;
-
