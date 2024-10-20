@@ -120,76 +120,87 @@ const sidebars: SidebarsConfig = {
       label: 'Quickstart',
       link: {
         type: 'doc',
-        id: 'account-recovery/quickstart',
+        id: 'account-recovery/quickstart/README',
       },
       items: [
+        'account-recovery/quickstart/existing-modules',
+        'account-recovery/quickstart/ether-email-auth',
       ],
     },
+    // {
+    //   type: 'category',
+    //   label: 'Contracts Reference',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'account-recovery/api-reference/README'
+    //   },
+    //   items: [
+    //     {
+    //       type: 'category',
+    //       label: 'Core Contracts',
+    //       items: [
+    //         'account-recovery/api-reference/core-contracts/email-recovery-manager',
+    //         'account-recovery/api-reference/core-contracts/guardian-manager',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Modules',
+    //       items: [
+    //         'account-recovery/api-reference/modules/email-recovery-module',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Factories',
+    //       items: [
+    //         'account-recovery/api-reference/factories/email-recovery-factory',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Command Handlers',
+    //       items: [
+    //         'account-recovery/api-reference/command-handlers/email-recovery-command-handler',
+    //         'account-recovery/api-reference/command-handlers/account-hiding-recovery-command-handler',
+    //         'account-recovery/api-reference/command-handlers/safe-recovery-command-handler',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Interfaces',
+    //       items: [
+    //         'account-recovery/api-reference/interfaces/i-email-recovery-module',
+    //         'account-recovery/api-reference/interfaces/i-email-recovery-manager',
+    //         'account-recovery/api-reference/interfaces/i-email-recovery-command-handler',
+    //         'account-recovery/api-reference/interfaces/i-guardian-manager',
+    //         'account-recovery/api-reference/interfaces/i-safe',
+    //         'account-recovery/api-reference/interfaces/i-universal-email-recovery-module',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Libraries',
+    //       items: [
+    //         'account-recovery/api-reference/libraries/enumerable-guardian-map',
+    //         'account-recovery/api-reference/libraries/string-utils',
+    //         'account-recovery/api-reference/libraries/l2-contract-helper',
+    //       ],
+    //     },
+    //   ],
+    // },
     {
       type: 'category',
-      label: 'Contracts Reference',
+      label: 'Ether Email Auth SDK',
       link: {
         type: 'doc',
-        id: 'account-recovery/api-reference/README'
+        id: 'account-recovery/ether-email-auth-sdk'
       },
       items: [
-        {
-          type: 'category',
-          label: 'Core Contracts',
-          items: [
-            'account-recovery/api-reference/core-contracts/email-recovery-manager',
-            'account-recovery/api-reference/core-contracts/guardian-manager',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Modules',
-          items: [
-            'account-recovery/api-reference/modules/email-recovery-module',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Factories',
-          items: [
-            'account-recovery/api-reference/factories/email-recovery-factory',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Command Handlers',
-          items: [
-            'account-recovery/api-reference/command-handlers/email-recovery-command-handler',
-            'account-recovery/api-reference/command-handlers/account-hiding-recovery-command-handler',
-            'account-recovery/api-reference/command-handlers/safe-recovery-command-handler',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Interfaces',
-          items: [
-            'account-recovery/api-reference/interfaces/i-email-recovery-module',
-            'account-recovery/api-reference/interfaces/i-email-recovery-manager',
-            'account-recovery/api-reference/interfaces/i-email-recovery-command-handler',
-            'account-recovery/api-reference/interfaces/i-guardian-manager',
-            'account-recovery/api-reference/interfaces/i-safe',
-            'account-recovery/api-reference/interfaces/i-universal-email-recovery-module',
-          ],
-        },
-        {
-          type: 'category',
-          label: 'Libraries',
-          items: [
-            'account-recovery/api-reference/libraries/enumerable-guardian-map',
-            'account-recovery/api-reference/libraries/string-utils',
-            'account-recovery/api-reference/libraries/l2-contract-helper',
-          ],
-        },
+        'account-recovery/concepts',
+        'account-recovery/package-components',
       ],
     },
-    'account-recovery/email-controlled-smart-contracts',
-    'account-recovery/novel-concepts',
-    'account-recovery/package-components',
     {
       type: 'category',
       label: 'Relayer API',

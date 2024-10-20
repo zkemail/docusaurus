@@ -1,20 +1,14 @@
-import DocCardList from '@theme/DocCardList';
-
-# Quickstart
+# email-ether-auth
 
 <div style={{fontSize: '1.2em'}}>
-Learn how to implement account recovery into your wallet using ZK Email.
+Learn how to create a simple wallet with email-based account recovery.
 </div>
 
-ZK Email allows developers to implement a secure Account Recovery mechanism into their wallet using ZK Email. Account Recovery can be implemented in wallets implementing both ERC-4337 and ERC-7579.
+---
 
-Wallets using ERC-7579 can implement ZK Email by installing our 7579 Module directly.
+This guide will explain how to implement email-based account recovery using the Ether Email Auth SDK. The SDK allows you to define arbitrary logic to control smart contracts via emails in Solidity.
 
-## Getting Started
-
-To get started with implementing Account Recovery using ZK Email, please follow the instructions below carefully. Before proceeding, ensure that you have met all the prerequisites listed in the following section.
-
-Please review the prerequisites and make sure you have all the necessary tools and dependencies installed before continuing with the implementation process.
+If you want more information about the SDK, you can read the [Ether Email Auth SDK](/account-recovery/ether-email-auth-sdk.md) documentation.
 
 
 ### Prerequisites
@@ -40,44 +34,13 @@ The latest version of foundry could fail some tests. If you encounter any issues
 
 :::
 
-### Clone the repository
+2. **Clone** the repository on your working directory:
 
 ```sh
 git clone https://github.com/zkemail/ether-email-auth.git
 ```
 
 **At the moment, please use the **<mark>**feat/docs-updates**</mark>** branch.**
-
-## Implementation Guides
-
-These guides provide detailed instructions for implementing account recovery using ZK Email in different scenarios.
-
-Whether you're working with an ERC-7579 compatible wallet, building a custom implementation, or integrating with a Safe smart contract wallet, we have you covered.
-
-Each guide offers step-by-step instructions tailored to your specific use case, ensuring a smooth implementation process.
-
-<DocCardList 
-  items={[
-    {
-      type: 'link',
-      href: '/account-recovery/erc-7579-module',
-      label: 'ERC-7579 Module',
-      description: 'Implement account recovery using our existing ERC-7579 module.',
-    },
-    {
-      type: 'link',
-      href: '/account-recovery/custom-implementation',
-      label: 'Custom Implementation',
-      description: 'Build a custom account recovery solution using our SDK.',
-    },
-    {
-      type: 'link',
-      href: '/account-recovery/safe-module',
-      label: 'Safe Module',
-      description: 'Add account recovery to your Safe smart contract wallet.',
-    }
-  ]}
-/>
 
 The following steps are for developers to implement account recovery using ether-email-auth. Note that this is the workflow for custom smart contracts -- if your wallet is 7579 compatible, you can simply install our 7579 module directly.
 

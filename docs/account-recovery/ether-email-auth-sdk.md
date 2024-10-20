@@ -1,4 +1,4 @@
-# Email-Controlled Smart Contracts (Ether Email Auth)
+# Ether Email Auth SDK
 
 You can define arbitrary logic to control smart contracts via emails in Solidity via the Ether Email Auth SDK, that doesn't require any zk circuit engineering. If you want to define your own account recovery logic or define custom email-triggered smart contract logic outside of account recovery, we recommend using this Ether-Email-Auth package.
 
