@@ -12,7 +12,7 @@ Our documentation for ZK-Email-Verifier is broken into three sections:
 
 Get started with zkEmail, install our SDKs so that you can build your own application.
 
-### [Package Overviews](packages-components.md)
+### [Package Overviews](packages)
 
 Explore our npm sdk packages:
 

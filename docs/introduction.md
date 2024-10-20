@@ -30,7 +30,7 @@ Start building with ZK Email using our quickstart guide and dive deeper into how
   items={[
     {
       type: 'link',
-      href: '/quickstart',
+      href: '/getting-started',
       label: 'Getting Started',
       description: 'Get started with ZK Email by following our step-by-step guide.',
     }
