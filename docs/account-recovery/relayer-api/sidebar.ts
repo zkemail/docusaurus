@@ -16,6 +16,12 @@ const sidebar: SidebarsConfig = {
           label: "Request status",
           className: "api-method post",
         },
+        {
+          type: "doc",
+          id: "account-recovery/relayer-api/get-account-salt",
+          label: "Get account salt",
+          className: "api-method post",
+        },
       ],
     },
     {
@@ -50,12 +56,6 @@ const sidebar: SidebarsConfig = {
           type: "doc",
           id: "account-recovery/relayer-api/complete-recovery-request",
           label: "Complete recovery request",
-          className: "api-method post",
-        },
-        {
-          type: "doc",
-          id: "account-recovery/relayer-api/get-account-salt",
-          label: "Get account salt",
           className: "api-method post",
         },
         {

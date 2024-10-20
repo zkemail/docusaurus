@@ -21,7 +21,26 @@ const sidebars: SidebarsConfig = {
       value: '<span class="sidebar-heading first">Welcome</span>',
     },
     'introduction',
-    'quickstart',
+    'getting-started',
+
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">How ZK Email Works</span>',
+    },
+    {
+      type: 'category',
+      label: 'Architecture',
+      link: {
+        type: 'doc',
+        id: 'architecture/README',
+      },
+      items: [
+        'architecture/dkim-verification',
+        'architecture/zk-proofs',
+        'architecture/on-chain',
+        'architecture/security-considerations',
+      ],
+    },
     {
       type: 'html',
       value: '<span class="sidebar-heading">SDK</span>',
@@ -39,6 +58,7 @@ const sidebars: SidebarsConfig = {
         'zk-email-sdk/using-the-sdk',
       ],
     },
+
     {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
@@ -52,10 +72,23 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'zk-email-verifier/installation',
-        'zk-email-verifier/packages-components',
+        {
+          type: 'category',
+          label: 'Packages',
+          link: {
+            type: 'doc',
+            id: 'zk-email-verifier/packages/README',
+          },
+          items: [
+            'zk-email-verifier/packages/zk-email-circuits',
+            'zk-email-verifier/packages/zk-email-helpers',
+            'zk-email-verifier/packages/zk-email-contracts'
+          ],
+        },
         'zk-email-verifier/usage-guide',
       ],
     },
+
     {
       type: 'html',
       value: '<span class="sidebar-heading">Email Wallet</span>',
@@ -76,41 +109,116 @@ const sidebars: SidebarsConfig = {
         'email-wallet/deployed-contract-addresses',
       ],
     },
+
     {
       type: 'html',
       value: '<span class="sidebar-heading">Account Recovery</span>',
     },
+    'account-recovery/README',
     {
       type: 'category',
-      label: 'Account Recovery',
+      label: 'Quickstart',
       link: {
         type: 'doc',
-        id: 'account-recovery/README',
+        id: 'account-recovery/quickstart/README',
       },
       items: [
-        'account-recovery/email-controlled-smart-contracts',
-        'account-recovery/novel-concepts',
-        'account-recovery/package-components',
-        'account-recovery/getting-started',
-        {
-          type: 'category',
-          label: 'Relayer API',
-          link: {
-            type: 'doc',
-            id: 'account-recovery/relayer-api/README'
-          },
-          items: [
-            'account-recovery/relayer-api/echo-endpoint',
-            'account-recovery/relayer-api/request-status',
-            'account-recovery/relayer-api/acceptance-request',
-            'account-recovery/relayer-api/recovery-request',
-            'account-recovery/relayer-api/complete-recovery-request',
-            'account-recovery/relayer-api/get-account-salt',
-          ],
-        },
-        'account-recovery/deployed-contracts',
+        'account-recovery/quickstart/existing-modules',
+        'account-recovery/quickstart/ether-email-auth',
       ],
     },
+    // {
+    //   type: 'category',
+    //   label: 'Contracts Reference',
+    //   link: {
+    //     type: 'doc',
+    //     id: 'account-recovery/api-reference/README'
+    //   },
+    //   items: [
+    //     {
+    //       type: 'category',
+    //       label: 'Core Contracts',
+    //       items: [
+    //         'account-recovery/api-reference/core-contracts/email-recovery-manager',
+    //         'account-recovery/api-reference/core-contracts/guardian-manager',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Modules',
+    //       items: [
+    //         'account-recovery/api-reference/modules/email-recovery-module',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Factories',
+    //       items: [
+    //         'account-recovery/api-reference/factories/email-recovery-factory',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Command Handlers',
+    //       items: [
+    //         'account-recovery/api-reference/command-handlers/email-recovery-command-handler',
+    //         'account-recovery/api-reference/command-handlers/account-hiding-recovery-command-handler',
+    //         'account-recovery/api-reference/command-handlers/safe-recovery-command-handler',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Interfaces',
+    //       items: [
+    //         'account-recovery/api-reference/interfaces/i-email-recovery-module',
+    //         'account-recovery/api-reference/interfaces/i-email-recovery-manager',
+    //         'account-recovery/api-reference/interfaces/i-email-recovery-command-handler',
+    //         'account-recovery/api-reference/interfaces/i-guardian-manager',
+    //         'account-recovery/api-reference/interfaces/i-safe',
+    //         'account-recovery/api-reference/interfaces/i-universal-email-recovery-module',
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Libraries',
+    //       items: [
+    //         'account-recovery/api-reference/libraries/enumerable-guardian-map',
+    //         'account-recovery/api-reference/libraries/string-utils',
+    //         'account-recovery/api-reference/libraries/l2-contract-helper',
+    //       ],
+    //     },
+    //   ],
+    // },
+    {
+      type: 'category',
+      label: 'Ether Email Auth SDK',
+      link: {
+        type: 'doc',
+        id: 'account-recovery/ether-email-auth-sdk'
+      },
+      items: [
+        'account-recovery/concepts',
+        'account-recovery/package-components',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Relayer API',
+      link: {
+        type: 'doc',
+        id: 'account-recovery/relayer-api/README'
+      },
+      items: [
+        'account-recovery/relayer-api/echo-endpoint',
+        'account-recovery/relayer-api/request-status',
+        'account-recovery/relayer-api/acceptance-request',
+        'account-recovery/relayer-api/recovery-request',
+        'account-recovery/relayer-api/complete-recovery-request',
+        'account-recovery/relayer-api/get-account-salt',
+      ],
+    },
+    'account-recovery/deployed-contracts',
+
     {
       type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',

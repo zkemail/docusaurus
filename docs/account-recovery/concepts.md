@@ -1,4 +1,4 @@
-# Novel Concepts
+# Concepts
 
 You can watch a video that explains these more at [our 2024 EthCC talk](https://ethcc.io/archive/ZK-Email-Decentralized-Email-Login-Account-Recovery-2FA).
 

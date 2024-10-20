@@ -143,12 +143,17 @@ paths:
   /api/getAccountSalt:
     post:
       summary: Get account salt
+      tags:
+        - account
       requestBody:
         required: true
         content:
           application/json:
             schema:
               $ref: '#/components/schemas/GetAccountSaltRequest'
+            example:
+              account_code: "0e10adbdebce5cd62c781f7e261250242e9ad103943f13a7919ed3f198b08822"
+              email_addr: "saul@saugar.dev"
       responses:
         '200':
           description: Successful response
@@ -157,14 +162,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetAccountSaltResponse'
         '500':
-          description: Internal server error
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  error:
-                    type: string
+          $ref: '#/components/responses/InternalServerError'
 
   /api/inactiveGuardian:
     post:
@@ -313,17 +311,27 @@ components:
     GetAccountSaltRequest:
       type: object
       properties:
-        accountAddress:
+        account_code:
           type: string
-          description: Ethereum address of the account
+          description: Unique identifier for the account
+        email_addr:
+          type: string
+          format: email
+          description: Email address associated with the account
+      required:
+        - account_code
+        - email_addr
 
     GetAccountSaltResponse:
       type: object
       properties:
         salt:
           type: string
-        accountAddress:
+        account_code:
           type: string
+      required:
+        - salt
+        - account_code
 
     InactiveGuardianRequest:
       type: object

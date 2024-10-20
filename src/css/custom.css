@@ -148,7 +148,7 @@ body {
 }
 
 .sidebar-heading.first {
-  margin-top: 0 !important;
+  margin-top: 25px !important;
 }
 
 .card {
@@ -170,4 +170,8 @@ body {
 
 .card__header, .card__body, .card__footer {
   padding: 0px !important;
+}
+
+.breadcrumbs {
+  display: none;
 }

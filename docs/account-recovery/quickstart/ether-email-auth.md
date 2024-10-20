@@ -1,30 +1,48 @@
-# Getting Started
+# email-ether-auth
 
+<div style={{fontSize: '1.2em'}}>
+Learn how to create a simple wallet with email-based account recovery.
+</div>
 
+---
 
-The following steps are for developers to implement account recovery using ether-email-auth. Note that this is the workflow for custom smart contracts -- if your wallet is 7579 compatible, you can simply install our 7579 module directly.
+This guide will explain how to implement email-based account recovery using the Ether Email Auth SDK. The SDK allows you to define arbitrary logic to control smart contracts via emails in Solidity.
+
+If you want more information about the SDK, you can read the [Ether Email Auth SDK](/account-recovery/ether-email-auth-sdk.md) documentation.
+
 
 ### Prerequisites
 
-First, install foundry by running the following command:
+Before getting started, make sure you have the following:
+
+1. **Foundry**: To install foundry, run the following command:
 
 ```sh
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
-Then, install the specific version of foundry by running the following command: Note: The latest version of foundry fails some tests.
+Make sure you have the following version of foundry by running the following command: 
+
 
 ```sh
 foundryup -v nightly-cafc2606a2187a42b236df4aa65f4e8cdfcea970
 ```
 
-### Clone the repository
+:::info
+
+The latest version of foundry could fail some tests. If you encounter any issues, please use the version specified above.
+
+:::
+
+2. **Clone** the repository on your working directory:
 
 ```sh
 git clone https://github.com/zkemail/ether-email-auth.git
 ```
 
 **At the moment, please use the **<mark>**feat/docs-updates**</mark>** branch.**
+
+The following steps are for developers to implement account recovery using ether-email-auth. Note that this is the workflow for custom smart contracts -- if your wallet is 7579 compatible, you can simply install our 7579 module directly.
 
 ### Set up
 
