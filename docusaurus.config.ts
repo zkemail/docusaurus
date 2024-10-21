@@ -168,6 +168,13 @@ const config: Config = {
         logoClass: "python",
       },
     ],
+    algolia: {
+      appId: 'BBFHVIFY5F',
+      apiKey: '5dd2cc4c0f485ddd69caf30ee8abf5ef',
+      indexName: 'osaurus-onrender',
+      contextualSearch: true,
+      searchParameters: {},
+    },
   } satisfies Preset.ThemeConfig,
 };
 
