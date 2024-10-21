@@ -60,6 +60,12 @@ Explore our resources to understand the technology behind ZK Email and how you c
       href: 'https://zk.email/blog',
       label: 'Blog',
       description: 'Read our latest articles and updates on ZK Email.',
+    },
+    {
+      type: 'link',
+      href: 'https://zk.email/blog',
+      label: 'Ideas',
+      description: '',
     }
   ]}
 />

@@ -223,7 +223,11 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',
     },
-    'projects',
+    {
+      type: 'link',
+      label: 'Projects using ZK Email',
+      href: 'https://prove.email/projects',
+    },
     'login-with-zk-email-oauth-api',
     'audits',
     'zk-regex',
