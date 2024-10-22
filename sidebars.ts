@@ -191,18 +191,6 @@ const sidebars: SidebarsConfig = {
     // },
     {
       type: 'category',
-      label: 'Ether Email Auth SDK',
-      link: {
-        type: 'doc',
-        id: 'account-recovery/ether-email-auth-sdk'
-      },
-      items: [
-        'account-recovery/concepts',
-        'account-recovery/package-components',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Relayer API',
       link: {
         type: 'doc',
@@ -218,6 +206,71 @@ const sidebars: SidebarsConfig = {
       ],
     },
     'account-recovery/deployed-contracts',
+
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">Generic Relayer</span>',
+    },
+    'generic-relayer/README',
+    {
+      type: 'category',
+      label: 'Quickstart Guide',
+      link: {
+        type: 'doc',
+        id: 'generic-relayer/quickstart/README'
+      },
+      items: [
+        'generic-relayer/quickstart/creating-command-templates',
+        'generic-relayer/quickstart/interacting-with-api',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Architecture',
+      link: {
+        type: 'doc',
+        id: 'generic-relayer/architecture/README'
+      },
+      items: [
+      ],
+    },
+    {
+      type: 'category',
+      label: 'API Reference',
+      link: {
+        type: 'doc',
+        id: 'generic-relayer/api-reference/generic-relayer-api'
+      },
+      items: [
+        'generic-relayer/api-reference/health-check',
+        'generic-relayer/api-reference/submit-a-transaction',
+        'generic-relayer/api-reference/get-transaction-status',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Concepts',
+      link: {
+        type: 'doc',
+        id: 'generic-relayer/concepts/README'
+      },
+      items: [
+        'generic-relayer/concepts/command',
+        'generic-relayer/concepts/email-auth-contract',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Ether Email Auth SDK',
+      link: {
+        type: 'doc',
+        id: 'account-recovery/ether-email-auth-sdk'
+      },
+      items: [
+        'account-recovery/concepts',
+        'account-recovery/package-components',
+      ],
+    },
 
     {
       type: 'html',

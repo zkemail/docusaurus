@@ -64,6 +64,13 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           },
+          genericRelayer: {
+            specPath: "static/openapi/generic-relayer-api.yaml",
+            outputDir: "docs/generic-relayer/api-reference",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
         },
       },
     ],

@@ -1,0 +1,180 @@
+openapi: 3.0.0
+info:
+  title: Generic Relayer API
+  version: 1.0.0
+  description: API for the Generic Relayer service
+
+servers:
+  - url: https://relayer.zk.email/api
+
+paths:
+  /healthz:
+    get:
+      summary: Health check
+      description: Check the health status of the API
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "ok"
+              example:
+                status: "ok"
+
+  /submit:
+    post:
+      summary: Submit a transaction
+      description: Submit a transaction to be relayed
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                contractAddress:
+                  type: string
+                dkimContractAddress:
+                  type: string
+                accountCode:
+                  type: string
+                codeExistsInEmail:
+                  type: boolean
+                functionAbi:
+                  type: object
+                commandTemplate:
+                  type: string
+                commandParams:
+                  type: array
+                  items:
+                    type: string
+                templateId:
+                  type: string
+                remainingArgs:
+                  type: array
+                  items:
+                    type: object
+                emailAddress:
+                  type: string
+                subject:
+                  type: string
+                body:
+                  type: string
+                chain:
+                  type: string
+            example:
+              contractAddress: "0x3E0E7F4fb89881d4936a40dC35895D2ce7802912"
+              dkimContractAddress: "0xF45acb85a1130BC107E3BCe17C1B60c8FeA8beec"
+              accountCode: "0x22a2d51a892f866cf3c6cc4e138ba87a8a5059a1d80dea5b8ee8232034a105b7"
+              codeExistsInEmail: true
+              functionAbi: 
+                type: "function"
+                name: "emitEmailCommand"
+                inputs: 
+                  - name: "emailAuthMsg"
+                    type: "tuple"
+                    internalType: "struct EmailAuthMsg"
+                    components: 
+                      - name: "templateId"
+                        type: "uint256"
+                        internalType: "uint256"
+                      - name: "commandParams"
+                        type: "bytes[]"
+                        internalType: "bytes[]"
+                      - name: "skippedCommandPrefix"
+                        type: "uint256"
+                        internalType: "uint256"
+                      - name: "proof"
+                        type: "tuple"
+                        internalType: "struct EmailProof"
+                        components: 
+                          - name: "domainName"
+                            type: "string"
+                            internalType: "string"
+                          - name: "publicKeyHash"
+                            type: "bytes32"
+                            internalType: "bytes32"
+                          - name: "timestamp"
+                            type: "uint256"
+                            internalType: "uint256"
+                          - name: "maskedCommand"
+                            type: "string"
+                            internalType: "string"
+                          - name: "emailNullifier"
+                            type: "bytes32"
+                            internalType: "bytes32"
+                          - name: "accountSalt"
+                            type: "bytes32"
+                            internalType: "bytes32"
+                          - name: "isCodeExist"
+                            type: "bool"
+                            internalType: "bool"
+                          - name: "proof"
+                            type: "bytes"
+                            internalType: "bytes"
+                  - name: "owner"
+                    type: "address"
+                    internalType: "address"
+                  - name: "templateIdx"
+                    type: "uint256"
+                    internalType: "uint256"
+                outputs: []
+                stateMutability: "nonpayable"
+              commandTemplate: "Emit string {string}"
+              commandParams: 
+                - "testing"
+              templateId: "0x25d6c3eada7b2926c822bbfebfc3173123afb205cf093a8cae6622a56712f8a"
+              remainingArgs: 
+                - Address: "0x9401296121FC9B78F84fc856B1F8dC88f4415B2e"
+                - Uint: "0x0"
+              emailAddress: "thezdev1@gmail.com"
+              subject: "Testing 1"
+              body: "Testing 2"
+              chain: "sepolia"
+      responses:
+        '200':
+          description: Successful submission
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  transactionId:
+                    type: string
+                    format: uuid
+              example:
+                transactionId: "60f76daa-a004-402e-a7cf-1cca1e3976c7"
+
+  /status/{transactionId}:
+    get:
+      summary: Get transaction status
+      description: Retrieve the status of a submitted transaction
+      parameters:
+        - in: path
+          name: transactionId
+          required: true
+          schema:
+            type: string
+            format: uuid
+          example: "60f76daa-a004-402e-a7cf-1cca1e3976c7"
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum: [pending, completed, failed]
+                  transactionHash:
+                    type: string
+              example:
+                status: "completed"
+                transactionHash: "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"
