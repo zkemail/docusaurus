@@ -64,6 +64,13 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           },
+          genericRelayer: {
+            specPath: "static/openapi/generic-relayer-api.yaml",
+            outputDir: "docs/generic-relayer/api-reference",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
         },
       },
     ],
@@ -80,9 +87,10 @@ const config: Config = {
         src: 'img/zk-email-logo-small-white.svg',
       },
       items: [
-        {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
-        {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
+        // {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
+        // {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
+        {to: '/generic-relayer/', label: 'Generic Relayer', position: 'left'},
       ],
     },
     footer: {
@@ -168,6 +176,13 @@ const config: Config = {
         logoClass: "python",
       },
     ],
+    // algolia: {
+    //   appId: 'BBFHVIFY5F',
+    //   apiKey: '5dd2cc4c0f485ddd69caf30ee8abf5ef',
+    //   indexName: 'osaurus-onrender',
+    //   contextualSearch: true,
+    //   searchParameters: {},
+    // },
   } satisfies Preset.ThemeConfig,
 };
 
