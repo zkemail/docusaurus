@@ -1,4 +1,4 @@
-# Interacting with the Relayer API
+# Using the Relayer API
 
 ## Prepare the API Call Payload
 
@@ -68,42 +68,12 @@ Construct the payload for the `/api/submit` endpoint of the relayer. Replace pla
   - **`owner`**: Your address (the deployer or owner of the contracts).
   - **`templateIdx`**: The index of the command template (e.g., `0` for `"Emit string {string}"`).
 
-## Compute the Template ID
-
-You can compute the template ID using a small JavaScript script with ethers.js:
-
-```javascript
-const { ethers } = require("ethers");
-
-function computeTemplateId(templateIdx) {
-  return ethers.BigNumber.from(
-    ethers.utils.keccak256(
-      ethers.utils.defaultAbiCoder.encode(["string", "uint256"], ["EXAMPLE", templateIdx])
-    )
-  ).toString();
-}
-
-console.log("Template ID for index 0:", computeTemplateId(0));
-```
-
-## Get the EmailAuth Contract Bytecode
-
-You can get the bytecode of the `EmailAuth` implementation contract from the build artifacts.
-
-Example:
-
-```bash
-cat out/EmailAuth.sol/EmailAuth.json | jq -r '.bytecode.object'
-```
-
-Ensure you have `jq` installed to parse JSON.
-
 ## Send the API Request
 
 Use `curl` or any HTTP client to send the request:
 
 ```bash
-curl -X POST https://relayer.example.com/api/submit \
+curl -X POST https://relayer.zk.email/api/submit \
   -H "Content-Type: application/json" \
   -d '{
     "contractAddress": "0xYourEmitEmailCommandContractAddress",
@@ -127,8 +97,6 @@ curl -X POST https://relayer.example.com/api/submit \
   }'
 ```
 
-Replace `https://relayer.example.com` with the actual URL of the Generic Relayer service you are using.
-
 ## User Interaction
 
 - The user (email recipient) will receive an email with the command.
@@ -148,7 +116,7 @@ Replace `https://relayer.example.com` with the actual URL of the Generic Relayer
 Use the `requestId` returned by the relayer to check the status:
 
 ```bash
-curl https://relayer.example.com/api/status/{requestId}
+curl https://relayer.zk.email/api/status/{requestId}
 ```
 
 ### Verify On-Chain Execution

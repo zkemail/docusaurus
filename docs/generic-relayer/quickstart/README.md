@@ -456,37 +456,21 @@ Congratulations! You've successfully set up and used the ZK Email Generic Relaye
 
 For more detailed information on the architecture and technical aspects, refer to the [Architecture Guide](../architecture/README.md).
 
-## Important Notes
-
-- **Foundry Is Required**: As per the latest instructions, you need to use Foundry for compiling and deploying the contracts.
-
-- **EmailAuth.sol Dependency**: Since `EmailAuth.sol` is provided as a dependency via the `@zk-email/ether-email-auth-contracts` package, you don't need to create or modify it manually. It's imported directly in your `EmitEmailCommand.sol` contract.
-
-- **Remappings**: Ensure your `remappings.txt` file is correctly set up to resolve the import paths.
-
-- **Environment Variables**: Use the `.env` file to securely manage sensitive information like private keys and API keys.
-
 ## Next Steps
 
 <DocCardList 
   items={[
     {
       type: 'link',
-      href: '/generic-relayer/advanced/command-templates',
-      label: 'Explore Additional Command Templates',
-      description: 'Extend your contracts by adding new command templates and corresponding logic.',
+      href: './creating-command-templates',
+      label: 'Creating Command Templates',
+      description: 'Explore the process of creating command templates for your specific use case.',
     },
     {
       type: 'link',
-      href: '/generic-relayer/security',
-      label: 'Implement Security Best Practices',
-      description: 'Follow the guidelines in the architecture guide to enhance the security of your application.',
-    },
-    {
-      type: 'link',
-      href: '/generic-relayer/integration',
-      label: 'Integrate with Existing Applications',
-      description: 'Incorporate the relayer into your existing systems to enable email-driven blockchain interactions.',
+      href: './using-the-api',
+      label: 'Using the Relayer API',
+      description: 'Learn how to use the relayer API to submit and manage commands.',
     },
   ]}
 />

@@ -46,7 +46,7 @@ Suppose you want a command that allows a user to set a greeting message:
 Set greeting to {string}
 ```
 
-## Integrating Command Templates into Contracts
+<!-- ## Integrating Command Templates into Contracts
 
 To integrate command templates into your contract:
 
@@ -226,4 +226,4 @@ Now that you understand how to create and integrate command templates:
 
 ## Conclusion
 
-Command templates are a powerful feature that allows you to define flexible and secure interactions between email commands and smart contracts. By understanding how to create and integrate them, you can enhance your blockchain applications to respond to off-chain events seamlessly.
+Command templates are a powerful feature that allows you to define flexible and secure interactions between email commands and smart contracts. By understanding how to create and integrate them, you can enhance your blockchain applications to respond to off-chain events seamlessly. -->

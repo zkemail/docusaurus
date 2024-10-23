@@ -220,8 +220,6 @@ The process of executing a command involves several steps, interacting between t
 
 - **Notify User**: An acknowledgment email is sent to the user, confirming the action.
 
----
-
 ## Technical Aspects
 
 ### Detailed Functionality of `EmailAuth.sol`
@@ -323,11 +321,4 @@ The ZK Email Generic Relayer architecture provides a secure and efficient way to
 
 By understanding the key concepts such as commands, command templates, email authentication, and the technical workflow, developers can effectively implement and utilize the Generic Relayer in their projects.
 
-For a practical implementation and step-by-step guide, refer to the [Quickstart Guide](quickstart.md).
-
----
-
-**Further Reading**
-
-- [API Reference](api-reference.md)
-- [Overview](overview.md)
+For a practical implementation and step-by-step guide, refer to the [Quickstart Guide](../quickstart).

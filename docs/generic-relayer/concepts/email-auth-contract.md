@@ -391,9 +391,3 @@ function removePrefix(string memory str, uint numChars) private pure returns (st
 The `EmailAuth.sol` contract plays a crucial role in the Generic Relayer architecture by providing secure email authentication and command authorization mechanisms. By integrating DKIM verification, zero-knowledge proofs, and robust access control, it ensures that only legitimate and authorized commands are executed on the blockchain.
 
 Understanding the functionalities and security features of `EmailAuth.sol` is essential for developers looking to implement email-driven actions in their blockchain applications using the Generic Relayer.
-
-**Further Reading**
-
-- [Generic Relayer Architecture](architecture.md)
-- [Quickstart Guide](quickstart.md)
-- [Command Implementation](commands.md)

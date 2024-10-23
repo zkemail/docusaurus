@@ -23,7 +23,7 @@ To get started with the Generic Relayer, follow our quickstart guide.
     {
       type: 'link',
       label: 'API Reference',
-      href: 'api-reference',
+      href: './api-reference/generic-relayer-api',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
     }
   ]}
