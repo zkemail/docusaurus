@@ -145,7 +145,7 @@ Its instances are as follows:
 
 #### Run tests
 
-At `packages/circuits`, make a `build` directory, download the zip file from the following link, and place its unziped files under `build`. https://drive.google.com/file/d/1b49VLOoUsf5c2bFXSQwx1eGIX7\_g30TN/view?usp=sharing
+At `packages/circuits`, make a `build` directory, download the zip file from the following link, and place its unziped files under `build`.
 
 Then run the following command. `yarn test`
 

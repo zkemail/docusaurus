@@ -1,6 +1,6 @@
 # Concepts
 
-You can watch a video that explains these more at [our 2024 EthCC talk](https://ethcc.io/archive/ZK-Email-Decentralized-Email-Login-Account-Recovery-2FA).
+You can watch a video that explains these more at [our 2024 EthCC talk](https://ethcc.io/archives/zk-email-decentralized-email-login-account-recovery-2fa).
 
 #### Account Code and Salt
 

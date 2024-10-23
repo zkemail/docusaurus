@@ -14,7 +14,7 @@ When you want more flexibility, you can deploy your own relayer via the [Relayer
 
 ### Core API Endpoints
 
-These endpoints concern basic universal features like sending ERC20s and ERC721s. You can see how to hit this or staging APIs for [account recovery](../account-recovery/relayer-api/README.md) or [oauth login](../login-with-zk-email-oauth-api.md) in those specific docs. For safe signers, simply adding an email wallet address to a Safe Wallet on Base Sepolia will automatically trigger the [email-based signer](https://prove.email/docs/2fa) flow -- to make that multichain, please reach out to the team.
+These endpoints concern basic universal features like sending ERC20s and ERC721s. You can see how to hit this or staging APIs for [account recovery](../account-recovery/relayer-api/README.md) or [oauth login](../login-with-zk-email-oauth-api.md) in those specific docs. For safe signers, simply adding an email wallet address to a Safe Wallet on Base Sepolia will automatically trigger the email-based signer flow -- to make that multichain, please reach out to the team.
 
 #### Create Account
 
