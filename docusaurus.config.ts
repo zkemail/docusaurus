@@ -8,7 +8,7 @@ const config: Config = {
   favicon: 'img/zk-email-logo-small.svg',
 
   // Set the production url of your site here
-  url: 'https://docosaurus.onrender.com/',
+  url: 'https://docs.prove.email/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -87,8 +87,8 @@ const config: Config = {
         src: 'img/zk-email-logo-small-white.svg',
       },
       items: [
-        // {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
-        // {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
+        {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
+        {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
         {to: '/generic-relayer/', label: 'Generic Relayer', position: 'left'},
       ],
