@@ -41,74 +41,74 @@ const sidebars: SidebarsConfig = {
         'architecture/security-considerations',
       ],
     },
-    // {
-    //   type: 'html',
-    //   value: '<span class="sidebar-heading">SDK</span>',
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'ZK Email SDK',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'zk-email-sdk/README',
-    //   },
-    //   items: [
-    //     'zk-email-sdk/running-the-example',
-    //     'zk-email-sdk/creating-a-new-pattern',
-    //     'zk-email-sdk/using-the-sdk',
-    //   ],
-    // },
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">SDK</span>',
+    },
+    {
+      type: 'category',
+      label: 'ZK Email SDK',
+      link: {
+        type: 'doc',
+        id: 'zk-email-sdk/README',
+      },
+      items: [
+        'zk-email-sdk/running-the-example',
+        'zk-email-sdk/creating-a-new-pattern',
+        'zk-email-sdk/using-the-sdk',
+      ],
+    },
 
-    // {
-    //   type: 'html',
-    //   value: '<span class="sidebar-heading">ZK Email Verifier</span>',
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'ZK-Email-Verifier',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'zk-email-verifier/README',
-    //   },
-    //   items: [
-    //     'zk-email-verifier/installation',
-    //     {
-    //       type: 'category',
-    //       label: 'Packages',
-    //       link: {
-    //         type: 'doc',
-    //         id: 'zk-email-verifier/packages/README',
-    //       },
-    //       items: [
-    //         'zk-email-verifier/packages/zk-email-circuits',
-    //         'zk-email-verifier/packages/zk-email-helpers',
-    //         'zk-email-verifier/packages/zk-email-contracts'
-    //       ],
-    //     },
-    //     'zk-email-verifier/usage-guide',
-    //   ],
-    // },
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">ZK Email Verifier</span>',
+    },
+    {
+      type: 'category',
+      label: 'ZK-Email-Verifier',
+      link: {
+        type: 'doc',
+        id: 'zk-email-verifier/README',
+      },
+      items: [
+        'zk-email-verifier/installation',
+        {
+          type: 'category',
+          label: 'Packages',
+          link: {
+            type: 'doc',
+            id: 'zk-email-verifier/packages/README',
+          },
+          items: [
+            'zk-email-verifier/packages/zk-email-circuits',
+            'zk-email-verifier/packages/zk-email-helpers',
+            'zk-email-verifier/packages/zk-email-contracts'
+          ],
+        },
+        'zk-email-verifier/usage-guide',
+      ],
+    },
 
-    // {
-    //   type: 'html',
-    //   value: '<span class="sidebar-heading">Email Wallet</span>',
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'Email Wallet',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'email-wallet/README',
-    //   },
-    //   items: [
-    //     'email-wallet/api-documentation',
-    //     'email-wallet/circuit-architecture',
-    //     'email-wallet/contract-architecture',
-    //     'email-wallet/relayer-infrastructure',
-    //     'email-wallet/email-wallet-extensions-sdk',
-    //     'email-wallet/deployed-contract-addresses',
-    //   ],
-    // },
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">Email Wallet</span>',
+    },
+    {
+      type: 'category',
+      label: 'Email Wallet',
+      link: {
+        type: 'doc',
+        id: 'email-wallet/README',
+      },
+      items: [
+        'email-wallet/api-documentation',
+        'email-wallet/circuit-architecture',
+        'email-wallet/contract-architecture',
+        'email-wallet/relayer-infrastructure',
+        'email-wallet/email-wallet-extensions-sdk',
+        'email-wallet/deployed-contract-addresses',
+      ],
+    },
 
     {
       type: 'html',
@@ -125,68 +125,6 @@ const sidebars: SidebarsConfig = {
     //   items: [
     //     'account-recovery/quickstart/existing-modules',
     //     'account-recovery/quickstart/ether-email-auth',
-    //   ],
-    // },
-    // {
-    //   type: 'category',
-    //   label: 'Contracts Reference',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'account-recovery/api-reference/README'
-    //   },
-    //   items: [
-    //     {
-    //       type: 'category',
-    //       label: 'Core Contracts',
-    //       items: [
-    //         'account-recovery/api-reference/core-contracts/email-recovery-manager',
-    //         'account-recovery/api-reference/core-contracts/guardian-manager',
-    //       ],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Modules',
-    //       items: [
-    //         'account-recovery/api-reference/modules/email-recovery-module',
-    //       ],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Factories',
-    //       items: [
-    //         'account-recovery/api-reference/factories/email-recovery-factory',
-    //       ],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Command Handlers',
-    //       items: [
-    //         'account-recovery/api-reference/command-handlers/email-recovery-command-handler',
-    //         'account-recovery/api-reference/command-handlers/account-hiding-recovery-command-handler',
-    //         'account-recovery/api-reference/command-handlers/safe-recovery-command-handler',
-    //       ],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Interfaces',
-    //       items: [
-    //         'account-recovery/api-reference/interfaces/i-email-recovery-module',
-    //         'account-recovery/api-reference/interfaces/i-email-recovery-manager',
-    //         'account-recovery/api-reference/interfaces/i-email-recovery-command-handler',
-    //         'account-recovery/api-reference/interfaces/i-guardian-manager',
-    //         'account-recovery/api-reference/interfaces/i-safe',
-    //         'account-recovery/api-reference/interfaces/i-universal-email-recovery-module',
-    //       ],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Libraries',
-    //       items: [
-    //         'account-recovery/api-reference/libraries/enumerable-guardian-map',
-    //         'account-recovery/api-reference/libraries/string-utils',
-    //         'account-recovery/api-reference/libraries/l2-contract-helper',
-    //       ],
-    //     },
     //   ],
     // },
     {
@@ -256,7 +194,6 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'generic-relayer/concepts/command',
-        // 'generic-relayer/concepts/email-auth-contract',
       ],
     },
     {
