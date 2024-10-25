@@ -17,8 +17,6 @@ The Generic Relayer API enables developers to integrate email-driven blockchain 
 This API serves as the bridge between traditional email communication and blockchain transactions, allowing users to authorize and execute smart contract functions through email verification.
 </div>
 <div className={styles.rightColumn}>
-## Getting Started?
-Check out the [Quickstart Guide](./README.md) to get started.
 </div>
 </div>
 

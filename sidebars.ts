@@ -150,18 +150,9 @@ const sidebars: SidebarsConfig = {
       value: '<span class="sidebar-heading">Generic Relayer</span>',
     },
     'generic-relayer/README',
-    {
-      type: 'category',
-      label: 'Quickstart Guide',
-      link: {
-        type: 'doc',
-        id: 'generic-relayer/quickstart/README'
-      },
-      items: [
-        'generic-relayer/quickstart/creating-command-templates',
-        'generic-relayer/quickstart/api-reference',
-      ],
-    },
+    'generic-relayer/quickstart',
+    'generic-relayer/creating-command-templates',
+    'generic-relayer/api-reference',
     {
       type: 'category',
       label: 'Architecture',

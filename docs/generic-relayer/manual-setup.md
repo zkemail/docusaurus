@@ -455,12 +455,6 @@ For more detailed information on the architecture and technical aspects, refer t
       href: './creating-command-templates',
       label: 'Creating Command Templates',
       description: 'Explore the process of creating command templates for your specific use case.',
-    },
-    {
-      type: 'link',
-      href: './using-the-api',
-      label: 'Using the Relayer API',
-      description: 'Learn how to use the relayer API to submit and manage commands.',
-    },
+    }
   ]}
 />

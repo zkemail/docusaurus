@@ -2,7 +2,7 @@ import ApiTester from '@site/src/components/ApiTester';
 import submitCommandConfig from '@site/src/api/generic-relayer/submit.ts';
 import statusConfig from '@site/src/api/generic-relayer/status.ts';
 
-# Quickstart Guide
+# Quickstart
 
 In this section, we will show you how to create a simple project using the ZK Email Generic Relayer and the `EmitEmailCommand.sol` contract. You will learn how to set up the project, optionally build and deploy the contracts, and interact with the relayer API to execute commands via email.
 
@@ -41,15 +41,6 @@ Your new project will include the following structure:
 - **script/**: Contains deployment scripts (not needed for this quickstart).
 - **src/**: Contains the `EmitEmailCommand.sol` contract.
 
-:::success
-Now you can submit a request to the Generic Relayer by running the following command:
-
-```bash
-make submit EMAIL=<your_email@example.com>
-```
-:::
-
-
 ## Build and Deploy
 
 If you wish to build and deploy the contracts yourself you can follow these steps.
@@ -72,7 +63,7 @@ Edit the `.env` file and set the following variables:
 
 ### Deploy the Contracts
 
-You can deploy the contracts by running:
+You can build and deploy the contract by running:
 
 ```bash
 make deploy
@@ -80,9 +71,11 @@ make deploy
 
 After deploying, the `run-latest.json` file in the `broadcast/` directory will be updated with the addresses of the deployed contracts.
 
-## Use the Relayer API
-
+:::success
 Now that you have the project set up (and optionally deployed your own contracts), you can use the provided Makefile to interact with the Generic Relayer API.
+:::
+
+## Use the Relayer API
 
 ### Submitting a Command
 
@@ -102,9 +95,7 @@ This command does the following:
 
 #### Option 2: Interacting with the Relayer API Directly
 
-If you prefer to interact with the API without using the Makefile, you can use `curl` directly:
-
-<ApiTester {...submitCommandConfig} />
+If you prefer to interact with the API without using the Makefile, you can use `curl` directly. For detailed information on the API endpoints and request format, refer to the [Submit Command API Reference](./api-reference#submit-command).
 
 ### Checking the Status
 
@@ -120,10 +111,4 @@ Replace `<request_id>` with the actual `request_id` you received from the previo
 
 #### Option 2: Interacting with the Relayer API Directly
 
-You can check the status of your request by running:
-
-<ApiTester {...statusConfig} />
-
-## Additional Resources
-
-For more detailed information on the architecture and technical aspects, refer to the [Architecture Guide](../architecture/README.md) in the repository.
+You can check the status of your request by making a GET request to the Request Status endpoint. For detailed information on this endpoint and its response format, refer to the [Request Status API Reference](./api-reference#request-status).
