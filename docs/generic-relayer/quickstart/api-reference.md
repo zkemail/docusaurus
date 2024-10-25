@@ -10,38 +10,17 @@ import statusConfig from '@site/src/api/generic-relayer/status.ts';
 
 # API Reference
 
-Welcome to the API reference. Here you'll find detailed information about our API endpoints.
-
-## Health Check
-
 <div className={styles.twoColumnLayout}>
 <div className={styles.leftColumn}>
+The Generic Relayer API enables developers to integrate email-driven blockchain actions into their applications.
 
-### Response Fields
-
-`message` (string)
-
-A greeting message from the API.
-
----
-`status` (string)
-
-The status of the health check. Possible value: `"success"`.
-
+This API serves as the bridge between traditional email communication and blockchain transactions, allowing users to authorize and execute smart contract functions through email verification.
 </div>
 <div className={styles.rightColumn}>
-
-### Endpoint
-
-```
-GET https://relayer.zk.email/api/healthz
-```
-
-<ApiTester {...healthzConfig} />
-
+## Getting Started?
+Check out the [Quickstart Guide](./README.md) to get started.
 </div>
 </div>
-
 
 ## Submit Command
 
@@ -148,7 +127,7 @@ POST https://relayer.zk.email/api/submit
 </div>
 </div>
 
-## Check Request Status
+## Request Status
 
 <div className={styles.twoColumnLayout}>
 <div className={styles.leftColumn}>
@@ -198,6 +177,36 @@ GET https://relayer.zk.email/api/status/:id
 ```
 
 <ApiTester {...statusConfig} />
+
+</div>
+</div>
+
+## Health Check
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Response Fields
+
+`message` (string)
+
+A greeting message from the API.
+
+---
+`status` (string)
+
+The status of the health check. Possible value: `"success"`.
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+GET https://relayer.zk.email/api/healthz
+```
+
+<ApiTester {...healthzConfig} />
 
 </div>
 </div>

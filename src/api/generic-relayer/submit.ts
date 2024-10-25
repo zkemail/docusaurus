@@ -11,13 +11,13 @@ const submitCommandConfig: ApiTesterProps = {
       name: 'contractAddress',
       type: 'string',
       required: true,
-      default: '0x3E0E7F4fb89881d4936a40dC35895D2ce7802912'
+      default: '0xefb56bb5771cde84f487391b6c0f9ff1694d2631',
     },
     {
       name: 'dkimContractAddress',
       type: 'string',
       required: true,
-      default: '0xF45acb85a1130BC107E3BCe17C1B60c8FeA8beec'
+      default: '0xc3f15f5cc76a86f97ef8bc2d5070b6725d8992ce'
     },
     {
       name: 'accountCode',
@@ -133,7 +133,7 @@ const submitCommandConfig: ApiTesterProps = {
       name: 'commandParams',
       type: 'array',
       required: true,
-      default: ['testing']
+      default: ['hello']
     },
     {
       name: 'templateId',
