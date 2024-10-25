@@ -1,0 +1,178 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 0rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0.25rem 0 0 0;
+}
+
+.editorToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toggleLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.codeBlock {
+  font-family: monospace;
+  font-size: 0.875rem;
+  padding: 1rem;
+  margin: 0;
+  white-space: pre-wrap;
+  background: none;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  width: 33.333%;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.input {
+  flex: 1;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.textarea {
+  composes: input;
+  font-family: monospace;
+  resize: vertical;
+  min-height: 4rem;
+}
+
+.inputDescription {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonPrimary {
+  composes: button;
+  background-color: #2563eb;
+  color: white;
+}
+
+.buttonPrimary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.buttonOutline {
+  composes: button;
+  background-color: transparent;
+}
+
+.buttonOutline:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.buttonGhost {
+  composes: button;
+  background-color: transparent;
+}
+
+.buttonGhost:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.responseSection {
+  composes: section;
+}
+
+.responseLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.alertSuccess {
+  composes: alert;
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+
+.alertError {
+  composes: alert;
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}

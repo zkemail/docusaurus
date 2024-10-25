@@ -3,6 +3,8 @@ hide_table_of_contents: true
 ---
 
 import styles from '@site/src/components/TwoColumnLayout/two-column-layout.module.css';
+import ApiTester from '@site/src/components/ApiTester';
+import submitCommandConfig from '@site/src/api/generic-relayer/submit.ts';
 
 # API Reference
 
@@ -27,7 +29,7 @@ Address of the `DKIMVerification` contract for email authentication.
 ---
 `accountCode` (string)
 
-Random `uint256` value to create the SALT in the email body.
+A random `uint256` value used to derive the user's address from their email address using CREATE2.
 
 ---
 `codeExistsInEmail` (boolean)
@@ -87,37 +89,9 @@ Blockchain network (e.g., `"sepolia"`).
 ```
 POST https://relayer.zk.email/api/submit
 ```
-### Example Request
+<ApiTester {...submitCommandConfig} />
 
-```bash
-curl -X POST 'https://relayer.zk.email/api/submit' \
-  -H 'Content-Type: application/json' \
-  --data-raw '{
-    "contractAddress": "<EMIT_EMAIL_COMMAND_ADDRESS>",
-    "dkimContractAddress": "<DKIM_PROXY_ADDRESS>",
-    "accountCode": "<ACCOUNT_CODE>",
-    "codeExistsInEmail": <CODE_EXISTS_IN_EMAIL>,
-    "functionAbi": <FUNCTION_ABI>,
-    "commandTemplate": "<COMMAND_TEMPLATE>",
-    "commandParams": <COMMAND_PARAMS>,
-    "templateId": "<TEMPLATE_ID>",
-    "remainingArgs": <REMAINING_ARGS>,
-    "emailAddress": "<EMAIL_ADDRESS>",
-    "subject": "<SUBJECT>",
-    "body": "<BODY>",
-    "chain": "<CHAIN>"
-  }'
-```
 
-### Example Response
-
-```json
-{
-  "message": "email sent",
-  "request_id": "1ca65abb-f4bd-43b3-956b-36e075790090",
-  "status": "success"
-}
-```
 
 </div>
 </div>
