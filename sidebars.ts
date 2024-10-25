@@ -159,7 +159,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'generic-relayer/quickstart/creating-command-templates',
-        'generic-relayer/quickstart/using-the-api',
+        'generic-relayer/quickstart/api-reference',
       ],
     },
     {
@@ -170,19 +170,6 @@ const sidebars: SidebarsConfig = {
         id: 'generic-relayer/architecture/README'
       },
       items: [
-      ],
-    },
-    {
-      type: 'category',
-      label: 'API Reference',
-      link: {
-        type: 'doc',
-        id: 'generic-relayer/api-reference/generic-relayer-api'
-      },
-      items: [
-        'generic-relayer/api-reference/health-check',
-        'generic-relayer/api-reference/submit-a-transaction',
-        'generic-relayer/api-reference/get-transaction-status',
       ],
     },
     {
