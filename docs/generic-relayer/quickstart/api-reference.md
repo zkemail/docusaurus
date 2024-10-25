@@ -5,10 +5,43 @@ hide_table_of_contents: true
 import styles from '@site/src/components/TwoColumnLayout/two-column-layout.module.css';
 import ApiTester from '@site/src/components/ApiTester';
 import submitCommandConfig from '@site/src/api/generic-relayer/submit.ts';
+import healthzConfig from '@site/src/api/generic-relayer/healthz.ts';
+import statusConfig from '@site/src/api/generic-relayer/status.ts';
 
 # API Reference
 
 Welcome to the API reference. Here you'll find detailed information about our API endpoints.
+
+## Health Check
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Response Fields
+
+`message` (string)
+
+A greeting message from the API.
+
+---
+`status` (string)
+
+The status of the health check. Possible value: `"success"`.
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+GET https://relayer.zk.email/api/healthz
+```
+
+<ApiTester {...healthzConfig} />
+
+</div>
+</div>
+
 
 ## Submit Command
 
@@ -81,6 +114,25 @@ Body content of the email.
 
 Blockchain network (e.g., `"sepolia"`).
 
+
+### Response Fields
+
+`message` (string)
+
+A confirmation message indicating the email has been sent.
+
+---
+`request_id` (string)
+
+A unique identifier for the request.
+
+---
+`status` (string)
+
+The status of the request. Possible value: `"success"`.
+
+
+
 </div>
 <div className={styles.rightColumn}>
 
@@ -92,6 +144,60 @@ POST https://relayer.zk.email/api/submit
 <ApiTester {...submitCommandConfig} />
 
 
+
+</div>
+</div>
+
+## Check Request Status
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+`id` (string)
+
+UUID of the request to check status for.
+
+### Response Fields
+
+`message` (string)
+
+A message indicating the request status.
+
+---
+`request` (object)
+
+An object containing details about the request, including:
+
+- `id` (string): UUID of the request.
+- `status` (string): Current status of the request. Possible values include "Finished" and others.
+- `updatedAt` (string): ISO 8601 formatted timestamp of when the status was last updated.
+- `emailTxAuth` (object): Original request details including:
+  - `emailAddress`: Recipient email address
+  - `subject`: Email subject
+  - `body`: Email body content
+  - `chain`: Blockchain network
+  - `contractAddress`: Smart contract address
+  - `dkimContractAddress`: DKIM contract address
+  - `accountCode`: Account code
+  - `codeExistsInEmail`: Boolean indicating if code exists in email
+  - `functionAbi`: ABI of the executed function
+  - `commandTemplate`: Original command template
+  - `commandParams`: Parameters used in the command
+  - `templateId`: Template ID
+  - `remainingArgs`: Additional arguments
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+GET https://relayer.zk.email/api/status/:id
+```
+
+<ApiTester {...statusConfig} />
 
 </div>
 </div>

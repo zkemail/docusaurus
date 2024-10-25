@@ -174,6 +174,12 @@ const ApiTester = ({
     }
   };
 
+  const formatResponse = (response: any) => {
+    return `{
+${Object.entries(response).map(([key, value]) => `  "${key}": ${JSON.stringify(value)}`).join(',\n')}
+}`;
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.section}>
@@ -259,7 +265,7 @@ const ApiTester = ({
 
         <div>
           <CodeBlock language="json">
-            {JSON.stringify(response, null, 2)}
+            {formatResponse(response)}
           </CodeBlock>
           {response?.status === 'success' && hasBeenTested && (
             <div className={styles.alertSuccess}>
