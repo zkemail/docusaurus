@@ -57,50 +57,27 @@ body {
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-/* Make navbar always dark with white text */
+.padding-top--md {
+  padding-top: 0px !important;
+}
+
+.tableOfContents {
+  top: 0 !important;
+}
+
+.DocSearch-Button {
+  width: 250px;
+}
+
+@media (max-width: 768px) {
+  .DocSearch-Button {
+    width: 150px;
+  }
+}
+
 .navbar {
-  background-color: var(--zk-gray-500);
-}
-
-.navbar__link,
-.navbar__brand,
-.navbar__toggle,
-.navbar-sidebar__brand {
-  color: #ffffff !important;
-}
-
-.navbar__link {
-  border-radius: 20px;
-  transition: background-color 200ms;
-}
-
-.navbar__link:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Style the color mode toggle button */
-.navbar .clean-btn {
-  color: #ffffff !important;
-  background-color: transparent !important;
-  transition: background-color 200ms;
-}
-
-.navbar .clean-btn:hover {
-  color: #ffffff !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Style the SVG inside the color mode toggle button */
-.navbar .clean-btn svg {
-  fill: currentColor;
-  width: 20px;
-  height: 20px;
-  transition: fill 200ms;
-}
-
-.navbar .clean-btn:hover svg {
-  fill: #ffffff;
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
 /* Make footer always dark with white text */
