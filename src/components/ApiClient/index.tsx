@@ -187,7 +187,7 @@ ${Object.entries(response).map(([key, value]) => `  "${key}": ${JSON.stringify(v
           <div>
             <h3>{title}</h3>
           </div>
-          {!hideEditor && (
+          {!hideEditor && parameters.length > 0 && (
             <div className={styles.editorToggle}>
               <ToggleSwitch
                 checked={isEditable}
