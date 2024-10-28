@@ -166,25 +166,15 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: 'Concepts',
-      link: {
-        type: 'doc',
-        id: 'generic-relayer/concepts/README'
-      },
-      items: [
-        'generic-relayer/concepts/command',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Ether Email Auth SDK',
       link: {
         type: 'doc',
-        id: 'account-recovery/ether-email-auth-sdk'
+        id: 'generic-relayer/ether-tx-auth/README'
       },
       items: [
-        'account-recovery/concepts',
-        'account-recovery/package-components',
+        'generic-relayer/ether-tx-auth/command',
+        'generic-relayer/ether-tx-auth/concepts',
+        'generic-relayer/ether-tx-auth/package-components',
       ],
     },
 
