@@ -445,16 +445,3 @@ Congratulations! You've successfully set up and used the ZK Email Generic Relaye
 - Monitored the execution and verified the results.
 
 For more detailed information on the architecture and technical aspects, refer to the [Architecture Guide](../architecture/README.md).
-
-## Next Steps
-
-<DocCardList 
-  items={[
-    {
-      type: 'link',
-      href: './creating-command-templates',
-      label: 'Creating Command Templates',
-      description: 'Explore the process of creating command templates for your specific use case.',
-    }
-  ]}
-/>
