@@ -151,7 +151,8 @@ const sidebars: SidebarsConfig = {
     },
     'generic-relayer/README',
     'generic-relayer/quickstart',
-    'generic-relayer/creating-command-templates',
+    'generic-relayer/setup',
+    'generic-relayer/command-templates',
     'generic-relayer/api-reference',
     {
       type: 'category',

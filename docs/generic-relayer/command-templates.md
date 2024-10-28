@@ -1,6 +1,7 @@
-# Creating Command Templates
 
-Command templates are a crucial part of integrating the ZK Email Generic Relayer into your smart contracts. They define the structure of commands that can be sent via email and subsequently processed on-chain. This guide will help you understand how to create custom command templates and integrate them into any smart contract, enabling you to harness the power of email-driven blockchain interactions.
+# Command Templates
+
+Command templates are a crucial part of integrating the ZK Email Generic Relayer into your smart contracts. They define the structure of commands that can be sent via email and subsequently processed on-chain.
 
 ## Understanding Command Templates
 
@@ -8,7 +9,7 @@ Command templates are a crucial part of integrating the ZK Email Generic Relayer
 
 ### Components of a Command Template
 
-- **Fixed Strings**: These are static parts of the command that do not change.
+- **Fixed Strings**: Static parts of the command that do not change.
 - **Matchers**: Placeholders enclosed in curly braces `{}` that represent dynamic input values.
 
 ### Example Template
@@ -46,13 +47,7 @@ Suppose you want a command that allows a user to set a greeting message:
 Set greeting to {string}
 ```
 
-<!-- ## Integrating Command Templates into Contracts
-
-To integrate command templates into your contract:
-
-1. **Create a Function to Return Templates**: Implement a function that returns an array of your command templates.
-2. **Compute Template IDs**: Assign a unique ID to each template using a consistent method.
-3. **Handle Commands in Contract Logic**: Write functions that process the commands based on the template used.
+## Integrating Command Templates into Contracts
 
 ### Step-by-Step Integration
 
@@ -64,7 +59,8 @@ function commandTemplates() public pure returns (string[][] memory) {
     templates[0] = new string[](3);
     templates[0][0] = "Set";
     templates[0][1] = "greeting";
-    templates[0][2] = "to {string}";
+    templates[0][2] = "to";
+    templates[0][3] = "{string}";
     return templates;
 }
 ```
@@ -135,95 +131,13 @@ function computeTemplateId(templateIdx) {
 console.log('Template ID for index 0:', computeTemplateId(0));
 ```
 
-## Example: Implementing Command Templates
-
-Let's walk through an example of integrating command templates into a contract that allows users to update a status message.
-
-### 1. Define the Contract
-
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.12;
-
-import "@zk-email/ether-email-auth-contracts/src/EmailAuth.sol";
-
-contract StatusUpdater {
-    string public statusMessage;
-    address public owner;
-
-    constructor(address _owner) {
-        owner = _owner;
-    }
-}
-```
-
-### 2. Add Command Templates
-
-```solidity
-function commandTemplates() public pure returns (string[][] memory) {
-    string[][] memory templates = new string[][](1);
-    templates[0] = new string[](3);
-    templates[0][0] = "Update";
-    templates[0][1] = "status";
-    templates[0][2] = "to {string}";
-    return templates;
-}
-```
-
-### 3. Compute Template IDs
-
-```solidity
-function computeTemplateId(uint256 templateIdx) public pure returns (uint256) {
-    return uint256(keccak256(abi.encode("STATUS_UPDATER", templateIdx)));
-}
-```
-
-### 4. Implement Command Handling
-
-```solidity
-function handleCommand(
-    EmailAuthMsg memory emailAuthMsg,
-    uint256 templateIdx
-) public {
-    uint256 templateId = computeTemplateId(templateIdx);
-    require(templateId == emailAuthMsg.templateId, "Invalid template ID");
-
-    if (templateIdx == 0) {
-        string memory newStatus = abi.decode(emailAuthMsg.commandParams[0], (string));
-        updateStatus(newStatus);
-    } else {
-        revert("Unknown template index");
-    }
-}
-```
-
-### 5. Add the Update Function
-
-```solidity
-function updateStatus(string memory newStatus) internal {
-    require(msg.sender == owner, "Only owner can update status");
-    statusMessage = newStatus;
-}
-```
-
----
-
 ## Best Practices
 
 - **Unique Identifiers**: Use a unique string in `computeTemplateId` to avoid collisions with other contracts.
-- **Input Validation**: Validate and sanitize inputs extracted from `commandParams` to prevent malicious data from being processed.
+- **Input Validation**: Validate and sanitize inputs extracted from `commandParams` to prevent malicious data.
 - **Access Control**: Implement proper access control to ensure only authorized users can execute commands.
 - **Error Handling**: Provide meaningful error messages and handle exceptions gracefully.
 
-## Next Steps
+---
 
-Now that you understand how to create and integrate command templates:
-
-- **Extend Functionality**: Add more command templates to support additional functionalities.
-- **User Interaction**: Update your frontend or API to generate emails conforming to your new command templates.
-- **Testing**: Thoroughly test your contract with various command inputs to ensure reliability.
-- **Security Audit**: Consider a security audit to identify and fix potential vulnerabilities.
-
-## Conclusion
-
-Command templates are a powerful feature that allows you to define flexible and secure interactions between email commands and smart contracts. By understanding how to create and integrate them, you can enhance your blockchain applications to respond to off-chain events seamlessly. -->
+By understanding and implementing command templates, you can harness the power of email-driven interactions within your smart contracts, enhancing functionality and user experience.
