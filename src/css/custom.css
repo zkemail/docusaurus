@@ -71,7 +71,7 @@ body {
 
 @media (max-width: 768px) {
   .DocSearch-Button {
-    width: 150px;
+    width: auto;
   }
 }
 

@@ -147,7 +147,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'html',
-      value: '<span class="sidebar-heading">Generic Relayer</span>',
+      value: '<span class="sidebar-heading">Email Transaction Auth</span>',
     },
     'generic-relayer/README',
     'generic-relayer/quickstart',

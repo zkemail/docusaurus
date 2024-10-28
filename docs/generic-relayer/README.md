@@ -3,14 +3,14 @@ import DocCardList from '@theme/DocCardList';
 # Overview
 
 <div style={{fontSize: '1.2em'}}>
-Discover our ZK Email Generic Relayer and how it can be used to enable email-driven actions on blockchain networks.
+Discover our Email Transaction Auth and how it can be used to enable email-driven actions on blockchain networks.
 </div>
 
 ---
   
 ## Getting Started
 
-To get started with the Generic Relayer, follow our quickstart guide.
+To get started with the Email Transaction Auth, follow our quickstart guide.
 
 <DocCardList 
   items={[
@@ -18,13 +18,13 @@ To get started with the Generic Relayer, follow our quickstart guide.
       type: 'link',
       label: 'Quickstart',
       href: 'quickstart',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      description: 'Get started with the Email Transaction Auth with an example project.'
     },
     {
       type: 'link',
-      label: 'API Reference',
-      href: './api-reference',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      label: 'Setup',
+      href:  'setup',
+      description: 'Learn how to integrate the Email Transaction Auth into your project.'
     }
   ]}
 />
@@ -39,7 +39,7 @@ For a more in-depth understanding of the Generic Relayer's capabilities and how 
       type: 'link',
       label: 'Architecture',
       href: 'architecture',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      description: 'Learn about the Generic Relayer architecture.'
     },
   ]}
 />

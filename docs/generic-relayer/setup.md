@@ -39,6 +39,12 @@ Add the following remappings to your `remappings.txt` file or create the file if
 @zk-email/=node_modules/@zk-email/
 ```
 
+:::note
+
+If you are using a workspace or monorepo, you may need to update the `node_modules` path to your root `node_modules` directory.
+
+:::
+
 ## Smart Contract Setup
 
 ### Contract Variables
