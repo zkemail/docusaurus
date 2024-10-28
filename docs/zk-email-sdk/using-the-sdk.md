@@ -6,6 +6,8 @@
 
 **Google Client API key**: You will need a Google OAuth token if you want users to be able to directly query emails from their inbox. Go to Google Cloud's dashboard to enable the Gmail API.
 
+Learn how to create your `GOOGLE_CLIENT_ID` [here](https://support.google.com/cloud/answer/6158849?hl=en).
+
 **React Project**: The SDK currently only works with `reactjs`. If you are using `nextjs`, you might need some workarounds to make sure the page you integrate the SDK runs fully on the client side. Refer to this for reference example.
 
 ## Wiring it up
