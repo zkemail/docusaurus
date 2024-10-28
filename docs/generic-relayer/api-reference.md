@@ -3,7 +3,7 @@ hide_table_of_contents: true
 ---
 
 import styles from '@site/src/components/TwoColumnLayout/two-column-layout.module.css';
-import ApiTester from '@site/src/components/ApiTester';
+import ApiClient from '@site/src/components/ApiClient';
 import submitCommandConfig from '@site/src/api/generic-relayer/submit.ts';
 import healthzConfig from '@site/src/api/generic-relayer/healthz.ts';
 import statusConfig from '@site/src/api/generic-relayer/status.ts';
@@ -118,7 +118,7 @@ The status of the request. Possible value: `"success"`.
 ```
 POST https://relayer.zk.email/api/submit
 ```
-<ApiTester {...submitCommandConfig} />
+<ApiClient {...submitCommandConfig} />
 
 
 
@@ -174,7 +174,7 @@ An object containing details about the request, including:
 GET https://relayer.zk.email/api/status/:id
 ```
 
-<ApiTester {...statusConfig} />
+<ApiClient {...statusConfig} />
 
 </div>
 </div>
@@ -204,7 +204,7 @@ The status of the health check. Possible value: `"success"`.
 GET https://relayer.zk.email/api/healthz
 ```
 
-<ApiTester {...healthzConfig} />
+<ApiClient {...healthzConfig} />
 
 </div>
 </div>

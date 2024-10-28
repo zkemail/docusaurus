@@ -1,4 +1,4 @@
-import ApiTester from '@site/src/components/ApiTester';
+import ApiClient from '@site/src/components/ApiClient';
 import submitCommandConfig from '@site/src/api/generic-relayer/submit.ts';
 import statusConfig from '@site/src/api/generic-relayer/status.ts';
 

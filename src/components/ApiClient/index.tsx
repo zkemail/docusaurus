@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AlertCircle, Check, Copy, PlayCircle, RotateCcw } from 'lucide-react';
-import styles from './api-tester.module.css';
+import styles from './api-client.module.css';
 import CodeBlock from '@theme/CodeBlock';
 
 export type RequestParameter = {
@@ -10,7 +10,7 @@ export type RequestParameter = {
   default?: any;
 };
 
-export type ApiTesterProps = {
+export type ApiClientProps = {
   endpoint: string;
   method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
   headers?: Record<string, string>;
@@ -24,7 +24,7 @@ export type ApiTesterProps = {
   onTest?: (requestData: any) => Promise<any>;
 };
 
-const ApiTester = ({
+const ApiClient = ({
   endpoint,
   method = 'POST',
   headers = { 'Content-Type': 'application/json' },
@@ -36,7 +36,7 @@ const ApiTester = ({
   testMode = 'mock',
   mockDelay = 1000,
   onTest,
-}: ApiTesterProps) => {
+}: ApiClientProps) => {
   const [isEditable, setIsEditable] = useState(false);
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState(exampleResponse);
@@ -279,7 +279,7 @@ ${Object.entries(response).map(([key, value]) => `  "${key}": ${JSON.stringify(v
   );
 };
 
-export default ApiTester;
+export default ApiClient;
 
 const ToggleSwitch = ({ checked, onChange }) => {
   return (

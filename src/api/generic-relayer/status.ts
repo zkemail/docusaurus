@@ -1,6 +1,6 @@
-import { ApiTesterProps, RequestParameter } from '../../components/ApiTester';
+import { ApiClientProps, RequestParameter } from '../../components/ApiClient';
 
-const statusConfig: ApiTesterProps = {
+const statusConfig: ApiClientProps = {
   endpoint: 'https://relayer.zk.email/api/status/:id',
   method: 'GET',
   headers: {

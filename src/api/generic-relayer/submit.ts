@@ -1,6 +1,6 @@
-import { ApiTesterProps, RequestParameter } from '../../components/ApiTester';
+import { ApiClientProps, RequestParameter } from '../../components/ApiClient';
 
-const submitCommandConfig: ApiTesterProps = {
+const submitCommandConfig: ApiClientProps = {
   endpoint: 'https://relayer.zk.email/api/submit',
   method: 'POST',
   headers: {
