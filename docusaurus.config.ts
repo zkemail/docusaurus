@@ -170,9 +170,9 @@ const config: Config = {
       },
     ],
     algolia: {
-      appId: 'BBFHVIFY5F',
-      apiKey: '5dd2cc4c0f485ddd69caf30ee8abf5ef',
-      indexName: 'osaurus-onrender',
+      appId: 'PZE9L5QV7Z',
+      apiKey: '7c9876d50df48d8abaa712a816d8935f',
+      indexName: 'prove',
       contextualSearch: true,
       searchParameters: {},
     },
