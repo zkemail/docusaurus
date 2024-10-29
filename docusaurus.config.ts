@@ -176,6 +176,9 @@ const config: Config = {
       contextualSearch: true,
       searchParameters: {},
     },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
+    },
   } satisfies Preset.ThemeConfig,
 };
 
