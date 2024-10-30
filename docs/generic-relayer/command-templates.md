@@ -1,4 +1,3 @@
-
 # Command Templates
 
 Command templates are a crucial part of integrating the ZK Email Generic Relayer into your smart contracts. They define the structure of commands that can be sent via email and subsequently processed on-chain.
@@ -7,137 +6,175 @@ Command templates are a crucial part of integrating the ZK Email Generic Relayer
 
 **Command templates** define the syntax and parameters of the commands that can be sent via email to your smart contract. They consist of fixed strings and placeholders (matchers) that represent dynamic values.
 
-### Components of a Command Template
+A command template consists of two main components that work together to define valid email commands:
 
 - **Fixed Strings**: Static parts of the command that do not change.
 - **Matchers**: Placeholders enclosed in curly braces `{}` that represent dynamic input values.
 
-### Example Template
+:::info
 
 ```plaintext
-Transfer {uint} tokens to {address}
+Transfer {uint} tokens to {ethAddr}
 ```
 
 In this template:
 
 - **Fixed Strings**: "Transfer", "tokens to"
-- **Matchers**: `{uint}`, `{address}`
+- **Matchers**: `{uint}`, `{ethAddr}`
 
-## Creating Custom Command Templates
+:::
 
-To create a custom command template:
+## Available Type Matchers
 
-1. **Define the Command Structure**: Determine what action the command should perform and what parameters it requires.
-2. **Identify Fixed Strings and Matchers**: Break down the command into fixed strings and matchers.
-3. **Choose Appropriate Matchers**: Use the correct matcher types for your parameters.
+There are several types of matchers you can use in your command templates. Each matcher type allows you to capture different kinds of data from the command.
 
-### Available Matchers
+For a full list of matcher types and how to use them, see the following sections.
 
-- `{string}`: Matches any string.
-- `{uint}`: Matches an unsigned integer.
-- `{int}`: Matches a signed integer.
-- `{decimals}`: Matches a decimal number.
-- `{ethAddr}`: Matches an Ethereum address.
+### `{string}` Type Matcher
 
-### Example
+The `{string}` matcher captures any string value.
 
-Suppose you want a command that allows a user to set a greeting message:
+#### Usage
+
+Use this matcher when you want to capture a text input.
+
+#### Example
+
+**Command Template**
 
 ```plaintext
-Set greeting to {string}
+Set status message to {string}
 ```
 
-## Integrating Command Templates into Contracts
-
-### Step-by-Step Integration
-
-#### 1. Define Command Templates in Your Contract
+**Code Example**
 
 ```solidity
 function commandTemplates() public pure returns (string[][] memory) {
     string[][] memory templates = new string[][](1);
-    templates[0] = new string[](3);
+    templates[0] = new string[](4);
     templates[0][0] = "Set";
-    templates[0][1] = "greeting";
-    templates[0][2] = "to";
+    templates[0][1] = "status";
+    templates[0][2] = "message";
     templates[0][3] = "{string}";
     return templates;
 }
 ```
 
-#### 2. Compute Template IDs
+### `{uint}` Type Matcher
 
-Implement a function to compute template IDs:
+The `{uint}` matcher captures an unsigned integer.
+
+#### Usage
+
+Use this matcher when you need to capture a non-negative whole number.
+
+#### Example
+
+**Command Template**
+
+```plaintext
+Deposit {uint} tokens
+```
+
+**Code Example**
 
 ```solidity
-function computeTemplateId(uint templateIdx) public pure returns (uint256) {
-    return uint256(keccak256(abi.encode("MY_CONTRACT", templateIdx)));
+function commandTemplates() public pure returns (string[][] memory) {
+    string[][] memory templates = new string[][](1);
+    templates[0] = new string[](3);
+    templates[0][0] = "Deposit";
+    templates[0][1] = "{uint}";
+    templates[0][2] = "tokens";
+    return templates;
 }
 ```
 
-**Note**: Replace `"MY_CONTRACT"` with a unique identifier for your contract to avoid collisions.
+### `{int}` Type Matcher
 
-#### 3. Process Commands Based on Template ID
+The `{int}` matcher captures a signed integer.
 
-In your function that handles commands (e.g., `handleCommand`), use the `templateId` to determine which command to execute:
+#### Usage
+
+Use this matcher when you need to capture both positive and negative whole numbers.
+
+#### Example
+
+**Command Template**
+
+```plaintext
+Adjust balance by {int}
+```
+
+**Code Example**
 
 ```solidity
-function handleCommand(
-    EmailAuthMsg memory emailAuthMsg,
-    uint256 templateIdx
-) public {
-    uint256 templateId = computeTemplateId(templateIdx);
-    require(templateId == emailAuthMsg.templateId, "Invalid template ID");
-
-    if (templateIdx == 0) {
-        string memory newGreeting = abi.decode(emailAuthMsg.commandParams[0], (string));
-        setGreeting(newGreeting);
-    } else {
-        revert("Unknown template index");
-    }
+function commandTemplates() public pure returns (string[][] memory) {
+    string[][] memory templates = new string[][](1);
+    templates[0] = new string[](5);
+    templates[0][0] = "Adjust";
+    templates[0][1] = "balance";
+    templates[0][2] = "by";
+    templates[0][3] = "{int}";
+    return templates;
 }
 ```
 
-## Computing Template IDs
+### `{decimals}` Type Matcher
 
-Template IDs are unique identifiers for your command templates. They are computed using a hash function to ensure uniqueness and prevent collisions.
+The `{decimals}` matcher captures a decimal number.
 
-### Computing Template IDs in Solidity
+#### Usage
+
+Use this matcher when you need to capture numbers with decimal points.
+
+#### Example
+
+**Command Template**
+
+```plaintext
+Set exchange rate to {decimals}
+```
+
+**Code Example**
 
 ```solidity
-function computeTemplateId(uint256 templateIdx) public pure returns (uint256) {
-    return uint256(keccak256(abi.encode("MY_CONTRACT", templateIdx)));
+function commandTemplates() public pure returns (string[][] memory) {
+    string[][] memory templates = new string[][](1);
+    templates[0] = new string[](5);
+    templates[0][0] = "Set";
+    templates[0][1] = "exchange";
+    templates[0][2] = "rate";
+    templates[0][3] = "to";
+    templates[0][4] = "{decimals}";
+    return templates;
 }
 ```
 
-### Computing Template IDs in JavaScript
+### `{ethAddr}` Type Matcher
 
-You can compute template IDs off-chain using JavaScript and the `ethers` library:
+The `{ethAddr}` matcher captures an Ethereum address.
 
-```javascript
-const ethers = require('ethers');
+#### Usage
 
-function computeTemplateId(templateIdx) {
-    return ethers.BigNumber.from(
-        ethers.utils.keccak256(
-            ethers.utils.defaultAbiCoder.encode(
-                ['string', 'uint256'],
-                ['MY_CONTRACT', templateIdx]
-            )
-        )
-    ).toString();
-}
+Use this matcher when you need to capture an Ethereum address.
 
-console.log('Template ID for index 0:', computeTemplateId(0));
+#### Example
+
+**Command Template**
+
+```plaintext
+Authorize address {ethAddr}
 ```
 
-## Best Practices
+**Code Example**
 
-- **Unique Identifiers**: Use a unique string in `computeTemplateId` to avoid collisions with other contracts.
-- **Input Validation**: Validate and sanitize inputs extracted from `commandParams` to prevent malicious data.
-- **Access Control**: Implement proper access control to ensure only authorized users can execute commands.
-- **Error Handling**: Provide meaningful error messages and handle exceptions gracefully.
-
----
-
-By understanding and implementing command templates, you can harness the power of email-driven interactions within your smart contracts, enhancing functionality and user experience.
+```solidity
+function commandTemplates() public pure returns (string[][] memory) {
+    string[][] memory templates = new string[][](1);
+    templates[0] = new string[](3);
+    templates[0][0] = "Authorize";
+    templates[0][1] = "address";
+    templates[0][2] = "{ethAddr}";
+    return templates;
+}
+```
