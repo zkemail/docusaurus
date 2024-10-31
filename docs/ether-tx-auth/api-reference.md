@@ -4,9 +4,9 @@ hide_table_of_contents: true
 
 import styles from '@site/src/components/TwoColumnLayout/two-column-layout.module.css';
 import ApiClient from '@site/src/components/ApiClient';
-import submitCommandConfig from '@site/src/api/generic-relayer/submit.ts';
-import healthzConfig from '@site/src/api/generic-relayer/healthz.ts';
-import statusConfig from '@site/src/api/generic-relayer/status.ts';
+import submitCommandConfig from '@site/src/api/ether-tx-auth/submit.ts';
+import healthzConfig from '@site/src/api/ether-tx-auth/healthz.ts';
+import statusConfig from '@site/src/api/ether-tx-auth/status.ts';
 
 # API Reference
 

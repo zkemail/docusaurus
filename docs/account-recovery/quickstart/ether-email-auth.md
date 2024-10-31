@@ -8,7 +8,7 @@ Learn how to create a simple wallet with email-based account recovery.
 
 This guide will explain how to implement email-based account recovery using the Ether Email Auth SDK. The SDK allows you to define arbitrary logic to control smart contracts via emails in Solidity.
 
-If you want more information about the SDK, you can read the [Ether Email Auth SDK](/generic-relayer/ether-tx-auth/README.md) documentation.
+If you want more information about the SDK, you can read the [Ether Email Auth SDK](/ether-tx-auth/ether-tx-auth/README.md) documentation.
 
 
 ### Prerequisites

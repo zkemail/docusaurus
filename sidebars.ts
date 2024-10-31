@@ -149,17 +149,17 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">Email Transaction Auth</span>',
     },
-    'generic-relayer/README',
-    'generic-relayer/quickstart',
-    'generic-relayer/setup',
-    'generic-relayer/command-templates',
-    'generic-relayer/api-reference',
+    'ether-tx-auth/README',
+    'ether-tx-auth/quickstart',
+    'ether-tx-auth/setup',
+    'ether-tx-auth/command-templates',
+    'ether-tx-auth/api-reference',
     {
       type: 'category',
       label: 'Architecture',
       link: {
         type: 'doc',
-        id: 'generic-relayer/architecture/README'
+        id: 'ether-tx-auth/architecture/README'
       },
       items: [
       ],
@@ -169,12 +169,12 @@ const sidebars: SidebarsConfig = {
       label: 'Ether Email Auth SDK',
       link: {
         type: 'doc',
-        id: 'generic-relayer/ether-tx-auth/README'
+        id: 'ether-tx-auth/ether-tx-auth/README'
       },
       items: [
-        'generic-relayer/ether-tx-auth/command',
-        'generic-relayer/ether-tx-auth/concepts',
-        'generic-relayer/ether-tx-auth/package-components',
+        'ether-tx-auth/ether-tx-auth/command',
+        'ether-tx-auth/ether-tx-auth/concepts',
+        'ether-tx-auth/ether-tx-auth/package-components',
       ],
     },
 
