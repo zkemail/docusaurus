@@ -50,7 +50,23 @@ To gain a comprehensive understanding of each component, dive into the following
 
 To simplify understanding, here's a diagram illustrating the core workflow of ZK Email:
 
-![ZK Email Workflow Diagram](/img/zk-email-architecture.svg)
+```mermaid
+sequenceDiagram
+    participant Email Sender
+    participant User
+    participant Smart Contract
+    participant DKIM Public Key Registry
+    participant Application
+
+    Email Sender ->> User: 1. Sends DKIM-signed email
+    User ->> User: 2. Extracts email parts<br>and generates ZK Proof
+    User ->> Smart Contract: 3. Submits ZK Proof
+    Smart Contract ->> DKIM Public Key Registry: 4. Retrieves DKIM Public Key
+    DKIM Public Key Registry -->> Smart Contract: Returns DKIM Public Key
+    Smart Contract ->> Smart Contract: Verifies ZK Proof
+    Smart Contract -->> Application: 5. If valid, trigger action
+    User -->> Application: Action taken (e.g., access granted)
+```
 
 1. **Email Receipt**:
    - The user receives an email from a sender that is signed using DKIM.

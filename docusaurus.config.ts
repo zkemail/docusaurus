@@ -64,13 +64,6 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           },
-          genericRelayer: {
-            specPath: "static/openapi/generic-relayer-api.yaml",
-            outputDir: "docs/generic-relayer/api-reference",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
         },
       },
     ],
@@ -90,7 +83,7 @@ const config: Config = {
         {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
         {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
-        {to: '/generic-relayer/', label: 'Generic Relayer', position: 'left'},
+        {to: '/ether-tx-auth/', label: 'Ether Transaction Auth', position: 'left'},
       ],
     },
     footer: {
@@ -137,8 +130,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} ZK Email.`,
     },
     prism: {
-      theme: prismThemes.oneDark,
-      darkTheme: prismThemes.oneDark,
+      theme: prismThemes.vsDark,
+      darkTheme: prismThemes.vsDark,
       additionalLanguages: ['solidity'],
     },
     colorMode: {
@@ -177,11 +170,14 @@ const config: Config = {
       },
     ],
     algolia: {
-      appId: 'BBFHVIFY5F',
-      apiKey: '5dd2cc4c0f485ddd69caf30ee8abf5ef',
-      indexName: 'osaurus-onrender',
+      appId: 'PZE9L5QV7Z',
+      apiKey: '7c9876d50df48d8abaa712a816d8935f',
+      indexName: 'prove',
       contextualSearch: true,
       searchParameters: {},
+    },
+    mermaid: {
+      theme: {light: 'neutral', dark: 'dark'},
     },
   } satisfies Preset.ThemeConfig,
 };

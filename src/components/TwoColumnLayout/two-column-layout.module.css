@@ -1,0 +1,61 @@
+/* api-reference.module.css */
+
+.twoColumnLayout {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;  
+  margin-top: 1rem;
+}
+
+.leftColumn,
+.rightColumn {
+  width: 50%;
+  font-size: 14px;
+}
+
+.leftColumn {
+  /* Add this to allow the left column to grow */
+  flex: 1;
+}
+
+.rightColumn {
+  /* Make the right column sticky */
+  position: sticky;
+  top: 70px; /* Adjust this value as needed */
+  align-self: flex-start;
+  /* Set a max-height and enable scrolling if content overflows */
+  max-height: calc(100vh - 2rem); /* Adjust this value as needed */
+  overflow-y: auto;
+}
+
+.leftColumn p, .rightColumn p {
+  margin-bottom: 10px !important;
+}
+
+.leftColumn hr, .rightColumn hr {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 767px) {
+  .twoColumnLayout {
+    flex-direction: column;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    width: 100%;
+  }
+
+  .rightColumn {
+    /* Remove sticky positioning on mobile */
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .leftColumn {
+    margin-bottom: 1rem;
+  }
+}

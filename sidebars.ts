@@ -147,53 +147,21 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'html',
-      value: '<span class="sidebar-heading">Generic Relayer</span>',
+      value: '<span class="sidebar-heading">Email Transaction Auth</span>',
     },
-    'generic-relayer/README',
-    {
-      type: 'category',
-      label: 'Quickstart Guide',
-      link: {
-        type: 'doc',
-        id: 'generic-relayer/quickstart/README'
-      },
-      items: [
-        'generic-relayer/quickstart/creating-command-templates',
-        'generic-relayer/quickstart/using-the-api',
-      ],
-    },
+    'ether-tx-auth/README',
+    'ether-tx-auth/quickstart',
+    'ether-tx-auth/setup',
+    'ether-tx-auth/command-templates',
+    'ether-tx-auth/api-reference',
     {
       type: 'category',
       label: 'Architecture',
       link: {
         type: 'doc',
-        id: 'generic-relayer/architecture/README'
+        id: 'ether-tx-auth/architecture/README'
       },
       items: [
-      ],
-    },
-    {
-      type: 'category',
-      label: 'API Reference',
-      link: {
-        type: 'doc',
-        id: 'generic-relayer/api-reference/generic-relayer-api'
-      },
-      items: [
-        'generic-relayer/api-reference/health-check',
-        'generic-relayer/api-reference/submit-a-transaction',
-        'generic-relayer/api-reference/get-transaction-status',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Concepts',
-      link: {
-        type: 'doc',
-        id: 'generic-relayer/concepts/README'
-      },
-      items: [
-        'generic-relayer/concepts/command',
       ],
     },
     {
@@ -201,11 +169,12 @@ const sidebars: SidebarsConfig = {
       label: 'Ether Email Auth SDK',
       link: {
         type: 'doc',
-        id: 'account-recovery/ether-email-auth-sdk'
+        id: 'ether-tx-auth/ether-tx-auth/README'
       },
       items: [
-        'account-recovery/concepts',
-        'account-recovery/package-components',
+        'ether-tx-auth/ether-tx-auth/command',
+        'ether-tx-auth/ether-tx-auth/concepts',
+        'ether-tx-auth/ether-tx-auth/package-components',
       ],
     },
 
