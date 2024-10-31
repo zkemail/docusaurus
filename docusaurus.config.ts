@@ -83,7 +83,7 @@ const config: Config = {
         {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
         {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
-        {to: '/ether-tx-auth/', label: 'Ether Transaction Auth', position: 'left'},
+        {to: '/email-tx-auth/', label: 'Ether Transaction Auth', position: 'left'},
       ],
     },
     footer: {
