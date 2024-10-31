@@ -72,7 +72,7 @@ const config: Config = {
   themes: ["docusaurus-theme-openapi-docs"],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/zk-email-docs-banner.png',
     navbar: {
       title: 'ZK Email',
       logo: {
