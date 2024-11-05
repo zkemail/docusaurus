@@ -2,11 +2,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Overview
 
-<div style={{fontSize: '1.2em'}}>
-Discover our Email Transaction Auth and how it can be used to enable email-driven actions on blockchain networks.
-</div>
-
----
+The Email Transaction Auth enables users to interact with Ethereum smart contracts by sending emails. Traditionally, interacting with Ethereum requires users to install specialized wallets and manage private keys, which can be a barrier for many. It removes this hurdle by using the email, allowing users to execute on-chain transactions without needing Ethereum-specific tools.
   
 ## Getting Started
 

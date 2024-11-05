@@ -10,7 +10,7 @@ In this section, we will show you how to create a simple project using the ZK Em
 
 We have provided a GitHub template that includes all necessary components, including the `EmitEmailCommand.sol` contract, deployment scripts, a Makefile, and a `.env.example` file. This template allows you to get started using the Generic Relayer quickly without deploying contracts yourself.
 
-You can either fork the template repository or clone it:
+You can either fork the [template repository](https://github.com/zkemail/generic-relayer-template.git) or clone it:
 
 ```bash
 git clone https://github.com/zkemail/generic-relayer-template.git

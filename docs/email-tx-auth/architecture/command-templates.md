@@ -1,10 +1,8 @@
 # Command Templates
 
-Command templates are a crucial part of integrating the ZK Email Generic Relayer into your smart contracts. They define the structure of commands that can be sent via email and subsequently processed on-chain.
-
-## Understanding Command Templates
-
 **Command templates** define the syntax and parameters of the commands that can be sent via email to your smart contract. They consist of fixed strings and placeholders (matchers) that represent dynamic values.
+
+A **command** is a predefined function within the `EmailAuth.sol` smart contract or a related contract that can be invoked via email authentication. Commands represent specific actions or operations that can be executed on the blockchain when properly authorized through the email verification process.
 
 A command template consists of two main components that work together to define valid email commands:
 
@@ -30,15 +28,9 @@ There are several types of matchers you can use in your command templates. Each 
 
 For a full list of matcher types and how to use them, see the following sections.
 
-### `{string}` Type Matcher
+### String Type Matcher
 
-The `{string}` matcher captures any string value.
-
-#### Usage
-
-Use this matcher when you want to capture a text input.
-
-#### Example
+The `{string}` matcher captures any string value. Solidity type: `string`. Use this matcher when you want to capture a text input.
 
 **Command Template**
 
@@ -60,15 +52,9 @@ function commandTemplates() public pure returns (string[][] memory) {
 }
 ```
 
-### `{uint}` Type Matcher
+### Uint Type Matcher
 
-The `{uint}` matcher captures an unsigned integer.
-
-#### Usage
-
-Use this matcher when you need to capture a non-negative whole number.
-
-#### Example
+The `{uint}` matcher captures an unsigned integer. Solidity type: `uint256`. Use this matcher when you need to capture a non-negative whole number.
 
 **Command Template**
 
@@ -89,15 +75,9 @@ function commandTemplates() public pure returns (string[][] memory) {
 }
 ```
 
-### `{int}` Type Matcher
+### Int Type Matcher
 
-The `{int}` matcher captures a signed integer.
-
-#### Usage
-
-Use this matcher when you need to capture both positive and negative whole numbers.
-
-#### Example
+The `{int}` matcher captures a signed integer. Solidity type: `int256`. Use this matcher when you need to capture both positive and negative whole numbers.
 
 **Command Template**
 
@@ -119,15 +99,11 @@ function commandTemplates() public pure returns (string[][] memory) {
 }
 ```
 
-### `{decimals}` Type Matcher
+### Decimals Type Matcher
 
-The `{decimals}` matcher captures a decimal number.
+The `{decimals}` matcher captures a decimal number. Solidity type: `uint256`. Use this matcher when you need to capture numbers with decimal points.
 
-#### Usage
-
-Use this matcher when you need to capture numbers with decimal points.
-
-#### Example
+For example, `2.7` is encoded as `abi.encode(2.7 * (10**18))`.
 
 **Command Template**
 
@@ -150,15 +126,9 @@ function commandTemplates() public pure returns (string[][] memory) {
 }
 ```
 
-### `{ethAddr}` Type Matcher
+### EthAddr Type Matcher
 
-The `{ethAddr}` matcher captures an Ethereum address.
-
-#### Usage
-
-Use this matcher when you need to capture an Ethereum address.
-
-#### Example
+The `{ethAddr}` matcher captures a checksummed Ethereum address in hexadecimal format. Solidity type: `address`. Use this matcher when you need to capture an Ethereum address.
 
 **Command Template**
 

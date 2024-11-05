@@ -152,8 +152,6 @@ const sidebars: SidebarsConfig = {
     'email-tx-auth/README',
     'email-tx-auth/quickstart',
     'email-tx-auth/setup',
-    'email-tx-auth/command-templates',
-    'email-tx-auth/api-reference',
     {
       type: 'category',
       label: 'Architecture',
@@ -162,8 +160,13 @@ const sidebars: SidebarsConfig = {
         id: 'email-tx-auth/architecture/README'
       },
       items: [
+        'email-tx-auth/architecture/concepts',
+        'email-tx-auth/architecture/package-components',
+        'email-tx-auth/architecture/generic-relayer',
+        'email-tx-auth/architecture/command-templates',
       ],
     },
+    'email-tx-auth/api-reference',
     {
       type: 'category',
       label: 'Ether Email Auth SDK',
@@ -172,9 +175,6 @@ const sidebars: SidebarsConfig = {
         id: 'email-tx-auth/email-tx-auth/README'
       },
       items: [
-        'email-tx-auth/email-tx-auth/command',
-        'email-tx-auth/email-tx-auth/concepts',
-        'email-tx-auth/email-tx-auth/package-components',
       ],
     },
 
