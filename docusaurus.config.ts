@@ -69,7 +69,11 @@ const config: Config = {
     ],
   ],
 
-  themes: ["docusaurus-theme-openapi-docs"],
+  themes: ["docusaurus-theme-openapi-docs", "@docusaurus/theme-mermaid"],
+
+  markdown: {
+    mermaid: true,
+  },
 
   themeConfig: {
     image: 'img/zk-email-docs-banner.png',
@@ -177,7 +181,12 @@ const config: Config = {
       searchParameters: {},
     },
     mermaid: {
-      theme: {light: 'neutral', dark: 'dark'},
+      theme: { light: 'neutral', dark: 'dark' },
+      options: {
+        maxTextSize: 1000,
+        flowchart: { curve: 'basis' },
+        htmlLabels: true,
+      },
     },
   } satisfies Preset.ThemeConfig,
 };
