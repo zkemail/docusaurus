@@ -2,13 +2,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Architecture
 
-<div style={{fontSize: '1.2em'}}>
-Learn how the ZK Email - Email Transaction Auth architecture enables secure, private, and trustless email-based interactions on the blockchain, using DKIM signatures and zero-knowledge proofs.
-</div>
-
 This system introduces **email-verified actions** on the blockchain, making use of existing email infrastructure, **DKIM (DomainKeys Identified Mail) signatures**, and **zero-knowledge proofs** (ZKPs) to ensure privacy and security. Here’s a high-level breakdown of each component and its function in the system.
-
----
 
 ## Core Components
 
@@ -22,8 +16,6 @@ To understand the overall architecture, let’s explore each core component and 
 4. **Command Implementation Contract**: Defines specific command logic triggered by authenticated emails. It interacts with `EmailAuth.sol` to verify each command and execute corresponding actions.
 5. **DKIM Registry**: Holds public keys for verifying DKIM signatures, allowing the system to confirm the sender’s authenticity.
 6. **Blockchain Network**: Hosts the smart contracts, processes transactions, and maintains a tamper-proof record of actions executed through email verification.
-
----
 
 ## How the System Works
 
@@ -50,8 +42,6 @@ sequenceDiagram
     Generic Relayer -->> Client Application: 8. Notifies user of successful action
 ```
 
----
-
 ### Step-by-Step Breakdown
 
 1. **Request Initiation**: The **Client Application** allows the user to initiate an email-based transaction (such as account recovery or verification).
@@ -61,8 +51,6 @@ sequenceDiagram
 5. **Confirmation and Notification**: Once the command executes, the user receives a confirmation notification.
 
 This process enables trustless and private email-based interactions with the blockchain, removing the need for centralized intermediaries and ensuring that only authenticated users can execute commands.
-
----
 
 ## Explore Further
 
@@ -96,7 +84,3 @@ To dive deeper into each architectural component, explore the following sub-page
     }
   ]}
 />
-
----
-
-This concise overview covers the essential components and interactions within the ZK Email - Email Transaction Auth architecture. Each section links to more detailed pages for those seeking a deeper understanding of specific functionalities.

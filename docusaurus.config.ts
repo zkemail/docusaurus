@@ -36,7 +36,6 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          docItemComponent: "@theme/ApiItem",
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
@@ -49,27 +48,7 @@ const config: Config = {
     ],
   ],
 
-  // Add the plugins configuration
-  plugins: [
-    [
-      'docusaurus-plugin-openapi-docs',
-      {
-        id: "relayer-api",
-        docsPluginId: "classic",
-        config: {
-          guardian: {
-            specPath: "static/openapi/relayer-api.yaml",
-            outputDir: "docs/account-recovery/relayer-api",
-            sidebarOptions: {
-              groupPathsBy: "tag",
-            },
-          },
-        },
-      },
-    ],
-  ],
-
-  themes: ["docusaurus-theme-openapi-docs", "@docusaurus/theme-mermaid"],
+  themes: ["@docusaurus/theme-mermaid"],
 
   markdown: {
     mermaid: true,

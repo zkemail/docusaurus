@@ -127,22 +127,7 @@ const sidebars: SidebarsConfig = {
     //     'account-recovery/quickstart/ether-email-auth',
     //   ],
     // },
-    {
-      type: 'category',
-      label: 'Relayer API',
-      link: {
-        type: 'doc',
-        id: 'account-recovery/relayer-api/README'
-      },
-      items: [
-        'account-recovery/relayer-api/echo-endpoint',
-        'account-recovery/relayer-api/request-status',
-        'account-recovery/relayer-api/acceptance-request',
-        'account-recovery/relayer-api/recovery-request',
-        'account-recovery/relayer-api/complete-recovery-request',
-        'account-recovery/relayer-api/get-account-salt',
-      ],
-    },
+    'account-recovery/relayer-api/README',
     'account-recovery/deployed-contracts',
 
     {
