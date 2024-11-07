@@ -58,7 +58,13 @@ const sidebars: SidebarsConfig = {
         'zk-email-sdk/using-the-sdk',
       ],
     },
-
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">SDK v2</span>',
+    },
+    'zk-email-sdk/overview',
+    'zk-email-sdk/setup',
+    'zk-email-sdk/blueprint',
     {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
