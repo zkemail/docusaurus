@@ -1,4 +1,4 @@
-# Installation
+# Setup
 
 To get started with zk-email, install these three npm packages:
 

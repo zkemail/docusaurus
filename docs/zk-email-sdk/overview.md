@@ -8,8 +8,8 @@ The ZK Email SDK enables developers to integrate Zero-Knowledge (ZK) proofs into
   items={[
     {
       type: 'link',
-      href: '/setup',
-      label: 'Setup',
+      href: '/zk-email-sdk/setup',
+      label: 'Setup', 
       description: 'Setup your ZK Email SDK project.',
     }
   ]}

@@ -25,7 +25,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'html',
-      value: '<span class="sidebar-heading">How ZK Email Works</span>',
+      value: '<span class="sidebar-heading">Learn</span>',
     },
     {
       type: 'category',
@@ -69,32 +69,22 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
     },
+    'zk-email-verifier/README',
+    'zk-email-verifier/setup',
+    'zk-email-verifier/usage-guide',
     {
       type: 'category',
-      label: 'ZK-Email-Verifier',
+      label: 'Packages',
       link: {
         type: 'doc',
-        id: 'zk-email-verifier/README',
+        id: 'zk-email-verifier/packages/README',
       },
       items: [
-        'zk-email-verifier/installation',
-        {
-          type: 'category',
-          label: 'Packages',
-          link: {
-            type: 'doc',
-            id: 'zk-email-verifier/packages/README',
-          },
-          items: [
-            'zk-email-verifier/packages/zk-email-circuits',
-            'zk-email-verifier/packages/zk-email-helpers',
-            'zk-email-verifier/packages/zk-email-contracts'
-          ],
-        },
-        'zk-email-verifier/usage-guide',
+        'zk-email-verifier/packages/zk-email-circuits',
+        'zk-email-verifier/packages/zk-email-helpers',
+        'zk-email-verifier/packages/zk-email-contracts'
       ],
     },
-
     {
       type: 'html',
       value: '<span class="sidebar-heading">Email Wallet</span>',
