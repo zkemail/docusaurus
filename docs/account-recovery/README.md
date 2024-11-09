@@ -34,7 +34,14 @@ The account recovery process involves four main steps:
 3. **Process Recovery**: Guardians approve recovery requests until the threshold is met.
 4. **Complete Recovery**: A separate step allowing for recovery delays to protect against malicious attempts.
 
-![Account Recovery Overview](/img/account-recovery-overview.avif)
+<div style={{ textAlign: 'center' }}>
+```mermaid
+graph LR
+  A[Install Recovery Module] --> B[Accept Guardian]
+  B --> C[Process Guardian]
+  C --> D[Complete Recovery]
+```
+</div>
 
 ### Detailed Recovery Flow
 

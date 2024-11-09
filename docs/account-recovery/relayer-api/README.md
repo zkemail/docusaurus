@@ -7,6 +7,9 @@ import ApiClient from '@site/src/components/ApiClient';
 import echoRequestConfig from '@site/src/api/relayer-api/echo';
 import requestStatusConfig from '@site/src/api/relayer-api/request-status';
 import acceptanceRequestConfig from '@site/src/api/relayer-api/acceptance-request';
+import recoveryRequestConfig from '@site/src/api/relayer-api/recovery-request';
+import completeRequestConfig from '@site/src/api/relayer-api/complete-request';
+import getAccountSaltConfig from '@site/src/api/relayer-api/get-account-salt';
 
 # API Reference
 
@@ -25,11 +28,7 @@ Explanation of the API.
 
 ### Request Parameters
 
-todo
-
 ### Response Fields
-
-tod
 
 </div>
 <div className={styles.rightColumn}>
@@ -52,38 +51,7 @@ GET https://auth-base-sepolia-staging.prove.email/api/echo
 
 ### Request Parameters
 
-`id` (string)
-
-UUID of the request to check status for.
-
 ### Response Fields
-
-`message` (string)
-
-A message indicating the request status.
-
----
-`request` (object)
-
-An object containing details about the request, including:
-
-- `id` (string): UUID of the request.
-- `status` (string): Current status of the request. Possible values include "Finished" and others.
-- `updatedAt` (string): ISO 8601 formatted timestamp of when the status was last updated.
-- `emailTxAuth` (object): Original request details including:
-  - `emailAddress`: Recipient email address
-  - `subject`: Email subject
-  - `body`: Email body content
-  - `chain`: Blockchain network
-  - `contractAddress`: Smart contract address
-  - `dkimContractAddress`: DKIM contract address
-  - `accountCode`: Account code
-  - `codeExistsInEmail`: Boolean indicating if code exists in email
-  - `functionAbi`: ABI of the executed function
-  - `commandTemplate`: Original command template
-  - `commandParams`: Parameters used in the command
-  - `templateId`: Template ID
-  - `remainingArgs`: Additional arguments
 
 </div>
 <div className={styles.rightColumn}>
@@ -91,7 +59,7 @@ An object containing details about the request, including:
 ### Endpoint
 
 ```
-GET https://relayer.zk.email/api/status/:id
+POST https://relayer.zk.email/api/requestStatus
 ```
 
 <ApiClient {...requestStatusConfig} />
@@ -99,21 +67,14 @@ GET https://relayer.zk.email/api/status/:id
 </div>
 </div>
 
-## Health Check
+## Acceptance Request
 
 <div className={styles.twoColumnLayout}>
 <div className={styles.leftColumn}>
 
+### Request Parameters
+
 ### Response Fields
-
-`message` (string)
-
-A greeting message from the API.
-
----
-`status` (string)
-
-The status of the health check. Possible value: `"success"`.
 
 </div>
 <div className={styles.rightColumn}>
@@ -121,10 +82,102 @@ The status of the health check. Possible value: `"success"`.
 ### Endpoint
 
 ```
-GET https://relayer.zk.email/api/healthz
+POST https://relayer.zk.email/api/acceptanceRequest
 ```
 
-<ApiClient {...acceptanceRequestConfig} />
+<ApiClient {...requestStatusConfig} />
+
+</div>
+</div>
+
+## Recovery Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/recoveryRequest
+```
+
+<ApiClient {...recoveryRequestConfig} />
+
+</div>
+</div>
+
+## Recovery Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/recoveryRequest
+```
+
+<ApiClient {...recoveryRequestConfig} />
+
+</div>
+</div>
+
+## Complete Recovery Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/recoveryRequest
+```
+
+<ApiClient {...completeRequestConfig} />
+
+</div>
+</div>
+
+## Get Account Salt Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/getAccountSalt
+```
+
+<ApiClient {...getAccountSaltConfig} />
 
 </div>
 </div>

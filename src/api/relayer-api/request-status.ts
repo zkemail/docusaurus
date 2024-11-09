@@ -1,33 +1,34 @@
 import { ApiClientProps, RequestParameter } from '../../components/ApiClient';
 
 const requestStatusConfig: ApiClientProps = {
-  endpoint: 'https://auth-base-sepolia-staging.prove.email/api/requestStatus',
-  method: 'GET',
+  endpoint: "/api/requestStatus",
+  method: "POST",
   headers: {
-    'Content-Type': 'application/json'
+    "Content-Type": "application/json"
   },
   parameters: [
     {
-      name: 'request_id',
-      type: 'string',
+      name: "request_id",
+      type: "number", 
       required: true,
-      default: ''
+      default: 0
     }
-  ] as RequestParameter[],
+  ],
   exampleResponse: {
-    status: 2,
-    is_success: true,
-    email_nullifier: '0x1234567890abcdef...',
-    account_salt: '0xabcdef1234567890...'
+    request_id: 12345,
+    status: 1,
+    is_success: false,
+    email_nullifier: "0x1234...",
+    account_salt: "0xabcd..."
   },
-  testMode: 'live',
+  testMode: "live",
   onTest: async (data) => {
-    const params = new URLSearchParams(data).toString();
-    const response = await fetch(`https://auth-base-sepolia-staging.prove.email/api/requestStatus?${params}`, {
-      method: 'GET',
+    const response = await fetch('/api/requestStatus', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
+      body: JSON.stringify(data)
     });
     return response.json();
   }
