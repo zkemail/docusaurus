@@ -45,26 +45,16 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">SDK</span>',
     },
-    {
-      type: 'category',
-      label: 'ZK Email SDK',
-      link: {
-        type: 'doc',
-        id: 'zk-email-sdk/README',
-      },
-      items: [
-        'zk-email-sdk/running-the-example',
-        'zk-email-sdk/creating-a-new-pattern',
-        'zk-email-sdk/using-the-sdk',
-      ],
-    },
-    {
-      type: 'html',
-      value: '<span class="sidebar-heading">SDK v2</span>',
-    },
-    'zk-email-sdk/overview',
-    'zk-email-sdk/setup',
-    'zk-email-sdk/blueprint',
+    'zk-email-sdk/README',
+    'zk-email-sdk/running-the-example',
+    'zk-email-sdk/creating-a-new-pattern',
+    // {
+    //   type: 'html',
+    //   value: '<span class="sidebar-heading">SDK v2</span>',
+    // },
+    // 'zk-email-sdk/overview',
+    // 'zk-email-sdk/setup',
+    // 'zk-email-sdk/blueprint',
     {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
@@ -89,23 +79,12 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">Email Wallet</span>',
     },
-    {
-      type: 'category',
-      label: 'Email Wallet',
-      link: {
-        type: 'doc',
-        id: 'email-wallet/README',
-      },
-      items: [
-        'email-wallet/api-documentation',
-        'email-wallet/circuit-architecture',
-        'email-wallet/contract-architecture',
-        'email-wallet/relayer-infrastructure',
-        'email-wallet/email-wallet-extensions-sdk',
-        'email-wallet/deployed-contract-addresses',
-      ],
-    },
-
+    'email-wallet/README',
+    'email-wallet/circuit-architecture',
+    'email-wallet/contract-architecture',
+    'email-wallet/relayer-infrastructure',
+    'email-wallet/email-wallet-extensions-sdk',
+    'email-wallet/deployed-contract-addresses',
     {
       type: 'html',
       value: '<span class="sidebar-heading">Account Recovery</span>',
@@ -123,6 +102,8 @@ const sidebars: SidebarsConfig = {
     //     'account-recovery/quickstart/ether-email-auth',
     //   ],
     // },
+    'account-recovery/architecture',
+    'account-recovery/setup',
     'account-recovery/relayer-api/README',
     'account-recovery/deployed-contracts',
 
