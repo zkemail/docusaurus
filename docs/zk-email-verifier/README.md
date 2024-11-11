@@ -1,6 +1,6 @@
-# ZK-Email-Verifier
+# Overview
 
-ZK Email is a library that allows for anonymous verification of email signatures while masking specific data. It enables verification of emails to/from specific domains or subsets of domains, as well as verification based on specific text in the email body. This technology can be used for web2 interoperability, decentralized anonymous KYC, or to create interesting on-chain anonymity sets.
+ZK Email Verifier is a library that allows for anonymous verification of email signatures while masking specific data. It enables verification of emails to/from specific domains or subsets of domains, as well as verification based on specific text in the email body. This technology can be used for web2 interoperability, decentralized anonymous KYC, or to create interesting on-chain anonymity sets.
 
 You can use this set of SDKs to build new proof infrastructure from scratch. We recommend using the [ZK Email SDK](../zk-email-sdk/) for new users who just want to test new types of proofs easily, and users to switch to zk-email-verifier if/when they want more customizability.
 
@@ -8,9 +8,16 @@ You can use this set of SDKs to build new proof infrastructure from scratch. We 
 
 Our documentation for ZK-Email-Verifier is broken into three sections:
 
-### [Installation](installation.md)
+### [Setup](setup.md)
 
 Get started with zkEmail, install our SDKs so that you can build your own application.
+
+### [Usage Guide](usage-guide.md)
+
+This section provides a comprehensive guide on how to use the zkEmail packages. It covers everything from generating proof inputs, creating circuits for proofs, to verifying DKIM signatures.
+
+It is recommended to go through this guide to understand how to effectively use the packages for email verification.
+
 
 ### [Package Overviews](packages)
 
@@ -19,12 +26,6 @@ Explore our npm sdk packages:
 1. **zk-email/helpers**: Utility functions for generating proof inputs.
 2. **zk-email/circuits**: Circuits for generating proofs and verifying DKIM signatures.
 3. **zk-email/contracts**: Solidity contracts for email verification.
-
-### [Usage Guide](usage-guide.md)
-
-This section provides a comprehensive guide on how to use the zkEmail packages. It covers everything from generating proof inputs, creating circuits for proofs, to verifying DKIM signatures.
-
-It is recommended to go through this guide to understand how to effectively use the packages for email verification.
 
 ## Terminology
 

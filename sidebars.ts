@@ -25,7 +25,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'html',
-      value: '<span class="sidebar-heading">How ZK Email Works</span>',
+      value: '<span class="sidebar-heading">Learn</span>',
     },
     {
       type: 'category',
@@ -45,71 +45,46 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">SDK</span>',
     },
-    {
-      type: 'category',
-      label: 'ZK Email SDK',
-      link: {
-        type: 'doc',
-        id: 'zk-email-sdk/README',
-      },
-      items: [
-        'zk-email-sdk/running-the-example',
-        'zk-email-sdk/creating-a-new-pattern',
-        'zk-email-sdk/using-the-sdk',
-      ],
-    },
-
+    'zk-email-sdk/README',
+    'zk-email-sdk/running-the-example',
+    'zk-email-sdk/creating-a-new-pattern',
+    // {
+    //   type: 'html',
+    //   value: '<span class="sidebar-heading">SDK v2</span>',
+    // },
+    // 'zk-email-sdk/overview',
+    // 'zk-email-sdk/setup',
+    // 'zk-email-sdk/blueprint',
     {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
     },
+    'zk-email-verifier/README',
+    'zk-email-verifier/setup',
+    'zk-email-verifier/usage-guide',
     {
       type: 'category',
-      label: 'ZK-Email-Verifier',
+      label: 'Packages',
       link: {
         type: 'doc',
-        id: 'zk-email-verifier/README',
+        id: 'zk-email-verifier/packages/README',
       },
       items: [
-        'zk-email-verifier/installation',
-        {
-          type: 'category',
-          label: 'Packages',
-          link: {
-            type: 'doc',
-            id: 'zk-email-verifier/packages/README',
-          },
-          items: [
-            'zk-email-verifier/packages/zk-email-circuits',
-            'zk-email-verifier/packages/zk-email-helpers',
-            'zk-email-verifier/packages/zk-email-contracts'
-          ],
-        },
-        'zk-email-verifier/usage-guide',
+        'zk-email-verifier/packages/zk-email-circuits',
+        'zk-email-verifier/packages/zk-email-helpers',
+        'zk-email-verifier/packages/zk-email-contracts'
       ],
     },
-
     {
       type: 'html',
       value: '<span class="sidebar-heading">Email Wallet</span>',
     },
-    {
-      type: 'category',
-      label: 'Email Wallet',
-      link: {
-        type: 'doc',
-        id: 'email-wallet/README',
-      },
-      items: [
-        'email-wallet/api-documentation',
-        'email-wallet/circuit-architecture',
-        'email-wallet/contract-architecture',
-        'email-wallet/relayer-infrastructure',
-        'email-wallet/email-wallet-extensions-sdk',
-        'email-wallet/deployed-contract-addresses',
-      ],
-    },
-
+    'email-wallet/README',
+    'email-wallet/circuit-architecture',
+    'email-wallet/contract-architecture',
+    'email-wallet/relayer-infrastructure',
+    'email-wallet/email-wallet-extensions-sdk',
+    'email-wallet/deployed-contract-addresses',
     {
       type: 'html',
       value: '<span class="sidebar-heading">Account Recovery</span>',
@@ -127,22 +102,9 @@ const sidebars: SidebarsConfig = {
     //     'account-recovery/quickstart/ether-email-auth',
     //   ],
     // },
-    {
-      type: 'category',
-      label: 'Relayer API',
-      link: {
-        type: 'doc',
-        id: 'account-recovery/relayer-api/README'
-      },
-      items: [
-        'account-recovery/relayer-api/echo-endpoint',
-        'account-recovery/relayer-api/request-status',
-        'account-recovery/relayer-api/acceptance-request',
-        'account-recovery/relayer-api/recovery-request',
-        'account-recovery/relayer-api/complete-recovery-request',
-        'account-recovery/relayer-api/get-account-salt',
-      ],
-    },
+    'account-recovery/architecture',
+    'account-recovery/setup',
+    'account-recovery/relayer-api/README',
     'account-recovery/deployed-contracts',
 
     {
@@ -152,8 +114,6 @@ const sidebars: SidebarsConfig = {
     'email-tx-auth/README',
     'email-tx-auth/quickstart',
     'email-tx-auth/setup',
-    'email-tx-auth/command-templates',
-    'email-tx-auth/api-reference',
     {
       type: 'category',
       label: 'Architecture',
@@ -162,8 +122,13 @@ const sidebars: SidebarsConfig = {
         id: 'email-tx-auth/architecture/README'
       },
       items: [
+        'email-tx-auth/architecture/concepts',
+        'email-tx-auth/architecture/package-components',
+        'email-tx-auth/architecture/generic-relayer',
+        'email-tx-auth/architecture/command-templates',
       ],
     },
+    'email-tx-auth/api-reference',
     {
       type: 'category',
       label: 'Ether Email Auth SDK',
@@ -172,9 +137,6 @@ const sidebars: SidebarsConfig = {
         id: 'email-tx-auth/email-tx-auth/README'
       },
       items: [
-        'email-tx-auth/email-tx-auth/command',
-        'email-tx-auth/email-tx-auth/concepts',
-        'email-tx-auth/email-tx-auth/package-components',
       ],
     },
 

@@ -4,7 +4,12 @@
  * work well for content-centric websites.
  */
 /* Import Fustat font */
-@import url('https://fonts.googleapis.com/css2?family=Fustat:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Fustat';
+  src: url('/fonts/Fustat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 /* Apply Fustat font to everything */
 body {

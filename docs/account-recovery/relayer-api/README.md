@@ -1,51 +1,183 @@
-# Relayer API Documentation
+---
+hide_table_of_contents: true
+---
 
-## Introduction
+import styles from '@site/src/components/TwoColumnLayout/two-column-layout.module.css';
+import ApiClient from '@site/src/components/ApiClient';
+import echoRequestConfig from '@site/src/api/relayer-api/echo';
+import requestStatusConfig from '@site/src/api/relayer-api/request-status';
+import acceptanceRequestConfig from '@site/src/api/relayer-api/acceptance-request';
+import recoveryRequestConfig from '@site/src/api/relayer-api/recovery-request';
+import completeRequestConfig from '@site/src/api/relayer-api/complete-request';
+import getAccountSaltConfig from '@site/src/api/relayer-api/get-account-salt';
 
-The Relayer API allows you to integrate ZK Email Account Recovery into your application. It provides endpoints for managing accounts, guardians, processing emails, and initiating recovery requests.
+# API Reference
 
-To see an interactive example of this API in practice, you can see [demo frontend code here](https://github.com/zkemail/email-recovery-demo) and [try the flow yourself here](https://recovery.prove.email/).
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+Explanation of the API.
+</div>
+<div className={styles.rightColumn}>
+</div>
+</div>
 
-## Base URL
+## Echo
 
-The base URL for all API endpoints is:
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
 
-```
-https://auth-base-sepolia-staging.prove.email
-```
+### Request Parameters
 
-## Authentication
+### Response Fields
 
-Some endpoints may require authentication. Please refer to the specific endpoint documentation for details on authentication requirements.
+</div>
+<div className={styles.rightColumn}>
 
-## Core Functionality
-
-The Relayer API offers several key functionalities:
-
-1. Account Management
-2. Guardian Operations
-3. Email Processing
-4. Recovery Requests
-5. Status Checks
-
-## Available Endpoints
-
-Here's a quick overview of some key endpoints:
-
-- `GET /api/echo`: A simple echo endpoint for testing connectivity
-- `POST /api/requestStatus`: Check the status of a request
-- `POST /api/acceptanceRequest`: Submit an acceptance request
-- `POST /api/recoveryRequest`: Initiate a recovery request
-- `POST /api/completeRequest`: Complete a recovery request
-- `POST /api/getAccountSalt`: Retrieve the salt for an account
-- `POST /api/inactiveGuardian`: Mark a guardian as inactive
-
-For a complete list of endpoints and their detailed documentation, please refer to the individual endpoint pages in this documentation.
-
-## Request and Response Formats
-
-Most endpoints accept and return JSON data. Be sure to set the appropriate `Content-Type` header in your requests:
+### Endpoint
 
 ```
-Content-Type: application/json
+GET https://auth-base-sepolia-staging.prove.email/api/echo
 ```
+<ApiClient {...echoRequestConfig} />
+
+
+</div>
+</div>
+
+## Request Status
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/requestStatus
+```
+
+<ApiClient {...requestStatusConfig} />
+
+</div>
+</div>
+
+## Acceptance Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/acceptanceRequest
+```
+
+<ApiClient {...requestStatusConfig} />
+
+</div>
+</div>
+
+## Recovery Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/recoveryRequest
+```
+
+<ApiClient {...recoveryRequestConfig} />
+
+</div>
+</div>
+
+## Recovery Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/recoveryRequest
+```
+
+<ApiClient {...recoveryRequestConfig} />
+
+</div>
+</div>
+
+## Complete Recovery Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/recoveryRequest
+```
+
+<ApiClient {...completeRequestConfig} />
+
+</div>
+</div>
+
+## Get Account Salt Request
+
+<div className={styles.twoColumnLayout}>
+<div className={styles.leftColumn}>
+
+### Request Parameters
+
+### Response Fields
+
+</div>
+<div className={styles.rightColumn}>
+
+### Endpoint
+
+```
+POST https://relayer.zk.email/api/getAccountSalt
+```
+
+<ApiClient {...getAccountSaltConfig} />
+
+</div>
+</div>

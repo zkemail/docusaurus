@@ -1,14 +1,29 @@
 import DocCardList from '@theme/DocCardList';
+import Head from '@docusaurus/Head';
 
 # Introduction
+
+<Head>
+  <link 
+    rel="preload" 
+    as="image" 
+    href="/img/zk-email-docs-banner.webp"
+    fetchpriority="high"
+  />
+</Head>
 
 <div style={{fontSize: '1.2em'}}>
 Welcome to the ZK Email Documentation. This documentation provides everything you need to understand and implement our email verification solutions powered by zero-knowledge.
 </div>
 
 <img 
-  src="/img/zk-email-docs-banner.png" 
+  src="/img/zk-email-docs-banner.webp" 
   alt="ZK Email Documentation Banner" 
+  width="1200"
+  height="600"
+  loading="eager"
+  decoding="async"
+  fetchpriority="high"
   style={{
     width: '100%',
     display: 'block',
@@ -17,9 +32,7 @@ Welcome to the ZK Email Documentation. This documentation provides everything yo
     objectFit: 'contain',
     maxWidth: '100%',
     height: 'auto'
-  }} 
-  loading="lazy"
-  decoding="async"
+  }}
 />
 
 ## Get started with ZK Email
