@@ -1,6 +1,6 @@
 import ApiClient from '@site/src/components/ApiClient';
-import submitCommandConfig from '@site/src/api/email-tx-auth/submit.ts';
-import statusConfig from '@site/src/api/email-tx-auth/status.ts';
+import submitCommandConfig from '@site/src/api/email-tx-builder/submit.ts';
+import statusConfig from '@site/src/api/email-tx-builder/status.ts';
 
 # Quickstart
 

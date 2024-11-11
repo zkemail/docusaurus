@@ -111,30 +111,30 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">Email Transaction Auth</span>',
     },
-    'email-tx-auth/README',
-    'email-tx-auth/quickstart',
-    'email-tx-auth/setup',
+    'email-tx-builder/README',
+    'email-tx-builder/quickstart',
+    'email-tx-builder/setup',
     {
       type: 'category',
       label: 'Architecture',
       link: {
         type: 'doc',
-        id: 'email-tx-auth/architecture/README'
+        id: 'email-tx-builder/architecture/README'
       },
       items: [
-        'email-tx-auth/architecture/concepts',
-        'email-tx-auth/architecture/package-components',
-        'email-tx-auth/architecture/generic-relayer',
-        'email-tx-auth/architecture/command-templates',
+        'email-tx-builder/architecture/concepts',
+        'email-tx-builder/architecture/package-components',
+        'email-tx-builder/architecture/generic-relayer',
+        'email-tx-builder/architecture/command-templates',
       ],
     },
-    'email-tx-auth/api-reference',
+    'email-tx-builder/api-reference',
     {
       type: 'category',
       label: 'Ether Email Auth SDK',
       link: {
         type: 'doc',
-        id: 'email-tx-auth/email-tx-auth/README'
+        id: 'email-tx-builder/email-tx-auth/README'
       },
       items: [
       ],
