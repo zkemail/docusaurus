@@ -58,10 +58,6 @@ const config: Config = {
     image: 'img/zk-email-docs-banner.png',
     navbar: {
       title: 'ZK Email',
-      logo: {
-        alt: 'ZK Email Logo',
-        src: 'img/zk-email-logo-small-white.svg',
-      },
       items: [
         {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
         {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
