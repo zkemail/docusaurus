@@ -130,17 +130,6 @@ const sidebars: SidebarsConfig = {
     },
     'email-tx-builder/api-reference',
     {
-      type: 'category',
-      label: 'Ether Email Auth SDK',
-      link: {
-        type: 'doc',
-        id: 'email-tx-builder/email-tx-auth/README'
-      },
-      items: [
-      ],
-    },
-
-    {
       type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',
     },
