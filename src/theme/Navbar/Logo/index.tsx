@@ -1,10 +1,7 @@
 import React from 'react';
-import {useColorMode} from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 
 export default function NavbarLogo(): JSX.Element {
-  const {colorMode} = useColorMode();
-
   return (
     <Link
       to="/"
@@ -13,10 +10,10 @@ export default function NavbarLogo(): JSX.Element {
       <img
         className="navbar__logo"
         src="/img/zk-email-logo.svg"
-        alt="Logo"
+        alt="ZK EmailLogo"
         width={128}
         style={{
-          filter: colorMode === 'dark' ? 'invert(100%) saturate(137%) hue-rotate(316deg) brightness(106%) contrast(94%)' : 'none',
+          filter: 'var(--navbar-logo-filter)'
         }}
       />
     </Link>
