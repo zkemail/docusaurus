@@ -147,6 +147,12 @@ try {
 }
 ```
 
+### Deployed Contracts
+
+| Contract Name     | Address                                      |
+|-------------------|----------------------------------------------|
+| EmailWalletCore   | 0x12dcc328cc1786cAE786d1181c15CC79f1af3Fee   |
+
 ### Conclusion
 
 The `OauthCore` SDK provides a comprehensive set of functions to manage ZK Email based OAuth-style authentication and transactions. By following the examples provided, you can easily integrate these functionalities into your application.
@@ -156,3 +162,4 @@ For more detailed information, refer to the source code or ask questions in the 
 ***
 
 This documentation should help users understand how to create an instance of the `OauthClient` SDK and use its various functions effectively.
+
