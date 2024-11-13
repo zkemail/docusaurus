@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Login with ZK Email: OAuth API
 
 ## ZK Email Oauth SDK Documentation
@@ -147,6 +150,16 @@ try {
 }
 ```
 
+### Deployed Contracts
+
+<Tabs>
+  <TabItem value="base-sepolia" label="Base Sepolia">
+| Contract Name     | Address                                      |
+|-------------------|----------------------------------------------|
+| EmailWalletCore   | 0x12dcc328cc1786cAE786d1181c15CC79f1af3Fee   |
+  </TabItem>
+</Tabs>
+
 ### Conclusion
 
 The `OauthCore` SDK provides a comprehensive set of functions to manage ZK Email based OAuth-style authentication and transactions. By following the examples provided, you can easily integrate these functionalities into your application.
@@ -156,3 +169,4 @@ For more detailed information, refer to the source code or ask questions in the 
 ***
 
 This documentation should help users understand how to create an instance of the `OauthClient` SDK and use its various functions effectively.
+
