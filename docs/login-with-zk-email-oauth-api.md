@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Login with ZK Email: OAuth API
 
 ## ZK Email Oauth SDK Documentation
@@ -149,9 +152,13 @@ try {
 
 ### Deployed Contracts
 
+<Tabs>
+  <TabItem value="base-sepolia" label="Base Sepolia">
 | Contract Name     | Address                                      |
 |-------------------|----------------------------------------------|
 | EmailWalletCore   | 0x12dcc328cc1786cAE786d1181c15CC79f1af3Fee   |
+  </TabItem>
+</Tabs>
 
 ### Conclusion
 
