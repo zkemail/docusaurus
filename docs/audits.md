@@ -7,9 +7,9 @@ description: >-
 
 # Audits
 
-### 2024 zk-regex and zksync update by Matter Labs
+### 2024 zk-regex and ZKsync update by Matter Labs
 
-We are currently completing an audit of our zk-regex rewrite and our Solidity zksync deployments. Expected end date is mid October.
+The zk-regex rewrite and Solidity ZKsync deployments underwent an audit by Matter Labs in October 2024. You can view the full audit report [here](/files/matterlabs-zkemail-audit-report.pdf).
 
 ### 2024 Ether Email Auth Audit by Zellic
 
