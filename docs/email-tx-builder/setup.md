@@ -141,15 +141,18 @@ function commandTemplates() public pure returns (string[][] memory) {
     string[][] memory templates = new string[][](NUMBER_OF_TEMPLATES);
 
     // Template 0: "Approve transaction {uint}"
-    templates[0] = new string[](2);
-    templates[0][0] = "Approve transaction";
-    templates[0][1] = "{uint}";
+    templates[0] = new string[](3);
+    templates[0][0] = "Approve";
+    templates[0][1] = "transaction";
+    templates[0][2] = "{uint}";
 
-    // Template 1: "Set threshold to {uint}"
-    templates[1] = new string[](3);
-    templates[1][0] = "Set threshold to";
-    templates[1][1] = "{uint}";
-    templates[1][2] = "percent";
+    // Template 1: "Set threshold to {uint} percent"
+    templates[1] = new string[](5);
+    templates[1][0] = "Set";
+    templates[1][1] = "threshold";
+    templates[1][2] = "to";
+    templates[1][3] = "{uint}";
+    templates[1][4] = "percent";
 
     // Add more templates as needed...
 
