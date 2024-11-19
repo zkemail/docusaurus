@@ -48,6 +48,7 @@ const sidebars: SidebarsConfig = {
     'zk-email-sdk/README',
     'zk-email-sdk/running-the-example',
     'zk-email-sdk/creating-a-new-pattern',
+    'zk-email-sdk/registry',
     // {
     //   type: 'html',
     //   value: '<span class="sidebar-heading">SDK v2</span>',
@@ -90,18 +91,6 @@ const sidebars: SidebarsConfig = {
       value: '<span class="sidebar-heading">Account Recovery</span>',
     },
     'account-recovery/README',
-    // {
-    //   type: 'category',
-    //   label: 'Quickstart',
-    //   link: {
-    //     type: 'doc',
-    //     id: 'account-recovery/quickstart/README',
-    //   },
-    //   items: [
-    //     'account-recovery/quickstart/existing-modules',
-    //     'account-recovery/quickstart/ether-email-auth',
-    //   ],
-    // },
     'account-recovery/architecture',
     'account-recovery/setup',
     'account-recovery/relayer-api/README',
