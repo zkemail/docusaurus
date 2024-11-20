@@ -52,6 +52,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">SDK v2</span>',
     },
+    'zk-email-sdk/overview-v2',
     'zk-email-sdk/setup',
     {
       type: 'category',
