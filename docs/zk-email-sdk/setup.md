@@ -13,7 +13,7 @@ npm install @zk-email/sdk
 Initialize the SDK with authentication:
 
 ```typescript
-import { createBlueprint, Auth } from '@zk-email/sdk';
+import zkeSDK from "@zk-email/sdk";
 ```
 
 ## Creating Proofs
@@ -21,20 +21,31 @@ import { createBlueprint, Auth } from '@zk-email/sdk';
 Generate proofs from email files (.eml):
 
 ```typescript
-// Get blueprint
-const blueprint = await sdk.getBlueprint('<blueprint-id>');
+import zkeSDK from "@zk-email/sdk";
+import fs from "fs/promises";
 
-// Create a prover instance
-const prover = blueprint.createProver();
+// Copy slug from UI homepage
+const blueprintSlug = "Bisht13/SuccinctZKResidencyInvite@v1"
 
-// Generate proof from email content
-const proof = await prover.generateProof(emlContent);
+async function main() {
+  const sdk = zkeSDK();
 
-// Check proof status
-const status = await proof.checkStatus();
+  // Get an instance of Blueprint
+  const blueprint = await sdk.getBlueprint(blueprintSlug);
 
-// Get proof data
-const proofDataUrl = await proof.getProofDataDownloadLink();
+  // Create a prover from the blueprint
+  const prover = blueprint.createProver();
+
+  // Get eml
+  const eml = (await fs.readFile("emls/residency.eml")).toString();
+
+  // Generate and wait until proof is generated, can take up to a few minutes
+  const proof = await prover.generateProof(eml);
+  // will change tomorrow: the field proof and public will be directly be named proofData, publicData
+  const { proofData, publicData } = proof.getProofData();
+  console.log("proof: ", proofData);
+  console.log("public: ", publicData);
+}
+
+main();
 ```
-
-The proof generation is asynchronous - use `checkStatus()` to monitor progress.

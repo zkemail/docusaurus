@@ -48,14 +48,22 @@ const sidebars: SidebarsConfig = {
     'zk-email-sdk/README',
     'zk-email-sdk/running-the-example',
     'zk-email-sdk/creating-a-new-pattern',
-    'zk-email-sdk/registry',
-    // {
-    //   type: 'html',
-    //   value: '<span class="sidebar-heading">SDK v2</span>',
-    // },
-    // 'zk-email-sdk/overview',
-    // 'zk-email-sdk/setup',
-    // 'zk-email-sdk/blueprint',
+    {
+      type: 'html',
+      value: '<span class="sidebar-heading">SDK v2</span>',
+    },
+    'zk-email-sdk/setup',
+    {
+      type: 'category',
+      label: 'Registry',
+      link: {
+        type: 'doc',
+        id: 'zk-email-sdk/registry',
+      },
+      items: [
+        'zk-email-sdk/create-blueprint',
+      ],
+    },
     {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
