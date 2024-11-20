@@ -9,11 +9,11 @@
   />
 </Head>
 
-The ZK Email registry allows you to create email proofs. To create a new proof, first you need to create a blueprint.
+The ZK Email Registry allows you to create email proofs. To create a new proof, first you need to create a blueprint.
 
 ## What is a blueprint?
 
-A blueprint is a set of parameters that define the email proof. This parameters include the regex for extracting parts of the email, the size of the email header and body, the email sender and all the required fields. The registry uses these parameters to compile a circuit that can be used to generate proofs.
+A blueprint is a set of parameters that define the email proof. These parameters include the regex for extracting parts of the email, the size of the email header and body, the email sender and all the required fields. The registry uses these parameters to compile a circuit that can be used to generate proofs.
 
 ## Fields
 
@@ -132,31 +132,59 @@ This option allows you to select the chain on which the verifier contract will b
 
 After you upload the test .eml file, you can use the integrated AI auto extraction feature to help you generate the fields to extract.
 
-To use this feature, you need to click on the `Generate Fields` button. And the registry will use the uploaded .eml file to help you generate the fields to extract.
+To use this feature, click the `Generate Fields` button. For best results:
+- Be specific about what you want to extract
+- Keep your prompts simple and focused
+- Break down complex extractions into multiple fields
+- Note that complex emails with varied formatting might need manual adjustments
+
+:::note
+The AI auto extraction feature may occasionally fail or provide incomplete results. In such cases, you'll need to manually define the fields to extract.
+
+:::
+
+Example prompts that work well:
+```
+Extract the username after @ symbol, show only the username part
+Extract the subject line from the email header
+Extract the verification code that appears after "Your code is:"
+Extract the dollar amount that appears after "Total:"
+```
+
+Bad prompts (too vague or incomplete):
+```
+Get all the numbers from the email
+Extract the user information
+Find the important parts
+```
 
 ### Fields to extract
 
-This section defines the fields that will be extracted from the email. If you have not check the `Skip body hash check` option, you will can provide a regex for the email body.
+This section defines the fields that will be extracted from the email. If you haven't checked the "Skip body hash check" option, you can provide a regex pattern to extract data from the email body.
 
-You have fill the following fields:
+You have to fill the following fields:
 
 - Fields Name: The name of the field to extract.
 - Data Location: The location of the data to extract. You can select between `Body` and `Headers`.
 - Max Length: The maximum length of the data to extract.
-- Parts JSON: The parts JSON is a JSON array that defines the regex to extract the data.
+- Parts JSON: The parts JSON is a JSON array that defines the regex to extract the data. Each part contains:
+  - `isPublic`: Is a boolean flag that determines if this part of the regex match should be revealed in the proof. Set to `true` if you want this part to be publicly visible, `false` if it should remain private.
+  - `regexDef`: The regex pattern to match. The patterns are concatenated in order to form the complete regex. Each pattern can match different parts of the text, allowing you to selectively make portions public or private.
 
-```
+```json
 [
   {
     "isPublic": false,
-    "regexDef": "@"
+    "regexDef": "@"               // This @ symbol will be kept private
   },
   {
     "isPublic": true,
-    "regexDef": "[a-zA-Z0-9_]+"
+    "regexDef": "[a-zA-Z0-9_]+"   // The username will be public
   }
 ]
 ```
+
+For example, in the pattern above, when matching the string `@zkmail`, the `@` symbol would be private while the username portion would be public in the generated proof.
 
 :::info
 Some characters need to be escaped in the regex. For example, the `"` character needs to be escaped as `\"`. This way when the JSON is parsed, it is not confused with the JSON syntax.
