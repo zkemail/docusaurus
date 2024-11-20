@@ -3,7 +3,7 @@ import TabItem from '@theme/TabItem';
 
 # Setup
 
-The ZK Email SDK provides a simple way to generate and verify zero-knowledge proofs from emails.
+The Blueprint SDK provides a simple way to generate and verify zero-knowledge proofs from emails.
 
 ## Installation
 
@@ -249,7 +249,7 @@ export default function Home() {
 
 We have provided a GitHub template that includes working examples from this guide, including Node.js, React and Next.js implementations.
 
-This templates allows you to get started quickly with the ZK Email SDK.
+This templates allows you to get started quickly with the Blueprint SDK.
 
 <div style={{
   padding: "1rem",

@@ -3,10 +3,10 @@ import DocCardList from '@theme/DocCardList';
 # Overview
 
 :::note
-The ZK Email SDK v2 is currently on development and not all the features are available yet.
+The Blueprint SDK is currently on development and not all the features are available yet.
 :::
 
-The ZK Email SDK provides methods in TypeScrit, for developing on or interacting with ZK Email Blueprints.
+The Blueprint SDK provides methods in TypeScript, for developing on or interacting with ZK Email Blueprints.
 
 Using the SDK you can:
 
@@ -24,7 +24,7 @@ For start using the SDK, follow the following guides:
       type: 'link',
       href: '/zk-email-sdk/setup',
       label: 'Setup',
-      description: 'Setup your ZK Email SDK project.',
+      description: 'Setup your project with the Blueprint SDK.',
     }
   ]}
 />
