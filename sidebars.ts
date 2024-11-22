@@ -50,8 +50,9 @@ const sidebars: SidebarsConfig = {
     'zk-email-sdk/creating-a-new-pattern',
     {
       type: 'html',
-      value: '<span class="sidebar-heading">SDK v2</span>',
+      value: '<span class="sidebar-heading">Blueprint SDK</span>',
     },
+    'zk-email-sdk/overview-v2',
     'zk-email-sdk/setup',
     {
       type: 'category',
