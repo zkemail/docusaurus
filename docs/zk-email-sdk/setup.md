@@ -121,50 +121,65 @@ export default defineConfig({
 import { useState } from 'react'
 import zkeSDK from "@zk-email/sdk"
 
-function App() {
+export default function Home() {
   const [proof, setProof] = useState(null)
   const [loading, setLoading] = useState(false)
 
   const handleFileUpload = async (event) => {
-    const file = event.target.files[0]
+    const file = event.target.files?.[0]
     if (!file) return
 
     setLoading(true)
     try {
+      // Read the file as text
       const eml = await file.text()
+
+      // Initialize the SDK
       const sdk = zkeSDK()
+
+      // Get the blueprint
       const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v1")
+
+      // Create a prover
       const prover = blueprint.createProver()
       
+      // Generate the proof
       const generatedProof = await prover.generateProof(eml)
       const { proofData, publicData } = generatedProof.getProofData()
       setProof({ proofData, publicData })
     } catch (error) {
-      console.error("Error:", error)
+      console.error("Error generating proof:", error)
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div>
-      <input 
-        type="file" 
-        accept=".eml"
-        onChange={handleFileUpload}
-        disabled={loading}
-      />
-      
-      {loading && <p>Generating proof...</p>}
-      
-      {proof && (
-        <pre>{JSON.stringify(proof, null, 2)}</pre>
-      )}
-    </div>
+    <main>
+      <div>
+        <h1>ZK Email Proof Generator</h1>
+        
+        <input 
+          type="file" 
+          accept=".eml"
+          onChange={handleFileUpload}
+          disabled={loading}
+        />
+        
+        {loading && <p>Generating proof...</p>}
+        
+        {proof && (
+          <div>
+            <h3>Proof Generated:</h3>
+            <pre>
+              {JSON.stringify(proof, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
+    </main>
   )
 }
-
-export default App
 ```
 
 </TabItem>
@@ -206,37 +221,53 @@ export default function Home() {
 
     setLoading(true)
     try {
+      // Read the file as text
       const eml = await file.text()
+
+      // Initialize the SDK
       const sdk = zkeSDK()
+
+      // Get the blueprint
       const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v1")
+
+      // Create a prover
       const prover = blueprint.createProver()
       
+      // Generate the proof
       const generatedProof = await prover.generateProof(eml)
       const { proofData, publicData } = generatedProof.getProofData()
       setProof({ proofData, publicData })
     } catch (error) {
-      console.error("Error:", error)
+      console.error("Error generating proof:", error)
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <main className="p-8">
-      <input 
-        type="file" 
-        accept=".eml"
-        onChange={handleFileUpload}
-        disabled={loading}
-      />
-      
-      {loading && <p>Generating proof...</p>}
-      
-      {proof && (
-        <pre className="mt-4 bg-gray-100 p-4 rounded">
-          {JSON.stringify(proof, null, 2)}
-        </pre>
-      )}
+    <main className="min-h-screen p-8">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8">ZK Email Proof Generator</h1>
+        
+        <input 
+          type="file" 
+          accept=".eml"
+          onChange={handleFileUpload}
+          disabled={loading}
+          className="mb-4"
+        />
+        
+        {loading && <p className="text-gray-600">Generating proof...</p>}
+        
+        {proof && (
+          <div className="mt-4">
+            <h3 className="text-xl font-semibold mb-2">Proof Generated:</h3>
+            <pre className="bg-gray-100 p-4 rounded overflow-auto">
+              {JSON.stringify(proof, null, 2)}
+            </pre>
+          </div>
+        )}
+      </div>
     </main>
   )
 }
