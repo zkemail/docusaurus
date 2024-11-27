@@ -9,9 +9,9 @@ description: >-
 
 ### 2024 zk-regex and ZKsync update by Matter Labs
 
-The zk-regex rewrite and Solidity ZKsync deployments underwent an audit by Matter Labs in October 2024. You can view the full audit report here:
+Matter Labs audited our zk-regex rewrite and ZKsync Solidity contracts in October 2024. The audit report is available below.
 
-Below is a breakdown of the final commits for the related repositories after the audit, where the identified issues have been addressed:
+The following commits contain all fixes addressing the audit findings:
 
 - Fixes committed at [9ed376](https://github.com/zkemail/zk-email-verify/tree/9ed3769dc3d96fb0d7c45f1f014dcd9bfb63675b) for zk-email-verify
 - Fixes committed at [7002a2](https://github.com/zkemail/zk-regex/tree/7002a2179e076449b84e3e7e8ba94e88d0a2dc2f) for zk-regex
@@ -19,7 +19,6 @@ Below is a breakdown of the final commits for the related repositories after the
 - Fixes committed at [c866ec](https://github.com/zkemail/email-recovery/tree/c866ecb3dd326fe17850c61a9e38eb3db8a45695) for email-recovery
 - Fixes committed at [a60eb9](https://github.com/zkemail/clave-email-recovery/tree/a60eb9877f47f80459eefcf4639a350c96a43393) for clave-email-recovery
 - Fixes committed at [0327db](https://github.com/zkemail/ic-dns-oracle/tree/0327db9ac701a908139fcef2994cff8ed2d5533f) for ic-dns-oracle
-
 
 <div style={{
   padding: "1rem",
