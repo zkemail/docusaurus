@@ -15,7 +15,7 @@ import getAccountSaltConfig from '@site/src/api/relayer-api/get-account-salt';
 
 <div className={styles.twoColumnLayout}>
 <div className={styles.leftColumn}>
-Explanation of the API.
+The Account Recovery Relayer API provides endpoints for managing account recovery and acceptance processes through email-based verification.
 </div>
 <div className={styles.rightColumn}>
 </div>
