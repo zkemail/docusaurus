@@ -129,6 +129,27 @@ const sidebars: SidebarsConfig = {
     'email-tx-builder/api-reference',
     {
       type: 'html',
+      value: '<span class="sidebar-heading">JWT Transaction Builder</span>',
+    },
+    'jwt-tx-builder/README',
+    'jwt-tx-builder/setup',
+    'jwt-tx-builder/architecture',
+    {
+      type: 'category',
+      label: 'Packages',
+      link: {
+        type: 'doc',
+        id: 'jwt-tx-builder/packages/README',
+      },
+      items: [
+        'jwt-tx-builder/packages/circuits',
+        'jwt-tx-builder/packages/helpers',
+        'jwt-tx-builder/packages/contracts',
+      ],
+    },
+    'jwt-tx-builder/contracts',
+    {
+      type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',
     },
     {
