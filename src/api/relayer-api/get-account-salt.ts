@@ -9,9 +9,9 @@ const getAccountSaltConfig: ApiClientProps = {
   parameters: [
     {
       name: 'account_code',
-      type: 'string',
+      type: 'string', 
       required: true,
-      default: '0x...'
+      default: '0115da5a2d274f63d10e5e839f08f37336c06828ac6b374ee3b13cacb6f7da43'
     },
     {
       name: 'email_addr',
@@ -32,7 +32,8 @@ const getAccountSaltConfig: ApiClientProps = {
       },
       body: JSON.stringify(data)
     });
-    return response.json();
+
+    return { account_salt: await response.text() };
   }
 };
 

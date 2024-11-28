@@ -24,3 +24,7 @@ We have several repos within the ZK Email ecosystem. Developers can use these to
 [Oauth Login](login-with-zk-email-oauth-api.md):  Explains how to hit our APIs from a frontend to be able to login via emails with ZK Email, and optionally request scopes like temporary access to assets.
 
 [ZK Regex](zk-regex.md): A library to do regex verification in circom. The zk-regex CLI takes in a regex and outputs a ZK circuit.
+
+[Email Transaction Builder](email-tx-builder/README.md): A package that enables developers to integrate email-driven blockchain actions into their applications.
+
+[JWT Transaction Builder](https://github.com/zkemail/email-tx-builder/): A package that enables anonymous verification of JWT signatures while masking specific claims.
