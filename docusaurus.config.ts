@@ -1,6 +1,7 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import 'dotenv/config';
 
 const config: Config = {
   title: 'ZK Email',
@@ -53,6 +54,17 @@ const config: Config = {
   markdown: {
     mermaid: true,
   },
+
+  plugins: [
+    [
+      "posthog-docusaurus",
+      {
+        apiKey: process.env.POSTHOG_API_KEY,
+        appUrl: "https://eu.i.posthog.com",
+        enableInDevelopment: false,
+      },
+    ],
+  ],
 
   themeConfig: {
     image: 'img/zk-email-docs-banner.png',
