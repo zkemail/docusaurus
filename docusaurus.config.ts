@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'ZK Email',
   tagline: 'ZK Email Documentation',
-  favicon: 'img/zk-email-logo-small.svg',
+  favicon: 'img/logo.svg',
 
   // Set the production url of your site here
   url: 'https://docs.prove.email/',
