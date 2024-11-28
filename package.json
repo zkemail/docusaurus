@@ -21,7 +21,9 @@
     "@docusaurus/theme-mermaid": "3.6.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "dotenv": "^16.4.5",
     "lucide-react": "^0.453.0",
+    "posthog-docusaurus": "^2.0.1",
     "prism-react-renderer": "^2.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
