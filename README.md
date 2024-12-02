@@ -1,41 +1,55 @@
-# Website
+# ZK Email Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This repository contains the documentation for ZK Email, built using [Docusaurus](https://docusaurus.io/).
 
-### Installation
+## What's Inside
 
-```
-$ yarn
-```
+- **Documentation**: Comprehensive guides and references for:
+  - ZK Email SDK: Build custom email verification circuits
+  - Email Wallet: Smart contract wallet controlled via email
+  - Account Recovery: Secure account recovery through email verification
+  - JWT Transaction Builder: Anonymous JWT signature verification
+  - Email Transaction Builder: Execute blockchain actions via email
+  - ZK Email Verifier: Core library for email verification
 
-### Local Development
+## Running Locally
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+1. Clone the repository:
+```bash
+git clone https://github.com/zkemail/docs
+cd docs
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+2. Install dependencies:
+```bash
+yarn
 ```
 
-Not using SSH:
-
+3. Start the development server:
+```bash
+yarn start
 ```
-$ GIT_USER=<Your GitHub username> yarn deploy
+
+This will start a local development server at `http://localhost:3000` and open your browser. Most changes are reflected live without needing to restart the server.
+
+## Building
+
+Generate a static build:
+```bash
+yarn build
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+This generates static content in the `build` directory that can be served using any static hosting service.xss
+
+## Contributing
+
+Please read our [Contributing Guide](docs/contributing.md) for details.
+
+## License
+
+MIT Licensed. Note that circom and circomlib dependencies are GPL licensed.
+
+## Contact
+
+- [Telegram](https://t.me/zkemail): Community discussions and support
+- [X](https://x.com/zkemail): Latest updates

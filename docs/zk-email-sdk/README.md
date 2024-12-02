@@ -1,6 +1,8 @@
 # Overview
 
-> NOTE: As the SDK is still in development, the APIs might change drastically.
+:::info
+This is the documentation for the legacy ZK Email SDK. For the latest version, please see the [Blueprint SDK](/zk-email-sdk/overview-v2) page.
+:::
 
 ## Getting started
 
