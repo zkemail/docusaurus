@@ -1,5 +1,17 @@
 # Getting Started
 
+<div style={{fontSize: '1.2em'}}>
+Understand how ZK Email works and how to integrate it into your applications.
+</div>
+
+---
+
+ZK Email allows to verify emails according to DKIM protocol using zero-knowledge proofs. Every email sent from a domain is signed with a private key, while the corresponding public key is published in the DNS of the domain. The DKIM signature is verified by the receiver and the email is authenticated.
+
+:::info
+For a deeper explanation of how ZK Email works, check out our [Architecture](architecture) section.
+:::
+
 To get started with ZK Email, follow these steps:
 
 1. **Choose the Project Component**: Select the project component you're interested in from our list of SDKs, templates, and examples.
