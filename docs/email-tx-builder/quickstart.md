@@ -1,20 +1,23 @@
 import ApiClient from '@site/src/components/ApiClient';
 import submitCommandConfig from '@site/src/api/email-tx-builder/submit.ts';
 import statusConfig from '@site/src/api/email-tx-builder/status.ts';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 
 # Quickstart
 
-In this section, we will show you how to create a simple project using the ZK Email Generic Relayer and the `EmitEmailCommand.sol` contract. You will learn how to set up the project, optionally build and deploy the contracts, and interact with the relayer API to execute commands via email.
+In this section, we will show you how to create a simple project using the Email Transaction Builder and the `EmitEmailCommand.sol` contract. You will learn how to set up the project, deploy the contracts, and interact with the generic relayer API to execute commands via email.
 
 ## Create a Project
 
-We have provided a GitHub template that includes all necessary components, including the `EmitEmailCommand.sol` contract, deployment scripts, a Makefile, and a `.env.example` file. This template allows you to get started using the Generic Relayer quickly without deploying contracts yourself.
+We have provided a GitHub template that includes all necessary components, including the `EmitEmailCommand.sol` contract, deployment scripts and a `.env.example` file. This template allows you to get started using the Generic Relayer quickly without deploying contracts yourself.
 
-You can either fork the [template repository](https://github.com/zkemail/generic-relayer-template.git) or clone it:
+You can either fork the [template repository](https://github.com/zkemail/email-tx-builder-template.git) or clone it:
 
 ```bash
-git clone https://github.com/zkemail/generic-relayer-template.git
-cd generic-relayer-template
+git clone https://github.com/zkemail/email-tx-builder-template.git
+cd email-tx-builder-template
 ```
 
 ## Project Overview
@@ -23,92 +26,152 @@ Your new project will include the following structure:
 
 ```bash
 .
-├── .env.example
-├── Makefile
-├── broadcast
-│   └── DeployEmitEmailCommand.s.sol
-│       └── 11155111
-│           └── run-latest.json
-├── script
-│   └── DeployEmitEmailCommand.s.sol
-└── src
-    └── EmitEmailCommand.sol
+├── contracts
+└── ts
 ```
 
-- **.env.example**: Example environment variables for configuration for the contract deployment.
-- **Makefile**: Includes commands to interact with the Generic Relayer API.
-- **broadcast/**: Contains `run-latest.json` with pre-deployed contract addresses.
-- **script/**: Contains deployment scripts (not needed for this quickstart).
-- **src/**: Contains the `EmitEmailCommand.sol` contract.
+- **contracts**: Contains a foundry project for the `EmitEmailCommand.sol` contract, including a deployment script.
+- **ts**: Contains a TypeScript CLI to interact with the Generic Relayer API.
 
 ## Build and Deploy
 
-If you wish to build and deploy the contracts yourself you can follow these steps.
+The Email Transaction Builder requires several smart contracts working together to enable secure email-based transactions:
+
+- `EmitEmailCommand.sol`: Our main example contract that processes email commands and emits events
+- `EmailAuth.sol`: Handles the core authentication flow, verifying that emails came from authorized users
+- `UserOverrideableDKIMRegistry.sol`: Maintains a registry of email domain public keys (DKIM keys) used to verify email authenticity.
+- `Verifier.sol` and `Groth16Verifier.sol`: Zero-knowledge proof verifiers that cryptographically prove an email is authentic without revealing its contents.
+
+In this guide we will deploy the `EmitEmailCommand.sol` contract using the script provided in the template, but you can use a update this script to deploy your own contract.
 
 ### Set Up Environment Variables
 
-Copy the example environment file and fill in the required variables:
+The first step is to navigate to the contracts folder and copy the example environment file:
 
 ```bash
+cd contracts
 cp .env.example .env
 ```
 
-Edit the `.env` file and set the following variables:
+You have to edit the `.env` file and set the following variables:
 
 - **PRIVATE_KEY**: Your private key for deployment (include the `0x` prefix).
-- **SIGNER**: ICP Canister signer that can update the DKIM registry.
-- **RPC_URL**: RPC URL for the target network.
 - **CHAIN_ID**: Chain ID of the target network.
+- **RPC_URL**: RPC URL for the target network.
+- **SIGNER**: Signer for the DKIM Oracle that can update the DKIM registry.
 - **ETHERSCAN_API_KEY**: (Optional) Etherscan API key for contract verification.
+
+:::info
+You will need to source the `.env` file in your shell to make the variables available to the deployment script.
+
+```bash
+source .env
+```
+
+:::
 
 ### Deploy the Contracts
 
-You can build and deploy the contract by running:
+After you finish setting up the environment variables, you need to install the dependencies:
 
 ```bash
-make deploy
+yarn
 ```
 
-After deploying, the `run-latest.json` file in the `broadcast/` directory will be updated with the addresses of the deployed contracts.
+:::warning
+If you find any issues with the dependencies, you can clear your yarn cache and try again:
 
-:::success
-Now that you have the project set up (and optionally deployed your own contracts), you can use the provided Makefile to interact with the Generic Relayer API.
+```bash
+yarn cache clean
+```
+
 :::
 
-## Use the Relayer API
-
-### Submitting a Command
-
-#### Option 1: Using the Makefile
-
-To submit a command to the Generic Relayer, run:
+Then, you can deploy the contracts:
 
 ```bash
-make submit EMAIL=<your_email@example.com>
+forge script script/DeployEmitEmailCommand.s.sol:Deploy --fork-url $RPC_URL --broadcast -vvvv --legacy
 ```
 
-This command does the following:
+## Using the TypeScript CLI
 
-1. Uses the contract addresses from `run-latest.json` (either the pre-deployed addresses or your own if you deployed them).
-2. Sends a request to the relayer API to execute the command `Emit string {string}` with the parameter "Sending a hello".
-3. Prints the response, which includes a `request_id`.
-
-#### Option 2: Interacting with the Relayer API Directly
-
-If you prefer to interact with the API without using the Makefile, you can use `curl` directly. For detailed information on the API endpoints and request format, refer to the [Submit Command API Reference](./api-reference#submit-command).
-
-### Checking the Status
-
-#### Option 1: Using the Makefile
-
-After submitting, you can check the status of your request:
+After deploying the contracts, you can use the TypeScript CLI to test different command templates. First, navigate to the `ts` directory and install dependencies:
 
 ```bash
-make status REQUEST=<request_id>
+cd ts
+yarn install
 ```
 
-Replace `<request_id>` with the actual `request_id` you received from the previous command.
+The CLI supports different parameter types. Here are examples for each type matcher:
 
-#### Option 2: Interacting with the Relayer API Directly
+### String Type Matcher
 
-You can check the status of your request by making a GET request to the Request Status endpoint. For detailed information on this endpoint and its response format, refer to the [Request Status API Reference](./api-reference#request-status).
+```bash
+npx ts-node src/cli.ts \
+  --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
+  --account-code YOUR_ACCOUNT_CODE \
+  --email-addr your.email@example.com \
+  --owner-addr YOUR_WALLET_ADDRESS \
+  --template-idx 0 \
+  --command-value "hello" \
+  --subject "Emit a string" \
+  --body "Emit a string"
+```
+
+### Uint Type Matcher
+
+```bash
+npx ts-node src/cli.ts \
+  --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
+  --account-code YOUR_ACCOUNT_CODE \
+  --email-addr your.email@example.com \
+  --owner-addr YOUR_WALLET_ADDRESS \
+  --template-idx 1 \
+  --command-value "123" \
+  --subject "Emit a uint" \
+  --body "Emit a uint"
+```
+
+### Int Type Matcher
+
+```bash
+npx ts-node src/cli.ts \
+  --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
+  --account-code YOUR_ACCOUNT_CODE \
+  --email-addr your.email@example.com \
+  --owner-addr YOUR_WALLET_ADDRESS \
+  --template-idx 2 \
+  --command-value "-123" \
+  --subject "Emit an int" \
+  --body "Emit an int"
+```
+
+### Decimals Type Matcher
+
+```bash
+npx ts-node src/cli.ts \
+  --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
+  --account-code YOUR_ACCOUNT_CODE \
+  --email-addr your.email@example.com \
+  --owner-addr YOUR_WALLET_ADDRESS \
+  --template-idx 3 \
+  --command-value "1.23" \
+  --subject "Emit a decimal" \
+  --body "Emit a decimal"
+```
+
+### EthAddr Type Matcher
+
+```bash
+npx ts-node src/cli.ts \
+  --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
+  --account-code YOUR_ACCOUNT_CODE \
+  --email-addr your.email@example.com \
+  --owner-addr YOUR_WALLET_ADDRESS \
+  --template-idx 4 \
+  --command-value "0x6956856464EaA434f22B42642e9089fF8e5C9cE9" \
+  --subject "Emit an address" \
+  --body "Emit an address"
+```
+
+Each command will return a request ID and transaction hash upon successful execution.
