@@ -2,11 +2,11 @@ import DocCardList from '@theme/DocCardList';
 
 # Overview
 
-The Email Transaction Auth enables users to interact with Ethereum smart contracts by sending emails. Traditionally, interacting with Ethereum requires users to install specialized wallets and manage private keys, which can be a barrier for many. It removes this hurdle by using the email, allowing users to execute on-chain transactions without needing Ethereum-specific tools.
+The Email Transaction Builder enables users to interact with Ethereum smart contracts by sending emails. Traditionally, interacting with Ethereum requires users to install specialized wallets and manage private keys, which can be a barrier for many. It removes this hurdle by using the email, allowing users to execute on-chain transactions without needing Ethereum-specific tools.
   
 ## Getting Started
 
-To get started with the Email Transaction Auth, follow our quickstart guide.
+To get started with the Email Transaction Builder, follow our quickstart guide.
 
 <DocCardList 
   items={[
@@ -14,13 +14,13 @@ To get started with the Email Transaction Auth, follow our quickstart guide.
       type: 'link',
       label: 'Quickstart',
       href: 'quickstart',
-      description: 'Get started with the Email Transaction Auth with an example project.'
+      description: 'Get started with the Email Transaction Builder with an example project.'
     },
     {
       type: 'link',
       label: 'Setup',
       href:  'setup',
-      description: 'Learn how to integrate the Email Transaction Auth into your project.'
+      description: 'Learn how to integrate the Email Transaction Builder into your project.'
     }
   ]}
 />

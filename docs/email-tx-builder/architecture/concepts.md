@@ -1,6 +1,6 @@
 # Concepts
 
-Welcome to the Concepts page for our Email Transaction Auth package. This document provides an overview of the main concepts essential for understanding our decentralized email login, account recovery, and two-factor authentication (2FA) system.
+Welcome to the Concepts page for our Email Transaction Builder. This document provides an overview of the main concepts essential for understanding our decentralized email login, account recovery, and two-factor authentication (2FA) system.
 
 You can watch a video that explains these concepts in more detail at [our 2024 EthCC talk](https://ethcc.io/archives/zk-email-decentralized-email-login-account-recovery-2fa).
 
@@ -31,7 +31,7 @@ The invitation code serves two key purposes: it verifies that the user has acces
 
 ## Command Template
 
-A **Command Template** defines the expected format of the message in the Subject line for each application. **It allows developers to constrain that message to an application-specific format without creating new ZKP circuits.** Our Email Transaction Auth package defines a universal circuit controlled by these command templates.
+A **Command Template** defines the expected format of the message in the Subject line for each application. **It allows developers to constrain that message to an application-specific format without creating new ZKP circuits.** Our Email Transaction Builder package defines a universal circuit controlled by these command templates.
 
 ### Structure
 

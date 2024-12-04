@@ -107,7 +107,7 @@ const sidebars: SidebarsConfig = {
 
     {
       type: 'html',
-      value: '<span class="sidebar-heading">Email Transaction Auth</span>',
+      value: '<span class="sidebar-heading">Email Transaction Builder</span>',
     },
     'email-tx-builder/README',
     'email-tx-builder/quickstart',
