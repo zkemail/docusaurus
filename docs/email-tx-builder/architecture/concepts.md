@@ -33,36 +33,4 @@ The invitation code serves two key purposes: it verifies that the user has acces
 
 A **Command Template** defines the expected format of the message in the Subject line for each application. **It allows developers to constrain that message to an application-specific format without creating new ZKP circuits.** Our Email Transaction Builder package defines a universal circuit controlled by these command templates.
 
-### Structure
-
-The subject template is an array of strings containing fixed text and variable parts:
-
-- `"{string}"`: Arbitrary string. Solidity type: `string`.
-- `"{uint}"`: Unsigned integer in decimal. Solidity type: `uint256`.
-- `"{int}"`: Signed integer in decimal. Solidity type: `int256`.
-- `"{decimals}"`: Decimal number with fixed 18 decimal places. Solidity type: `uint256`.
-  - Example: `"2.7"` is encoded as `abi.encode(2.7 * (10**18))`.
-- `"{ethAddr}"`: Checksummed Ethereum address in hexadecimal. Solidity type: `address`.
-
-### Example
-
-Suppose an application expects a transaction amount and a recipient address in the email subject. The subject template could be:
-
-```plaintext
-"Send {decimals} tokens to {ethAddr}"
-```
-
-An email subject following this template would be:
-
-```plaintext
-"Send 2.5 tokens to 0xAbC123...789"
-```
-
-In this example:
-
-- `{decimals}` is `2.5`, encoded as `abi.encode(2.5 * (10**18))`.
-- `{ethAddr}` is the recipient's Ethereum address, which must pass checksum validation.
-
-- **Flexibility**: Allows customization without modifying underlying ZKP circuits.
-
-Command templates provide significant advantages for developers. They enable flexible customization of email formats without requiring changes to the underlying zero-knowledge proof circuits, while also enforcing standardized formatting across different applications.
+Learn more about the command templates in the [Command Templates](/email-tx-builder/architecture/command-templates) section.

@@ -2,19 +2,25 @@ import DocCardList from '@theme/DocCardList';
 
 # Overview
 
-The Email Transaction Builder enables users to interact with Ethereum smart contracts by sending emails. Traditionally, interacting with Ethereum requires users to install specialized wallets and manage private keys, which can be a barrier for many. It removes this hurdle by using the email, allowing users to execute on-chain transactions without needing Ethereum-specific tools.
-  
-## Getting Started
+<div style={{fontSize: '1.2em'}}>
+Learn how to send transaction via email commands using the Email Transaction Builder.
+</div>
 
-To get started with the Email Transaction Builder, follow our quickstart guide.
+The **Email Transaction Builder** allows developers to send transactions to a smart contract by sending email commands. Developers can define [**Command Templates**](/email-tx-builder/architecture/command-templates) in their smart contracts and trigger transactions by sending email commands to the Generic Relayer API.
+
+The Generic Relayer is a service that sends the emails to the user and generates the proofs for creating the EmailAuthMsg used to authenticate the transaction.
+
+## Learn more
+
+Learn how the Email Transaction Builder send the emails and generates the proofs for creating the EmailAuthMsg used to authenticate the transaction. And how to integrate the Email Transaction Builder into your existing projects.
 
 <DocCardList 
   items={[
     {
       type: 'link',
-      label: 'Quickstart',
-      href: 'quickstart',
-      description: 'Get started with the Email Transaction Builder with an example project.'
+      label: 'Architecture',
+      href: 'architecture',
+      description: 'Learn about the Email Transaction Builder architecture.'
     },
     {
       type: 'link',
@@ -25,17 +31,19 @@ To get started with the Email Transaction Builder, follow our quickstart guide.
   ]}
 />
 
-## Learn more
 
-For a more in-depth understanding of the Generic Relayer's capabilities and how to integrate it into your specific use case, refer to our architecture guide.
+## Getting Started
+
+Get started with our template repository that includes deployment scripts and a TypeScript CLI to interact with the Generic Relayer API. Follow our quickstart guide to deploy the contracts and start sending transactions with any of these [type matchers](/email-tx-builder/architecture/command-templates#available-type-matchers) in minutes.
+
 
 <DocCardList 
   items={[
     {
       type: 'link',
-      label: 'Architecture',
-      href: 'architecture',
-      description: 'Learn about the Generic Relayer architecture.'
-    },
+      label: 'Quickstart',
+      href: 'quickstart',
+      description: 'Get started with the Email Transaction Builder with an example project.'
+    }
   ]}
 />
