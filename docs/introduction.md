@@ -13,7 +13,7 @@ import Head from '@docusaurus/Head';
 </Head>
 
 <div style={{fontSize: '1.2em'}}>
-Welcome to the ZK Email Documentation. This documentation provides everything you need to understand and implement our email verification solutions powered by zero-knowledge.
+Welcome to the ZK Email Documentation. This documentation provides detailed specifications, references and implementation examples for integrating ZK Email libraries into your applications.
 </div>
 
 <img 
@@ -35,24 +35,9 @@ Welcome to the ZK Email Documentation. This documentation provides everything yo
   }}
 />
 
-## Get started with ZK Email
+## Learn about ZK Email
 
-Start building with ZK Email using our quickstart guide and dive deeper into how it works. 
-
-<DocCardList 
-  items={[
-    {
-      type: 'link',
-      href: '/getting-started',
-      label: 'Getting Started',
-      description: 'Get started with ZK Email by following our step-by-step guide.',
-    }
-  ]}
-/>
-
-## Learn more about ZK Email
-
-Explore our resources to understand the technology behind ZK Email and how you can start using it in your projects.
+Start by exploring our resources to understand the technology behind ZK Email — from understanding the architecture components to learning how our libraries work in practice.
 
 <DocCardList 
   items={[
@@ -60,7 +45,7 @@ Explore our resources to understand the technology behind ZK Email and how you c
       type: 'link',
       href: '/architecture',
       label: 'Architecture',
-      description: 'Understand the technology behind ZK Email and its key features.',
+      description: 'Understand the technology behind ZK Email.',
     },
     {
       type: 'link',
@@ -76,3 +61,22 @@ Explore our resources to understand the technology behind ZK Email and how you c
     },
   ]}
 />
+
+## Get started with ZK Email
+
+Learn about our different libraries and choose the right one for your use case. Each library serves a specific purpose in the ZK Email ecosystem.
+
+<DocCardList 
+  items={[
+    {
+      type: 'link',
+      href: '/getting-started',
+      label: 'Getting Started',
+      description: 'Learn the use cases and how to integrate ZK Email.',
+    }
+  ]}
+/>
+
+:::tip
+Do you have any questions? [Join our Telegram](https://t.me/zkemail)
+:::

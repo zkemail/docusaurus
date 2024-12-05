@@ -1,6 +1,25 @@
+---
+title: Overview
+description: The Blueprint SDK is a TypeScript library for building ZK Email applications. Allows you to generate and verify zero-knowledge proofs from emails.
+---
+
 import DocCardList from '@theme/DocCardList';
+import Head from '@docusaurus/Head';
 
 # Overview
+
+<Head>
+  <link 
+    rel="preload" 
+    as="image" 
+    href="/img/zk-email-docs-banner.webp"
+    fetchpriority="high"
+  />
+</Head>
+
+<div style={{fontSize: '1.2em'}}>
+Learn how to generate and verify zk proofs inside your application using the Blueprint SDK.
+</div>
 
 <img 
   src="/img/beta-release-banner.webp" 
@@ -10,14 +29,14 @@ import DocCardList from '@theme/DocCardList';
   loading="eager"
   decoding="async"
   fetchpriority="high"
-    style={{
+  style={{
     width: '100%',
     display: 'block',
     margin: '20px auto',
     borderRadius: '17px',
     objectFit: 'contain',
     maxWidth: '100%',
-    height: '400px'
+    height: 'auto'
   }}
 />
 

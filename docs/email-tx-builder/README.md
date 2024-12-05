@@ -6,7 +6,7 @@ import DocCardList from '@theme/DocCardList';
 Learn how to send transaction via email commands using the Email Transaction Builder.
 </div>
 
-The **Email Transaction Builder** allows developers to send transactions to a smart contract by sending email commands. Developers can define [**Command Templates**](/email-tx-builder/architecture/command-templates) in their smart contracts and trigger transactions by sending email commands to the Generic Relayer API.
+The **Email Transaction Builder** allows users to send transactions to a smart contract by sending email commands. Developers can define [**Command Templates**](/email-tx-builder/architecture/command-templates) in their smart contracts and trigger transactions by sending email commands to the Generic Relayer API.
 
 The Generic Relayer is a service that sends the emails to the user and generates the proofs for creating the EmailAuthMsg used to authenticate the transaction.
 
