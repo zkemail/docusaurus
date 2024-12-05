@@ -28,11 +28,6 @@ You can find the source code for the Generic Relayer API [here](https://github.c
 
 ### Request Parameters
 
-`contractAddress` (string)
-
-Address of your deployed smart contract containing the command.
-
----
 `dkimContractAddress` (string)
 
 Address of the `DKIMVerification` contract for email authentication.
@@ -48,11 +43,6 @@ A random `uint256` value used to derive the user's address from their email addr
 Include `accountCode` in the email body (`true` or `false`).
 
 ---
-`functionAbi` (object)
-
-ABI of the function to execute.
-
----
 `commandTemplate` (string)
 
 Command string as defined in your contract (e.g., `"Emit string {string}"`).
@@ -66,11 +56,6 @@ Parameters to fill into the command template.
 `templateId` (string)
 
 Unique identifier for the command template.
-
----
-`remainingArgs` (array)
-
-Additional arguments not included in the command template.
 
 ---
 `emailAddress` (string)
@@ -100,7 +85,7 @@ Blockchain network (e.g., `"sepolia"`).
 A confirmation message indicating the email has been sent.
 
 ---
-`request_id` (string)
+`id` (string)
 
 A unique identifier for the request.
 
@@ -151,20 +136,17 @@ An object containing details about the request, including:
 - `id` (string): UUID of the request.
 - `status` (string): Current status of the request. Possible values include "Finished" and others.
 - `updatedAt` (string): ISO 8601 formatted timestamp of when the status was last updated.
-- `emailTxAuth` (object): Original request details including:
+- `request` (object): Original request details including:
   - `emailAddress`: Recipient email address
   - `subject`: Email subject
   - `body`: Email body content
   - `chain`: Blockchain network
-  - `contractAddress`: Smart contract address
   - `dkimContractAddress`: DKIM contract address
   - `accountCode`: Account code
   - `codeExistsInEmail`: Boolean indicating if code exists in email
-  - `functionAbi`: ABI of the executed function
   - `commandTemplate`: Original command template
   - `commandParams`: Parameters used in the command
   - `templateId`: Template ID
-  - `remainingArgs`: Additional arguments
 
 </div>
 <div className={styles.rightColumn}>
