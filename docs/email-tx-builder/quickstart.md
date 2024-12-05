@@ -117,7 +117,27 @@ cp .env.example .env
 
 Then you can use the following examples to test each command template. After you call the CLI, you will receive an email that you need to reply to confirm the command and after the relayer verifies the email, it will return the `EmailAuthMsg` used to broadcast the transaction.
 
-### String Type Matcher
+### Example Commands
+
+Before running any of the example commands below, make sure to replace the following fields with your own values:
+
+- **YOUR_CONTRACT_ADDRESS**: An Ethereum address of the `EmitEmailCommand` command.
+- **YOUR_ACCOUNT_CODE**: Your [account code](/email-tx-builder/architecture/concepts#account-code-and-salt) (a random hex number in the BN254 elliptic curve used to derive your account salt)
+- **YOUR_EMAIL**: The email address you want to use to send commands
+- **YOUR_WALLET_ADDRESS**: Ethereum address of the owner EOA/contract of your `EmailAuth` contract.
+
+<details>
+<summary>Example</summary>
+
+This **EmitEmailCommand** contract is deployed on Base Sepolia:
+
+- **YOUR_CONTRACT_ADDRESS**: 0xa49600b17f2978AEaE9477836Ade18CAfD95A3de
+- **YOUR_ACCOUNT_CODE**: 0x22a2d51a892f866cf3c6cc4e138ba87a8a5059a1d80dea5b8ee8232034a105b7
+- **YOUR_EMAIL**: youremail@example.com
+- **YOUR_WALLET_ADDRESS**: 0x6e8CdBE9CB9A90F75Fe4D5B2F08B9181b04f4Ea9
+</details>
+
+#### String Type Matcher
 
 This command will emit a `StringCommand` event.
 
@@ -125,7 +145,7 @@ This command will emit a `StringCommand` event.
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
   --account-code YOUR_ACCOUNT_CODE \
-  --email-addr your.email@example.com \
+  --email-addr YOUR_EMAIL \
   --owner-addr YOUR_WALLET_ADDRESS \
   --template-idx 0 \
   --command-value "hello" \
@@ -133,7 +153,7 @@ npx ts-node src/cli.ts \
   --body "Emit a string"
 ```
 
-### Uint Type Matcher
+#### Uint Type Matcher
 
 This command will emit a `UintCommand` event.
 
@@ -141,7 +161,7 @@ This command will emit a `UintCommand` event.
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
   --account-code YOUR_ACCOUNT_CODE \
-  --email-addr your.email@example.com \
+  --email-addr YOUR_EMAIL \
   --owner-addr YOUR_WALLET_ADDRESS \
   --template-idx 1 \
   --command-value "123" \
@@ -149,7 +169,7 @@ npx ts-node src/cli.ts \
   --body "Emit a uint"
 ```
 
-### Int Type Matcher
+#### Int Type Matcher
 
 This command will emit an `IntCommand` event.
 
@@ -157,7 +177,7 @@ This command will emit an `IntCommand` event.
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
   --account-code YOUR_ACCOUNT_CODE \
-  --email-addr your.email@example.com \
+  --email-addr YOUR_EMAIL \
   --owner-addr YOUR_WALLET_ADDRESS \
   --template-idx 2 \
   --command-value "-123" \
@@ -165,7 +185,7 @@ npx ts-node src/cli.ts \
   --body "Emit an int"
 ```
 
-### Decimals Type Matcher
+#### Decimals Type Matcher
 
 This command will emit a `DecimalsCommand` event.
 
@@ -173,7 +193,7 @@ This command will emit a `DecimalsCommand` event.
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
   --account-code YOUR_ACCOUNT_CODE \
-  --email-addr your.email@example.com \
+  --email-addr YOUR_EMAIL \
   --owner-addr YOUR_WALLET_ADDRESS \
   --template-idx 3 \
   --command-value "1.23" \
@@ -181,7 +201,7 @@ npx ts-node src/cli.ts \
   --body "Emit a decimal"
 ```
 
-### EthAddr Type Matcher
+#### EthAddr Type Matcher
 
 This command will emit an `EthAddrCommand` event.
 
@@ -189,7 +209,7 @@ This command will emit an `EthAddrCommand` event.
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
   --account-code YOUR_ACCOUNT_CODE \
-  --email-addr your.email@example.com \
+  --email-addr YOUR_EMAIL \
   --owner-addr YOUR_WALLET_ADDRESS \
   --template-idx 4 \
   --command-value "0x6956856464EaA434f22B42642e9089fF8e5C9cE9" \
