@@ -11,13 +11,13 @@ const submitCommandConfig: ApiClientProps = {
       name: 'dkimContractAddress',
       type: 'string',
       required: true,
-      default: '0xc3f15f5cc76a86f97ef8bc2d5070b6725d8992ce'
+      default: '0x688b9f8Ee489D5fDE22819b1c2906d1403566836'
     },
     {
       name: 'accountCode',
       type: 'string',
       required: true,
-      default: '0x22a2d51a892f866cf3c6cc4e138ba87a8a5059a1d80dea5b8ee8232034a105b7'
+      default: '0x22a2d51a892f866cf3c6cc4e138ba87a8a5059a1d80dea5b8ee8232034a105b0'
     },
     {
       name: 'codeExistsInEmail',
@@ -35,7 +35,7 @@ const submitCommandConfig: ApiClientProps = {
       name: 'commandParams',
       type: 'array',
       required: true,
-      default: ['hello']
+      default: ['Hello']
     },
     {
       name: 'templateId',
@@ -47,30 +47,30 @@ const submitCommandConfig: ApiClientProps = {
       name: 'emailAddress',
       type: 'string',
       required: true,
-      default: 'email@example.com'
+      default: 'suegamisora@gmail.com'
     },
     {
       name: 'subject',
       type: 'string',
       required: true,
-      default: 'Hello World'
+      default: 'Hello'
     },
     {
       name: 'body',
       type: 'string',
       required: true,
-      default: 'Sending a hello world!'
+      default: 'Sending a hello'
     },
     {
       name: 'chain',
       type: 'string',
       required: true,
-      default: 'sepolia'
+      default: 'baseSepolia'
     }
   ] as RequestParameter[],
   exampleResponse: {
     message: "email sent",
-    id: "fecfac34-3333-4cd3-bdaa-1b349aea0699",
+    id: "3fb8c30d-5004-4e3c-aa1f-d32407e740ad",
     status: "success"
   },
   testMode: 'live',
