@@ -1,13 +1,9 @@
-import ApiClient from '@site/src/components/ApiClient';
-import submitCommandConfig from '@site/src/api/email-tx-builder/submit.ts';
-import statusConfig from '@site/src/api/email-tx-builder/status.ts';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-
 # Quickstart
 
-In this section, we will show you how to create a simple project using the Email Transaction Builder and the `EmitEmailCommand.sol` contract. You will learn how to set up the project, deploy the contracts, and interact with the generic relayer API to execute commands via email.
+In this section, we will show you how to create a simple project using the Email Transaction Builder and the `EmitEmailCommand.sol` contract. You will learn how to set up the project, deploy the contracts, calling the Generic Relayer API and broadcasting the transaction to the network to execute commands via email.
 
 ## Create a Project
 
@@ -33,6 +29,20 @@ Your new project will include the following structure:
 - **contracts**: Contains a foundry project for the `EmitEmailCommand.sol` contract, including a deployment script.
 - **ts**: Contains a TypeScript CLI to interact with the Generic Relayer API.
 
+The `EmitEmailCommand` contract implements five command templates, each corresponding to a different type matcher. These templates are used to emit events based on commands received via email. Here's a breakdown of how it works:
+
+The contract defines five command templates, each associated with a specific type matcher:
+
+1. String Matcher: Emits a `StringCommand` event.
+2. Uint Matcher: Emits a `UintCommand` event.
+3. Int Matcher: Emits an `IntCommand` event.
+4. Decimals Matcher: Emits a `DecimalsCommand` event.
+5. EthAddr Matcher: Emits an `EthAddrCommand` event.
+
+:::info
+Each template is represented as an array of strings, specifying the command format. You can learn more about the command format in the [Command Templates](/email-tx-builder/architecture/command-templates) section.
+:::
+
 ## Build and Deploy
 
 The Email Transaction Builder requires several smart contracts working together to enable secure email-based transactions:
@@ -51,6 +61,7 @@ The first step is to navigate to the contracts folder and copy the example envir
 ```bash
 cd contracts
 cp .env.example .env
+source .env
 ```
 
 You have to edit the `.env` file and set the following variables:
@@ -60,15 +71,6 @@ You have to edit the `.env` file and set the following variables:
 - **RPC_URL**: RPC URL for the target network.
 - **SIGNER**: Signer for the DKIM Oracle that can update the DKIM registry.
 - **ETHERSCAN_API_KEY**: (Optional) Etherscan API key for contract verification.
-
-:::info
-You will need to source the `.env` file in your shell to make the variables available to the deployment script.
-
-```bash
-source .env
-```
-
-:::
 
 ### Deploy the Contracts
 
@@ -93,18 +95,31 @@ Then, you can deploy the contracts:
 forge script script/DeployEmitEmailCommand.s.sol:Deploy --fork-url $RPC_URL --broadcast -vvvv --legacy
 ```
 
-## Using the TypeScript CLI
+## Calling the Generic Relayer API
 
-After deploying the contracts, you can use the TypeScript CLI to test different command templates. First, navigate to the `ts` directory and install dependencies:
+To call the Generic Relayer we are going to use the TypeScript CLI, if you want to learn more about the Generic Relayer you can check the [Generic Relayer](/email-tx-builder/architecture/generic-relayer) section. After deploying the contracts, you can use the TypeScript CLI to test different command templates.
+
+First, navigate to the `ts` directory and install dependencies:
 
 ```bash
 cd ts
 yarn install
 ```
 
-The CLI supports different parameter types. Here are examples for each type matcher:
+Copy the `.env.example` file to `.env` and set the required variables:
+
+```bash
+cp .env.example .env
+```
+
+- **PRIVATE_KEY**: Your private key for deployment (include the `0x` prefix).
+- **RELAYER_URL**: URL of the Generic Relayer API (`https://relayer.zkemail.xyz/api`).
+
+Then you can use the following examples to test each command template. After you call the CLI, you will receive an email that you need to reply to confirm the command and after the relayer verifies the email, it will return the `EmailAuthMsg` used to broadcast the transaction.
 
 ### String Type Matcher
+
+This command will emit a `StringCommand` event.
 
 ```bash
 npx ts-node src/cli.ts \
@@ -120,6 +135,8 @@ npx ts-node src/cli.ts \
 
 ### Uint Type Matcher
 
+This command will emit a `UintCommand` event.
+
 ```bash
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
@@ -133,6 +150,8 @@ npx ts-node src/cli.ts \
 ```
 
 ### Int Type Matcher
+
+This command will emit an `IntCommand` event.
 
 ```bash
 npx ts-node src/cli.ts \
@@ -148,6 +167,8 @@ npx ts-node src/cli.ts \
 
 ### Decimals Type Matcher
 
+This command will emit a `DecimalsCommand` event.
+
 ```bash
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
@@ -162,6 +183,8 @@ npx ts-node src/cli.ts \
 
 ### EthAddr Type Matcher
 
+This command will emit an `EthAddrCommand` event.
+
 ```bash
 npx ts-node src/cli.ts \
   --emit-email-command-addr YOUR_CONTRACT_ADDRESS \
@@ -173,5 +196,3 @@ npx ts-node src/cli.ts \
   --subject "Emit an address" \
   --body "Emit an address"
 ```
-
-Each command will return a request ID and transaction hash upon successful execution.
