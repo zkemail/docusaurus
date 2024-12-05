@@ -8,12 +8,6 @@ const submitCommandConfig: ApiClientProps = {
   },
   parameters: [
     {
-      name: 'contractAddress',
-      type: 'string',
-      required: true,
-      default: '0xefb56bb5771cde84f487391b6c0f9ff1694d2631',
-    },
-    {
       name: 'dkimContractAddress',
       type: 'string',
       required: true,
@@ -32,98 +26,6 @@ const submitCommandConfig: ApiClientProps = {
       default: true
     },
     {
-      name: 'functionAbi',
-      type: 'object',
-      required: true,
-      default: {
-        type: "function",
-        name: "emitEmailCommand",
-        inputs: [
-          {
-            name: "emailAuthMsg",
-            type: "tuple",
-            internalType: "struct EmailAuthMsg",
-            components: [
-              {
-                name: "templateId",
-                type: "uint256",
-                internalType: "uint256"
-              },
-              {
-                name: "commandParams",
-                type: "bytes[]",
-                internalType: "bytes[]"
-              },
-              {
-                name: "skippedCommandPrefix",
-                type: "uint256",
-                internalType: "uint256"
-              },
-              {
-                name: "proof",
-                type: "tuple",
-                internalType: "struct EmailProof",
-                components: [
-                  {
-                    name: "domainName",
-                    type: "string",
-                    internalType: "string"
-                  },
-                  {
-                    name: "publicKeyHash",
-                    type: "bytes32",
-                    internalType: "bytes32"
-                  },
-                  {
-                    name: "timestamp",
-                    type: "uint256",
-                    internalType: "uint256"
-                  },
-                  {
-                    name: "maskedCommand",
-                    type: "string",
-                    internalType: "string"
-                  },
-                  {
-                    name: "emailNullifier",
-                    type: "bytes32",
-                    internalType: "bytes32"
-                  },
-                  {
-                    name: "accountSalt",
-                    type: "bytes32",
-                    internalType: "bytes32"
-                  },
-                  {
-                    name: "isCodeExist",
-                    type: "bool",
-                    internalType: "bool"
-                  },
-                  {
-                    name: "proof",
-                    type: "bytes",
-                    internalType: "bytes"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            name: "owner",
-            type: "address",
-            internalType: "address"
-          },
-          {
-            name: "templateIdx",
-            type: "uint256",
-            internalType: "uint256"
-          }
-        ],
-        outputs: [],
-        stateMutability: "nonpayable"
-      }
-    },
-    {
       name: 'commandTemplate',
       type: 'string',
       required: true,
@@ -140,15 +42,6 @@ const submitCommandConfig: ApiClientProps = {
       type: 'string',
       required: true,
       default: '0x25d6c3eada7b2926c822bbfebfc3173123afb205cf093a8cae6622a56712f8a'
-    },
-    {
-      name: 'remainingArgs',
-      type: 'array',
-      required: true,
-      default: [
-        { "Address": "0x9401296121FC9B78F84fc856B1F8dC88f4415B2e" },
-        { "Uint": "0x0" }
-      ]
     },
     {
       name: 'emailAddress',
@@ -177,7 +70,7 @@ const submitCommandConfig: ApiClientProps = {
   ] as RequestParameter[],
   exampleResponse: {
     message: "email sent",
-    request_id: "fecfac34-3333-4cd3-bdaa-1b349aea0699",
+    id: "fecfac34-3333-4cd3-bdaa-1b349aea0699",
     status: "success"
   },
   testMode: 'live',
