@@ -1,3 +1,10 @@
+---
+title: Generic Relayer | Email Transaction Builder
+sidebar_label: Generic Relayer
+description: Technical guide to ZK Email's Generic Relayer system for integrating email-driven blockchain actions, including API endpoints, proof generation, and smart contract interactions
+keywords: [generic relayer, email transactions, blockchain integration, zero-knowledge proofs, DKIM verification, smart contracts, EmailAuth.sol, command templates, API integration, decentralized architecture]
+---
+
 # Generic Relayer
 
 The **Generic Relayer** allows developers to integrate email-driven actions into their blockchain applications seamlessly. By interacting with a specific API endpoint, you can trigger the execution of commands defined in a smart contract via email. The relayer handles the email verification process, zero-knowledge proof generation, and the execution of the command on the blockchain, simplifying development and enhancing security.

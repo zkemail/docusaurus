@@ -1,4 +1,9 @@
 ---
+title: Generic Relayer API Reference | Email Transaction Builder
+sidebar_label: API Reference
+hide_table_of_contents: true
+description: Complete API reference for the Generic Relayer, including endpoints for submitting commands, checking request status, and monitoring API health
+keywords: [API reference, Generic Relayer, email transactions, blockchain integration, REST API, command submission, status checking, health monitoring, API endpoints, API parameters]
 hide_table_of_contents: true
 ---
 

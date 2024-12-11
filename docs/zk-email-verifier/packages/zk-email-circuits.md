@@ -1,11 +1,11 @@
 ---
-description: >-
-  The circuits package exports the circom circuits needed for building on ZK
-  Email. All circuits in this package are libraries that can be imported to your
-  circom project.
+title: "@zk-email/circuits | ZK Email Verifier"
+sidebar_label: "@zk-email/circuits"
+description: Comprehensive documentation of the ZK Email circuits package, including EmailVerifier circuit, utility libraries, and helper components for email verification and data processing
+keywords: [ZK Email circuits, EmailVerifier, RSA verification, SHA-256 hashing, base64 decoding, email masking, circuit libraries, Circom templates, zero-knowledge proofs, email processing]
 ---
 
-# zk-email/circuits
+# @zk-email/circuits
 
 ### Installation
 

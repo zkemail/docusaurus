@@ -1,3 +1,10 @@
+---
+title: "Login with ZK Email: OAuth API"
+sidebar_label: "Login with ZK Email: OAuth API"
+description: Complete guide for implementing ZK Email's OAuth authentication system - setup, user management, transaction execution, and ephemeral key handling with code examples
+keywords: [OAuth authentication, ZK Email SDK, ephemeral keys, blockchain transactions, email verification, user authentication, smart contract integration, Base Sepolia, transaction execution, web3 authentication]
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

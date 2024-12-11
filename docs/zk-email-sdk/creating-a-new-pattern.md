@@ -1,3 +1,10 @@
+---
+title: Creating a New Pattern | Registry
+sidebar_label: Creating a new Pattern
+description: Comprehensive guide to creating email verification patterns in ZK Email SDK, including field extraction configuration, regex formats, and pattern submission process
+keywords: [pattern creation, email verification, field extraction, regex patterns, V1, SDK configuration, circuit generation, pattern submission, DKIM verification, email queries, pattern optimization]
+---
+
 # Creating a New Pattern
 
 A pattern is a customizable template that guides the system in how to handle and process email data. A pattern specifies:

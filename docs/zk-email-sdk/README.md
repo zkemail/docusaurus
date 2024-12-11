@@ -1,3 +1,10 @@
+---
+title: Overview | ZK Email SDK v1
+sidebar_label: Overview
+description: Integration guide for the legacy ZK Email SDK with React applications, including Google OAuth setup, SDK provider configuration, and proof generation workflow
+keywords: [legacy SDK, React integration, Google OAuth, email verification, proof generation, web workers, circuit inputs, SDK hooks, proof status monitoring, client-side processing]
+---
+
 # Overview
 
 :::info

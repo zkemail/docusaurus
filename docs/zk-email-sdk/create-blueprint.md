@@ -1,3 +1,10 @@
+---
+title: Create a new Blueprint | Registry
+sidebar_label: Create a new Blueprint
+description: Step-by-step guide to creating email verification blueprints in the ZK Email Registry, including pattern configuration, field extraction, and AI-assisted setup
+keywords: [blueprint creation, email verification, pattern matching, regex configuration, field extraction, AI auto-extraction, DKIM verification, circuit parameters, proof generation, email parsing]
+---
+
 # Create a new Blueprint
 
 <Head>

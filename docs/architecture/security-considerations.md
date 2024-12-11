@@ -1,3 +1,10 @@
+---
+title: Security Considerations
+sidebar_label: Security Considerations
+description: Comprehensive analysis of ZK Email's security measures, trust assumptions, potential attack vectors, and mitigations for secure email verification on blockchain networks
+keywords: [security considerations, trust assumptions, attack vectors, security measures, DKIM security, zero-knowledge proofs, blockchain security, email verification, cryptographic security, smart contract security]
+---
+
 # Security Considerations
 
 <div style={{fontSize: '1.2em'}}>

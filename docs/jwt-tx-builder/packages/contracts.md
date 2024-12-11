@@ -1,3 +1,9 @@
+---
+title: "@zk-jwt/contracts | JWT Transaction Builder"
+sidebar_label: "@zk-jwt/contracts"
+description: Technical guide for JWT Transaction Builder smart contracts including JWTRegistry and JWTVerifier, with deployment instructions, integration examples, and troubleshooting tips
+keywords: [JWT verification contracts, smart contracts, blockchain authentication, JWTRegistry, JWTVerifier, contract deployment, Foundry integration, proxy contracts, contract addresses,
+---
 # @zk-jwt/contracts 
 
 This directory contains verifier contracts for handling JSON Web Tokens(JWTs) proofs. 

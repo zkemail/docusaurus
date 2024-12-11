@@ -1,3 +1,10 @@
+---
+title: Running the Example | ZK Email SDK
+sidebar_label: Running Example
+description: Step-by-step guide to running and testing the example project with the ZK Email SDK, including circuit setup, input generation, and proof verification
+keywords: [example project, circuit testing, input generation, proof verification, web workers, circuit inputs, witness generation, project structure, email processing, development setup]
+---
+
 # Running the Example
 
 This guide will help to run the example project to test out the generated circuit.

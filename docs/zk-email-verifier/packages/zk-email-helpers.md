@@ -1,11 +1,11 @@
 ---
-description: >-
-  The @zk-email/helpers package provides utility functions for email
-  verification and cryptographic operations. It includes functions for handling
-  RSA signatures, public keys, email bodies, and hashes.
+title: "@zk-email/helpers | ZK Email Verifier"
+sidebar_label: "@zk-email/helpers"
+description: Comprehensive documentation of ZK Email helper functions for email verification, DKIM signature validation, binary format conversion, SHA operations, and proof generation
+keywords: [email verification, DKIM signatures, binary conversion, SHA operations, proof generation, input generation, zkey handling, cryptographic utilities, data formatting, helper functions]
 ---
 
-# zk-email/helpers
+# @zk-email/helpers
 
 ### Installation
 

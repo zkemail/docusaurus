@@ -1,8 +1,8 @@
 ---
-description: >-
-  We have audited all of the code used in any zk-email mainnet deployments
-  (zkp2p, email recovery). Contact us on t.me/zkemail if you are using any code
-  that is not covered in these audits.
+title: Audits
+sidebar_label: Audits
+description: Complete audit history of ZK Email's libraries, including reports from Matter Labs, Zellic, Ackee Blockchain, zksecurity, and Y Academy, with detailed fixes and improvements
+keywords: [security audits, Matter Labs, Zellic, Ackee Blockchain, zksecurity, Y Academy, smart contract security, ZK circuits, DKIM verification, email recovery, security fixes, code improvements]
 ---
 
 # Audits

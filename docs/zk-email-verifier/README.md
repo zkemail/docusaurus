@@ -1,3 +1,10 @@
+---
+title: Overview | ZK Email Verifier
+sidebar_label: Overview
+description: ZK Email Verifier enables anonymous verification of email signatures with data masking capabilities, supporting domain verification and text-based proofs for web2 interoperability and decentralized KYC
+keywords: [ZK Email Verifier, anonymous verification, DKIM signatures, zero-knowledge proofs, email masking, web2 interoperability, decentralized KYC, zkSNARKs, Circom, RSA verification, blockchain integration]
+---
+
 # Overview
 
 ZK Email Verifier is a library that allows for anonymous verification of email signatures while masking specific data. It enables verification of emails to/from specific domains or subsets of domains, as well as verification based on specific text in the email body. This technology can be used for web2 interoperability, decentralized anonymous KYC, or to create interesting on-chain anonymity sets.

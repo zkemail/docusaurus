@@ -1,4 +1,11 @@
-# zk-email/contracts
+---
+title: "@zk-email/contracts | ZK Email Verifier"
+sidebar_label: "@zk-email/contracts"
+description: Documentation for ZK Email smart contracts including DKIMRegistry for public key management and StringUtils library for string manipulation and conversion
+keywords: [DKIM Registry, smart contracts, Solidity, public key management, string utilities, blockchain verification, key revocation, string manipulation, hex conversion, data formatting]
+---
+
+# @zk-email/contracts
 
 ### DKIMRegistry.sol
 

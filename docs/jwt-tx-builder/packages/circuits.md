@@ -1,3 +1,10 @@
+---
+title: "@zk-jwt/circuits | JWT Transaction Builder"
+sidebar_label: "@zk-jwt/circuits"
+description: Technical documentation for JWT Transaction Builder circom circuits used in JWT signature verification, including RSA verification, claim validation, and command masking functionality
+keywords: [JWT verification, ZK circuits, circom, RSA verification, JWT claims, zero-knowledge proofs, circuit parameters, JWT nullifier, command masking, blockchain authentication]
+---
+
 # @zk-jwt/circuits
 
 The `circuits` package exports the circom circuits needed for building on ZK-JWT.

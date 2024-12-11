@@ -1,3 +1,10 @@
+---
+title: Setup | ZK Email SDK
+sidebar_label: Setup
+description: Complete setup guide for the Blueprint SDK, including installation, configuration for Node.js, React, and Next.js, with working examples for proof generation
+keywords: [Blueprint SDK, setup guide, installation, Node.js integration, React setup, Next.js configuration, WASM support, proof generation, email verification, development setup]
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

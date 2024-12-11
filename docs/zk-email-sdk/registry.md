@@ -1,3 +1,11 @@
+---
+title: Registry
+sidebar_label: Registry
+description: Platform for creating, managing, and sharing email-based zero-knowledge proofs through blueprints. Features Gmail integration, proof generation, and sharing capabilities
+keywords: [ZK Email Registry, blueprint management, proof generation, email verification, zero-knowledge proofs, Gmail integration, proof sharing, blueprint creation, proof preview, blueprint search]
+image: /img/registry/search.webp
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Registry

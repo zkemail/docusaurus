@@ -1,3 +1,10 @@
+---
+title: Overview | Email Transaction Builder
+sidebar_label: Overview
+description: Send blockchain transactions securely via email commands. Learn about ZK Email's transaction builder, command templates, and the Generic Relayer API for email-based smart contract interactions.
+keywords: [email transactions, blockchain integration, command templates, Generic Relayer, smart contracts, email authentication, ZK proofs, transaction builder, web3 integration, email commands]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Overview

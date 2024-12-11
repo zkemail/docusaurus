@@ -1,10 +1,13 @@
 ---
-title: Setup
+title: Setup | Email Transaction Builder
+sidebar_label: Setup
+description: Technical guide for integrating the ZK Email Email Transaction Builder into smart contracts using Foundry. Includes dependency installation, contract setup, command templates, and deployment instructions.
+keywords: [email transaction builder setup, smart contract integration, email authentication, command templates, Foundry deployment, EmailAuth.sol, DKIM registry, contract variables, blockchain development, web3 integration]
 ---
 
-# Generic Relayer Setup
+# Setup
 
-This guide provides step-by-step instructions to integrate the ZK Email Generic Relayer system into your existing contract using Foundry.
+This guide provides step-by-step instructions to integrate the ZK Email Email Transaction Builder system into your existing contract using Foundry.
 
 ## Install Dependencies
 

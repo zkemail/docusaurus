@@ -1,5 +1,8 @@
 ---
-description: Contract architecture thats used in Email Wallet
+title: Contract Architecture | Email Wallet
+sidebar_label: Contract Architecture
+description: Overview of Email Wallet's smart contract system, including core contracts, handlers, interfaces, libraries, extensions, and verifiers with deployment instructions
+keywords: [smart contracts, contract architecture, EmailWalletCore, handlers, wallet contracts, verifiers, extensions, contract deployment, Foundry, blockchain development, upgradeable contracts]
 ---
 
 # Contract Architecture

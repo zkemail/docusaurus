@@ -1,3 +1,10 @@
+---
+title: Command Templates | Email Transaction Builder
+sidebar_label: Command Templates
+description: Learn about email command templates for smart contract interactions, including matcher types, syntax rules, and implementation examples in Solidity
+keywords: [command templates, email transactions, smart contract commands, matcher types, Solidity implementation, string matcher, uint matcher, int matcher, decimals matcher, ethereum address matcher, email authentication]
+---
+
 # Command Templates
 
 **Command templates** define the syntax and parameters of the commands that can be sent via email to your smart contract. They consist of fixed strings and placeholders (matchers) that represent dynamic values.

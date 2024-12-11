@@ -1,3 +1,10 @@
+---
+title: Overview | JWT Transaction Builder
+sidebar_label: Overview
+description: JWT Transaction Builder enables private JWT verification on-chain using zero-knowledge proofs, allowing selective claim disclosure and domain-based verification while maintaining anonymity
+keywords: [ZK-JWT, JWT verification, zero-knowledge proofs, blockchain authentication, selective disclosure, anonymous verification, RSA validation, Merkle proofs, privacy-preserving authentication]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Overview

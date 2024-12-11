@@ -1,3 +1,10 @@
+---
+title: Blueprints | ZK Email SDK
+sidebar_label: Blueprints
+description: Guide to creating and managing email verification blueprints in ZK Email SDK, including regex pattern matching, proof generation, and on-chain verification
+keywords: [blueprints, regex patterns, proof generation, ZK proofs, email parsing, on-chain verification, smart contract deployment, blueprint compilation, SDK configuration]
+---
+
 # Blueprints
 
 A blueprint is a set of rules that define how to generate a proof from an email. It specifies:

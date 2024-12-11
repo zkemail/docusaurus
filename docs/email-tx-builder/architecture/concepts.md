@@ -1,3 +1,10 @@
+---
+title: Concepts | Email Transaction Builder
+sidebar_label: Concepts
+description: Overview of key concepts in ZK Email's transaction builder, including account codes, salts, invitation codes, and command templates for decentralized email authentication
+keywords: [account code, CREATE2 salt, invitation code, command templates, email authentication, decentralized login, account recovery, 2FA, privacy preservation, blockchain integration]
+---
+
 # Concepts
 
 Welcome to the Concepts page for our Email Transaction Builder. This document provides an overview of the main concepts essential for understanding our decentralized email login, account recovery, and two-factor authentication (2FA) system.

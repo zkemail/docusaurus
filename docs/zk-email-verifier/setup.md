@@ -1,3 +1,10 @@
+---
+title: Setup | ZK Email Verifier
+sidebar_label: Setup
+description: Step-by-step installation guide for ZK Email Verifier packages - helpers, contracts, and circuits - required for implementing email verification with zero-knowledge proofs
+keywords: [ZK Email setup, package installation, npm packages, email verification setup, DKIM verification, cryptographic operations, smart contracts, circuit implementation, development setup]
+---
+
 # Setup
 
 To get started with zk-email, install these three npm packages:

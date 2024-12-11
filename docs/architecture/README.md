@@ -1,3 +1,10 @@
+---
+title: Architecture
+sidebar_label: Architecture
+description: Comprehensive overview of ZK Email's technical architecture, combining DKIM signatures with zero-knowledge proofs for trustless email verification on blockchain networks
+keywords: [ZK Email architecture, DKIM verification, zero-knowledge proofs, blockchain integration, email authentication, privacy-preserving verification, web3 infrastructure, trustless systems, smart contracts, decentralized verification]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Architecture

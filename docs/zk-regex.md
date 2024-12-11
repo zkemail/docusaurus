@@ -1,7 +1,8 @@
 ---
-description: >-
-  A library to do regex verification in circom. It will also generate lookup
-  tables compatible with halo2-regex soon.
+title: ZK-Regex
+sidebar_label: ZK-Regex
+description: A Circom library for zero-knowledge regex verification and substring extraction, with CLI tools for generating regex circuits and DFA-based pattern matching
+keywords: [ZK-Regex, zero knowledge proofs, regular expressions, Circom, DFA verification, substring extraction, pattern matching, CLI tools, regex circuits, blockchain verification]
 ---
 
 # ZK-Regex
