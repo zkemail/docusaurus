@@ -9,7 +9,7 @@ const config: Config = {
   favicon: 'img/logo.svg',
 
   // Set the production url of your site here
-  url: 'https://docs.prove.email/',
+  url: 'https://docs.zk.email/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -71,7 +71,7 @@ const config: Config = {
     navbar: {
       title: 'ZK Email',
       items: [
-        {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
+        {to: '/zk-email-sdk/', label: 'Blueprint SDK', position: 'left'},
         {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
         {to: '/email-tx-builder/', label: 'Email Transaction Builder', position: 'left'},
@@ -85,17 +85,17 @@ const config: Config = {
           items: [
             {
               label: 'SDK Registry',
-              to: 'https://sdk.prove.email/',
+              to: 'https://registry.zk.email/',
               target: '_blank',
             },
             {
               label: 'Account Recovery Demo',
-              to: 'https://recovery.prove.email/',
+              to: 'https://recovery.zk.email/',
               target: '_blank',
             },
             {
               label: 'DKIM Archive',
-              to: 'https://archive.prove.email/',
+              to: 'https://archive.zk.email/',
               target: '_blank',
             },
           ],

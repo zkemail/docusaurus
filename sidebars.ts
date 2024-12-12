@@ -43,16 +43,9 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'html',
-      value: '<span class="sidebar-heading">SDK</span>',
-    },
-    'zk-email-sdk/README',
-    'zk-email-sdk/running-the-example',
-    'zk-email-sdk/creating-a-new-pattern',
-    {
-      type: 'html',
       value: '<span class="sidebar-heading">Blueprint SDK</span>',
     },
-    'zk-email-sdk/overview-v2',
+    'zk-email-sdk/README',
     'zk-email-sdk/setup',
     {
       type: 'category',
@@ -63,6 +56,15 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'zk-email-sdk/create-blueprint',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Blueprint SDK v1',
+      items: [
+        'zk-email-sdk/overview-v1',
+        'zk-email-sdk/running-the-example',
+        'zk-email-sdk/creating-a-new-pattern',
       ],
     },
     {
@@ -155,7 +157,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'link',
       label: 'Projects using ZK Email',
-      href: 'https://prove.email/projects',
+      href: 'https://zk.email/projects',
     },
     'login-with-zk-email-oauth-api',
     'audits',

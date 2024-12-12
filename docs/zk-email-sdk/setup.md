@@ -97,32 +97,7 @@ main();
 </TabItem>
 <TabItem value="react" label="React (Vite)">
 
-1. Configure Vite for WASM support:
-
-```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import wasm from "vite-plugin-wasm"
-import topLevelAwait from "vite-plugin-top-level-await"
-
-export default defineConfig({
-  plugins: [react(), wasm(), topLevelAwait()],
-  server: {
-    headers: {
-      'Cross-Origin-Opener-Policy': 'same-origin',
-      'Cross-Origin-Embedder-Policy': 'require-corp',
-    }
-  },
-  optimizeDeps: {
-    exclude: ['@zk-email/sdk']
-  },
-  build: {
-    target: 'esnext'
-  }
-})
-```
-
-2. Create your component:
+Create your component:
 
 ```jsx
 import { useState } from 'react'
@@ -192,27 +167,9 @@ export default function Home() {
 </TabItem>
 <TabItem value="nextjs" label="Next.js">
 
-1. Configure Next.js:
+Create your component:
 
-```typescript
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-    };
-    return config;
-  },
-};
-
-export default nextConfig;
-```
-
-2. Create your component:
-
-```typescript
+```jsx
 'use client'
 
 import { useState } from 'react'
@@ -252,24 +209,23 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen p-8">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">ZK Email Proof Generator</h1>
+    <main>
+      <div>
+        <h1>ZK Email Proof Generator</h1>
         
         <input 
           type="file" 
           accept=".eml"
           onChange={handleFileUpload}
           disabled={loading}
-          className="mb-4"
         />
         
-        {loading && <p className="text-gray-600">Generating proof...</p>}
+        {loading && <p>Generating proof...</p>}
         
         {proof && (
-          <div className="mt-4">
-            <h3 className="text-xl font-semibold mb-2">Proof Generated:</h3>
-            <pre className="bg-gray-100 p-4 rounded overflow-auto">
+          <div>
+            <h3>Proof Generated:</h3>
+            <pre>
               {JSON.stringify(proof, null, 2)}
             </pre>
           </div>
