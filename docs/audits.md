@@ -44,9 +44,9 @@ The following commits contain all fixes addressing the audit findings:
   </a>
 </div>
 
-### 2024 Ether Transaction Builder Audit by Zellic
+### 2024 Email Transaction Builder Audit by Zellic
 
-We completed an audit with Zellic of our Ether Transaction Builder (previously known as Ether Email Auth) library in September 2024.
+We completed an audit with Zellic of our Email Transaction Builder (previously known as Ether Email Auth) library in September 2024.
 
 Fixes are merged on commit [38d9a4](https://github.com/zkemail/ether-email-auth/commit/38d9a4b96b75ce436157c31732bb759d3029f886) on ether-email-auth.
 
