@@ -1,7 +1,7 @@
 ---
 title: Introduction
 sidebar_label: Introduction
-description: Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications
+description: Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications
 keywords: [ZK Email, zero knowledge proofs, email verification, DKIM signatures, blockchain integration, developer documentation, implementation guide, architecture overview, technical specifications, web3 integration]
 ---
 

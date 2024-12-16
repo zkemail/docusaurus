@@ -80,7 +80,7 @@ const config: Config = {
     metadata: [
       {
         name: 'description',
-        content: 'Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications',
+        content: 'Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications',
       },
       {
         property: 'og:title',
@@ -88,7 +88,7 @@ const config: Config = {
       },
       {
         property: 'og:description',
-        content: 'Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications',
+        content: 'Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications',
       },
       {
         property: 'og:type',
@@ -112,7 +112,7 @@ const config: Config = {
       },
       {
         name: 'twitter:description',
-        content: 'Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications',
+        content: 'Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications',
       },
       {
         name: 'twitter:image',
