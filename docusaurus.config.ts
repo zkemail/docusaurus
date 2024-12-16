@@ -77,6 +77,48 @@ const config: Config = {
         {to: '/email-tx-builder/', label: 'Email Transaction Builder', position: 'left'},
       ],
     },
+    metadata: [
+      {
+        name: 'description',
+        content: 'Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications',
+      },
+      {
+        property: 'og:title',
+        content: 'ZK Email Documentation',
+      },
+      {
+        property: 'og:description',
+        content: 'Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:url',
+        content: 'https://docs.zk.email',
+      },
+      {
+        property: 'og:image',
+        content: 'https://docs.zk.email/img/zk-email-docs-banner.png',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: 'ZK Email Documentation',
+      },
+      {
+        name: 'twitter:description',
+        content: 'Documentation for ZK Email - learn about zero-knowledge email verification, architecture components, implementation examples, and integration guides for applications',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://docs.zk.email/img/zk-email-docs-banner.png',
+      },
+    ],
     footer: {
       style: 'dark',
       links: [
