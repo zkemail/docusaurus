@@ -100,7 +100,7 @@ const config: Config = {
       },
       {
         property: 'og:image',
-        content: 'https://docs.zk.email/img/zk-email-docs-banner.png',
+        content: 'https://docs.zk.email/img/zk-email-docs-banner.webp',
       },
       {
         name: 'twitter:card',
@@ -116,7 +116,7 @@ const config: Config = {
       },
       {
         name: 'twitter:image',
-        content: 'https://docs.zk.email/img/zk-email-docs-banner.png',
+        content: 'https://docs.zk.email/img/zk-email-docs-banner.webp',
       },
     ],
     footer: {
