@@ -7,6 +7,7 @@ import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
 import { Redirect } from '@docusaurus/router';
+import Head from '@docusaurus/Head';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
@@ -41,5 +42,12 @@ export default function Home(): JSX.Element {
   //     </main>
   //   </Layout>
   // );
-  return <Redirect to="/introduction" />
+  return (
+    <>
+      <Head>
+        <meta name="google-site-verification" content="p1d2CJxBesOeXENEYrDsrLDTPfWOBVTmwXnsfdB7b1Q" />
+      </Head>
+      <Redirect to="/introduction" />
+    </>
+  );
 }

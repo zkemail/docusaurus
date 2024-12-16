@@ -17,6 +17,7 @@ import Head from '@docusaurus/Head';
     href="/img/zk-email-docs-banner.webp"
     fetchpriority="high"
   />
+  <meta name="google-site-verification" content="p1d2CJxBesOeXENEYrDsrLDTPfWOBVTmwXnsfdB7b1Q" />
 </Head>
 
 <div style={{fontSize: '1.2em'}}>
