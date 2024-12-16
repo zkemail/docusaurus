@@ -1,3 +1,10 @@
+---
+title: Architecture | Email Transaction Builder
+sidebar_label: Architecture
+description: Technical overview of ZK Email's architecture, combining DKIM signatures with zero-knowledge proofs for trustless email verification on blockchain networks, including core components and workflow
+keywords: [email verification, blockchain architecture, DKIM signatures, zero-knowledge proofs, smart contracts, decentralized systems, trustless verification, EmailAuth.sol, Generic Relayer, system components]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Architecture

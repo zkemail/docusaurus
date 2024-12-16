@@ -1,3 +1,10 @@
+---
+title: Architecture | JWT Transaction Builder
+sidebar_label: Architecture
+description: Architecture of JWT Transaction Builder's, including frontend, prover service, circuits, and smart contracts with detailed workflow diagrams.
+keywords: [architecture, JWT verification, zero-knowledge proofs, smart contracts, Google Sign-In, blockchain integration, ZK circuits, proof verification, workflow diagram, component breakdown]
+---
+
 # Architecture
 
 This system enables **JWT-based actions** on the blockchain using Google Sign-In, zero-knowledge proofs (ZKPs), and smart contracts to ensure privacy and security. Here's a detailed breakdown of the architecture.

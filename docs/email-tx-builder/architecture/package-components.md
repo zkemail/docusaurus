@@ -1,3 +1,10 @@
+---
+title: Package Components | Email Transaction Builder
+sidebar_label: Package Components
+description: Overview of ZK Email's core packages including circuits, contracts, relayer, and prover components, with detailed explanations of their roles in email verification and blockchain integration
+keywords: [package components, circom circuits, smart contracts, relayer server, prover server, DKIM verification, email authentication, account recovery, blockchain integration, zero-knowledge proofs]
+---
+
 # Package Components
 
 There are four significant packages in this repo:

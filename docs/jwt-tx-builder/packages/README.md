@@ -1,3 +1,10 @@
+---
+title: Packages | JWT Transaction Builder
+sidebar_label: Packages
+description: Overview of JWT Transaction Builder's core packages - Circuits for zero-knowledge proofs, Contracts for on-chain verification, and Helpers for JWT operations and testing
+keywords: [JWT Transaction Builder packages, zero-knowledge circuits, smart contracts, JWT verification, RSA validation, Merkle trees, anonymous domains, blockchain authentication, cryptographic utilities, circuit templates]
+---
+
 # Packages
 
 The jwt-tx-builder repository consists of three core packages: **Circuits**, **Contracts**, and **Helpers**.

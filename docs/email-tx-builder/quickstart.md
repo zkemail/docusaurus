@@ -1,3 +1,10 @@
+---
+title: Quickstart | Email Transaction Builder
+sidebar_label: Quickstart
+description: Get started quickly with ZK Email Transaction Builder using the template repository. Learn to deploy contracts and execute email-based blockchain commands in minutes.
+keywords: [quickstart guide, email transactions, blockchain integration, smart contracts, EmitEmailCommand, command templates, type matchers, Generic Relayer API, deployment guide, CLI usage]
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

@@ -1,3 +1,10 @@
+---
+title: Overview | Account Recovery
+sidebar_label: Overview
+description: Zero-knowledge email-based account recovery system for Web3, enabling secure account restoration through trusted email guardians while maintaining complete privacy through ZK proofs
+keywords: [ZK email recovery, account recovery, web3 security, email guardians, zero-knowledge proofs, DKIM verification, blockchain security, account restoration, privacy-preserving recovery, decentralized recovery]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Overview

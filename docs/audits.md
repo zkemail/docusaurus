@@ -1,8 +1,8 @@
 ---
-description: >-
-  We have audited all of the code used in any zk-email mainnet deployments
-  (zkp2p, email recovery). Contact us on t.me/zkemail if you are using any code
-  that is not covered in these audits.
+title: Audits
+sidebar_label: Audits
+description: Complete audit history of ZK Email's libraries, including reports from Matter Labs, Zellic, Ackee Blockchain, zksecurity, and Y Academy, with detailed fixes and improvements
+keywords: [security audits, Matter Labs, Zellic, Ackee Blockchain, zksecurity, Y Academy, smart contract security, ZK circuits, DKIM verification, email recovery, security fixes, code improvements]
 ---
 
 # Audits
@@ -44,9 +44,9 @@ The following commits contain all fixes addressing the audit findings:
   </a>
 </div>
 
-### 2024 Ether Transaction Builder Audit by Zellic
+### 2024 Email Transaction Builder Audit by Zellic
 
-We completed an audit with Zellic of our Ether Transaction Builder (previously known as Ether Email Auth) library in September 2024.
+We completed an audit with Zellic of our Email Transaction Builder (previously known as Ether Email Auth) library in September 2024.
 
 Fixes are merged on commit [38d9a4](https://github.com/zkemail/ether-email-auth/commit/38d9a4b96b75ce436157c31732bb759d3029f886) on ether-email-auth.
 

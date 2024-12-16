@@ -1,8 +1,8 @@
 ---
-description: >-
-  Thank you for your interest in contributing to Zk Email! We're thrilled to
-  have you on board. This guide is designed to help you smoothly navigate
-  through the process of making valuable contributions.
+title: Contributing
+sidebar_label: Contributing
+description: Comprehensive guide for contributing to ZK Email, including contribution guidelines, issue labels, bounty program details, and exciting project ideas with grants available
+keywords: [contributing guide, open source, bounty program, project ideas, issue labels, pull requests, developer guidelines, blockchain projects, zero knowledge proofs, email verification, developer community]
 ---
 
 # Contributing

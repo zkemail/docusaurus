@@ -1,3 +1,10 @@
+---
+title: Overview | ZK Email SDK
+sidebar_label: Overview
+description: Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications
+keywords: [ZK Email SDK, zero-knowledge proofs, email verification, blockchain integration, ZK circuits, proof generation, smart contract verification, developer tools, privacy-preserving authentication]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Overview

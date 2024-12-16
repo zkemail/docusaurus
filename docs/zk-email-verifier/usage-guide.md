@@ -1,3 +1,10 @@
+---
+title: Usage Guide | ZK Email Verifier
+sidebar_label: Usage Guide
+description: Comprehensive guide for implementing ZK Email Verifier - from regex creation to proof verification, including circuit compilation, input generation, witness computation, and both off-chain and on-chain verification
+keywords: [ZK Email implementation, regex compilation, circuit creation, DKIM verification, proof generation, witness computation, snarkjs setup, trusted setup, circuit verification, Ethereum integration, zero-knowledge proofs]
+---
+
 # Usage Guide
 
 This guide provides a step-by-step walkthrough on how to use the ZK Email Verifier. It covers the process from converting your email to regex to creating your zero-knowledge proof for email verification. The guide assumes you have already installed the necessary packages as outlined in the Installation Guide. If you haven't done so, please refer to the [Setup Guide](setup.md) first.

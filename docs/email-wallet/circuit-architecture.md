@@ -1,5 +1,8 @@
 ---
-description: Circom templates that are used in Email Wallet
+title: Circuit Architecture | Email Wallet
+sidebar_label: Circuit Architecture
+description: Technical documentation of Circom zero-knowledge proof circuits used in Email Wallet, including account creation, initialization, transport, claiming, and email verification circuits
+keywords: [circom circuits, zero-knowledge proofs, ZK circuits, account creation, email verification, DKIM verification, circuit architecture, cryptographic primitives, email wallet protocol, blockchain integration]
 ---
 
 # Circuit Architecture

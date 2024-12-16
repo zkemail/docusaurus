@@ -1,3 +1,10 @@
+---
+title: Setup Guide | JWT Transaction Builder
+sidebar_label: Setup Guide
+description: Complete guide to setting up the JWT Transaction Builder frontend, including Google OAuth configuration, API endpoints, and smart contract integration
+keywords: [frontend setup, JWT implementation, Google OAuth, API endpoints, smart contract integration, Next.js configuration, environment setup, proof submission, security considerations, development guide]
+---
+
 # Setup
 
 This guide explains how to set up the JWT Transaction Builder frontend for handling JWT-based transactions.
@@ -53,7 +60,7 @@ GOOGLE_CLIENT_ID=your_google_client_id_here
 Create `next.config.mjs`:
 
 
-```1:15:frontend/next.config.mjs
+```
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     webpack: (config, { isServer }) => {
@@ -74,61 +81,12 @@ const nextConfig = {
 
 ## Core Components
 
-### Layout Setup
-
-Create the base layout with ChakraUI:
-
-
-```1:41:frontend/app/layout.tsx
-import type { Metadata } from "next";
-import { ChakraProvider } from "@chakra-ui/react";
-import localFont from "next/font/local";
-import "./globals.css";
-
-const geistSans = localFont({
-    src: "./fonts/GeistVF.woff",
-    variable: "--font-geist-sans",
-    weight: "100 900",
-});
-const geistMono = localFont({
-    src: "./fonts/GeistMonoVF.woff",
-    variable: "--font-geist-mono",
-    weight: "100 900",
-});
-
-export const metadata: Metadata = {
-    title: "JWT-Wallet",
-    description: "A simple JWT wallet application",
-};
-
-export default function RootLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
-    return (
-        <html lang="en">
-            <body className={`${geistSans.variable} ${geistMono.variable}`}>
-                <ChakraProvider>{children}</ChakraProvider>
-                <script
-                    src="https://accounts.google.com/gsi/client"
-                    async
-                    defer
-                ></script>
-            </body>
-        </html>
-    );
-}
-
-```
-
-
 ### Main Page Implementation
 
 The main page handles JWT generation and proof verification:
 
 
-```1:340:frontend/app/page.tsx
+```
 ...
 export default function Home() {
   const [command, setCommand] = useState("");
@@ -209,7 +167,7 @@ export default function Home() {
 Create an API endpoint for generating circuit inputs:
 
 
-```1:39:frontend/pages/api/generateCircuitInputs.ts
+```
 import { NextApiRequest, NextApiResponse } from "next";
 import { generateJWTVerifierInputs } from "@zk-jwt/helpers/dist/input-generators";
 import { genAccountCode } from "@zk-email/relayer-utils";
@@ -255,7 +213,7 @@ export default async function handler(
 Set up a proxy endpoint for the JWT prover service:
 
 
-```1:54:frontend/pages/api/proxyJwtProver.ts
+```
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
@@ -318,7 +276,7 @@ export default async function handler(
 Create an endpoint for submitting proofs to the contract:
 
 
-```1:106:frontend/pages/api/submitProofToContract.ts
+```
 import { NextApiRequest, NextApiResponse } from "next";
 import { createPublicClient, http, createWalletClient } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
@@ -430,7 +388,7 @@ export default async function handler(
 Ensure you have the contract ABI in `public/JwtVerifier.json`. The contract interface should match:
 
 
-```196:249:frontend/public/JwtVerifier.json
+```
         {
             "type": "function",
             "name": "verifyEmailProof",

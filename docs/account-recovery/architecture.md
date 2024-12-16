@@ -1,3 +1,10 @@
+---
+title: Architecture | Account Recovery
+sidebar_label: Architecture
+description: Technical architecture documentation for email-based account recovery system, including core contracts, command handlers, recovery modules, and detailed recovery flows
+keywords: [smart contracts, account recovery, EmailRecoveryManager, command handlers, recovery modules, guardian management, blockchain architecture, web3 security, account restoration, Safe integration]
+---
+
 # Architecture
 
 ## Core Contracts

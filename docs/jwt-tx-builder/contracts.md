@@ -1,3 +1,10 @@
+---
+title: Deployed Contract Addresses | JWT Transaction Builder
+sidebar_label: Deployed Contracts
+description: Current deployment addresses for JWT Transaction Builder's smart contracts on Base Sepolia testnet, including JWTRegistry and JWTVerifier contracts
+keywords: [deployed contracts, contract addresses, Base Sepolia, JWTRegistry, JWTVerifier, smart contract deployment, testnet addresses, proxy contracts, blockchain deployment]
+---
+
 # Deployed Contracts
 
 import Tabs from '@theme/Tabs';

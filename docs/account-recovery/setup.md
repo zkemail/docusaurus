@@ -1,3 +1,10 @@
+---
+title: Setup | Account Recovery
+sidebar_label: Setup
+description: Step-by-step guide for implementing ZK Email Recovery in Safe accounts, including module installation, guardian configuration, and recovery process setup
+keywords: [email recovery setup, Safe integration, guardian configuration, account recovery, module installation, ERC-7579, smart account setup, recovery module, web3 security, account protection]
+---
+
 # Setup
 
 ZK Email Recovery enables account recovery through email guardians. The recovery process involves:

@@ -1,3 +1,10 @@
+---
+title: Relayer API Documentation | Email Wallet
+sidebar_label: API Documentation
+description: Complete reference for the Email Wallet Relayer API, including endpoints for account creation, asset transfers, NFT management, and account recovery with TypeScript examples
+keywords: [relayer API, email wallet, API endpoints, account creation, asset transfer, NFT transfer, account recovery, web3 API, blockchain integration, TypeScript examples]
+---
+
 # API Documentation
 
 ## Relayer API Documentation

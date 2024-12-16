@@ -1,3 +1,10 @@
+---
+title: "@zk-jwt/helpers | JWT Transaction Builder"
+sidebar_label: "@zk-jwt/helpers"
+description: Developer utilities for JWT verification and cryptographic operations, including RSA signature handling, input generation for JWTVerifier circuit, and anonymous domain management
+keywords: [JWT helpers, cryptographic utilities, RSA signatures, input generation, anonymous domains, JWT verification, ZK circuit inputs, TypeScript interfaces, blockchain authentication]
+---
+
 # @zk-jwt/helpers
 
 The @zk-jwt/helpers package provides utility functions for JWT verification and cryptographic operations. It includes functions for handling RSA signatures, public keys, JWT messages, and hashes.

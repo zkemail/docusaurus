@@ -1,3 +1,10 @@
+---
+title: DKIM Verification | ZK Email Architecture
+sidebar_label: DKIM Verification
+description: Comprehensive guide to how ZK Email leverages DKIM for trustless email verification on blockchain networks, including signature process, verification workflow, and integration with zero-knowledge proofs
+keywords: [DKIM verification, email authentication, zero-knowledge proofs, blockchain verification, email security, cryptographic signatures, DNS records, email integrity, trustless verification, privacy preservation]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # DKIM Verification

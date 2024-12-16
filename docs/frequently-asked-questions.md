@@ -1,3 +1,10 @@
+---
+title: Frequently Asked Questions
+sidebar_label: Frequently Asked Questions
+description: Comprehensive FAQ covering DKIM signatures, SHA hashing, regex parsing, proof generation, public key verification, circuit editing, and common troubleshooting for ZK Email implementation
+keywords: [DKIM signatures, SHA hashing, regex parsing, snarkJS, proof generation, public key verification, circuit constraints, troubleshooting, error resolution, implementation guide, technical FAQ]
+---
+
 # Frequently Asked Questions
 
 ### Can you provide an example header for me to understand what exactly is signed?

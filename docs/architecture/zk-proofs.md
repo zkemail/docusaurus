@@ -1,3 +1,10 @@
+---
+title: Zero-Knowledge Proofs
+sidebar_label: Zero-Knowledge Proofs
+description: Deep dive into how ZK Email uses Zero-Knowledge Proofs for private email verification, including ZK-SNARKs, circuit design, and selective disclosure mechanisms
+keywords: [zero-knowledge proofs, ZK-SNARKs, ZK circuits, privacy-preserving verification, selective disclosure, cryptographic protocols, blockchain verification, DKIM verification, proof generation, circuit design]
+---
+
 import DocCardList from '@theme/DocCardList';
 
 # Zero-Knowledge Proofs

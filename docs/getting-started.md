@@ -1,3 +1,10 @@
+---
+title: Getting Started
+sidebar_label: Getting Started
+description: Learn how to integrate ZK Email's DKIM verification and zero-knowledge proofs into your applications, with guides for SDKs, templates, and project components
+keywords: [ZK Email integration, DKIM verification, zero-knowledge proofs, email authentication, blockchain integration, SDK implementation, smart contract wallet, account recovery, OAuth login, developer guide]
+---
+
 # Getting Started
 
 <div style={{fontSize: '1.2em'}}>

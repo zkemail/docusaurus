@@ -1,3 +1,10 @@
+---
+title: On-chain Integration | ZK Email Architecture
+sidebar_label: On-chain Integration
+description: Technical overview of ZK Email's blockchain integration, including proof generation, verification contracts, and DKIM registry for trustless email verification in Web3 applications
+keywords: [on-chain verification, blockchain integration, zero-knowledge proofs, smart contracts, DKIM registry, web3 integration, trustless verification, privacy-preserving, proof generation, blockchain applications]
+---
+
 # On-chain Integration
 
 <div style={{fontSize: '1.2em'}}>

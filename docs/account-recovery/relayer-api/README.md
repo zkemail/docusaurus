@@ -1,4 +1,8 @@
 ---
+title: Relayer API Reference | Account Recovery
+sidebar_label: API Reference
+description: Complete API documentation for managing account recovery and acceptance processes through email-based verification, including endpoints for echo, request status, acceptance, recovery, and account salt generation.
+keywords: [account recovery, email verification, blockchain authentication, ethereum, API reference, relayer API, account security, web3 authentication, account restoration, guardian management]
 hide_table_of_contents: true
 ---
 

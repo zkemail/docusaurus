@@ -9,7 +9,7 @@ const config: Config = {
   favicon: 'img/logo.svg',
 
   // Set the production url of your site here
-  url: 'https://docs.prove.email/',
+  url: 'https://docs.zk.email/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -71,12 +71,54 @@ const config: Config = {
     navbar: {
       title: 'ZK Email',
       items: [
-        {to: '/zk-email-sdk/', label: 'SDK', position: 'left'},
+        {to: '/zk-email-sdk/', label: 'Blueprint SDK', position: 'left'},
         {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
         {to: '/email-tx-builder/', label: 'Email Transaction Builder', position: 'left'},
       ],
     },
+    metadata: [
+      {
+        name: 'description',
+        content: 'Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications',
+      },
+      {
+        property: 'og:title',
+        content: 'ZK Email Documentation',
+      },
+      {
+        property: 'og:description',
+        content: 'Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:url',
+        content: 'https://docs.zk.email',
+      },
+      {
+        property: 'og:image',
+        content: 'https://docs.zk.email/img/zk-email-docs-banner.webp',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: 'ZK Email Documentation',
+      },
+      {
+        name: 'twitter:description',
+        content: 'Documentation for ZK Email - learn how ZK Email works, architecture components, implementation examples, and integration guides for applications',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://docs.zk.email/img/zk-email-docs-banner.webp',
+      },
+    ],
     footer: {
       style: 'dark',
       links: [
@@ -85,17 +127,17 @@ const config: Config = {
           items: [
             {
               label: 'SDK Registry',
-              to: 'https://sdk.prove.email/',
+              to: 'https://registry.zk.email/',
               target: '_blank',
             },
             {
               label: 'Account Recovery Demo',
-              to: 'https://recovery.prove.email/',
+              to: 'https://recovery.zk.email/',
               target: '_blank',
             },
             {
               label: 'DKIM Archive',
-              to: 'https://archive.prove.email/',
+              to: 'https://archive.zk.email/',
               target: '_blank',
             },
           ],

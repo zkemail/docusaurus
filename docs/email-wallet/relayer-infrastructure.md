@@ -1,7 +1,8 @@
 ---
-description: >-
-  An overview of the relayer infrastructure for Email Wallet, and how to set it
-  up.
+title: Relayer Infrastructure | Email Wallet
+sidebar_label: Relayer Infrastructure
+description: Complete guide to setting up and running an Email Wallet relayer, including SMTP server configuration, prover setup, database management, and Docker deployment instructions
+keywords: [relayer infrastructure, SMTP server, ZK prover, PostgreSQL setup, Docker deployment, blockchain infrastructure, email processing, transaction validation, Modal integration, relayer incentives]
 ---
 
 # Relayer Infrastructure

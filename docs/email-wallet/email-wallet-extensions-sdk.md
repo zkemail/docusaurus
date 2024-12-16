@@ -1,3 +1,10 @@
+---
+title: Email Wallet Extensions SDK| Email Wallet
+sidebar_label: Email Wallet Extensions SDK
+description: Developer guide for building custom Email Wallet extensions using the SDK. Learn to create, test, and deploy extensions for token swaps, NFT transfers, and custom functionality.
+keywords: [extensions SDK, smart contract development, email wallet extensions, custom extensions, Uniswap integration, NFT transfers, subject templates, extension deployment, blockchain development, web3 integration]
+---
+
 # Email Wallet Extensions SDK
 
 The [Email Wallet SDK](https://github.com/zkemail/email-wallet-sdk) comprises smart contracts that enhance an email wallet's functionality. This SDK enables the creation of custom extensions that can interact with any smart contracts. It supports operations like token swapping via Uniswap, NFT transfer from the email wallet, and more. Third-party developers can build new functionality of email wallet using our SDK for extensions.
