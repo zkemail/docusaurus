@@ -217,6 +217,15 @@ const config: Config = {
         htmlLabels: true,
       },
     },
+    headTags: [
+      {
+        tagName: 'meta',
+        attributes: {
+          name: 'google-site-verification',
+          content: 'p1d2CJxBesOeXENEYrDsrLDTPfWOBVTmwXnsfdB7b1Q'
+        }
+      }
+    ],
   } satisfies Preset.ThemeConfig,
 };
 
