@@ -39,6 +39,12 @@ The Blueprint SDK consists of three main features:
       href: '/zk-email-sdk/setup',
       label: 'Setup',
       description: 'Setup your project with the Blueprint SDK.',
+    },
+    {
+      type: 'link',
+      href: 'https://github.com/zkemail/sdk-ts-demo',
+      label: 'Examples',
+      description: 'Example repository to help you get started.',
     }
   ]}
 />
