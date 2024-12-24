@@ -42,6 +42,7 @@ const config: Config = {
           editUrl:
             'https://github.com/zkemail/docusaurus/edit/main/',
           showLastUpdateTime: true,
+          editLocalizedFiles: true,
         },
         theme: {
           customCss: './src/css/custom.css',
