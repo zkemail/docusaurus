@@ -8,9 +8,16 @@ keywords: [API reference, Generic Relayer, email transactions, blockchain integr
 
 import styles from '@site/src/components/TwoColumnLayout/two-column-layout.module.css';
 import ApiClient from '@site/src/components/ApiClient';
-import submitCommandConfig from '@site/src/api/email-tx-builder/submit.ts';
+import submitStringConfig from '@site/src/api/email-tx-builder/submit-string.ts';
+import submitUintConfig from '@site/src/api/email-tx-builder/submit-uint.ts';
+import submitIntConfig from '@site/src/api/email-tx-builder/submit-int.ts';
+import submitDecimalsConfig from '@site/src/api/email-tx-builder/submit-decimals.ts';
+import submitEthAddrConfig from '@site/src/api/email-tx-builder/submit-ethaddr.ts';
 import healthzConfig from '@site/src/api/email-tx-builder/healthz.ts';
 import statusConfig from '@site/src/api/email-tx-builder/status.ts';
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # API Reference
 
@@ -72,11 +79,6 @@ Parameters to fill into the command template.
 Unique identifier for the command template.
 
 ---
-`remainingArgs` (array)
-
-Additional arguments not included in the command template.
-
----
 `emailAddress` (string)
 
 Your email address where the command will be sent.
@@ -94,7 +96,7 @@ Body content of the email.
 ---
 `chain` (string)
 
-Blockchain network (e.g., `"sepolia"`).
+Blockchain network (e.g., `"baseSepolia"`).
 
 
 ### Response Fields
@@ -123,7 +125,25 @@ The status of the request. Possible value: `"success"`.
 ```
 POST https://relayer.zk.email/api/submit
 ```
-<ApiClient {...submitCommandConfig} />
+
+Request by type matcher:
+<Tabs>
+  <TabItem value="string" label="String">
+    <ApiClient {...submitStringConfig} />
+  </TabItem>
+  <TabItem value="uint" label="Uint">
+    <ApiClient {...submitUintConfig} />
+  </TabItem>
+  <TabItem value="int" label="Int">
+    <ApiClient {...submitIntConfig} />
+  </TabItem>
+  <TabItem value="decimals" label="Decimals">
+    <ApiClient {...submitDecimalsConfig} />
+  </TabItem>
+  <TabItem value="ethaddr" label="EthAddr">
+    <ApiClient {...submitEthAddrConfig} />
+  </TabItem>
+</Tabs>
 
 
 
