@@ -56,6 +56,14 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'zk-email-sdk/create-blueprint',
+        {
+          type: 'category',
+          label: 'Guides',
+          items: [
+            'zk-email-sdk/proof-of-luma',
+          ],
+        },
+        'zk-email-sdk/regex',
       ],
     },
     {
