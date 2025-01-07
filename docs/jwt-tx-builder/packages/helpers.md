@@ -1,18 +1,18 @@
 ---
-title: "@zk-jwt/helpers | JWT Transaction Builder"
-sidebar_label: "@zk-jwt/helpers"
+title: "@zk-email/jwt-tx-builder-helpers | JWT Transaction Builder"
+sidebar_label: "@zk-email/jwt-tx-builder-helpers"
 description: Developer utilities for JWT verification and cryptographic operations, including RSA signature handling, input generation for JWTVerifier circuit, and anonymous domain management
 keywords: [JWT helpers, cryptographic utilities, RSA signatures, input generation, anonymous domains, JWT verification, ZK circuit inputs, TypeScript interfaces, blockchain authentication]
 ---
 
-# @zk-jwt/helpers
+# @zk-email/jwt-tx-builder-helpers
 
-The @zk-jwt/helpers package provides utility functions for JWT verification and cryptographic operations. It includes functions for handling RSA signatures, public keys, JWT messages, and hashes.
+The @zk-email/jwt-tx-builder-helpers package provides utility functions for JWT verification and cryptographic operations. It includes functions for handling RSA signatures, public keys, JWT messages, and hashes.
 
 ## Installation
 
 ```bash
-yarn add @zk-jwt/helpers
+yarn add @zk-email/jwt-tx-builder-helpers
 ```
 
 ### input-generators.ts

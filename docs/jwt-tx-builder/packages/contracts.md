@@ -1,10 +1,10 @@
 ---
-title: "@zk-jwt/contracts | JWT Transaction Builder"
-sidebar_label: "@zk-jwt/contracts"
+title: "@zk-email/jwt-tx-builder-contracts | JWT Transaction Builder"
+sidebar_label: "@zk-email/jwt-tx-builder-contracts"
 description: Technical guide for JWT Transaction Builder smart contracts including JWTRegistry and JWTVerifier, with deployment instructions, integration examples, and troubleshooting tips
 keywords: [JWT verification contracts, smart contracts, blockchain authentication, JWTRegistry, JWTVerifier, contract deployment, Foundry integration, proxy contracts, contract addresses]
 ---
-# @zk-jwt/contracts 
+# @zk-email/jwt-tx-builder-contracts 
 
 This directory contains verifier contracts for handling JSON Web Tokens(JWTs) proofs. 
 
@@ -59,7 +59,7 @@ forge script script/Deploy_jwtRegistry.s.sol:DeployScript --rpc-url $RPC_URL --b
 1. **Installation**: First, install the package using yarn. Run the following command in your project directory:
 
    ```
-   yarn add @zk-jwt/contracts 
+   yarn add @zk-email/jwt-tx-builder-contracts 
    ```
 
 2. **Integration**: 
@@ -67,16 +67,16 @@ forge script script/Deploy_jwtRegistry.s.sol:DeployScript --rpc-url $RPC_URL --b
    - **Foundry**: Add the following line to remappings.txt:
 
    ```text
-   @zk-jwt/contracts=../../node_modules/@zk-jwt/contracts/src
+   @zk-email/jwt-tx-builder-contracts=../../node_modules/@zk-email/jwt-tx-builder-contracts/src
    ```
 
    - **Solidity**: Import the contracts in your Solidity files using the following syntax:
 
      ```solidity
      // Import necessary contracts for JWT verification
-     import {JwtVerifier} from "@zk-jwt/contracts/utils/JwtVerifier.sol";
-     import {JwtGroth16Verifier} from "@zk-jwt/contracts/utils/JwtGroth16Verifier.sol";
-     import {JwtRegistry} from "@zk-jwt/contracts/utils/JwtRegistry.sol";
+     import {JwtVerifier} from "@zk-email/jwt-tx-builder-contracts/utils/JwtVerifier.sol";
+     import {JwtGroth16Verifier} from "@zk-email/jwt-tx-builder-contracts/utils/JwtGroth16Verifier.sol";
+     import {JwtRegistry} from "@zk-email/jwt-tx-builder-contracts/utils/JwtRegistry.sol";
      ```
 
      You can use the imported contracts as follows:

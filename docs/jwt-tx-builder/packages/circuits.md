@@ -1,11 +1,11 @@
 ---
-title: "@zk-jwt/circuits | JWT Transaction Builder"
-sidebar_label: "@zk-jwt/circuits"
+title: "@zk-email/jwt-tx-builder-circuits | JWT Transaction Builder"
+sidebar_label: "@zk-email/jwt-tx-builder-circuits"
 description: Technical documentation for JWT Transaction Builder circom circuits used in JWT signature verification, including RSA verification, claim validation, and command masking functionality
 keywords: [JWT verification, ZK circuits, circom, RSA verification, JWT claims, zero-knowledge proofs, circuit parameters, JWT nullifier, command masking, blockchain authentication]
 ---
 
-# @zk-jwt/circuits
+# @zk-email/jwt-tx-builder-circuits
 
 The `circuits` package exports the circom circuits needed for building on ZK-JWT.
 
@@ -14,7 +14,7 @@ All circuits in this package are libraries that can be imported to your circom p
 ## Installation
 
 ```bash
-yarn add @zk-jwt/circuits
+yarn add @zk-email/jwt-tx-builder-circuits
 ```
 
 ## JWTVerifier Circuit
@@ -26,7 +26,7 @@ The [JWTVerifier](https://github.com/zkemail/jwt-tx-builder/blob/main/packages/c
 Import to your circuit file like below.
 
 ```circom
-include "@zk-jwt/circuits/jwt-verifier-template.circom";
+include "@zk-email/jwt-tx-builder-circuits/jwt-verifier-template.circom";
 ```
 
 -   Parameters:

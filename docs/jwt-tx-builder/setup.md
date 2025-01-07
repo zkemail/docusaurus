@@ -169,7 +169,7 @@ Create an API endpoint for generating circuit inputs:
 
 ```
 import { NextApiRequest, NextApiResponse } from "next";
-import { generateJWTVerifierInputs } from "@zk-jwt/helpers/dist/input-generators";
+import { generateJWTVerifierInputs } from "@zk-email/jwt-tx-builder-helpers/dist/input-generators";
 import { genAccountCode } from "@zk-email/relayer-utils";
 
 export default async function handler(
