@@ -33,7 +33,7 @@ If you face any challenge creating new Patterns, you can ask our GPT questions a
 
 Before you begin you will need to have:
 
-* An email `.eml` file that you want to create proofs for.
+* An email `.EML` file that you want to create proofs for.
 
 </details>
 
