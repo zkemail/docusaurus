@@ -21,7 +21,7 @@ import DocCardList from '@theme/DocCardList';
 The ZK Email Registry allows you to create email proofs by defining a blueprint. This guide will walk you through the steps to create a new blueprint, ensuring you can set up a new email verification pattern.
 
 :::note Prerequisites
-Before starting, you'll need an .EML file. If you don't have one, learn how to obtain it [**here**](/docs/zk-email-sdk/get-eml-file).
+Before starting, you'll need an .EML file. If you don't have one, learn how to obtain it [**here**](/zk-email-sdk/get-eml-file).
 :::
 
 ## Getting Started
