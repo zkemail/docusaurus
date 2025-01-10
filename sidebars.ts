@@ -105,6 +105,7 @@ const sidebars: SidebarsConfig = {
     'email-wallet/relayer-infrastructure',
     'email-wallet/email-wallet-extensions-sdk',
     'email-wallet/deployed-contract-addresses',
+    'email-wallet/api-documentation',
     {
       type: 'html',
       value: '<span class="sidebar-heading">Account Recovery</span>',
