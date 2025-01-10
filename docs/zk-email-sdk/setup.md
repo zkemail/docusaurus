@@ -60,7 +60,7 @@ You can download a sample email file to test the SDK:
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" fill="currentColor"/>
     </svg>
-    <span>Download residency.eml</span>
+    <span>Download residency.EML</span>
   </a>
 </div>
 
@@ -81,7 +81,7 @@ async function main() {
   const prover = blueprint.createProver();
 
   // Read email file
-  const eml = await fs.readFile("residency.eml", "utf-8");
+  const eml = await fs.readFile("residency.EML", "utf-8");
   
   // Generate proof
   const proof = await prover.generateProof(eml);

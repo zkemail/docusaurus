@@ -55,15 +55,19 @@ const sidebars: SidebarsConfig = {
         id: 'zk-email-sdk/registry',
       },
       items: [
-        'zk-email-sdk/create-blueprint',
+        'zk-email-sdk/regex',
         {
           type: 'category',
-          label: 'Guides',
+          label: 'Creating Blueprint',
+          link: {
+            type: 'doc',
+            id: 'zk-email-sdk/create-blueprint',
+          },
           items: [
+            'zk-email-sdk/get-eml-file',
             'zk-email-sdk/proof-of-luma',
           ],
-        },
-        'zk-email-sdk/regex',
+        }
       ],
     },
     {
