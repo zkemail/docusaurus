@@ -18,49 +18,55 @@ import DocCardList from '@theme/DocCardList';
   />
 </Head>
 
-The ZK Email Registry allows you to create email proofs. To create a new proof, first you need to create a blueprint. To start creating your blueprint you need to login with your GitHub account and navigate to the [ZK Email Registry](https://registry.zk.email/create/new).
+The ZK Email Registry allows you to create email proofs by defining a blueprint. This guide will walk you through the steps to create a new blueprint, ensuring you can set up a new email verification pattern.
 
-:::info Prerequisites
-To create a blueprint you need an .EML file. Learn how to get yours [here](/docs/zk-email-sdk/get-eml-file).
+:::note Prerequisites
+Before starting, you'll need an .EML file. If you don't have one, learn how to obtain it [**here**](/docs/zk-email-sdk/get-eml-file).
 :::
+
+## Getting Started
+
+1. Log in to the [**ZK Email Registry**](https://registry.zk.email) using your GitHub account.
+2. Navigate to the blueprint creation page.
+3. Click the "Create Blueprint" button on the top right to begin.
 
 ## Blueprint Details
 
-First, let's set up the basic information for your blueprint. Click the "Create Blueprint" button to start.
 
 ![Create Blueprint Step 1](/img/registry/create-blueprint.webp)
 
 ### Pattern Name
-This is what users will see in the registry. Make it descriptive and clear.
+Choose a descriptive and clear name that users will see in the registry.
 ```
-Example: "Blueprint Name"
+Example: "Google Confirmation Proof"
 ```
 
 ### Circuit Name
-The technical name for your circuit. Must follow these rules:
+Set a technical name for your circuit, following these rules:
 - Use PascalCase
-- No spaces or special characters
-- No file extensions
+- Avoid spaces and special characters
+- Omit file extensions
 ```
-Example: "BlueprintName"
+Example: "GoogleConfirmationProof"
 ```
 
 ### Slug
-This is your URL identifier. It's automatically generated as:
+Your URL identifier is automatically generated as:
 ```
 {github-username}/{circuitName}
 ```
 
 ### Test Email Upload
-Drop or upload a `.EML` file here. This is needed because:
-- It's used to test your extraction patterns
-- Powers the AI auto-extraction feature
-- Helps validate your blueprint works
+Upload a .EML file here. This file serves multiple purposes:
+- Powering the AI auto extraction feature
+- Testing your extraction regex
+
+If you need to download an .EML file, you can learn how to do so [**here**](/zk-email-sdk/get-eml-file).
 
 ### Description
-Write a clear explanation of what your blueprint proves. Keep it concise but informative.
+Provide a concise yet informative explanation of what your blueprint proves.
 ```
-Example: "Proof that you were confirmed for an event."
+Example: "Prove that you received a devcon confirmation email."
 ```
 
 ## Email Details
@@ -70,71 +76,86 @@ Now we will configure the query to find the email for creating the proof and set
 ![Create Blueprint Step 2](/img/registry/create-blueprint-step2.webp)
 
 ### Email Query
-The Gmail search query to find relevant emails. You can use any gmail query to find the email. More information [here](https://support.google.com/mail/answer/7190).
+Specify a Gmail search query to locate relevant emails. You can use any valid Gmail query. More information [**here**](https://support.google.com/mail/answer/7190).
 ```
-Example: "from:domain.com"
+Example: "from:google.com"
 ```
-This query will be used when users try to generate proofs with their Gmail account.
+This query is used to search the logged-in user's Gmail inbox to easily find and select the relevant email for generating proofs.
 
 ### Sender Domain
-The domain used for DKIM verification. Find this in the `d=` field of the DKIM-Signature header.
+Specify the domain used for DKIM verification, which is crucial for email authenticity.
+- Location: Find this in the `d=` field of the DKIM-Signature header.
+- Format: Enter the domain name without the "@" symbol.
 ```
-Example: "domain.com" (don't include @)
+Example: "google.com"
 ```
 
 ### Max Email Header Length
-Sets the maximum size for email headers. Must be:
-- A multiple of 64
-- Large enough to fit your use email header
+Define the maximum size for email headers:
+- Must be a multiple of 64 bytes
+- Ensure it's large enough to encompass your entire email header
 ```
 Example: 1024
 ```
 
+:::caution
+Setting this value too low may result in a blueprint compilation error, while setting it too high unnecessarily increases the circuit size.
+:::
+
 ### Skip body hash check
-If you are trying to extract data purely from headers, you can enable this option. This option ignores the body of the email when generating the proof which is useful to reduce the number of constraints in the circuit.
+Enable this option to ignore the email body during proof generation:
+- Useful when extracting data solely from headers
+- Reduces the number of constraints in the circuit
+- Can significantly improve proof generation speed
+
+:::note
+Only enable this if you're certain all required data is in the headers, as it will prevent any body content verification.
+:::
 
 ## Field Extraction
 
-This is where you define what data to extract from the email.
+This section defines the data you want to extract from the email.
 
 ![Create Blueprint Step 3](/img/registry/create-blueprint-step3.webp)
 
 ### AI Auto-extraction
-1. Write a description of the fields you want to extract (e.g., "Extract the user's name and order number")
-2. Click "Generate Fields"
-3. The AI will analyze your test email and populate the extraction fields automatically
+Leverage AI to simplify the field extraction process:
+- Provide a clear description of the fields you want to extract
+- Click the "Generate Fields" button
+- Review and refine the AI-generated extraction fields as needed
 
 ### Fields to Extract
-For each piece of data you want to extract:
+For each data point you wish to extract:
+- **Field Name**: Assign a clear, descriptive identifier
+  ```
+  Example: "receiverName"
+  ```
 
-1. **Field Name**: Give it a clear identifier
-```
-Example: "receiverName"
-```
+- **Data Location**: Specify the email section to search:
+  - Body: Main email content
+  - Headers: Email metadata (subject, sender, etc.)
 
-2. **Data Location**: Choose where to look:
-   - `Body`: Email content
-   - `Headers`: Email metadata
+- **Max Length**: Set the maximum character count for this field
+  ```
+  Example: 64
+  ```
 
-3. **Max Length**: Maximum characters for this field
-```
-Example: 64
-```
+- **Decomposed Regex Parts**: Define your extraction pattern:
+  ```json
+  [
+    {
+      "isPublic": true,
+      "regexDef": "[a-zA-Z0-9_]+"  // Matches username
+    }
+  ]
+  ```
 
-4. **Regex Parts**: Define your extraction pattern:
-```json
-[
-  {
-    "isPublic": true,
-    "regexDef": "[a-zA-Z0-9_]+"  // Matches username
-  }
-]
-```
+Learn more about decomposed regex [**here**](/zk-email-sdk/regex#decomposed-regex).
 
 ### External Inputs
-For any additional data needed during verification:
-1. Field Name
-2. Maximum Length
+For any additional data:
+- **Field Name**: Choose a descriptive identifier (e.g., "eventCode")
+- **Maximum Length**: Set an appropriate character limit (e.g., 20)
 
 ## Example Blueprints
 

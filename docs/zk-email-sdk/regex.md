@@ -26,23 +26,9 @@ These building blocks allow you to define very patterns to search or extract sub
 
 Examples:
 
-- `[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}` - Matches email addresses. [Try out](https://regex101.com/r/NlTlk4/1).
-- `^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$` - Matches US phone numbers. [Try out](https://regex101.com/r/QwP1va/1).
-- `^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$` - Matches valid IP address octets (0-255). [Try out](https://regex101.com/r/E6ujVA/1).
-
-### Decomposed Regex
-
-For extracting specific fields from an email, a **decomposed regex** breaks a single regular expression into smaller, sequential parts. Instead of having one large and complex regex, ZK Email uses an array of parts definitions, each describing a consecutive part of the regex and visibility.
-
-Each part in the decomposed regex includes:
-- `isPublic`: a boolean indicating if this part of the match should be public or private in the final proof.
-- `regexDef`: the portion of the regex pattern.
-
-When these parts are combined in order, they form a complete pattern for matching. You can also find an example of a parts array from our [ZK Email Registry](https://registry.zk.email/dc963079-fe7d-4bcb-a4ed-c60ad7a93d2b/parameters#:~:text=parts).
-
-:::info
-If multiple matches are found in the email, only the first match will be used. Make sure your regex pattern is specific enough to uniquely identify the desired content.
-:::
+- `[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}` - Matches email addresses. [**Try out**](https://regex101.com/r/NlTlk4/1).
+- `^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$` - Matches US phone numbers. [**Try out**](https://regex101.com/r/QwP1va/1).
+- `^((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}$` - Matches valid IP address octets (0-255). [**Try out**](https://regex101.com/r/E6ujVA/1).
 
 ### Special Characters and Expressions
 
@@ -77,6 +63,19 @@ Here's a quick reference of commonly used regex special characters and expressio
 
 For an interactive regex tester and comprehensive reference, visit [regex101.com](https://regex101.com).
 
+## Decomposed Regex
+
+For extracting specific fields from an email, a **decomposed regex** breaks a single regular expression into smaller, sequential parts. Instead of having one large and complex regex, ZK Email uses an array of parts definitions, each describing a consecutive part of the regex and visibility.
+
+Each part in the decomposed regex includes:
+- `isPublic`: a boolean indicating if this part of the match should be public or private in the final proof.
+- `regexDef`: the portion of the regex pattern.
+
+When these parts are combined in order, they form a complete pattern for matching. You can also find an example of a parts array from our [ZK Email Registry](https://registry.zk.email/dc963079-fe7d-4bcb-a4ed-c60ad7a93d2b/parameters#:~:text=parts).
+
+:::info
+If multiple matches are found in the email, only the first match will be used. Make sure your regex pattern is specific enough to uniquely identify the desired content.
+:::
 
 ## Decomposed Regex Examples
 
