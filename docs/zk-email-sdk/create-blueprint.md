@@ -20,6 +20,10 @@ import DocCardList from '@theme/DocCardList';
 
 The ZK Email Registry allows you to create email proofs. To create a new proof, first you need to create a blueprint. To start creating your blueprint you need to login with your GitHub account and navigate to the [ZK Email Registry](https://registry.zk.email/create/new).
 
+:::info Prerequisites
+To create a blueprint you need an .EML file. Learn how to get yours [here](/docs/zk-email-sdk/get-eml-file).
+:::
+
 ## Blueprint Details
 
 First, let's set up the basic information for your blueprint. Click the "Create Blueprint" button to start.
@@ -48,7 +52,7 @@ This is your URL identifier. It's automatically generated as:
 ```
 
 ### Test Email Upload
-Drop or upload a `.eml` file here. This is needed because:
+Drop or upload a `.EML` file here. This is needed because:
 - It's used to test your extraction patterns
 - Powers the AI auto-extraction feature
 - Helps validate your blueprint works

@@ -61,6 +61,7 @@ const sidebars: SidebarsConfig = {
           label: 'Guides',
           items: [
             'zk-email-sdk/proof-of-luma',
+            'zk-email-sdk/get-eml-file',
           ],
         },
         'zk-email-sdk/regex',
