@@ -57,6 +57,13 @@ import TabItem from '@theme/TabItem';
 | RecoveryController(proxy) | 0x207A507c7824235D841348e0F204E883B27239A5 |
 | SimpleWallet(impl) | 0xcB1938e736d54a09491B03D6680A3aedc3477c9E |
 | ZkSyncCreate2Factory | 0x4a06245B0CD0cAE3968f0BD048196d610f53B6b2 |
+
+**Missing Libraries**
+| Library name | Address |
+| ------------ | ------- |
+| DecimalUtils | 0x718C17388E0A1b63788E80F789B03cdd8Df76060 |
+| CommandUtils | 0x72971413eC4D6F4298C9E906f85a9f78a73773a5 |
+| StringUtils | 0x888A8339fF7465DfE29BcC1f930B983C01a35C0a |
   </TabItem>
 </Tabs>
 
