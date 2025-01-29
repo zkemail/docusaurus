@@ -67,6 +67,10 @@ For an interactive regex tester and comprehensive reference, visit [regex101.com
 
 For extracting specific fields from an email, a **decomposed regex** breaks a single regular expression into smaller, sequential parts. Instead of having one large and complex regex, ZK Email uses an array of parts definitions, each describing a consecutive part of the regex and visibility.
 
+:::warning Important Limitations
+ZK Email uses the ZK-Regex library which has several important limitations. These include restrictions on greedy/lazy matching, anchor placement, and DFA state transitions. Most importantly for decomposed regex, parts must alternate between public and private states. See the [ZK-Regex Limitations](/zk-regex#limitations) section for the complete list of restrictions.
+:::
+
 Each part in the decomposed regex includes:
 - `isPublic`: a boolean indicating if this part of the match should be public or private in the final proof.
 - `regexDef`: the portion of the regex pattern.
