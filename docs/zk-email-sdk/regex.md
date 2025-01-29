@@ -61,7 +61,17 @@ Here's a quick reference of commonly used regex special characters and expressio
 | `a{3,6}` | Between 3 and 6 occurrences of a |
 | `a\|b` | Alternation - matches a or b |
 
-For an interactive regex tester and comprehensive reference, visit [regex101.com](https://regex101.com).
+For an interactive regex tester and comprehensive reference, visit [regex101.com](https://regex101.com). Note that we don't support all regex features supported by them.
+
+### Unsupported Regex
+
+We need our regex matches to be deterministic and able to be calculated one character at a time in order. This means that we don't support the following regex features:
+
+- Regular expressions where the results differ between greedy and lazy matching (e.g., `.+`, `.+?`, `.*`) are not supported.
+- The beginning anchor ^ must either appear at the beginning of the regular expression or be in the format `(\r\n|^)`. Additionally, the section containing this ^ must be non-public (is_public: false). You don't need the `$` at the end of the regex.
+- Lookarounds like `(?=...)` are not supported. Lookbehinds like `(?<=...)` are also not supported.
+- Regular expressions that, when converted to DFA, have multiple accepting states are not supported. You can think of this as meaning that the regex should end on a known character.
+- Decomposed regex definitions must alternate public and private states.
 
 ## Decomposed Regex
 
@@ -80,6 +90,10 @@ If multiple matches are found in the email, only the first match will be used. M
 ## Decomposed Regex Examples
 
 Below are some common email fields you might want to extract. If you want to create your own email proof, please refer to our guide to [create a new blueprint](/zk-email-sdk/create-blueprint).
+
+### Recommendations
+
+We recommend using `(\r\n|^)` to start all regexes, and especially before all fields like `from`, `to`, `subject`, etc. This ensures no one can fake it by e.g. manipulating the subject. We also recommend the pattern of `[^x]+x` -- basically matching any character except the target character multiple times, then the target character. This helps avoid you from having to define the nuances of what appears in that field, as it's easy to make a mistake.
 
 ### Email Sender
 

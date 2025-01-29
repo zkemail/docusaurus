@@ -16,7 +16,7 @@ This library provides circom circuits that enables you to prove that
 * the input string satisfies regular expressions (regexes) specified in the chip.
 * the substrings are correctly extracted from the input string according to substring definitions.
 
-This is a Rust adaptation of the V1 JS/Python regex-to-circom work first done by [sampriti](https://github.com/sampritipanda/) and [yush\_g](https://twitter.com/yush\_g), rewritten and majorly expanded to a V2 by [aditya](https://github.com/Bisht13) and [sorasue](https://github.com/SoraSuegami/) in 2024 to use a simpler decomposed specification. You can generate your own regexes via the V1 compiler with our no-code tool at [zkregex.com](https://www.zkregex.com).
+This is a Rust adaptation of the V1 JS/Python regex-to-circom work first done by [sampriti](https://github.com/sampritipanda/) and [yush\_g](https://twitter.com/yush\_g), rewritten and majorly expanded to a V2 by [aditya](https://github.com/Bisht13) and [sorasue](https://github.com/SoraSuegami/) and Shreyas in 2024 to use a simpler decomposed specification. You can generate your own regexes via the V2 compiler with our [CLI](https://github.com/zkemail/zk-regex/) and with ZK Email patterns on our [registry](https://registry.zk.email/). Note that our original V1 is still live at [zkregex.com](https://www.zkregex.com) but we no longer recommend using it.
 
 In addition to the original work, this library also supports the following features:
 
@@ -49,7 +49,7 @@ yarn install
 
 **`zk-regex decomposed -d <DECOMPOSED_REGEX_PATH> -c <CIRCOM_FILE_PATH> -t <TEMPLATE_NAME> -g <GEN_SUBSTRS (true/false)>`**
 
-This command generates a regex circom from a decomposed regex definition. For example, if you want to verify the regex of `email was meant for @(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z)+.` and reveal alphabets after @, you can define the decomposed regex as follows.
+This command generates a regex circom from a decomposed regex definition. For example, if you want to verify the regex of `email was meant for @(a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z)+.` and reveal alphabets after @, you can define the decomposed regex as follows. For recommendations on how to define your regex, see docs for [ZK Email SDK > Regex](https://docs.zk.email/docs/zk-email-sdk/regex) -- note that only a subset of regex syntax is supported.
 
 ```
 {
