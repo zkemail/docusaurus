@@ -25,7 +25,12 @@ cd docs
 yarn
 ```
 
-3. Start the development server:
+3. Copy `.env.example` and add your posthog API key:
+```bash
+cp .env.example .env
+```
+
+4. Start the development server:
 ```bash
 yarn start
 ```
