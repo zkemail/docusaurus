@@ -23,6 +23,8 @@ The Universal Email Recovery Module allows you to add an email-based recovery me
 
 **Pimlico API Key**: Required for interacting with the Pimlico bundler. Get your API key [here](https://dashboard.pimlico.io/).
 
+**RPC API Key**: Get your API key at Alchemy [here](https://www.alchemy.com/).
+
 </details>
 
 ### Setting Up the Environment
@@ -47,6 +49,7 @@ import {
   http,
   keccak256,
   parseAbiParameters,
+  bytesToHex,
 } from "viem";
 import { baseSepolia } from "viem/chains";
 import { readContract } from "wagmi/actions";
@@ -104,7 +107,7 @@ const safeAccount = await toSafeSmartAccount({
 const safeWalletAddress = "YOUR_SAFE_WALLET_ADDRESS";
 ```
 
-Extend the smart account client with ERC-7579 actions:
+Create the smart account client and extend it with ERC-7579 actions:
 
 ```typescript
 const smartAccountClient = createSmartAccountClient({
@@ -125,30 +128,23 @@ const smartAccountClient = createSmartAccountClient({
 Set up the Universal Email Recovery Module:
 
 ```typescript
-const universalEmailRecoveryModuleAddress = "0x36A470159F8170ad262B9518095a9FeD0824e7dD";
+const universalEmailRecoveryModuleAddress = "0x636632FA22052d2a4Fb6e3Bab84551B620b9C1F9";
 const guardianEmail = "guardian@gmail.com";
 ```
 
 Generate a random account code using Poseidon:
 
 ```typescript
-function bytesToHex(bytes: Uint8Array): string {
-  return [...bytes]
-    .reverse()
-    .map((x) => x.toString(16).padStart(2, "0"))
-    .join("");
-}
-
 const poseidon = await buildPoseidon();
 const accountCodeBytes: Uint8Array = poseidon.F.random();
-const accountCode = bytesToHex(accountCodeBytes);
+const accountCode = bytesToHex(accountCodeBytes.reverse());
 ```
 
 Fetch the guardian salt by sending a POST request:
 
 ```typescript
 const { guardianSalt } = await axios.post(`${relayerApiUrl}/getAccountSalt`, {
-  account_code: accountCode,
+  account_code: accountCode.slice(2),
   email_addr: guardianEmail,
 });
 ```
@@ -169,13 +165,13 @@ Prepare the module data for installation:
 ```typescript
 const account: `0x${string}` = safeWalletAddress as `0x${string}`;
 const isInstalledContext = new Uint8Array([0]);
-const functionSelector = keccak256(
-  new TextEncoder().encode("swapOwner(address,address,address)")
-).slice(0, 10);
+  const functionSelector = toFunctionSelector(
+    "swapOwner(address,address,address)"
+  );
 const guardians = [guardianAddr];
 const guardianWeights = [1n];
 const threshold = 1n;
-const delay = 0n; // No delay
+const delay = 6n * 60n * 60n; // 6 hours
 const expiry = 2n * 7n * 24n * 60n * 60n; // 2 weeks in seconds
 
 const moduleData = encodeAbiParameters(
@@ -185,8 +181,8 @@ const moduleData = encodeAbiParameters(
   [
     account,
     `0x${toHexString(isInstalledContext)}`,
-    functionSelector as `0x${string}`,
-    guardians as `0x${string}`[],
+    functionSelector,
+    guardians,
     guardianWeights,
     threshold,
     delay,
@@ -221,7 +217,7 @@ const subject = await readContract({
   args: [],
 });
 
-const templateIdx = 1;
+const templateIdx = 0;
 const handleAcceptanceCommand = subject[0]
   .join(" ")
   .replace("{ethAddr}", safeWalletAddress);
@@ -259,6 +255,8 @@ const processRecoveryCommand = await readContract({
 
 Send the recovery request:
 
+See the following [example](https://github.com/zkemail/email-recovery-example-scripts) for how to construct the recovery command.
+
 ```typescript
 const { data: processRecoveryData } = await axios.post(
   `${relayerApiUrl}/recoveryRequest`,
@@ -274,6 +272,8 @@ const { request_id: processRecoveryDataRequestId } = processRecoveryData;
 ```
 
 ### Completing the Recovery
+
+See the following [example](https://github.com/zkemail/email-recovery-example-scripts) for how to retrieve the `previousOwnerInLinkedList`, `oldOwner` and `newOwner`.
 
 Set up the parameters for owner swapping:
 
@@ -308,13 +308,15 @@ const { data } = await axios.post(`${relayerApiUrl}/completeRequest`, {
 
 7579 compatible accounts introduce the modules. Modules allows you to add functionality to your account. To implement account recovery, you can do the following:
 
-```solidity:contracts/Account.sol
+```solidity
 // Install module with configuration
 account.installModule({
     moduleTypeId: MODULE_TYPE_EXECUTOR,
     module: emailRecoveryModuleAddress,
     data: abi.encode(
+        validator,
         isInstalledContext,
+        functionSelector,
         guardians,
         guardianWeights, 
         threshold,
