@@ -16,7 +16,7 @@ This repository contains the documentation for ZK Email, built using [Docusaurus
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/zkemail/docs
+git clone https://github.com/zkemail/docusaurus
 cd docs
 ```
 

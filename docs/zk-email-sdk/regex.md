@@ -93,7 +93,22 @@ Below are some common email fields you might want to extract. If you want to cre
 
 ### Recommendations
 
-We recommend using `(\r\n|^)` to start all regexes, and especially before all fields like `from`, `to`, `subject`, etc. This ensures no one can fake it by e.g. manipulating the subject. We also recommend the pattern of `[^x]+x` -- basically matching any character except the target character multiple times, then the target character. This helps avoid you from having to define the nuances of what appears in that field, as it's easy to make a mistake.
+1. **Always Start with `(\r\n|^)`**  
+   Use `(\r\n|^)` at the beginning of all regexes, especially before fields like `from`, `to`, and `subject`.  
+   **Why?** This prevents potential spoofing or manipulation of field content.
+
+2. **Adopt the `[^x]+x` Pattern**  
+   Use a pattern like `[^x]+x`, which matches one or more characters that are not the target (`x`), followed by the target character.  
+   **Why?** This strategy avoids the need to precisely define every nuance of a field, reducing the chance of errors.
+
+3. **Avoid Ending a Regex with `?`**  
+   Ending a regex with `?` creates multiple accepting states in the DFA, which can lead to unexpected behavior.  
+   **Tip:** Restructure your regex to handle optional elements without placing `?` at the very end.
+
+4. **Do Not Use `{n}` or `{m,n}` for Size Constraints**  
+   Size constraints using `{n}` or `{m,n}` are not yet supported in our system.  
+   **Note:** This feature is a work in progress, so please avoid using these quantifiers for now.
+
 
 ### Email Sender
 
@@ -134,8 +149,8 @@ Similar approach for the **email recipient**:
     "regexDef": "([^\r\n]+<)?"
   },
   {
-    "is_public": true,
-    "regex_def": "[a-zA-Z0-9!#$%&'\*\+\-/=\?\^_`{\|}~\.]+@[a-zA-Z0-9_\.-]+"
+    "isPublic": true,
+    "regexDef": "[a-zA-Z0-9!#$%&'\*\+\-/=\?\^_`{\|}~\.]+@[a-zA-Z0-9_\.-]+"
   },
   {
     "isPublic": false,
