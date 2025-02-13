@@ -72,4 +72,10 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
+## ICP DNS Oracle
+
+| Component | Canister ID |
+| --------- | -- |
+| IC DNS Oracle | fxmww-qiaaa-aaaaj-azu7a-cai |
+
 You can additionally see our Account Recovery relayer's address at [0x9401296121FC9B78F84fc856B1F8dC88f4415B2e](https://base-sepolia.blockscout.com/address/0x9401296121FC9B78F84fc856B1F8dC88f4415B2e).

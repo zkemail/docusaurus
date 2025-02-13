@@ -9,8 +9,9 @@ keywords: [generic relayer, email transactions, blockchain integration, zero-kno
 
 The **Generic Relayer** allows developers to integrate email-driven actions into their blockchain applications seamlessly. By interacting with a specific API endpoint, you can trigger the execution of commands defined in a smart contract via email. The relayer handles the email verification process, zero-knowledge proof generation, and the execution of the command on the blockchain, simplifying development and enhancing security.
 
-This document provides an in-depth explanation of the architecture, including detailed technical aspects of an end-to-end implementation deployed on the Sepolia testnet.
+**ICP Canister ID**: `fxmww-qiaaa-aaaaj-azu7a-cai`
 
+This ICP Canister ID is deployed as the IC DNS Oracle on the Internet Computer. This canister generates a signature for a pair of a domain and a hash of a DKIM public key registered on the distributed name service (DNS). The signature can be verified on Ethereum, allowing smart contracts on Ethereum to verify that the given domain and public key hash are registered on the DNS. For example, this is used in ZK Email to update a DKIM registry contract, which stores the authorized public key hashes accessed during email proof verification.
 
 ## Architecture Overview
 
