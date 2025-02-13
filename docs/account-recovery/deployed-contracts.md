@@ -1,8 +1,8 @@
 ---
-title: Deployed Contracts | Account Recovery
-sidebar_label: Deployed Contracts
-description: Reference list of deployed smart contract addresses for account recovery system across Base, Base Sepolia, Sepolia, and ZKSync Era networks
-keywords: [smart contracts, contract addresses, Base, Sepolia, ZKSync Era, account recovery, blockchain deployments, DKIM registry, verifier, recovery modules]
+title: Deployed Contracts and IC DNS Oracle | Account Recovery
+sidebar_label: Deployed Contracts and IC DNS Oracle
+description: Reference list of deployed smart contract addresses for account recovery system across Base, Base Sepolia, Sepolia, and ZKSync Era networks. Also, the ICP Canister ID of the IC DNS Oracle is provided.
+keywords: [smart contracts, contract addresses, Base, Sepolia, ZKSync Era, account recovery, blockchain deployments, DKIM registry, verifier, recovery modules, IC DNS Oracle]
 ---
 
 # Deployed Contracts
@@ -71,5 +71,11 @@ import TabItem from '@theme/TabItem';
 | StringUtils | 0x888A8339fF7465DfE29BcC1f930B983C01a35C0a |
   </TabItem>
 </Tabs>
+
+## ICP DNS Oracle
+
+| Component | Canister ID |
+| --------- | -- |
+| IC DNS Oracle | fxmww-qiaaa-aaaaj-azu7a-cai |
 
 You can additionally see our Account Recovery relayer's address at [0x9401296121FC9B78F84fc856B1F8dC88f4415B2e](https://base-sepolia.blockscout.com/address/0x9401296121FC9B78F84fc856B1F8dC88f4415B2e).
