@@ -1,6 +1,6 @@
 ---
-title: Deployed Contracts | Account Recovery
-sidebar_label: Deployed Contracts
+title: Deployed Contracts and IC DNS Oracle | Account Recovery
+sidebar_label: Deployed Contracts and IC DNS Oracle
 description: Reference list of deployed smart contract addresses for account recovery system across Base, Base Sepolia, Sepolia, and ZKSync Era networks
 keywords: [smart contracts, contract addresses, Base, Sepolia, ZKSync Era, account recovery, blockchain deployments, DKIM registry, verifier, recovery modules]
 ---
