@@ -5,6 +5,8 @@ description: Step-by-step guide for implementing ZK Email Recovery in Safe accou
 keywords: [email recovery setup, Safe integration, guardian configuration, account recovery, module installation, ERC-7579, smart account setup, recovery module, web3 security, account protection, ModuleSDK]
 ---
 
+[ModuleSDK](https://docs.rhinestone.wtf/module-sdk) is a TypeScript library for using ERC7579 smart account modules. It allows you to install and uninstall modules for any ERC7579-compatible account, interact with said modules using dedicated utilities, and can be used with existing SDKs such as permissionless.js, Biconomy, ZeroDev and more.
+
 You can see the full implementation used in this guide [here](https://github.com/zkemail/email-recovery-example-scripts).
 
 <details>
@@ -21,7 +23,7 @@ You can see the full implementation used in this guide [here](https://github.com
 First, install the necessary packages by running:
 
 ```bash
-npm install permissionless viem wagmi axios circomlibjs
+npm install @rhinestone/module-sdk permissionless viem wagmi axios circomlibjs
 ```
 
 Import the required modules in your script:
@@ -39,11 +41,15 @@ import {
   keccak256,
   parseAbiParameters,
   bytesToHex,
+  parseAbi,
+  toFunctionSelector,
+  toHex,
 } from "viem";
 import { baseSepolia } from "viem/chains";
 import { readContract } from "wagmi/actions";
 import axios from "axios";
 import { buildPoseidon } from "circomlibjs";
+import { getOwnableValidator, getUniversalEmailRecoveryExecutor } from "@rhinestone/module-sdk";
 ```
 
 ### Configuring the Clients
@@ -52,6 +58,7 @@ Set up your API keys and URLs:
 
 ```typescript
 const owner = "YOUR_OWNER_ADDRESS";
+const owner2 = "YOUR_OWNER_2_ADDRESS";
 const apiKey = "YOUR_PIMLICO_API_KEY";
 const rpcApiKey = "YOUR_ALCHEMY_RPC_API_KEY";
 const bundlerUrl = `https://api.pimlico.io/v2/basesepolia/rpc?apikey=${apiKey}`;
@@ -79,6 +86,11 @@ const pimlicoClient = createSmartAccountClient({
 Initialize your Safe account with the necessary parameters:
 
 ```typescript
+const ownableValidator = getOwnableValidator({
+  owners: [owner, owner2],
+  threshold: 2,
+});
+
 const safeAccount = await toSafeSmartAccount({
   client: publicClient,
   owners: [owner],
@@ -91,6 +103,12 @@ const safeAccount = await toSafeSmartAccount({
   erc7579LaunchpadAddress: "0x7579011aB74c46090561ea277Ba79D510c6C00ff",
   attesters: ["0x000000333034E9f539ce08819E12c1b8Cb29084d"], // Rhinestone's attester address
   attestersThreshold: 1,
+  validators: [
+    {
+      address: ownableValidator.address,
+      context: ownableValidator.initData,
+    },
+  ],
 });
 
 const safeWalletAddress = "YOUR_SAFE_WALLET_ADDRESS";
@@ -152,42 +170,32 @@ const guardianAddr = await readContract({
 Prepare the module data for installation:
 
 ```typescript
-const account: `0x${string}` = safeWalletAddress as `0x${string}`;
-const isInstalledContext = new Uint8Array([0]);
-  const functionSelector = toFunctionSelector(
-    "swapOwner(address,address,address)"
-  );
+const validator = ownableValidator.address;
+const isInstalledContext = toHex(0);
+const initialSelector = toFunctionSelector("setThreshold(uint256)");
 const guardians = [guardianAddr];
-const guardianWeights = [1n];
+const weights = [1n];
 const threshold = 1n;
 const delay = 6n * 60n * 60n; // 6 hours
 const expiry = 2n * 7n * 24n * 60n * 60n; // 2 weeks in seconds
 
-const moduleData = encodeAbiParameters(
-  parseAbiParameters(
-    "address, bytes, bytes4, address[], uint256[], uint256, uint256, uint256"
-  ),
-  [
-    account,
-    `0x${toHexString(isInstalledContext)}`,
-    functionSelector,
+const emailRecoveryModule = getUniversalEmailRecoveryExecutor({
+    validator,
+    isInstalledContext,
+    initialSelector,
     guardians,
-    guardianWeights,
+    weights,
     threshold,
     delay,
     expiry,
-  ]
-);
+    chainId: baseSepolia.id,
+  });
 ```
 
 Install the module:
 
 ```typescript
-const userOpHash = await smartAccountClient.installModule({
-  type: "executor",
-  address: universalEmailRecoveryModuleAddress,
-  context: moduleData,
-});
+const userOpHash = await smartAccountClient.installModule(emailRecoveryModule);
 
 const receipt = await pimlicoClient.waitForUserOperationReceipt({
   hash: userOpHash,
@@ -244,7 +252,7 @@ const processRecoveryCommand = await readContract({
 
 Send the recovery request:
 
-See the following [example](https://github.com/zkemail/email-recovery-example-scripts) for how to construct the recovery command.
+See the following [example](https://github.com/zkemail/email-recovery-example-scripts) for how to construct the recovery command. We assume that the user has lost access to single signer but still has access to the second one. In this case, the easiest way to recover the OwnableValidator is to reduce the threshold to 1 and then the user can add another signer instead.
 
 ```typescript
 const { data: processRecoveryData } = await axios.post(
@@ -262,19 +270,16 @@ const { request_id: processRecoveryDataRequestId } = processRecoveryData;
 
 ### Completing the Recovery
 
-See the following [example](https://github.com/zkemail/email-recovery-example-scripts) for how to retrieve the `previousOwnerInLinkedList`, `oldOwner` and `newOwner`.
-
-Set up the parameters for owner swapping:
+Set up the parameters for reducing the threshold:
 
 ```typescript
-const previousOwnerInLinkedList = "PREVIOUS_OWNER_IN_LINKED_LIST";
-const oldOwner = "OLD_OWNER_ADDRESS";
-const newOwner = "NEW_OWNER_ADDRESS";
-
+const ownableValidatorAbi = parseAbi([
+  "function setThreshold(uint256 _threshold) external",
+]);
 const recoveryCallData = encodeFunctionData({
-  abi: safeAbi,
-  functionName: "swapOwner",
-  args: [previousOwnerInLinkedList, oldOwner, newOwner],
+  abi: ownableValidatorAbi,
+  functionName: "setThreshold",
+  args: [1n],
 });
 
 const recoveryData = encodeAbiParameters(
@@ -290,27 +295,5 @@ const { data } = await axios.post(`${relayerApiUrl}/completeRequest`, {
   controller_eth_addr: universalEmailRecoveryModuleAddress,
   account_eth_addr: safeWalletAddress,
   complete_calldata: recoveryData,
-});
-```
-
-## 7579 Compatible Accounts
-
-7579 compatible accounts introduce the modules. Modules allows you to add functionality to your account. To implement account recovery, you can do the following:
-
-```solidity
-// Install module with configuration
-account.installModule({
-    moduleTypeId: MODULE_TYPE_EXECUTOR,
-    module: emailRecoveryModuleAddress,
-    data: abi.encode(
-        validator,
-        isInstalledContext,
-        functionSelector,
-        guardians,
-        guardianWeights, 
-        threshold,
-        delay,
-        expiry
-    )
 });
 ```

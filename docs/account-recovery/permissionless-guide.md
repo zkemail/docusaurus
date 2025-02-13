@@ -5,6 +5,8 @@ description: Step-by-step guide for implementing ZK Email Recovery in Safe accou
 keywords: [email recovery setup, Safe integration, guardian configuration, account recovery, module installation, ERC-7579, smart account setup, recovery module, web3 security, account protection, permissionless.js, permissionless]
 ---
 
+[permissionless.js](https://docs.pimlico.io/permissionless) is a TypeScript library built on top of viem for building with ERC-4337 smart accounts. permissionless.js supports Safe, Kernel, Biconomy, SimpleAccount, TrustWallet and LightAccount and more.
+
 You can see the full implementation used in this guide [here](https://github.com/zkemail/email-recovery-example-scripts).
 
 <details>
@@ -39,6 +41,7 @@ import {
   keccak256,
   parseAbiParameters,
   bytesToHex,
+  toHex,
 } from "viem";
 import { baseSepolia } from "viem/chains";
 import { readContract } from "wagmi/actions";
@@ -152,9 +155,9 @@ const guardianAddr = await readContract({
 Prepare the module data for installation:
 
 ```typescript
-const account: `0x${string}` = safeWalletAddress as `0x${string}`;
-const isInstalledContext = new Uint8Array([0]);
-  const functionSelector = toFunctionSelector(
+const account = safeWalletAddress;
+const isInstalledContext = toHex(0);
+const functionSelector = toFunctionSelector(
     "swapOwner(address,address,address)"
   );
 const guardians = [guardianAddr];
@@ -169,7 +172,7 @@ const moduleData = encodeAbiParameters(
   ),
   [
     account,
-    `0x${toHexString(isInstalledContext)}`,
+    isInstalledContext,
     functionSelector,
     guardians,
     guardianWeights,
@@ -290,27 +293,5 @@ const { data } = await axios.post(`${relayerApiUrl}/completeRequest`, {
   controller_eth_addr: universalEmailRecoveryModuleAddress,
   account_eth_addr: safeWalletAddress,
   complete_calldata: recoveryData,
-});
-```
-
-## 7579 Compatible Accounts
-
-7579 compatible accounts introduce the modules. Modules allows you to add functionality to your account. To implement account recovery, you can do the following:
-
-```solidity
-// Install module with configuration
-account.installModule({
-    moduleTypeId: MODULE_TYPE_EXECUTOR,
-    module: emailRecoveryModuleAddress,
-    data: abi.encode(
-        validator,
-        isInstalledContext,
-        functionSelector,
-        guardians,
-        guardianWeights, 
-        threshold,
-        delay,
-        expiry
-    )
 });
 ```
