@@ -116,7 +116,18 @@ const sidebars: SidebarsConfig = {
     },
     'account-recovery/README',
     'account-recovery/architecture',
-    'account-recovery/setup',
+    {
+      type: 'category',
+      label: 'Setup',
+      link: {
+        type: 'doc',
+        id: 'account-recovery/setup',
+      },
+      items: [
+        'account-recovery/permissionless-guide',
+        'account-recovery/module-sdk-guide',
+      ],
+    },
     'account-recovery/relayer-api/README',
     'account-recovery/deployed-contracts',
 
