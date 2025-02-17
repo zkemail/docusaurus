@@ -53,6 +53,8 @@ Desktop Version:
 
 ## Proton Mail
 
+Note that currently, Protonmail's desire for non-repudiation means that users are not empowered with enough cryptographic data from the email in order to verify DKIM themselves. We do not agree with the design, as we think users should be in control of their own cryptographic verification as much as possible, with an option to delete that data if they so choose. That means that currently, Protonmail users cannot use the [registry](/zk-email-sdk/registry) to prove emails they received, but they can send still emails to trigger on chain transactions (i.e. they can still use account recovery or email wallet).
+
 1. Open the specific email you wish to export.
 2. Click the three dots (More options) icon in the top-left corner of the email.
 3. Select "Export" from the dropdown menu.
