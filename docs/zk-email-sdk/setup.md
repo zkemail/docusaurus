@@ -241,9 +241,9 @@ export default function Home() {
 
 ## Repository Templates
 
-We have provided a GitHub template that includes working examples from this guide, including Node.js, React and Next.js implementations.
+We have provided a GitHub repo with working examples from this guide, showcasing different implementations, including Node.js, Next.js, Vite with Vanilla JS, and Deno.
 
-This templates allows you to get started quickly with the Blueprint SDK.
+These templates help you get started quickly with the Blueprint SDK.
 
 <div style={{
   padding: "1rem",
@@ -255,7 +255,7 @@ This templates allows you to get started quickly with the Blueprint SDK.
   width: "fit-content",
   cursor: "pointer"
 }}>
-  <a href="https://github.com/zkemail/sdk-templates" target="_blank" style={{
+  <a href="https://github.com/zkemail/sdk-ts-demo" target="_blank" style={{
     display: "flex",
     alignItems: "center",
     gap: "0.5rem",
