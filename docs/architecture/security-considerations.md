@@ -38,6 +38,36 @@ While ZK Email significantly reduces trust requirements compared to traditional 
 - **Trustless Verification**: By maintaining an on-chain registry of DKIM public keys, ZK Email reduces reliance on potentially manipulable DNS lookups.
 - **Key Rotation Handling**: The system includes mechanisms to securely update DKIM public keys, addressing the challenge of key rotation.
 
+#### Trust Properties and Security Measures
+
+> The following section details our approach to DKIM key management and security, as explained by our team in this [Twitter thread](https://x.com/yush_g/status/1895551051031605563?t=42pPxsTbAcZuh7KkW0KarQ&s=19) discussing our partnership with Clave for ZK Email Recovery.
+
+Since DNS values cannot be directly accessed on L1 or centralized sequencer L2s, the system implements a robust security model with multiple layers of protection:
+
+1. **Consensus Mechanism**:
+   - Uses mini consensus over 30 computers to create a threshold ECDSA signature on top of a rotated key
+   - Each computer uses multiple DNS sources for redundancy
+
+2. **User Protection Measures**:
+   - Users must sign their own key rotations for any recovery settings changed in the first 48 hours
+   - After 48 hours, the value can be set by the consensus alone
+   - This design ensures attacks can be detected and frozen before users are affected, while maintaining smooth user experience
+
+3. **Guardian Recovery Process**:
+   - Guardians must wait 48 hours after their key rotation to trigger recovery
+   - Using different email domains as guardians is encouraged to prevent simultaneous guardian affects
+   - All recovery processes include a mandatory time lock during which the owner can revert changes
+
+4. **Ongoing Improvements**:
+   - Active development to enhance DNS key oracles
+   - Plans to add redundant oracles like TLS Notary and DNSSEC where possible
+   - Current implementation focuses on giving users and guardians ample time to recover from potential attacks
+
+The implementation details can be found in:
+
+- User Overrideable DKIM Registry: [GitHub Repository](https://github.com/zkemail/zk-email-verify/blob/main/packages/contracts/UserOverrideableDKIMRegistry.sol)
+- Audited Oracle Code: [GitHub Repository](https://github.com/zkemail/ic-dns-oracle/blob/main/src/ic_dns_oracle_backend/src/lib.rs)
+
 ### 3. Signature Verification
 
 - **Robust Checking**: The ZK circuits perform thorough checks on DKIM signatures, ensuring their validity and integrity.
