@@ -5,65 +5,66 @@
  */
 /* Import Fustat font */
 @font-face {
-  font-family: 'Fustat';
-  src: url('/fonts/Fustat-VariableFont_wght.ttf') format('truetype');
+  font-family: "Fustat";
+  src: url("/fonts/Fustat-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-display: swap;
 }
 
 /* Apply Fustat font to everything */
 body {
-  font-family: 'Fustat', sans-serif;
+  font-family: "Fustat", sans-serif;
 }
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2962A5;
-  --ifm-color-primary-dark: #0C3D77;
+  --ifm-color-primary: #2962a5;
+  --ifm-color-primary-dark: #0c3d77;
   --ifm-color-primary-darker: #062242;
-  --ifm-color-primary-darkest: #03162C;
-  --ifm-color-primary-light: #68A3E9;
-  --ifm-color-primary-lighter: #CCE0EA;
-  --ifm-color-primary-lightest: #CCE0EA;
+  --ifm-color-primary-darkest: #03162c;
+  --ifm-color-primary-light: #68a3e9;
+  --ifm-color-primary-lighter: #cce0ea;
+  --ifm-color-primary-lightest: #cce0ea;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   /* Additional colors */
-  --zk-gray-50: #F5F3EF;
-  --zk-gray-100: #D4D4D4;
-  --zk-gray-200: #A8A8A8;
+  --zk-gray-50: #f5f3ef;
+  --zk-gray-100: #d4d4d4;
+  --zk-gray-200: #a8a8a8;
   --zk-gray-300: #606060;
-  --zk-gray-400: #3B3B3B;
+  --zk-gray-400: #3b3b3b;
   --zk-gray-500: #161819;
 
-  --zk-blue-50: #CCE0EA;
-  --zk-blue-100: #68A3E9;
-  --zk-blue-200: #2962A5;
-  --zk-blue-300: #0C3D77;
+  --zk-blue-50: #cce0ea;
+  --zk-blue-100: #68a3e9;
+  --zk-blue-200: #2962a5;
+  --zk-blue-300: #0c3d77;
   --zk-blue-400: #062242;
-  --zk-blue-500: #03162C;
+  --zk-blue-500: #03162c;
 
-  --zk-red-50: #FDC8C5;
-  --zk-red-100: #F38E88;
-  --zk-red-200: #E15E56;
-  --zk-red-300: #C72C22;
-  --zk-red-400: #98251E;
-  --zk-red-500: #5B0D08;
+  --zk-red-50: #fdc8c5;
+  --zk-red-100: #f38e88;
+  --zk-red-200: #e15e56;
+  --zk-red-300: #c72c22;
+  --zk-red-400: #98251e;
+  --zk-red-500: #5b0d08;
 
   --navbar-logo-filter: none;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #68A3E9;
-  --ifm-color-primary-dark: #2962A5;
-  --ifm-color-primary-darker: #0C3D77;
+[data-theme="dark"] {
+  --ifm-color-primary: #68a3e9;
+  --ifm-color-primary-dark: #2962a5;
+  --ifm-color-primary-darker: #0c3d77;
   --ifm-color-primary-darkest: #062242;
-  --ifm-color-primary-light: #CCE0EA;
-  --ifm-color-primary-lighter: #CCE0EA;
-  --ifm-color-primary-lightest: #CCE0EA;
+  --ifm-color-primary-light: #cce0ea;
+  --ifm-color-primary-lighter: #cce0ea;
+  --ifm-color-primary-lightest: #cce0ea;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  --navbar-logo-filter: invert(100%) saturate(137%) hue-rotate(316deg) brightness(106%) contrast(94%);
+  --navbar-logo-filter: invert(100%) saturate(137%) hue-rotate(316deg)
+    brightness(106%) contrast(94%);
 }
 
 .padding-top--md {
@@ -137,27 +138,177 @@ body {
   margin-top: 25px !important;
 }
 
+/* Remove old card styles */
 .card {
-  border: 1px solid white;
-  backdrop-filter: blur(6px);
-  border-radius: 17px;
-  cursor: pointer;
-  transition: all 0.1s;
+  display: none;
+}
+
+/* ZK Email custom card styles */
+.zk-card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: var(--ifm-card-border-radius);
+  box-shadow: var(--ifm-global-shadow-lw);
   display: flex;
-  user-select: none;
-  font-weight: bolder;
-  color: var(--ifm-color-content);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  flex-direction: column;
+  overflow: hidden;
+  transition: all var(--ifm-transition-fast) ease;
+  transition-property: border-color, box-shadow;
+  margin-bottom: 1rem;
+  height: 100%;
+  text-align: center;
 }
 
-.card:hover {
-  border: 1px solid var(--ifm-color-primary);
+.zk-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ifm-global-shadow-md);
+  text-decoration: none;
 }
 
-.card__header, .card__body, .card__footer {
-  padding: 0px !important;
+.zk-card__header {
+  padding: 1.5rem 1.5rem 0.75rem;
+}
+
+.zk-card__title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  color: var(--ifm-heading-color);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.zk-card__body {
+  padding: 0 1rem 1rem;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.zk-card__link-wrapper {
+  margin: 0.75rem 0;
+}
+
+.zk-card__main-link {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ifm-link-color);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.zk-card__main-link:hover {
+  text-decoration: underline;
+}
+
+.zk-card__subtitle {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  text-align: left;
+  width: 100%;
+}
+
+.zk-card__bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.zk-card__bullet-list li {
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+  padding-left: 1.25rem;
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+.zk-card__bullet-list li:before {
+  content: "•";
+  position: absolute;
+  left: 0.25rem;
+  color: var(--ifm-color-primary);
+}
+
+.zk-card__bullet-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Grid layout adjustments */
+.row {
+  margin: -0.75rem;
+}
+
+.col {
+  padding: 0.75rem;
+}
+
+/* Quick Start section specific styles */
+.row[style*="marginBottom: '2em'"] .zk-card__body p {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1rem;
+}
+
+.row[style*="marginBottom: '2em'"] .zk-card__body ul {
+  margin-top: 0;
+}
+
+.text--truncate {
+  text-align: center;
+  white-space: normal !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: unset !important;
+  overflow: visible !important;
+  display: block !important;
 }
 
 .breadcrumbs {
   display: none;
+}
+
+/* Use Cases Table Styles */
+table {
+  display: table;
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+}
+
+td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  vertical-align: top;
+}
+
+td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Add line breaks in table cells */
+td br {
+  content: "";
+  display: block;
+  margin: 0.5rem 0;
+}
+
+/* Style list items in table cells */
+td ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+td li {
+  margin: 0.5rem 0;
 }
