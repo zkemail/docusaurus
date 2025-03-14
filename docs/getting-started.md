@@ -40,7 +40,7 @@ Based on your needs, start with one of these components:
       </div>
       <div className="zk-card__body">
         <div className="zk-card__link-wrapper">
-          <a href="zk-email-sdk/README.md" className="zk-card__main-link">ZK Email SDK</a>
+          <a href="zk-email-sdk" className="zk-card__main-link">ZK Email SDK</a>
         </div>
         <p className="zk-card__subtitle">Start here if you want to:</p>
         <ul className="zk-card__bullet-list">
@@ -58,7 +58,7 @@ Based on your needs, start with one of these components:
       </div>
       <div className="zk-card__body">
         <div className="zk-card__link-wrapper">
-          <a href="zk-email-verifier/README.md" className="zk-card__main-link">ZK Email Verifier</a>
+          <a href="zk-email-verifier" className="zk-card__main-link">ZK Email Verifier</a>
         </div>
         <p className="zk-card__subtitle">Choose this if you need to:</p>
         <ul className="zk-card__bullet-list">
@@ -81,8 +81,8 @@ Based on your needs, start with one of these components:
       </div>
       <div className="zk-card__body">
         <ul className="zk-card__bullet-list">
-          <li><a href="login-with-zk-email-oauth-api.md" className="zk-card__main-link">OAuth Login</a>Privacy-preserving email authentication</li>
-          <li><a href="account-recovery/README.md" className="zk-card__main-link">Account Recovery</a>Secure wallet recovery via email</li>
+          <li><a href="login-with-zk-email-oauth-api" className="zk-card__main-link">OAuth Login</a>Privacy-preserving email authentication</li>
+          <li><a href="account-recovery" className="zk-card__main-link">Account Recovery</a>Secure wallet recovery via email</li>
         </ul>
       </div>
     </div>
@@ -94,8 +94,8 @@ Based on your needs, start with one of these components:
       </div>
       <div className="zk-card__body">
         <ul className="zk-card__bullet-list">
-          <li><a href="email-wallet/README.md" className="zk-card__main-link">Email Wallet</a>Control smart contracts via email</li>
-          <li><a href="email-tx-builder/README.md" className="zk-card__main-link">Transaction Builder</a>Email-driven blockchain actions</li>
+          <li><a href="email-wallet" className="zk-card__main-link">Email Wallet</a>Control smart contracts via email</li>
+          <li><a href="email-tx-builder" className="zk-card__main-link">Transaction Builder</a>Email-driven blockchain actions</li>
         </ul>
       </div>
     </div>
@@ -107,8 +107,7 @@ Based on your needs, start with one of these components:
       </div>
       <div className="zk-card__body">
         <ul className="zk-card__bullet-list">
-          <li><a href="zk-regex.md" className="zk-card__main-link">ZK Regex</a>Pattern matching in ZK circuits</li>
-          <li><a href="https://github.com/zkemail/email-tx-builder/" className="zk-card__main-link">JWT Builder</a>Anonymous JWT verification</li>
+          <li><a href="zk-regex" className="zk-card__main-link">ZK Regex</a>Pattern matching in ZK circuits</li>
         </ul>
       </div>
     </div>
