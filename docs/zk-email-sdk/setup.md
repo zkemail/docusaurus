@@ -70,7 +70,7 @@ You can download a sample email file to test the SDK:
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-import zkeSDK from "@zk-email/sdk";
+import zkeSDK, { Proof } from "@zk-email/sdk";
 import fs from "fs/promises";
 
 async function main() {
@@ -83,12 +83,13 @@ async function main() {
   // Read email file
   const eml = await fs.readFile("residency.EML", "utf-8");
   
-  // Generate proof
+  // Generate the proof
   const proof = await prover.generateProof(eml);
-  const { proofData, publicData } = proof.getProofData();
-  
-  console.log("Proof:", proofData);
-  console.log("Public data:", publicData);
+  setProof(proof);
+
+  const verification = await blueprint.verifyProofOnChain(proof);
+
+  console.log("Verification:", verification);
 }
 
 main();
@@ -101,10 +102,10 @@ Create your component:
 
 ```jsx
 import { useState } from 'react'
-import zkeSDK from "@zk-email/sdk"
+import zkeSDK, { Proof } from "@zk-email/sdk"
 
 export default function Home() {
-  const [proof, setProof] = useState(null)
+  const [proof, setProof] = useState<Proof | null>(null);
   const [loading, setLoading] = useState(false)
 
   const handleFileUpload = async (event) => {
@@ -126,9 +127,12 @@ export default function Home() {
       const prover = blueprint.createProver()
       
       // Generate the proof
-      const generatedProof = await prover.generateProof(eml)
-      const { proofData, publicData } = generatedProof.getProofData()
-      setProof({ proofData, publicData })
+      const proof = await prover.generateProof(eml);
+      setProof(proof);
+
+      const verification = await blueprint.verifyProofOnChain(proof);
+
+      console.log("Verification:", verification);
     } catch (error) {
       console.error("Error generating proof:", error)
     } finally {
@@ -173,10 +177,10 @@ Create your component:
 'use client'
 
 import { useState } from 'react'
-import zkeSDK from "@zk-email/sdk"
+import zkeSDK, { Proof } from "@zk-email/sdk"
 
 export default function Home() {
-  const [proof, setProof] = useState<any>(null)
+  const [proof, setProof] = useState<Proof | null>(null);
   const [loading, setLoading] = useState(false)
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -198,9 +202,12 @@ export default function Home() {
       const prover = blueprint.createProver()
       
       // Generate the proof
-      const generatedProof = await prover.generateProof(eml)
-      const { proofData, publicData } = generatedProof.getProofData()
-      setProof({ proofData, publicData })
+      const proof = await prover.generateProof(eml);
+      setProof(proof);
+
+      const verification = await blueprint.verifyProofOnChain(proof);
+
+      console.log("Verification:", verification);
     } catch (error) {
       console.error("Error generating proof:", error)
     } finally {
