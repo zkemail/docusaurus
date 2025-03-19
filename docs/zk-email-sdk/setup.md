@@ -77,7 +77,7 @@ async function main() {
   const sdk = zkeSDK();
   
   // Get blueprint from the registry
-  const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v1");
+  const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v3");
   const prover = blueprint.createProver();
 
   // Read email file
@@ -121,7 +121,7 @@ export default function Home() {
       const sdk = zkeSDK()
 
       // Get the blueprint
-      const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v1")
+      const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v3")
 
       // Create a prover
       const prover = blueprint.createProver()
@@ -196,7 +196,7 @@ export default function Home() {
       const sdk = zkeSDK()
 
       // Get the blueprint
-      const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v1")
+      const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v3")
 
       // Create a prover
       const prover = blueprint.createProver()
