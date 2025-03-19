@@ -41,25 +41,25 @@ Email headers often contain `\r\n` pairs to mark the end of lines. Depending on 
 
 Here's a quick reference of commonly used regex special characters and expressions:
 
-| Character / Expression| Description |
-|-----------|-------------|
-| `.` | Matches any character except newline |
-| `^` | Start of string/line |
-| `$` | End of string/line |
-| `*` | 0 or more occurrences |
-| `+` | 1 or more occurrences |
-| `?` | 0 or 1 occurrence |
-| `\w` | Word character [A-Za-z0-9_] |
-| `\d` | Digit [0-9] |
-| `\s` | Whitespace (space, tab, newline) |
-| `[abc]` | Character class - matches a, b, or c |
-| `[^abc]` | Negated class - matches anything except a, b, or c |
-| `(...)` | Capturing group |
-| `(?:...)` | Non-capturing group |
-| `a{3}` | Exactly 3 occurrences of a |
-| `a{3,}` | 3 or more occurrences of a |
-| `a{3,6}` | Between 3 and 6 occurrences of a |
-| `a\|b` | Alternation - matches a or b |
+| Character / Expression | Description                                        |
+| ---------------------- | -------------------------------------------------- |
+| `.`                    | Matches any character except newline               |
+| `^`                    | Start of string/line                               |
+| `$`                    | End of string/line                                 |
+| `*`                    | 0 or more occurrences                              |
+| `+`                    | 1 or more occurrences                              |
+| `?`                    | 0 or 1 occurrence                                  |
+| `\w`                   | Word character [A-Za-z0-9_]                        |
+| `\d`                   | Digit [0-9]                                        |
+| `\s`                   | Whitespace (space, tab, newline)                   |
+| `[abc]`                | Character class - matches a, b, or c               |
+| `[^abc]`               | Negated class - matches anything except a, b, or c |
+| `(...)`                | Capturing group                                    |
+| `(?:...)`              | Non-capturing group                                |
+| `a{3}`                 | Exactly 3 occurrences of a                         |
+| `a{3,}`                | 3 or more occurrences of a                         |
+| `a{3,6}`               | Between 3 and 6 occurrences of a                   |
+| `a\|b`                 | Alternation - matches a or b                       |
 
 For an interactive regex tester and comprehensive reference, visit [regex101.com](https://regex101.com). Note that we don't support all regex features supported by them.
 
@@ -105,8 +105,8 @@ Below are some common email fields you might want to extract. If you want to cre
    Ending a regex with `?` creates multiple accepting states in the DFA, which can lead to unexpected behavior.  
    **Tip:** Restructure your regex to handle optional elements without placing `?` at the very end.
 
-4. **Do Not Use `{n}` or `{m,n}` for Size Constraints**  
-   Size constraints using `{n}` or `{m,n}` are not yet supported in our system.  
+4. **Do Not Use `{m,n}` for Size Constraints**  
+   Size constraints using `{m,n}` are not yet supported in our system.  
    **Note:** This feature is a work in progress, so please avoid using these quantifiers for now.
 
 

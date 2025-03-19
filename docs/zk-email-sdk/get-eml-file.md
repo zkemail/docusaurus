@@ -60,6 +60,10 @@ Note that currently, Protonmail's desire for non-repudiation means that users ar
 3. Select "Export" from the dropdown menu.
 4. The email will automatically save as an .eml file.
 
+## Yahoo Mail
+
+We recommend following [this guide](https://support.microsoft.com/en-us/office/add-or-manage-a-yahoo-email-account-in-outlook-ff76dd33-3127-42ac-b93f-1da2dc9054c7#:~:text=Select%20File.-,Select%20%2B%20Add%20Account.,set%20up%20for%20this%20account) to add your yahoo account in Outlook and then follow the steps above for Microsoft Outlook.
+
 ## Next Steps
 
 By following these instructions, you'll be able to obtain the necessary .EML files to proceed with creating email verification blueprints in the ZK Email Registry.
