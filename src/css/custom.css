@@ -138,12 +138,6 @@ body {
   margin-top: 25px !important;
 }
 
-/* Remove old card styles */
-.card {
-  display: none;
-}
-
-/* ZK Email custom card styles */
 .zk-card {
   background: var(--ifm-card-background-color);
   border: 1px solid var(--ifm-color-emphasis-200);
