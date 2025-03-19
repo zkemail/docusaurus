@@ -26,7 +26,7 @@ Before starting, you'll need an .EML file. If you don't have one, learn how to o
 
 ## Getting Started
 
-1. Log in to the [**ZK Email Registry**](https://registry.zk.email) using your GitHub account.
+1. Log in to the [**ZK Email Registry**](https://registry.zk.email) using your GitHub account (your handle will be used to identify your blueprints).
 2. Navigate to the blueprint creation page.
 3. Click the "Create Blueprint" button on the top right to begin.
 
@@ -39,15 +39,6 @@ Before starting, you'll need an .EML file. If you don't have one, learn how to o
 Choose a descriptive and clear name that users will see in the registry.
 ```
 Example: "Google Confirmation Proof"
-```
-
-### Circuit Name
-Set a technical name for your circuit, following these rules:
-- Use PascalCase
-- Avoid spaces and special characters
-- Omit file extensions
-```
-Example: "GoogleConfirmationProof"
 ```
 
 ### Slug
