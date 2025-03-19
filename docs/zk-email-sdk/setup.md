@@ -32,6 +32,11 @@ pnpm add @zk-email/sdk
 yarn add @zk-email/sdk
 ```
 </TabItem>
+<TabItem value="bun" label="bun">
+```bash
+bun add @zk-email/sdk
+```
+</TabItem>
 </Tabs>
 
 ## Usage
