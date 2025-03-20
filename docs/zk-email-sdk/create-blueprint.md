@@ -81,6 +81,19 @@ Specify the domain used for DKIM verification, which is crucial for email authen
 Example: "google.com"
 ```
 
+:::info
+Sometimes there are multiple DKIM signatures in the email. In this case you should use the one that is more likely to be the one from the sender (more similar or the same as the one specified in the from field).
+:::
+
+Example of an email with multiple DKIM signatures:
+```
+From: Uber Receipts <noreply@uber.com>
+
+DKIM-Signature: ... d=mgt.uber.com; ...
+DKIM-Signature: ... d=mailgun.org ...
+```
+In this case you should set the sender domain to mgt.uber.com as it is more likely to be the one from the sender.
+
 ### Max Email Header Length
 Define the maximum size for email headers:
 - Must be a multiple of 64 bytes
@@ -102,6 +115,9 @@ Enable this option to ignore the email body during proof generation:
 :::note
 Only enable this if you're certain all required data is in the headers, as it will prevent any body content verification.
 :::
+
+### Email Body Cutoff Value
+This is optional but we encourage you to set it in order to reduce the circuit size and its compilation time.
 
 ## Field Extraction
 
