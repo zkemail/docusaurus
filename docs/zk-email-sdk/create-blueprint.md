@@ -116,6 +116,10 @@ Enable this option to ignore the email body during proof generation:
 Only enable this if you're certain all required data is in the headers, as it will prevent any body content verification.
 :::
 
+:::warning
+This option should be marked if you're using an email from Protonmail as they don't provide access to the original email body.
+:::
+
 ### Email Body Cutoff Value
 This is optional but we encourage you to set it in order to reduce the circuit size and its compilation time.
 
