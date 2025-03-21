@@ -14,7 +14,7 @@ You can see the full implementation used in this guide [here](https://github.com
 
 **Pimlico API Key**: Required for interacting with the Pimlico bundler. Get your API key [here](https://dashboard.pimlico.io/).
 
-**RPC API Key**: Get your API key at Alchemy [here](https://www.alchemy.com/).
+**RPC API Key**: Get your API key at Alchemy [here](https://www.alchemy.com/). Make sure to enable Base Sepolia in your Alchemy dashboard.
 
 </details>
 

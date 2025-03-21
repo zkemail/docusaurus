@@ -64,6 +64,12 @@ graph LR
       href: '/account-recovery/architecture',
       label: 'Architecture',
       description: 'Deep dive into system components, flows, and integration patterns.',
+    },
+    {
+      type: 'link',
+      href: '/account-recovery/setup',
+      label: 'Setup',
+      description: 'Guide to configure and activate your recovery system.',
     }
   ]}
 />
