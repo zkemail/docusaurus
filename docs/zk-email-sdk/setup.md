@@ -92,7 +92,11 @@ async function main() {
   const proof = await prover.generateProof(eml);
   setProof(proof);
 
+  // Verify the proof on chain
   const verification = await blueprint.verifyProofOnChain(proof);
+
+  // Verify the proof off chain
+  const verification = await blueprint.verifyProof(proof);
 
   console.log("Verification:", verification);
 }
@@ -135,7 +139,11 @@ export default function Home() {
       const proof = await prover.generateProof(eml);
       setProof(proof);
 
+      // Verify the proof on chain
       const verification = await blueprint.verifyProofOnChain(proof);
+
+      // Verify the proof off chain
+      const verification = await blueprint.verifyProof(proof);
 
       console.log("Verification:", verification);
     } catch (error) {
@@ -210,7 +218,11 @@ export default function Home() {
       const proof = await prover.generateProof(eml);
       setProof(proof);
 
+      // Verify the proof on chain
       const verification = await blueprint.verifyProofOnChain(proof);
+
+      // Verify the proof off chain
+      const verification = await blueprint.verifyProof(proof);
 
       console.log("Verification:", verification);
     } catch (error) {
