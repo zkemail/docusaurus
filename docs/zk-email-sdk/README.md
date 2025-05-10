@@ -9,7 +9,6 @@ import DocCardList from '@theme/DocCardList';
 
 # Overview
 
-
 <div style={{fontSize: '1.2em'}}>
 Learn how to generate and verify ZK Proofs inside your application using the Blueprint SDK.
 </div>

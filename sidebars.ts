@@ -106,7 +106,18 @@ const sidebars: SidebarsConfig = {
     'email-wallet/README',
     'email-wallet/circuit-architecture',
     'email-wallet/contract-architecture',
-    'email-wallet/relayer-infrastructure',
+    {
+      type: 'category',
+      label: 'Relayer Infrastructure',
+      link: {
+        type: 'doc',
+        id: 'email-wallet/relayer-infrastructure/overview',
+      },
+      items: [
+        'email-wallet/relayer-infrastructure/overview',
+        'email-wallet/relayer-infrastructure/icp-account-setup',
+      ],
+    },
     'email-wallet/email-wallet-extensions-sdk',
     'email-wallet/deployed-contract-addresses',
     'email-wallet/api-documentation',

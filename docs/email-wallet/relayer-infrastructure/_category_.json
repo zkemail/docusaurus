@@ -1,0 +1,8 @@
+{
+  "label": "Relayer Infrastructure",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about the Email Wallet relayer infrastructure, including setup, configuration, and maintenance."
+  }
+} 

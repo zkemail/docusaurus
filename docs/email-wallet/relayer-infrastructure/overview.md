@@ -1,11 +1,11 @@
 ---
-title: Relayer Infrastructure | Email Wallet
-sidebar_label: Relayer Infrastructure
+title: Overview | Relayer Infrastructure
+sidebar_label: Overview
 description: Complete guide to setting up and running an Email Wallet relayer, including SMTP server configuration, prover setup, database management, and Docker deployment instructions
 keywords: [relayer infrastructure, SMTP server, ZK prover, PostgreSQL setup, Docker deployment, blockchain infrastructure, email processing, transaction validation, Modal integration, relayer incentives]
 ---
 
-# Relayer Infrastructure
+# Relayer Infrastructure Overview
 
 ### Overview
 
@@ -199,6 +199,7 @@ cargo run --release
 
 \
 
+> **TODO**: Add detailed instructions for wallet canister deployment in a future update.
 
 ### ☞ Running Relayer as Docker container
 
@@ -249,6 +250,4 @@ When the Relayer posts the email-triggered transaction along with the ZK proof o
 4. If the transaction specifies a recipient's email address, 450000 and 500000 gas are added to 3 for ERC20 tokens transfer and the other use cases, respectively.
 5. The total amount of fee in wei is the multiplication between the fee per gas set by the relayer and the total gas in 4.
 
-Note that our contract catches any errors during the execution of the transaction in Step 2 instead of making the transaction fail because the Relayer cannot always simulate if the execution returns errors in general cases before posting it on-chain. Therefore, the Relayer can always collect the fee as long as the transaction passes the validation in Step 1. This design refers to the bundler's fee mechanism in [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337).
-
-\
+Note that our contract catches any errors during the execution of the transaction in Step 2 instead of making the transaction fail because the Relayer cannot always simulate if the execution returns errors in general cases before posting it on-chain. Therefore, the Relayer can always collect the fee as long as the transaction passes the validation in Step 1. This design refers to the bundler's fee mechanism in [ERC-4337](https://eips.ethereum.org/EIPS/eip-4337). 
