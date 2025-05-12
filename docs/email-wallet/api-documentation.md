@@ -17,7 +17,7 @@ Ensure you have a `.env` file or other definition with your chosen relayer endpo
 RELAYER_API_URL=https://relayerapi.emailwallet.org
 ```
 
-When you want more flexibility, you can deploy your own relayer via the [Relayer Infrastructure](relayer-infrastructure.md).
+When you want more flexibility, you can deploy your own relayer via the [Relayer Infrastructure](relayer-infrastructure/overview.md).
 
 ### Core API Endpoints
 

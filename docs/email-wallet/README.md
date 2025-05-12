@@ -17,7 +17,7 @@ Email Wallet is an Ethereum contract wallet that can be controlled by sending em
 
 [**Contract Architecture**](contract-architecture.md)**:** To understand each of the smart contracts, the overall architecture, and the compilation pipeline, you can read these docs. If you are just integrating smart contracts into existing deployed contracts, we recommend the [Extensions SDK](email-wallet-extensions-sdk.md) instead.&#x20;
 
-[**Relayer Infrastructure**](relayer-infrastructure.md): To host your own email wallet relayer, you can follow the guide here to understand the microservices architecture, environment variables, setup, and Docker deployments.
+[**Relayer Infrastructure**](relayer-infrastructure/overview.md): To host your own email wallet relayer, you can follow the guide here to understand the microservices architecture, environment variables, setup, and Docker deployments.
 
 [**Extensions SDK**](email-wallet-extensions-sdk.md)**:** Define your own functoinality for email wallet by defining a Solidity function that defines the parsing logic and calls the relevant smart contracts.
 
