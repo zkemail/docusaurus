@@ -4,20 +4,138 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 8rem 0 6rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: white;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  color: var(--zk-gray-900);
+}
+
+.heroSubtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem;
+  color: var(--zk-gray-600);
+  letter-spacing: -0.01em;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--zk-gray-600);
+  font-weight: 400;
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+}
+
+.primaryButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: var(--ifm-color-primary);
+  border: 1px solid var(--ifm-color-primary);
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.primaryButton:hover {
+  background: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
+  color: white;
+  text-decoration: none;
+}
+
+.secondaryButton {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid var(--zk-gray-300);
+  color: var(--zk-gray-700);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background: var(--zk-gray-50);
+  border-color: var(--zk-gray-400);
+  color: var(--zk-gray-800);
+  text-decoration: none;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .heroBanner {
+  background: var(--zk-gray-900);
+}
+
+[data-theme='dark'] .heroTitle {
+  color: white;
+}
+
+[data-theme='dark'] .heroSubtitle {
+  color: var(--zk-gray-300);
+}
+
+[data-theme='dark'] .heroDescription {
+  color: var(--zk-gray-400);
+}
+
+[data-theme='dark'] .secondaryButton {
+  border-color: var(--zk-gray-600);
+  color: var(--zk-gray-300);
+}
+
+[data-theme='dark'] .secondaryButton:hover {
+  background: var(--zk-gray-800);
+  border-color: var(--zk-gray-500);
+  color: white;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 4rem 2rem 3rem;
+  }
+  
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+  
+  .heroDescription {
+    font-size: 1.05rem;
+  }
+  
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+  
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 300px;
+  }
 }

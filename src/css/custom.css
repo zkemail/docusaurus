@@ -11,6 +11,9 @@
   font-display: swap;
 }
 
+/* Import Newsreader font for headings (matching main site) */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
 /* Apply Fustat font to everything */
 body {
   font-family: "Fustat", sans-serif;
@@ -18,6 +21,23 @@ body {
 
 /* You can override the default Infima variables here. */
 :root {
+  /* Clean, academic typography scale */
+  --ifm-font-size-base: 17px;
+  --ifm-line-height-base: 1.8;
+  --ifm-heading-line-height: 1.2;
+  
+  /* Minimal typography scale */
+  --ifm-h1-font-size: 2.25rem;
+  --ifm-h2-font-size: 1.75rem;
+  --ifm-h3-font-size: 1.375rem;
+  --ifm-h4-font-size: 1.125rem;
+  
+  /* Refined letter spacing */
+  --ifm-heading-letter-spacing: -0.01em;
+  --ifm-font-weight-semibold: 600;
+  --ifm-font-weight-bold: 700;
+  
+  /* Keep existing brand colors */
   --ifm-color-primary: #2962a5;
   --ifm-color-primary-dark: #0c3d77;
   --ifm-color-primary-darker: #062242;
@@ -27,14 +47,20 @@ body {
   --ifm-color-primary-lightest: #cce0ea;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* Additional colors */
-  --zk-gray-50: #f5f3ef;
-  --zk-gray-100: #d4d4d4;
-  --zk-gray-200: #a8a8a8;
-  --zk-gray-300: #606060;
-  --zk-gray-400: #3b3b3b;
-  --zk-gray-500: #161819;
+  /* Minimal, sophisticated gray palette */
+  --zk-gray-25: #fafafa;
+  --zk-gray-50: #f8f8f8;
+  --zk-gray-100: #f0f0f0;
+  --zk-gray-200: #e8e8e8;
+  --zk-gray-300: #d4d4d4;
+  --zk-gray-400: #a1a1a1;
+  --zk-gray-500: #787878;
+  --zk-gray-600: #5a5a5a;
+  --zk-gray-700: #3a3a3a;
+  --zk-gray-800: #1f1f1f;
+  --zk-gray-900: #0a0a0a;
 
+  /* Keep existing brand blue scale */
   --zk-blue-50: #cce0ea;
   --zk-blue-100: #68a3e9;
   --zk-blue-200: #2962a5;
@@ -42,12 +68,41 @@ body {
   --zk-blue-400: #062242;
   --zk-blue-500: #03162c;
 
+  /* Keep existing red scale */
   --zk-red-50: #fdc8c5;
   --zk-red-100: #f38e88;
   --zk-red-200: #e15e56;
   --zk-red-300: #c72c22;
   --zk-red-400: #98251e;
   --zk-red-500: #5b0d08;
+
+  /* Success/Warning colors (subtle enhancement) */
+  --ifm-color-success: #10b981;
+  --ifm-color-warning: #f59e0b;
+  
+  /* Research paper aesthetic */
+  --zk-accent-subtle: rgba(41, 98, 165, 0.08);
+  --zk-border-light: rgba(0, 0, 0, 0.06);
+  --zk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --zk-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.06);
+  
+  /* Brand-based dark mode color system */
+  --zk-dark-bg: var(--zk-blue-500); /* #03162c - deepest brand blue */
+  --zk-dark-surface: var(--zk-blue-400); /* #062242 - brand blue surface */
+  --zk-dark-surface-elevated: var(--zk-blue-300); /* #0c3d77 - elevated brand blue */
+  --zk-dark-text-primary: #e8f4fd;
+  --zk-dark-text-secondary: var(--zk-blue-50); /* #cce0ea - light brand blue */
+  --zk-dark-text-muted: #a8c8e1;
+  --zk-dark-border: rgba(41, 98, 165, 0.3);
+  --zk-dark-border-subtle: rgba(41, 98, 165, 0.2);
+  --zk-dark-accent: rgba(104, 163, 233, 0.2); /* Brand light blue accent */
+  --zk-dark-accent-hover: rgba(104, 163, 233, 0.15);
+  
+  /* Main site navbar colors (matching zk.email) */
+  --zk-navbar-bg: #111314; /* var(--Grey-950) from main site */
+  --zk-navbar-border: #272727; /* var(--Grey-850) from main site */
+  --zk-navbar-search-bg: rgba(39, 39, 39, 0.6);
+  --zk-navbar-search-bg-hover: rgba(39, 39, 39, 0.8);
 
   --navbar-logo-filter: none;
 }
@@ -58,17 +113,68 @@ body {
   --ifm-color-primary-dark: #2962a5;
   --ifm-color-primary-darker: #0c3d77;
   --ifm-color-primary-darkest: #062242;
-  --ifm-color-primary-light: #cce0ea;
-  --ifm-color-primary-lighter: #cce0ea;
-  --ifm-color-primary-lightest: #cce0ea;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary-light: #8bb4ed;
+  --ifm-color-primary-lighter: #b3ccf2;
+  --ifm-color-primary-lightest: #d9e4f7;
+  --docusaurus-highlighted-code-line-bg: rgba(104, 163, 233, 0.1);
+
+  /* Dark mode specific colors for sophisticated design */
+  --zk-dark-bg: #0f1419;
+  --zk-dark-surface: #1a1f2e;
+  --zk-dark-surface-elevated: #242936;
+  --zk-dark-border: #2d3748;
+  --zk-dark-border-subtle: #1e2532;
+  --zk-dark-text-primary: #e2e8f0;
+  --zk-dark-text-secondary: #a0aec0;
+  --zk-dark-text-muted: #718096;
+  --zk-dark-accent: rgba(104, 163, 233, 0.12);
+  --zk-dark-accent-hover: rgba(104, 163, 233, 0.18);
+
+  /* Override gray palette for dark mode */
+  --zk-gray-25: #1a1f2e;
+  --zk-gray-50: #242936;
+  --zk-gray-100: #2d3748;
+  --zk-gray-200: #374151;
+  --zk-gray-300: #4b5563;
+  --zk-gray-400: #6b7280;
+  --zk-gray-500: #9ca3af;
+  --zk-gray-600: #d1d5db;
+  --zk-gray-700: #e5e7eb;
+  --zk-gray-800: #f3f4f6;
+  --zk-gray-900: #ffffff;
+
+  /* Update borders and shadows for dark mode */
+  --zk-border-light: rgba(255, 255, 255, 0.06);
+  --zk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --zk-shadow-md: 0 2px 4px rgba(0, 0, 0, 0.3);
 
   --navbar-logo-filter: invert(100%) saturate(137%) hue-rotate(316deg)
     brightness(106%) contrast(94%);
 }
 
 .padding-top--md {
-  padding-top: 0px !important;
+  padding-top: 0 !important;
+}
+
+/* Reduce excessive top spacing */
+.theme-doc-root {
+  margin-top: 0;
+}
+
+.theme-doc-page {
+  padding: 0;
+}
+
+/* Better spacing for navigation breadcrumbs when visible */
+.theme-doc-breadcrumbs {
+  margin-bottom: 2rem;
+}
+
+/* Pagination spacing */
+.pagination-nav {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--zk-border-light);
 }
 
 .tableOfContents {
@@ -77,22 +183,91 @@ body {
 
 .DocSearch-Button {
   width: 250px;
+  border-radius: 6px;
+  background: var(--zk-gray-50);
+  border: 1px solid var(--zk-gray-200);
 }
 
+.DocSearch-Button:hover {
+  background: var(--zk-gray-100);
+  border-color: var(--zk-gray-300);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .DocSearch-Button {
+  background: var(--zk-dark-surface-elevated);
+  border-color: var(--zk-dark-border);
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .DocSearch-Button:hover {
+  background: var(--zk-dark-accent);
+  border-color: var(--zk-dark-border);
+}
+
+/* Mobile responsive improvements */
 @media (max-width: 768px) {
   .DocSearch-Button {
     width: auto;
+  }
+  
+  /* Adjust typography for mobile */
+  .markdown h1 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+  }
+  
+  .markdown h2 {
+    font-size: 1.75rem;
+    line-height: 2rem;
+  }
+  
+  .markdown h3 {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+  }
+  
+  .markdown h4 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+  
+  /* Adjust spacing for mobile */
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .theme-doc-markdown > .container {
+    padding: 0 1rem;
+  }
+  
+  .markdown h1,
+  .markdown h2,
+  .markdown h3,
+  .markdown h4 {
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .markdown p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .markdown section,
+  .markdown div {
+    margin-bottom: 2.5rem;
   }
 }
 
 .navbar {
   box-shadow: none !important;
-  border-bottom: 1px solid var(--ifm-toc-border-color);
+  border-bottom: none;
+  background: white;
 }
 
 /* Make footer always dark with white text */
 .footer {
-  background-color: var(--zk-gray-500);
+  background-color: var(--zk-gray-800);
   color: #ffffff;
 }
 
@@ -129,13 +304,187 @@ body {
 
 .sidebar-heading {
   display: block;
-  font-weight: bold;
-  margin-top: 1rem !important;
-  margin-left: 12px;
+  font-weight: 600;
+  margin-top: 1.5rem !important;
+  margin-left: 0;
+  font-size: 0.95rem;
+  color: var(--zk-gray-700);
 }
 
 .sidebar-heading.first {
-  margin-top: 25px !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Sophisticated section headers using Newsreader serif */
+.sidebar-section-header {
+  font-family: "Newsreader", serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--zk-gray-800);
+  letter-spacing: -0.01em;
+  margin: 3rem 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-primary-lighter);
+  position: relative;
+  display: block;
+}
+
+.sidebar-section-header.first {
+  margin-top: 1rem;
+}
+
+.sidebar-section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .sidebar-section-header {
+  color: var(--zk-dark-text-primary);
+  border-bottom-color: var(--zk-dark-border-subtle);
+}
+
+[data-theme="dark"] .sidebar-section-header::after {
+  background: var(--ifm-color-primary-light);
+}
+
+/* Sophisticated sidebar navigation with refined hierarchy */
+.theme-doc-sidebar-item-link {
+  font-size: 0.9375rem;
+  color: var(--zk-gray-600);
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  position: relative;
+  margin: 0.125rem 0;
+}
+
+.theme-doc-sidebar-item-link:hover {
+  color: var(--ifm-color-primary-dark);
+  background: rgba(41, 98, 165, 0.03);
+  text-decoration: none;
+  transform: translateX(1px);
+  border-radius: 6px;
+}
+
+/* Active state with subtle elegance */
+.menu__link--active {
+  color: var(--ifm-color-primary-dark) !important;
+  font-weight: 500;
+  background: rgba(41, 98, 165, 0.04) !important;
+  border-left: 2px solid var(--ifm-color-primary);
+  border-radius: 0 6px 6px 0;
+  margin-left: -0.75rem;
+  padding-left: 1rem;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 0 0 1px rgba(41, 98, 165, 0.08);
+}
+
+.menu__link--active:hover {
+  background: rgba(41, 98, 165, 0.06) !important;
+  transform: none;
+  box-shadow: inset 0 0 0 1px rgba(41, 98, 165, 0.12);
+}
+
+/* Category labels with refined styling */
+.menu__list-item-collapsible > .menu__link {
+  font-weight: 500;
+  color: var(--zk-gray-700);
+  font-size: 0.9375rem;
+}
+
+/* Nested navigation with subtle visual guides */
+.menu__list .menu__list {
+  padding-left: 1rem;
+  border-left: 1px solid var(--zk-gray-200);
+  margin-left: 0.5rem;
+}
+
+/* Clean up duplicate - handled above with more sophisticated styling */
+
+.menu__link--active::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 60%;
+  background: var(--ifm-color-primary);
+  border-radius: 0 2px 2px 0;
+  opacity: 0.8;
+}
+
+/* Category labels with improved hierarchy */
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--zk-gray-800);
+  padding: 0.5rem 0.75rem;
+  margin: 0.25rem 0;
+}
+
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link:hover {
+  color: var(--ifm-color-primary);
+  background: var(--zk-gray-50);
+}
+
+/* Nested item spacing */
+.menu__list .menu__list {
+  margin-left: 0.75rem;
+  border-left: 1px solid var(--zk-gray-200);
+  padding-left: 0.75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+[data-theme="dark"] .theme-doc-sidebar-item-link {
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .theme-doc-sidebar-item-link:hover {
+  color: var(--zk-dark-text-primary);
+  background: rgba(104, 163, 233, 0.06);
+  transform: translateX(1px);
+  border-radius: 6px;
+}
+
+[data-theme="dark"] .menu__list .menu__list {
+  border-left-color: var(--zk-dark-border-subtle);
+}
+
+/* Enhanced dark mode for sophisticated sidebar */
+[data-theme="dark"] .menu__list-item-collapsible > .menu__link {
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .menu__list-item-collapsible > .menu__link:hover {
+  color: var(--zk-dark-text-primary);
+  background: var(--zk-dark-accent);
+}
+
+[data-theme="dark"] .menu__link--active {
+  color: var(--ifm-color-primary-lighter) !important;
+  background: rgba(104, 163, 233, 0.08) !important;
+  border-left-color: var(--ifm-color-primary-light);
+  box-shadow: inset 0 0 0 1px rgba(104, 163, 233, 0.12);
+}
+
+[data-theme="dark"] .menu__link--active:hover {
+  background: rgba(104, 163, 233, 0.12) !important;
+  transform: none;
+  box-shadow: inset 0 0 0 1px rgba(104, 163, 233, 0.16);
+}
+
+[data-theme="dark"] .menu__link--active::before {
+  background: var(--ifm-color-primary-light);
 }
 
 .zk-card {
@@ -305,4 +654,733 @@ td ul {
 
 td li {
   margin: 0.5rem 0;
+}
+
+/* Sophisticated section header styles */
+.sidebar-section-header {
+  display: block;
+  font-family: "Newsreader", serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--zk-gray-900);
+  margin: 3rem 0 1.25rem 0 !important;
+  padding: 0 0 0.75rem 0;
+  border-bottom: 1px solid var(--zk-gray-200);
+  position: relative;
+}
+
+.sidebar-section-header.first {
+  margin-top: 1rem !important;
+}
+
+.sidebar-section-header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 2rem;
+  height: 1px;
+  background: var(--ifm-color-primary);
+}
+
+[data-theme="dark"] .sidebar-section-header {
+  color: var(--zk-dark-text-primary);
+  border-bottom-color: var(--zk-dark-border-subtle);
+}
+
+[data-theme="dark"] .sidebar-section-header::after {
+  background: var(--ifm-color-primary-light);
+}
+
+/* Typography matching zk.email main site */
+.markdown {
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+  color: var(--zk-gray-700);
+}
+
+[data-theme="dark"] .markdown {
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .markdown h1,
+[data-theme="dark"] .markdown h2,
+[data-theme="dark"] .markdown h3,
+[data-theme="dark"] .markdown h4 {
+  color: var(--zk-dark-text-primary);
+}
+
+.markdown p {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: "Newsreader", serif;
+  letter-spacing: var(--ifm-heading-letter-spacing);
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  color: var(--zk-gray-900);
+  line-height: 1.3;
+}
+
+/* First heading should have no top margin */
+.markdown h1:first-child,
+.markdown h2:first-child,
+.markdown h3:first-child,
+.markdown h4:first-child {
+  margin-top: 0;
+}
+
+.markdown h1 {
+  font-size: 3rem;
+  line-height: 3.875rem;
+  font-weight: 300;
+}
+
+.markdown h2 {
+  font-size: 2.75rem;
+  line-height: 3rem;
+  font-weight: 300;
+}
+
+.markdown h3 {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  font-weight: 300;
+}
+
+.markdown h4 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+/* Hero title on landing pages */
+.hero__title {
+  font-family: "Newsreader", serif !important;
+  font-weight: 300 !important;
+  font-size: 3rem !important;
+  line-height: 3.875rem !important;
+}
+
+/* Main content spacing improvements matching zk.email */
+.container {
+  padding: 0 2rem;
+}
+
+.markdown > * + * {
+  margin-top: 2rem;
+}
+
+/* Better spacing for sections */
+.markdown section,
+.markdown div {
+  margin-bottom: 4rem;
+}
+
+/* Add generous spacing to documentation layout */
+.theme-doc-markdown {
+  margin-top: 2rem;
+}
+
+.theme-doc-markdown > .container {
+  max-width: 1100px;
+  padding: 0 2rem;
+}
+
+/* Enhanced sidebar container */
+.theme-doc-sidebar-container {
+  padding: 0;
+  border-right: 1px solid var(--zk-gray-200);
+}
+
+.theme-doc-sidebar-menu {
+  padding: 1.5rem 1rem;
+  max-width: 300px;
+}
+
+/* Sidebar overall refinements */
+.theme-doc-sidebar {
+  background: var(--zk-gray-25);
+  border-right: 1px solid var(--zk-gray-200);
+}
+
+[data-theme="dark"] .theme-doc-sidebar {
+  background: var(--zk-navbar-bg);
+  border-right-color: var(--zk-navbar-border);
+}
+
+[data-theme="dark"] .theme-doc-sidebar-container {
+  background: var(--zk-navbar-bg);
+  border-right-color: var(--zk-navbar-border);
+}
+
+/* Brand-based dark mode for main areas - consistent dark background */
+[data-theme="dark"] .main-wrapper {
+  background: var(--zk-navbar-bg) !important;
+}
+
+/* Ensure main content area has consistent background */
+[data-theme="dark"] .theme-doc-page {
+  background: var(--zk-navbar-bg);
+}
+
+[data-theme="dark"] .theme-doc-markdown {
+  background: var(--zk-navbar-bg);
+}
+
+[data-theme="dark"] .theme-doc-markdown > .container {
+  background: var(--zk-navbar-bg);
+}
+
+/* Match main zk.email navbar styling */
+[data-theme="dark"] .navbar {
+  background: var(--zk-navbar-bg) !important;
+  border-bottom: 1px solid var(--zk-navbar-border);
+}
+
+/* Enhanced brand integration for dark backgrounds - consistent with navbar */
+[data-theme="dark"] body {
+  background: var(--zk-navbar-bg) !important;
+}
+
+/* Ensure all major layout containers use consistent dark background */
+[data-theme="dark"] .theme-doc-wrapper {
+  background: var(--zk-navbar-bg);
+}
+
+[data-theme="dark"] .theme-doc-root {
+  background: var(--zk-navbar-bg);
+}
+
+/* Search button matching main site navbar theme */
+[data-theme="dark"] .DocSearch-Button {
+  background: var(--zk-navbar-search-bg) !important;
+  border-color: var(--zk-navbar-border) !important;
+  color: var(--zk-dark-text-secondary) !important;
+}
+
+[data-theme="dark"] .DocSearch-Button:hover {
+  background: var(--zk-navbar-search-bg-hover) !important;
+  border-color: var(--ifm-color-primary-light) !important;
+  color: var(--zk-dark-text-primary) !important;
+}
+
+/* Dark mode typography improvements with better contrast */
+[data-theme="dark"] .markdown {
+  color: #cbd5e1; /* Improved contrast for better readability */
+}
+
+[data-theme="dark"] .markdown h1,
+[data-theme="dark"] .markdown h2,
+[data-theme="dark"] .markdown h3,
+[data-theme="dark"] .markdown h4 {
+  color: #f1f5f9; /* Higher contrast white for headings */
+}
+
+/* Dark mode code blocks with consistent styling */
+[data-theme="dark"] .prism-code {
+  background: #1e293b !important; /* Slightly lighter than main bg for contrast */
+  border: 1px solid var(--zk-navbar-border);
+}
+
+[data-theme="dark"] code {
+  background: #1e293b; /* Consistent with code block background */
+  color: #94a3b8; /* Softer color for inline code */
+  border: 1px solid transparent;
+}
+
+/* Dark mode table of contents */
+[data-theme="dark"] .table-of-contents {
+  border-left-color: var(--zk-dark-border-subtle);
+}
+
+[data-theme="dark"] .table-of-contents__link {
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .table-of-contents__link:hover {
+  color: var(--zk-dark-text-primary);
+  background: var(--zk-dark-accent-hover);
+}
+
+/* Brand-inspired dark mode accents */
+[data-theme="dark"] .hero__title {
+  color: var(--zk-dark-text-primary);
+}
+
+[data-theme="dark"] .hero__subtitle {
+  color: var(--zk-dark-text-secondary);
+}
+
+/* Enhanced footer for brand consistency */
+[data-theme="dark"] .footer {
+  background-color: var(--zk-blue-500) !important;
+}
+
+/* Better pagination with brand colors */
+[data-theme="dark"] .pagination-nav {
+  border-top-color: var(--zk-dark-border);
+}
+
+[data-theme="dark"] .pagination-nav__link {
+  border-color: var(--zk-dark-border);
+  background: var(--zk-dark-surface);
+}
+
+[data-theme="dark"] .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary-light);
+  background: var(--zk-dark-surface-elevated);
+}
+
+/* Brand-themed blockquotes */
+[data-theme="dark"] .markdown blockquote {
+  background: var(--zk-dark-surface-elevated);
+  border-left: 4px solid var(--ifm-color-primary-light);
+  color: var(--zk-dark-text-secondary);
+}
+
+/* Better spacing for cards and components */
+.row {
+  margin: -1.5rem;
+}
+
+.col {
+  padding: 1.5rem;
+}
+
+/* Add more space around main content areas */
+.main-wrapper {
+  padding-top: 2rem;
+}
+
+/* TOC spacing */
+.table-of-contents {
+  padding: 1.5rem 0;
+}
+
+.table-of-contents .table-of-contents__link {
+  padding: 0.5rem 0;
+}
+
+/* List spacing improvements */
+.markdown ul,
+.markdown ol {
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.markdown li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+/* Table spacing */
+.markdown table {
+  margin: 2.5rem 0;
+}
+
+.markdown th,
+.markdown td {
+  padding: 1rem 1.5rem;
+}
+
+/* Code block spacing */
+.markdown pre {
+  margin: 2.5rem 0;
+}
+
+/* Blockquote spacing */
+.markdown blockquote {
+  margin: 2.5rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 4px solid var(--ifm-color-primary-lighter);
+  background: var(--zk-gray-50);
+}
+
+[data-theme="dark"] .markdown blockquote {
+  background: var(--zk-dark-surface-elevated);
+  border-left-color: var(--ifm-color-primary-light);
+}
+
+/* Pagination dark mode */
+[data-theme="dark"] .pagination-nav {
+  border-top-color: var(--zk-dark-border-subtle);
+}
+
+/* Minimal code blocks */
+.prism-code {
+  border-radius: 4px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  border: 1px solid var(--zk-gray-200);
+  background: var(--zk-gray-50);
+  font-size: 0.925rem;
+}
+
+/* Inline code styling */
+code {
+  background: var(--zk-gray-100);
+  color: var(--zk-gray-800);
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 0.875em;
+  font-family: 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Duplicate entries removed - handled above */
+
+/* Two Powerful Approaches - Simple Layout */
+.simple-approaches {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 2rem 0 3rem 0;
+}
+
+.simple-approach {
+  padding: 0;
+}
+
+.simple-approach h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-heading-color);
+}
+
+.simple-approach p {
+  font-size: 1rem;
+  color: var(--zk-gray-600);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.simple-approach ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.simple-approach li {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--zk-gray-700);
+  margin-bottom: 0.5rem;
+}
+
+/* Dark mode */
+[data-theme="dark"] .simple-approach p {
+  color: var(--zk-gray-400);
+}
+
+[data-theme="dark"] .simple-approach li {
+  color: var(--zk-gray-300);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .simple-approaches {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 1.5rem 0 2.5rem 0;
+  }
+}
+
+/* Fix DocCardList styling for Explore ZK Email section */
+.card {
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  height: 100%;
+}
+
+.card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.card__header {
+  margin-bottom: 0.75rem;
+}
+
+/* Override DocCardList title styling using the actual generated class */
+[class*="cardTitle"] {
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 0.5rem !important;
+  color: var(--ifm-heading-color) !important;
+  line-height: 1.3 !important;
+  margin-top: 0 !important;
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+/* Replace card titles entirely with custom content */
+.card[href="/getting-started"] [class*="cardTitle"] {
+  font-size: 0 !important;
+}
+.card[href="/getting-started"] [class*="cardTitle"]::before {
+  content: "🚀 Getting Started";
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--ifm-heading-color) !important;
+  line-height: 1.3 !important;
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+.card[href="/architecture"] [class*="cardTitle"] {
+  font-size: 0 !important;
+}
+.card[href="/architecture"] [class*="cardTitle"]::before {
+  content: "⚡ How It Works";
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--ifm-heading-color) !important;
+  line-height: 1.3 !important;
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+.card[href="https://prove.email"] [class*="cardTitle"] {
+  font-size: 0 !important;
+}
+.card[href="https://prove.email"] [class*="cardTitle"]::before {
+  content: "🔗 Live Demo";
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--ifm-heading-color) !important;
+  line-height: 1.3 !important;
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+.card[href="https://github.com/zkemail"] [class*="cardTitle"] {
+  font-size: 0 !important;
+}
+.card[href="https://github.com/zkemail"] [class*="cardTitle"]::before {
+  content: "💻 Open Source";
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  color: var(--ifm-heading-color) !important;
+  line-height: 1.3 !important;
+  font-family: var(--ifm-font-family-base) !important;
+}
+
+.card__body {
+  padding: 0;
+}
+
+.card__body p {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: var(--ifm-color-emphasis-700) !important;
+  margin: 0 !important;
+}
+
+/* Dark mode for cards */
+[data-theme="dark"] .card {
+  background: var(--zk-gray-800);
+  border-color: var(--zk-gray-700);
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: var(--ifm-color-primary-light);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .card[href="/getting-started"] [class*="cardTitle"]::before,
+[data-theme="dark"] .card[href="/architecture"] [class*="cardTitle"]::before,
+[data-theme="dark"] .card[href="https://prove.email"] [class*="cardTitle"]::before,
+[data-theme="dark"] .card[href="https://github.com/zkemail"] [class*="cardTitle"]::before {
+  color: var(--zk-gray-100) !important;
+}
+
+[data-theme="dark"] .card__body p {
+  color: var(--zk-gray-300) !important;
+}
+
+/* Legacy card styling for backward compatibility */
+.zk-card {
+  background: white;
+  border: 1px solid var(--zk-gray-200);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.zk-card:hover {
+  border-color: var(--zk-gray-300);
+  box-shadow: var(--zk-shadow-md);
+}
+
+.zk-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--zk-gray-900);
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+[data-theme="dark"] .zk-card {
+  background: #1e293b; /* Consistent with code blocks */
+  border-color: var(--zk-navbar-border);
+}
+
+[data-theme="dark"] .zk-card:hover {
+  border-color: var(--ifm-color-primary-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .zk-card__title {
+  color: #f1f5f9; /* High contrast for card titles */
+}
+
+/* Legacy sidebar heading cleanup */
+.sidebar-heading {
+  display: block;
+  font-weight: 500;
+  margin-top: 1.5rem !important;
+  margin-left: 0;
+  font-size: 0.875rem;
+  color: var(--zk-gray-600);
+}
+
+/* Mobile sidebar improvements */
+@media (max-width: 996px) {
+  .sidebar-section-header {
+    font-size: 1rem;
+    margin: 2rem 0 1rem 0 !important;
+  }
+  
+  .sidebar-section-header.first {
+    margin-top: 0.75rem !important;
+  }
+  
+  .theme-doc-sidebar-menu {
+    padding: 1rem 0.75rem;
+  }
+  
+  .menu__list .menu__list {
+    margin-left: 0.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+/* Collapse/expand arrow styling */
+.menu__caret {
+  transition: transform 0.2s ease;
+}
+
+.menu__list-item--collapsed .menu__caret {
+  transform: rotate(-90deg);
+}
+
+/* External link styling */
+.menu__link[href^="http"]::after {
+  content: "↗";
+  font-size: 0.75rem;
+  margin-left: 0.25rem;
+  opacity: 0.6;
+}
+
+/* Improve focus states for accessibility */
+.theme-doc-sidebar-item-link:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .theme-doc-sidebar-item-link:focus {
+  outline-color: var(--ifm-color-primary-light);
+}
+
+/* Category labels dark mode improvements */
+[data-theme="dark"] .theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link:hover {
+  color: var(--zk-dark-text-primary);
+  background: var(--zk-dark-accent);
+}
+
+/* Legacy sidebar heading dark mode */
+[data-theme="dark"] .sidebar-heading {
+  color: var(--zk-dark-text-muted);
+}
+
+/* Table of contents dark mode */
+[data-theme="dark"] .table-of-contents .table-of-contents__link {
+  color: var(--zk-dark-text-secondary);
+}
+
+[data-theme="dark"] .table-of-contents .table-of-contents__link:hover {
+  color: var(--zk-dark-text-primary);
+}
+
+[data-theme="dark"] .table-of-contents .table-of-contents__link--active {
+  color: var(--ifm-color-primary-light);
+}
+
+/* External link styling dark mode */
+[data-theme="dark"] .menu__link[href^="http"]::after {
+  color: var(--zk-dark-text-muted);
+}
+
+/* Collapse/expand arrow dark mode */
+[data-theme="dark"] .menu__caret {
+  color: var(--zk-dark-text-muted);
+}
+
+/* Mobile sidebar improvements dark mode - match navbar */
+@media (max-width: 996px) {
+  [data-theme="dark"] .theme-doc-sidebar {
+    background: var(--zk-navbar-bg);
+  }
+}
+
+/* Additional dark mode consistency improvements */
+[data-theme="dark"] .theme-doc-page-wrapper {
+  background: var(--zk-navbar-bg);
+}
+
+[data-theme="dark"] .theme-doc-content {
+  background: var(--zk-navbar-bg);
+}
+
+/* Improve text contrast for sidebar elements */
+[data-theme="dark"] .theme-doc-sidebar-item-link {
+  color: #94a3b8; /* Better contrast for sidebar links */
+}
+
+[data-theme="dark"] .theme-doc-sidebar-item-link:hover {
+  color: #e2e8f0; /* Higher contrast on hover */
+}
+
+/* Improve breadcrumb visibility */
+[data-theme="dark"] .breadcrumbs__link {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .breadcrumbs__link:hover {
+  color: #e2e8f0;
+}
+
+/* Fix any remaining content area background issues */
+[data-theme="dark"] .col--9 {
+  background: var(--zk-navbar-bg);
+}
+
+[data-theme="dark"] .col--3 {
+  background: var(--zk-navbar-bg);
 }

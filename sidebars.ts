@@ -16,20 +16,16 @@ const sidebars: SidebarsConfig = {
 
   // But you can create a sidebar manually
   docs: [
+    // SECTION 1: Fundamentals
     {
       type: 'html',
-      value: '<span class="sidebar-heading first">Welcome</span>',
+      value: '<span class="sidebar-section-header first">Fundamentals</span>',
     },
     'introduction',
     'getting-started',
-
-    {
-      type: 'html',
-      value: '<span class="sidebar-heading">Learn</span>',
-    },
     {
       type: 'category',
-      label: 'Architecture',
+      label: 'Core Concepts',
       link: {
         type: 'doc',
         id: 'architecture/README',
@@ -42,161 +38,248 @@ const sidebars: SidebarsConfig = {
       ],
     },
     {
-      type: 'html',
-      value: '<span class="sidebar-heading">Blueprint SDK</span>',
+      type: 'category',
+      label: 'Use Cases',
+      items: [
+        'build-overview',
+        'web3-ux-overview',
+      ],
     },
-    'zk-email-sdk/README',
-    'zk-email-sdk/setup',
+
+    // SECTION 2: Technical Reference
+    {
+      type: 'html',
+      value: '<span class="sidebar-section-header">Technical Reference</span>',
+    },
     {
       type: 'category',
-      label: 'Registry',
-      link: {
-        type: 'doc',
-        id: 'zk-email-sdk/registry',
-      },
+      label: 'Circuit Creation',
       items: [
-        'zk-email-sdk/regex',
         {
           type: 'category',
-          label: 'Creating Blueprint',
+          label: 'Registry',
           link: {
             type: 'doc',
-            id: 'zk-email-sdk/create-blueprint',
+            id: 'zk-email-sdk/registry',
           },
           items: [
-            'zk-email-sdk/get-eml-file',
-            'zk-email-sdk/proof-of-luma',
+            'zk-email-sdk/regex',
           ],
-        }
+        },
+        {
+          type: 'category',
+          label: 'SDK',
+          link: {
+            type: 'doc',
+            id: 'zk-email-sdk/README',
+          },
+          items: [
+            'zk-email-sdk/overview',
+            {
+              type: 'category',
+              label: 'Legacy (v1)',
+              items: [
+                'zk-email-sdk/overview-v1',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'ZK Email Verifier',
+          link: {
+            type: 'doc',
+            id: 'zk-email-verifier/README',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Packages',
+              link: {
+                type: 'doc',
+                id: 'zk-email-verifier/packages/README',
+              },
+              items: [
+                'zk-email-verifier/packages/zk-email-circuits',
+                'zk-email-verifier/packages/zk-email-helpers',
+                'zk-email-verifier/packages/zk-email-contracts'
+              ],
+            },
+          ],
+        },
       ],
     },
     {
       type: 'category',
-      label: 'Blueprint SDK v1',
+      label: 'Web3 UX Components',
       items: [
-        'zk-email-sdk/overview-v1',
-        'zk-email-sdk/running-the-example',
+        {
+          type: 'category',
+          label: 'Email Wallet',
+          link: {
+            type: 'doc',
+            id: 'email-wallet/README',
+          },
+          items: [
+            'email-wallet/circuit-architecture',
+            'email-wallet/contract-architecture',
+            'email-wallet/api-documentation',
+            'email-wallet/email-wallet-extensions-sdk',
+            'email-wallet/deployed-contract-addresses',
+            {
+              type: 'category',
+              label: 'Relayer Infrastructure',
+              link: {
+                type: 'doc',
+                id: 'email-wallet/relayer-infrastructure/overview',
+              },
+              items: [
+                'email-wallet/relayer-infrastructure/icp-account-setup',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Account Recovery',
+          link: {
+            type: 'doc',
+            id: 'account-recovery/README',
+          },
+          items: [
+            'account-recovery/architecture',
+            'account-recovery/relayer-api/README',
+            'account-recovery/deployed-contracts',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Email Transaction Builder',
+          link: {
+            type: 'doc',
+            id: 'email-tx-builder/README',
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Architecture',
+              link: {
+                type: 'doc',
+                id: 'email-tx-builder/architecture/README'
+              },
+              items: [
+                'email-tx-builder/architecture/concepts',
+                'email-tx-builder/architecture/package-components',
+                'email-tx-builder/architecture/generic-relayer',
+                'email-tx-builder/architecture/command-templates',
+              ],
+            },
+            'email-tx-builder/api-reference',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Infrastructure',
+      items: [
+        'zk-regex',
+        {
+          type: 'category',
+          label: 'JWT Transaction Builder',
+          link: {
+            type: 'doc',
+            id: 'jwt-tx-builder/README',
+          },
+          items: [
+            'jwt-tx-builder/architecture',
+            {
+              type: 'category',
+              label: 'Packages',
+              link: {
+                type: 'doc',
+                id: 'jwt-tx-builder/packages/README',
+              },
+              items: [
+                'jwt-tx-builder/packages/circuits',
+                'jwt-tx-builder/packages/helpers',
+                'jwt-tx-builder/packages/contracts',
+              ],
+            },
+            'jwt-tx-builder/contracts',
+          ],
+        },
+        'login-with-zk-email-oauth-api',
+        {
+          type: 'link',
+          label: 'Archive (DKIM Storage)',
+          href: 'https://archive.zk.email',
+        },
+      ],
+    },
+
+    // SECTION 3: Implementation Guides
+    {
+      type: 'html',
+      value: '<span class="sidebar-section-header">Implementation Guides</span>',
+    },
+    {
+      type: 'category',
+      label: 'Creating ZK Proofs',
+      items: [
+        'zk-email-sdk/create-blueprint',
+        'zk-email-sdk/get-eml-file',
+        'zk-email-sdk/proof-of-luma',
         'zk-email-sdk/creating-a-new-pattern',
+        'zk-email-sdk/running-the-example',
       ],
     },
     {
-      type: 'html',
-      value: '<span class="sidebar-heading">ZK Email Verifier</span>',
-    },
-    'zk-email-verifier/README',
-    'zk-email-verifier/setup',
-    'zk-email-verifier/usage-guide',
-    {
       type: 'category',
-      label: 'Packages',
-      link: {
-        type: 'doc',
-        id: 'zk-email-verifier/packages/README',
-      },
+      label: 'SDK Setup',
       items: [
-        'zk-email-verifier/packages/zk-email-circuits',
-        'zk-email-verifier/packages/zk-email-helpers',
-        'zk-email-verifier/packages/zk-email-contracts'
+        'zk-email-sdk/setup',
+        'zk-email-verifier/setup',
+        'zk-email-verifier/usage-guide',
       ],
     },
     {
-      type: 'html',
-      value: '<span class="sidebar-heading">Email Wallet</span>',
-    },
-    'email-wallet/README',
-    'email-wallet/circuit-architecture',
-    'email-wallet/contract-architecture',
-    {
       type: 'category',
-      label: 'Relayer Infrastructure',
-      link: {
-        type: 'doc',
-        id: 'email-wallet/relayer-infrastructure/overview',
-      },
+      label: 'Email Wallet Guides',
       items: [
-        'email-wallet/relayer-infrastructure/overview',
         'email-wallet/relayer-infrastructure/icp-account-setup',
       ],
     },
-    'email-wallet/email-wallet-extensions-sdk',
-    'email-wallet/deployed-contract-addresses',
-    'email-wallet/api-documentation',
-    {
-      type: 'html',
-      value: '<span class="sidebar-heading">Account Recovery</span>',
-    },
-    'account-recovery/README',
-    'account-recovery/architecture',
     {
       type: 'category',
-      label: 'Setup',
-      link: {
-        type: 'doc',
-        id: 'account-recovery/setup',
-      },
+      label: 'Recovery Implementation',
       items: [
+        'account-recovery/setup',
         'account-recovery/permissionless-guide',
         'account-recovery/module-sdk-guide',
       ],
     },
-    'account-recovery/relayer-api/README',
-    'account-recovery/deployed-contracts',
+    {
+      type: 'category',
+      label: 'Advanced Tutorials',
+      items: [
+        'email-tx-builder/quickstart',
+        'email-tx-builder/setup',
+        'jwt-tx-builder/setup',
+      ],
+    },
 
+    // SECTION 4: Resources
     {
       type: 'html',
-      value: '<span class="sidebar-heading">Email Transaction Builder</span>',
-    },
-    'email-tx-builder/README',
-    'email-tx-builder/quickstart',
-    'email-tx-builder/setup',
-    {
-      type: 'category',
-      label: 'Architecture',
-      link: {
-        type: 'doc',
-        id: 'email-tx-builder/architecture/README'
-      },
-      items: [
-        'email-tx-builder/architecture/concepts',
-        'email-tx-builder/architecture/package-components',
-        'email-tx-builder/architecture/generic-relayer',
-        'email-tx-builder/architecture/command-templates',
-      ],
-    },
-    'email-tx-builder/api-reference',
-    {
-      type: 'html',
-      value: '<span class="sidebar-heading">JWT Transaction Builder</span>',
-    },
-    'jwt-tx-builder/README',
-    'jwt-tx-builder/setup',
-    'jwt-tx-builder/architecture',
-    {
-      type: 'category',
-      label: 'Packages',
-      link: {
-        type: 'doc',
-        id: 'jwt-tx-builder/packages/README',
-      },
-      items: [
-        'jwt-tx-builder/packages/circuits',
-        'jwt-tx-builder/packages/helpers',
-        'jwt-tx-builder/packages/contracts',
-      ],
-    },
-    'jwt-tx-builder/contracts',
-    {
-      type: 'html',
-      value: '<span class="sidebar-heading">Additional Resources</span>',
+      value: '<span class="sidebar-section-header">Resources</span>',
     },
     {
       type: 'link',
       label: 'Projects using ZK Email',
       href: 'https://zk.email/projects',
     },
-    'login-with-zk-email-oauth-api',
     'audits',
-    'zk-regex',
     'frequently-asked-questions',
     'contributing',
   ],

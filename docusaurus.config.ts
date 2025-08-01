@@ -72,12 +72,7 @@ const config: Config = {
     image: 'img/zk-email-docs-banner.png',
     navbar: {
       title: 'ZK Email',
-      items: [
-        {to: '/zk-email-sdk/', label: 'Blueprint SDK', position: 'left'},
-        {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
-        {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
-        {to: '/email-tx-builder/', label: 'Email Transaction Builder', position: 'left'},
-      ],
+      items: [],
     },
     metadata: [
       {
