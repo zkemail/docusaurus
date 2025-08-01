@@ -108,7 +108,7 @@ Choose your path to leverage ZK Email's privacy-preserving verification system.
     },
     {
       type: 'link',
-      href: 'https://prove.email',
+      href: 'https://zk.email',
       label: 'Live Demo',
       description: 'Try ZK Email proofs in your browser right now.',
     },
@@ -122,5 +122,5 @@ Choose your path to leverage ZK Email's privacy-preserving verification system.
 />
 
 :::tip Ready to Get Started?
-**Try it now**: [Live Demo](https://prove.email) • **Developers**: [Quick Start Guide](/getting-started) • **Questions**: [Join our Telegram](https://t.me/zkemail)
+**Try it now**: [Live Demo](https://zk.email) • **Developers**: [Quick Start Guide](/getting-started) • **Questions**: [Join our Telegram](https://t.me/zkemail)
 :::
