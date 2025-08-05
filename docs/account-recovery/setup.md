@@ -14,6 +14,7 @@ keywords:
     recovery module,
     web3 security,
     account protection,
+    EIP-7702,
   ]
 ---
 
@@ -32,7 +33,7 @@ ZK Email Recovery enables account recovery through email guardians. The recovery
 
 The Universal Email Recovery Module allows you to add an email-based recovery mechanism to any ERC7579-compatible account, such as a 7579 Safe account. The following guides showcase the E2E recovery flow via permissionless.js or ModuleSDK. They will guide you through the process of setting up the module, configuring recovery options, and handling the recovery process in case you need to regain access to your account.
 
-### EIP-7702 Account Recovery
+### Account Recovery for EIP-7702 delegated Accounts
 
 [EIP-7702](https://eips.ethereum.org/EIPS/eip-7702) gives superpowers to EOAs by allowing any EOA to set its code based on any existing smart contract. To do so, an EOA owner would sign an authorization that could then be submitted by anyone as part of the new transaction type. The code will be valid until replaced by another authorization. The authorization could be given for a single chain, or all chains at once.
 
