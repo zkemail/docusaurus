@@ -45,7 +45,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">Blueprint SDK</span>',
     },
-    'zk-email-sdk',
+    'zk-email-sdk/README',
     'zk-email-sdk/setup',
     {
       type: 'category',
@@ -83,7 +83,7 @@ const sidebars: SidebarsConfig = {
       type: 'html',
       value: '<span class="sidebar-heading">ZK Email Verifier</span>',
     },
-    'zk-email-verifier',
+    'zk-email-verifier/README',
     'zk-email-verifier/setup',
     'zk-email-verifier/usage-guide',
     {
