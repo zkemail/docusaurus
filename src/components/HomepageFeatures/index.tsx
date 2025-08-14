@@ -4,52 +4,68 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
+  link?: {
+    text: string;
+    url: string;
+  };
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Privacy-Preserving Email Verification',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        A cryptographic protocol enabling users to prove email ownership and content 
+        without revealing sensitive information. Built on zero-knowledge proofs and 
+        DKIM signatures.
       </>
     ),
+    link: {
+      text: 'Read the paper →',
+      url: '/docs/introduction'
+    }
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Decentralized Identity Infrastructure',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Transform existing email systems into a universal identity layer for Web3. 
+        No modifications to email providers required—leveraging existing DKIM 
+        infrastructure.
       </>
     ),
+    link: {
+      text: 'Technical overview →',
+      url: '/docs/architecture/overview'
+    }
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Open Source Implementation',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Production-ready SDK and smart contracts for building privacy-preserving 
+        applications. Actively maintained by researchers and developers worldwide.
       </>
     ),
+    link: {
+      text: 'View on GitHub →',
+      url: 'https://github.com/zkemail'
+    }
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({title, description, link}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+      <div className={styles.feature}>
+        <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+        <p className={styles.featureDescription}>{description}</p>
+        {link && (
+          <a href={link.url} className={styles.featureLink}>
+            {link.text}
+          </a>
+        )}
       </div>
     </div>
   );
@@ -59,6 +75,13 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+        <div className={styles.featuresIntro}>
+          <p className={styles.abstract}>
+            ZK Email is a cryptographic protocol for anonymous email verification. 
+            By combining zero-knowledge proofs with existing email infrastructure, 
+            we enable privacy-preserving identity systems without trusted third parties.
+          </p>
+        </div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

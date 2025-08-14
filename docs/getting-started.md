@@ -1,162 +1,227 @@
 ---
-title: Getting Started
+title: Choose Your Path to Email-Based Verification
 sidebar_label: Getting Started
-description: Learn how to integrate ZK Email's DKIM verification and zero-knowledge proofs into your applications, with guides for SDKs, templates, and project components
-keywords: [ZK Email integration, DKIM verification, zero-knowledge proofs, email authentication, blockchain integration, SDK implementation, smart contract wallet, account recovery, OAuth login, developer guide]
+description: Role-based entry points for business leaders, developers, and researchers. Start building with ZK Email in minutes with clear paths for every audience.
+keywords: [ZK Email getting started, developer quickstart, zero-knowledge proofs, email verification, blockchain integration, privacy-preserving authentication, role-based onboarding]
 ---
 
 import DocCardList from '@theme/DocCardList';
 
-# Getting Started
+# Choose Your Path to Email-Based Verification
 
 <div style={{fontSize: '1.2em', marginBottom: '2em'}}>
-Welcome to ZK Email! Let's help you get started with email verification using zero-knowledge proofs.
+Whether you're integrating ZK Email into applications, researching the cryptographic foundations, or exploring implementation options—we have the right starting point for you.
 </div>
 
-## What is ZK Email?
-
-ZK Email is a powerful system that lets you verify emails using zero-knowledge proofs, based on the DKIM (DomainKeys Identified Mail) protocol. Here's how it works:
-
-1. When an email is sent from a domain, it's signed with the domain's private key
-2. The corresponding public key is published in the domain's DNS records
-3. The receiver verifies the DKIM signature to authenticate the email
-4. ZK Email adds privacy by proving the verification without revealing the email contents
-
-:::info Learn More
-For a deeper dive into the cryptography and architecture behind ZK Email, check out our [Architecture](architecture) section.
-:::
-
-## Quick Start Guide
-
-### 1. Choose Your Starting Point
-
-Based on your needs, start with one of these components:
+## For Builders
+**Build with ZK Email in your applications**
 
 <div className="row" style={{marginBottom: '2em'}}>
-  <div className="col col--6">
+  <div className="col col--4">
     <div className="zk-card">
       <div className="zk-card__header">
-        <h3 className="zk-card__title">🌟 For New Developers</h3>
+        <h3 className="zk-card__title">🎯 Live Demo</h3>
       </div>
       <div className="zk-card__body">
+        <p>Experience ZK Email proofs instantly</p>
         <div className="zk-card__link-wrapper">
-          <a href="zk-email-sdk" className="zk-card__main-link">ZK Email SDK</a>
+          <a href="https://prove.email" className="zk-card__main-link">Try Now →</a>
         </div>
-        <p className="zk-card__subtitle">Start here if you want to:</p>
-        <ul className="zk-card__bullet-list">
-          <li>Build ZK Email proofs with minimal code</li>
-          <li>Use auto-deployed infrastructure</li>
-          <li>Get up and running quickly</li>
-        </ul>
       </div>
     </div>
   </div>
-  <div className="col col--6">
+  <div className="col col--4">
     <div className="zk-card">
       <div className="zk-card__header">
-        <h3 className="zk-card__title">⚡ For Advanced Users</h3>
+        <h3 className="zk-card__title">📖 Use Cases</h3>
       </div>
       <div className="zk-card__body">
+        <p>See technical implementation examples</p>
         <div className="zk-card__link-wrapper">
-          <a href="zk-email-verifier" className="zk-card__main-link">ZK Email Verifier</a>
+          <a href="https://github.com/zkemail" className="zk-card__main-link">Example Apps →</a>
         </div>
-        <p className="zk-card__subtitle">Choose this if you need to:</p>
-        <ul className="zk-card__bullet-list">
-          <li>Create custom verification circuits</li>
-          <li>Build specialized smart contracts</li>
-          <li>Implement custom frontend utilities</li>
-        </ul>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4">
+    <div className="zk-card">
+      <div className="zk-card__header">
+        <h3 className="zk-card__title">📋 Architecture</h3>
+      </div>
+      <div className="zk-card__body">
+        <p>System design and components</p>
+        <div className="zk-card__link-wrapper">
+          <a href="architecture/" className="zk-card__main-link">Learn More →</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-### 2. Explore Our Solutions
+**Key Technical Benefits:**
+- **Privacy-preserving authentication** - Cryptographic proofs without revealing email contents
+- **Decentralized verification** - No trusted third parties required for email validation  
+- **Composable system** - Integrate with existing authentication and identity infrastructure
 
-<div className="row">
+## For Developers & Technical Teams  
+**Start building in 15 minutes**
+
+<div className="row" style={{marginBottom: '2em'}}>
   <div className="col col--4">
     <div className="zk-card">
       <div className="zk-card__header">
-        <h3 className="zk-card__title">🔐 Authentication</h3>
+        <h3 className="zk-card__title">⚡ Quick Start</h3>
       </div>
       <div className="zk-card__body">
-        <ul className="zk-card__bullet-list">
-          <li><a href="login-with-zk-email-oauth-api" className="zk-card__main-link">OAuth Login</a>Privacy-preserving email authentication</li>
-          <li><a href="account-recovery" className="zk-card__main-link">Account Recovery</a>Secure wallet recovery via email</li>
-        </ul>
+        <p>Working proof in your browser</p>
+        <div className="zk-card__link-wrapper">
+          <a href="zk-email-sdk/create-blueprint" className="zk-card__main-link">5-Min Tutorial →</a>
+        </div>
       </div>
     </div>
   </div>
   <div className="col col--4">
     <div className="zk-card">
       <div className="zk-card__header">
-        <h3 className="zk-card__title">💼 Smart Contracts</h3>
+        <h3 className="zk-card__title">🛠️ SDK Setup</h3>
       </div>
       <div className="zk-card__body">
-        <ul className="zk-card__bullet-list">
-          <li><a href="email-wallet" className="zk-card__main-link">Email Wallet</a>Control smart contracts via email</li>
-          <li><a href="email-tx-builder" className="zk-card__main-link">Transaction Builder</a>Email-driven blockchain actions</li>
-        </ul>
+        <p>Install and integrate SDKs</p>
+        <div className="zk-card__link-wrapper">
+          <a href="zk-email-sdk/setup" className="zk-card__main-link">Install Guide →</a>
+        </div>
       </div>
     </div>
   </div>
   <div className="col col--4">
     <div className="zk-card">
       <div className="zk-card__header">
-        <h3 className="zk-card__title">🛠️ Developer Tools</h3>
+        <h3 className="zk-card__title">📚 Examples</h3>
       </div>
       <div className="zk-card__body">
-        <ul className="zk-card__bullet-list">
-          <li><a href="zk-regex" className="zk-card__main-link">ZK Regex</a>Pattern matching in ZK circuits</li>
-        </ul>
+        <p>Copy-paste implementations</p>
+        <div className="zk-card__link-wrapper">
+          <a href="https://github.com/zkemail" className="zk-card__main-link">Browse Code →</a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-## Implementation Guide
+**Developer Resources:**
+- **TypeScript/JavaScript SDK** with full type safety
+- **Pre-built templates** for common email patterns  
+- **Auto-deployed infrastructure** (no server management)
 
-### 1. Set Up Your Environment
-- Clone the repository for your chosen component
-- Follow the installation instructions in the component's README
-- Install required dependencies
+## For Researchers & Cryptographers
+**Explore the cryptographic foundations**
 
-### 2. Learn Through Examples
-- Try our [Proof of Twitter Example](https://prove.email/blog/twitter)
-- Explore more examples in our [Github repositories](https://github.com/zkemail)
-- Check component-specific documentation for detailed APIs
+<div className="row" style={{marginBottom: '2em'}}>
+  <div className="col col--4">
+    <div className="zk-card">
+      <div className="zk-card__header">
+        <h3 className="zk-card__title">📄 Papers</h3>
+      </div>
+      <div className="zk-card__body">
+        <p>Peer-reviewed research</p>
+        <div className="zk-card__link-wrapper">
+          <a href="https://zk.email/papers" className="zk-card__main-link">Read Research →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4">
+    <div className="zk-card">
+      <div className="zk-card__header">
+        <h3 className="zk-card__title">🔐 Audits</h3>
+      </div>
+      <div className="zk-card__body">
+        <p>Third-party security reviews</p>
+        <div className="zk-card__link-wrapper">
+          <a href="audits" className="zk-card__main-link">Security Reports →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col col--4">
+    <div className="zk-card">
+      <div className="zk-card__header">
+        <h3 className="zk-card__title">🌐 Open Source</h3>
+      </div>
+      <div className="zk-card__body">
+        <p>Contribute to the protocol</p>
+        <div className="zk-card__link-wrapper">
+          <a href="contributing" className="zk-card__main-link">Contribute →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-### 3. Build Your Application
-- Start with basic email verification
-- Add custom logic for your use case
-- Integrate with your existing systems
+**Research Highlights:**
+- **DKIM-based ZK proofs** leveraging RSA signature verification in zero-knowledge circuits
+- **Selective disclosure protocols** using regex-based pattern matching with information-theoretic privacy
+- **Multi-framework compatibility**: Circom SNARKs, Noir, SP1/RISC0 zkVMs for diverse deployment scenarios
 
-### 4. Best Practices
-- Keep dependencies up-to-date for security
-- Follow our coding standards
-- Implement proper error handling
-- Test thoroughly before deployment
+## Understanding ZK Email
 
-## Popular Use Cases
+ZK Email transforms emails into cryptographic proofs using a simple but powerful principle:
 
-Here's what developers are building with ZK Email:
+**The Analogy**: Traditional identity verification reveals excessive information—showing ID at a bar exposes your address, full name, and ID number just to prove you're over 21. ZK Email enables selective disclosure—proving "Yes, over 21" without revealing anything else, backed by cryptographic guarantees.
 
-| Use Case                   | Description                                                                                                                                                                            | Key Components                    | Examples                                                                              |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------- |
-| **Private Authentication** | Use your email for secure and private authentication. Prove ownership of your email address without revealing it or its contents to the service.                                       | OAuth API, ZK Email SDK           | - Logging into a healthcare portal<br/>- Accessing a private club                     |
-| **Smart Contract Control** | Manage your blockchain wallets using your email. Perform transactions securely by proving email ownership, making it user-friendly and eliminating the need for managing private keys. | Email Wallet, Transaction Builder | - Transferring cryptocurrency<br/>- Executing smart contract functions                |
-| **Account Recovery**       | Safely recover access to your blockchain wallet if you lose your credentials. Use your email to prove your identity and regain control over your assets.                               | Account Recovery, Email Wallet    | - Forgetting your wallet password<br/>- Losing your private key                       |
-| **Identity Verification**  | Verify personal details or qualifications privately. Prove attributes like age, membership, or event attendance based on email receipts without exposing sensitive information.        | ZK Email Verifier, ZK Regex       | - Confirming membership in an organization<br/>- Verifying attendance at a conference |
+**Technical Process**:
+1. **DKIM Signature Verification**: Every email contains an RSA signature that cryptographically proves sender authenticity
+2. **Zero-Knowledge Proof Generation**: Prove DKIM signature validity without revealing email contents through circuit-based verification  
+3. **Selective Disclosure**: Extract specific data fields using regex patterns while keeping all other content private
+4. **Universal Verification**: Anyone can verify proofs using publicly available DKIM keys without accessing private information
 
-## Join Our Community
+*Security Note: Privacy guarantees assume proper DKIM implementation by email providers and computational security of the underlying zero-knowledge proof system.*
 
-We're here to help you succeed with ZK Email:
+:::info Learn More
+For technical details, see our [Architecture](architecture) section. For hands-on learning, try the [5-minute tutorial](zk-email-sdk/create-blueprint).
+:::
 
-- 💬 Join our [Telegram](https://t.me/zkemail) for support
-- 📚 Check the [FAQ](frequently-asked-questions.md) for quick answers
-- 🤝 Contribute through our [contributing guide](contributing.md)
-- 🔍 Browse [example implementations](https://github.com/zkemail)
+## Real-World Applications
 
-:::tip Stay Updated
-Watch our [Github repositories](https://github.com/zkemail) for the latest updates and features!
+Transform how users interact with your application:
+
+**Anonymous Whistleblowing**: Healthcare workers report violations while proving their credentials—without revealing their identity.
+
+**Fraud-Proof KYC**: Financial services verify user attributes (age, residency) without storing personal data—eliminating data breach risks.
+
+**Seamless Web3 Onboarding**: E-commerce users control crypto payments through email—no wallet apps or seed phrases required.
+
+**Private Social Verification**: Dating apps verify university attendance or employer without exposing personal details.
+
+## Next Steps by Role
+
+### Application Developers
+1. **[Quick Tutorial](zk-email-sdk/create-blueprint)** - Create your first proof in 5 minutes
+2. **[SDK Installation](zk-email-sdk/setup)** - Integrate into your project
+3. **[Example Implementations](https://github.com/zkemail)** - Study full applications
+
+### Protocol Developers
+1. **[Architecture Deep Dive](architecture/)** - System design and components
+2. **[Circuit Implementation](zk-email-verifier/)** - Low-level ZK circuit development
+3. **[Contribute](contributing)** - Extend the protocol
+
+### Security Researchers  
+1. **[Security Model](architecture/security-considerations)** - Threat analysis and assumptions
+2. **[Audit Reports](audits)** - Third-party security reviews
+3. **[Research Papers](https://zk.email/papers)** - Academic foundations
+
+## Community & Support
+
+**Get Help:**
+- 💬 [Telegram Community](https://t.me/zkemail) - Real-time support
+- 📖 [Documentation](/) - Comprehensive guides
+- 🐛 [GitHub Issues](https://github.com/zkemail) - Bug reports & features
+
+**Stay Updated:**
+- 📝 [Blog](https://zk.email/blog) - Latest developments
+- 🐦 [Twitter](https://twitter.com/zkemail) - Announcements
+- 📺 [YouTube](https://youtube.com/@zkemail) - Technical talks
+
+:::tip Ready to Start?
+**Quick wins**: [Try the demo](https://prove.email) → [Follow tutorial](zk-email-sdk/create-blueprint) → [Join Telegram](https://t.me/zkemail)
 :::
