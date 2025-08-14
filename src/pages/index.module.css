@@ -109,6 +109,214 @@
   color: white;
 }
 
+/* Persona Navigation Section */
+.personaSection {
+  padding: 4rem 0;
+  background: var(--ifm-background-color);
+}
+
+.personaHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.personaHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.personaHeader p {
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.personaGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.personaCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.personaCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.personaCardHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.personaSubtitle {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+
+.personaDescription {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.personaLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.personaLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.25rem 0;
+  transition: color 0.2s ease;
+}
+
+.personaLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+}
+
+/* Use Cases Section */
+.useCasesSection {
+  padding: 4rem 0;
+  background: var(--ifm-color-primary-lightest);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionHeader h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.sectionHeader p {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.useCasesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.useCaseCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.useCaseIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.useCaseCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.useCaseCard p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.5;
+}
+
+/* Quick Start Section */
+.quickStartSection {
+  padding: 4rem 0;
+  background: var(--ifm-background-color);
+}
+
+.quickStartContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.quickStartText {
+  flex: 1;
+}
+
+.quickStartText h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.quickStartText p {
+  font-size: 1.125rem;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.quickStartButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.quickStartStats {
+  display: flex;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: 500;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .personaCard,
+[data-theme='dark'] .useCaseCard {
+  background: var(--ifm-color-emphasis-100);
+}
+
+[data-theme='dark'] .useCasesSection {
+  background: var(--ifm-color-emphasis-200);
+}
+
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
   .heroBanner {
@@ -137,5 +345,29 @@
   .secondaryButton {
     width: 100%;
     max-width: 300px;
+  }
+
+  .personaGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .useCasesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .quickStartContent {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .quickStartButtons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .quickStartStats {
+    justify-content: center;
   }
 }

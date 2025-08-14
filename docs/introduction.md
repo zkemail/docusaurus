@@ -66,7 +66,7 @@ This approach provides formal privacy guarantees through zero-knowledge proofs w
 
 ## Two Powerful Approaches
 
-Choose your path to leverage ZK Email's privacy-preserving verification system.
+ZK Email enables privacy-preserving verification through two complementary approaches:
 
 <div className="simple-approaches">
   <div className="simple-approach">
@@ -90,27 +90,71 @@ Choose your path to leverage ZK Email's privacy-preserving verification system.
   </div>
 </div>
 
-## Explore ZK Email
+## Choose Your Path
+
+Select the journey that matches your goals and technical background:
+
+<div className="persona-grid">
+  <div className="persona-card">
+    <h3>🎨 No-Code Builder</h3>
+    <p className="persona-subtitle">Business users, Product managers, Marketers</p>
+    <p>Create email verification proofs without writing code using our visual Registry tool.</p>
+    <div className="persona-links">
+      <a href="/zk-email-sdk/registry">Start with Registry →</a>
+      <a href="/zk-email-sdk/proof-of-luma">5-Minute Tutorial →</a>
+      <a href="https://registry.zk.email">Browse Blueprints →</a>
+    </div>
+  </div>
+
+  <div className="persona-card">
+    <h3>👩‍💻 Developer</h3>
+    <p className="persona-subtitle">Frontend & Backend engineers</p>
+    <p>Integrate ZK Email proofs into your applications with our SDK and comprehensive APIs.</p>
+    <div className="persona-links">
+      <a href="/zk-email-sdk/setup">SDK Quick Start →</a>
+      <a href="/zk-email-sdk/overview">API Reference →</a>
+      <a href="/zk-email-sdk/running-the-example">Code Examples →</a>
+    </div>
+  </div>
+
+  <div className="persona-card">
+    <h3>🏗️ Infrastructure Operator</h3>
+    <p className="persona-subtitle">DevOps, System administrators</p>
+    <p>Deploy and manage ZK Email infrastructure including relayers and DKIM archives.</p>
+    <div className="persona-links">
+      <a href="/email-wallet/relayer-infrastructure/overview">Deploy Relayer →</a>
+      <a href="/architecture">Architecture Guide →</a>
+      <a href="/architecture/security-considerations">Security Setup →</a>
+    </div>
+  </div>
+
+  <div className="persona-card">
+    <h3>🔬 Researcher</h3>
+    <p className="persona-subtitle">Cryptographers, Protocol developers</p>
+    <p>Explore the cryptographic foundations and extend ZK Email's capabilities.</p>
+    <div className="persona-links">
+      <a href="/architecture/zk-proofs">ZK Proofs →</a>
+      <a href="/architecture/dkim-verification">DKIM Verification →</a>
+      <a href="/architecture/security-considerations">Security Model →</a>
+    </div>
+  </div>
+</div>
+
+## Learn More
 
 <DocCardList 
   items={[
     {
       type: 'link',
-      href: '/getting-started',
-      label: 'Getting Started',
-      description: 'Choose your path: business impact, development, or research.',
-    },
-    {
-      type: 'link',
       href: '/architecture',
       label: 'How It Works',
-      description: 'Understand the cryptographic foundations and architecture.',
+      description: 'Understand the cryptographic foundations and ZK Email architecture.',
     },
     {
       type: 'link',
-      href: 'https://zk.email',
-      label: 'Live Demo',
-      description: 'Try ZK Email proofs in your browser right now.',
+      href: 'https://zk.email/blog',
+      label: 'Blog & Research',
+      description: 'Latest insights, research, and developments in ZK Email.',
     },
     {
       type: 'link',
@@ -118,9 +162,15 @@ Choose your path to leverage ZK Email's privacy-preserving verification system.
       label: 'Open Source',
       description: 'Explore code, contribute, and build with our libraries.',
     },
+    {
+      type: 'link',
+      href: '/web3-ux-overview',
+      label: 'Use Cases',
+      description: 'Real-world applications and implementation examples.',
+    },
   ]}
 />
 
 :::tip Ready to Get Started?
-**Try it now**: [Live Demo](https://zk.email) • **Developers**: [Quick Start Guide](/getting-started) • **Questions**: [Join our Telegram](https://t.me/zkemail)
+**Choose your path above** based on your role • **Questions?**: [Join our Telegram](https://t.me/zkemail) • **Stay updated**: [Follow our Blog](https://zk.email/blog)
 :::
