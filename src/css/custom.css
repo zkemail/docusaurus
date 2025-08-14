@@ -211,6 +211,42 @@ body {
     width: auto;
   }
   
+  /* Enhanced card responsive design */
+  .zk-card {
+    min-height: 160px;
+  }
+  
+  .zk-card__header {
+    padding: 1.5rem 1.5rem 0.5rem;
+  }
+  
+  .zk-card__title {
+    font-size: 1.25rem;
+  }
+  
+  .zk-card__body {
+    padding: 0.5rem 1.5rem 1.5rem;
+  }
+  
+  .zk-card__body p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .zk-card__main-link {
+    font-size: 1rem;
+    padding: 0.5rem 0.875rem;
+  }
+  
+  /* Adjust card grid spacing */
+  .row {
+    margin: -1rem;
+  }
+  
+  .col {
+    padding: 1rem;
+  }
+  
   /* Adjust typography for mobile */
   .markdown h1 {
     font-size: 2rem;
@@ -583,11 +619,27 @@ body {
 
 /* Grid layout adjustments */
 .row {
-  margin: -0.75rem;
+  margin: -0.5rem;
 }
 
 .col {
-  padding: 0.75rem;
+  padding: 0.5rem;
+}
+
+/* Tablet responsive - one card per row */
+@media (min-width: 768px) and (max-width: 996px) {
+  .row .col--4,
+  .row .col--6 {
+    --ifm-col-width: 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .zk-card {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Quick Start section specific styles */
@@ -781,7 +833,7 @@ td li {
 /* Better spacing for sections */
 .markdown section,
 .markdown div {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 /* Add generous spacing to documentation layout */
@@ -1206,43 +1258,117 @@ code {
   color: var(--zk-gray-300) !important;
 }
 
-/* Legacy card styling for backward compatibility */
+/* Enhanced card styling with improved proportions and typography */
 .zk-card {
   background: white;
   border: 1px solid var(--zk-gray-200);
   border-radius: 8px;
   transition: all 0.2s ease;
   overflow: hidden;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   height: 100%;
-  padding: 1.5rem;
+  min-height: 140px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .zk-card:hover {
-  border-color: var(--zk-gray-300);
-  box-shadow: var(--zk-shadow-md);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 3px 12px rgba(41, 98, 165, 0.1);
+  transform: translateY(-1px);
+}
+
+.zk-card__header {
+  padding: 2rem 1rem 0.25rem;
+  flex-shrink: 0;
 }
 
 .zk-card__title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--zk-gray-900);
   line-height: 1.3;
+  margin-bottom: 0;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.zk-card__body {
+  padding: 0.25rem 1rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 0;
+}
+
+.zk-card__body p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--zk-gray-600);
   margin-bottom: 0.75rem;
+  text-align: center;
+  flex: 1;
+}
+
+.zk-card__link-wrapper {
+  margin: 0;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.zk-card__main-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 4px;
+  background: rgba(41, 98, 165, 0.06);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.zk-card__main-link:hover {
+  background: var(--ifm-color-primary);
+  color: white;
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(41, 98, 165, 0.15);
 }
 
 [data-theme="dark"] .zk-card {
   background: #1e293b; /* Consistent with code blocks */
   border-color: var(--zk-navbar-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 [data-theme="dark"] .zk-card:hover {
   border-color: var(--ifm-color-primary-light);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(104, 163, 233, 0.2);
+  transform: translateY(-2px);
 }
 
 [data-theme="dark"] .zk-card__title {
   color: #f1f5f9; /* High contrast for card titles */
+}
+
+[data-theme="dark"] .zk-card__body p {
+  color: #94a3b8; /* Better contrast for dark mode */
+}
+
+[data-theme="dark"] .zk-card__main-link {
+  color: var(--ifm-color-primary-light);
+  background: rgba(104, 163, 233, 0.1);
+}
+
+[data-theme="dark"] .zk-card__main-link:hover {
+  background: var(--ifm-color-primary-light);
+  color: var(--zk-navbar-bg);
+  box-shadow: 0 2px 8px rgba(104, 163, 233, 0.3);
 }
 
 /* Legacy sidebar heading cleanup */
@@ -1384,3 +1510,4 @@ code {
 [data-theme="dark"] .col--3 {
   background: var(--zk-navbar-bg);
 }
+
