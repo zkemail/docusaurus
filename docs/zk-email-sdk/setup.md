@@ -75,11 +75,11 @@ You can download a sample email file to test the SDK:
 <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-import zkeSDK, { Proof } from "@zk-email/sdk";
+import { initZkEmailSdk } from "@zk-email/sdk";
 import fs from "fs/promises";
 
 async function main() {
-  const sdk = zkeSDK();
+  const sdk = initZkEmailSdk();
   
   // Get blueprint from the registry
   const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v3");
@@ -90,7 +90,6 @@ async function main() {
   
   // Generate the proof
   const proof = await prover.generateProof(eml);
-  setProof(proof);
 
   // Verify the proof on chain
   const verification = await blueprint.verifyProofOnChain(proof);
@@ -111,7 +110,7 @@ Create your component:
 
 ```jsx
 import { useState } from 'react'
-import zkeSDK, { Proof } from "@zk-email/sdk"
+import { initZkEmailSdk } from "@zk-email/sdk";
 
 export default function Home() {
   const [proof, setProof] = useState<Proof | null>(null);
@@ -127,7 +126,7 @@ export default function Home() {
       const eml = await file.text()
 
       // Initialize the SDK
-      const sdk = zkeSDK()
+      const sdk = initZkEmailSdk();
 
       // Get the blueprint
       const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v3")
@@ -190,7 +189,7 @@ Create your component:
 'use client'
 
 import { useState } from 'react'
-import zkeSDK, { Proof } from "@zk-email/sdk"
+import { initZkEmailSdk } from "@zk-email/sdk";
 
 export default function Home() {
   const [proof, setProof] = useState<Proof | null>(null);
@@ -206,7 +205,7 @@ export default function Home() {
       const eml = await file.text()
 
       // Initialize the SDK
-      const sdk = zkeSDK()
+      const sdk = initZkEmailSdk();
 
       // Get the blueprint
       const blueprint = await sdk.getBlueprint("Bisht13/SuccinctZKResidencyInvite@v3")
