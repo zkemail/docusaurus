@@ -189,7 +189,7 @@ Create your component:
 'use client'
 
 import { useState } from 'react'
-import { initZkEmailSdk } from "@zk-email/sdk";
+import { initZkEmailSdk, Proof } from "@zk-email/sdk";
 
 export default function Home() {
   const [proof, setProof] = useState<Proof | null>(null);
