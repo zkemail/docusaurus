@@ -21,7 +21,7 @@ Think of a pattern as a set of instructions to follow when processing an email. 
 
 ## Getting started
 
-This guide will walk you through the step-by-step process of creating a new pattern using [ZK Email Registry](https://sdk.prove.email/).
+This guide will walk you through the step-by-step process of creating a new pattern using [ZK Email Registry](https://registry.zk.email/).
 
 If you face any challenge creating new Patterns, you can ask our GPT questions about creating new patterns: [GPT Link](https://chatgpt.com/g/g-wNBWHHSPV-zk-email-fields-to-extract-generator)
 
@@ -39,7 +39,7 @@ Before you begin you will need to have:
 
 #### 1. Access the ZK Email Registry
 
-First, visit the ZK Regex Registry at [https://sdk.prove.email/](https://sdk.prove.email/). This is where you'll submit your new pattern.
+First, visit the ZK Regex Registry at [https://registry.zk.email](https://registry.zk.email/). This is where you'll submit your new pattern.
 
 #### 2. Open the Pattern Creation Form
 
