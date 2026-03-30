@@ -187,6 +187,25 @@ const sidebars: SidebarsConfig = {
     'jwt-tx-builder/contracts',
     {
       type: 'html',
+      value: '<span class="sidebar-heading">Redacted</span>',
+    },
+    {
+      type: 'category',
+      label: 'Redacted',
+      link: {
+        type: 'doc',
+        id: 'redacted/README',
+      },
+      items: [
+        'redacted/architecture',
+        'redacted/zk-proving',
+        'redacted/email-parsing',
+        'redacted/backend',
+        'redacted/development',
+      ],
+    },
+    {
+      type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',
     },
     {
