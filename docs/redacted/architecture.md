@@ -9,7 +9,7 @@ keywords: [redacted architecture, system design, client-side proving, GCS storag
 
 ## System Overview
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────┐
 │  Browser (React 19 + Vite)                                       │
 │                                                                  │
@@ -59,7 +59,7 @@ keywords: [redacted architecture, system design, client-side proving, GCS storag
 
 ## File Structure
 
-```
+```text
 src/
 ├── lib.ts                    # Core: proof generation, verification, circuit loading
 ├── App.tsx                   # Main app state, proof flow orchestration
@@ -92,7 +92,7 @@ server/
 
 ### Proof Generation
 
-```
+```text
 1. User drops .eml file
 2. postal-mime parses email → {from, to, subject, body, raw}
 3. @zk-email/helpers verifyDKIMSignature → DKIMResult {modulusLength, signature, ...}
@@ -107,7 +107,7 @@ server/
 
 ### Proof Verification
 
-```
+```text
 1. Verifier opens /verify?id={uuid}
 2. GET /api/get-data/{uuid} → {proof, headerMask, bodyMask}
 3. Extract masked header/body from publicInputs

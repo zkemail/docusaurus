@@ -87,7 +87,7 @@ Retrieve proof and metadata for verification.
 
 ## GCS Storage Structure
 
-```
+```text
 bucket/
 └── eml/
     └── {uuid}/
@@ -134,7 +134,7 @@ This sets:
 
 The server sets two critical headers on all responses:
 
-```
+```text
 Cross-Origin-Opener-Policy: same-origin
 Cross-Origin-Embedder-Policy: require-corp
 ```
@@ -145,7 +145,7 @@ These enable `SharedArrayBuffer` in the browser, which Barretenberg's `UltraHonk
 
 In production (`NODE_ENV=production`), the server also serves the built Vite frontend:
 
-```
+```text
 GET /                → dist/index.html
 GET /generate-proof  → dist/index.html (SPA fallback)
 GET /verify          → dist/index.html (SPA fallback)
@@ -156,7 +156,7 @@ API routes (`/api/*`) are registered first and take priority.
 
 ## Proof Lifecycle
 
-```
+```text
 1. Client generates proof in browser
 2. Client calls POST /api/get-proof-upload-url → gets signed URL + uuid
 3. Client uploads proof.json directly to GCS via signed PUT URL

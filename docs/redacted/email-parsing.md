@@ -15,7 +15,7 @@ Email parsing converts a raw `.eml` file into structured fields (From, To, Subje
 
 ## Parsing Pipeline
 
-```
+```text
 Raw .eml file (RFC 5322)
     │
     ▼
@@ -79,7 +79,7 @@ For a detailed explanation of how DKIM works — including the signing process, 
 
 Redacted uses [`verifyDKIMSignature`](/zk-email-verifier/packages/zk-email-helpers#dkim-verification) from `@zk-email/helpers` to parse the DKIM signature and extract the data needed for proof generation:
 
-```
+```text
 verifyDKIMSignature(rawEmail) returns:
     {
       modulusLength: 2048,             // RSA key size
@@ -107,7 +107,7 @@ The mask arrays (`headerMask[]`, `bodyMask[]`) are indexed by byte position in t
 
 ### UI to Circuit alignment
 
-```
+```text
 User selects text "John" in the From field
     │
     ▼

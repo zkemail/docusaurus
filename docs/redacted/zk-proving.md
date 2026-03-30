@@ -77,7 +77,7 @@ Four pre-compiled circuits cover different email sizes. Defined in `src/circuit-
 
 ### Selection logic
 
-```
+```text
 1. Detect RSA key size from DKIM result (1024 or 2048 bits)
 2. Filter circuits matching that key size
 3. Pick the smallest circuit where maxBodyLength >= actual body length
@@ -134,7 +134,7 @@ const isValid = await backend.verifyProof(proof);
 
 **Circuit detection fallback:** If circuit metadata isn't embedded in the proof, the verifier infers the circuit from `publicInputs.length`:
 
-```
+```text
 publicInputs.length = 2 + maxHeaderLength + maxBodyLength
 
 e.g., 6146 = 2 + 2048 + 4096  →  email_mask_*_small
@@ -161,7 +161,7 @@ interface ProofDataWithMetadata extends ProofData {
 
 ### Extracting masked content from publicInputs
 
-```
+```text
 publicInputs[0]     → pubkey hash (Field, hex string)
 publicInputs[1]     → email nullifier (Field, hex string)
 publicInputs[2]     → masked_header[0] (u8 as hex, e.g., "0x46" = 'F')
