@@ -77,6 +77,7 @@ const config: Config = {
         {to: '/email-wallet/', label: 'Email Wallet', position: 'left'},
         {to: '/account-recovery/', label: 'Account Recovery', position: 'left'},
         {to: '/email-tx-builder/', label: 'Email Transaction Builder', position: 'left'},
+        {to: '/kusama/', label: 'Polkadot & Kusama', position: 'left'},
       ],
     },
     metadata: [
