@@ -11,6 +11,8 @@ ZK Email Verifier is a library that allows for anonymous verification of email s
 
 You can use this set of SDKs to build new proof infrastructure from scratch. We recommend using the [ZK Email SDK](../zk-email-sdk/) for new users who just want to test new types of proofs easily, and users to switch to zk-email-verifier if/when they want more customizability.
 
+Deploying verifier contracts to Polkadot or Kusama? See [Polkadot & Kusama](../kusama/) for the PolkaVM toolchain, chain reference, and deployed addresses.
+
 ## Sections
 
 Our documentation for ZK-Email-Verifier is broken into three sections:

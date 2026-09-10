@@ -262,6 +262,10 @@ export default function Home() {
 </TabItem>
 </Tabs>
 
+## On-Chain Verification
+
+`verifyProofOnChain` submits a proof to the blueprint's deployed verifier contract. For verifying on Polkadot or Kusama, including the supported chains and how verifier contracts are deployed to PolkaVM, see [Polkadot & Kusama](../kusama/).
+
 ## Repository Templates
 
 We have provided a GitHub repo with working examples from this guide, showcasing different implementations, including Node.js, Next.js, Vite with Vanilla JS, and Deno.

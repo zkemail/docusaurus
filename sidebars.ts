@@ -187,6 +187,11 @@ const sidebars: SidebarsConfig = {
     'jwt-tx-builder/contracts',
     {
       type: 'html',
+      value: '<span class="sidebar-heading">Polkadot &amp; Kusama</span>',
+    },
+    'kusama/README',
+    {
+      type: 'html',
       value: '<span class="sidebar-heading">Additional Resources</span>',
     },
     {
